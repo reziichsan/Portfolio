@@ -2,7 +2,7 @@
 
 Welcome to the official repository for my personal portfolio website. This project is a high-performance, visually striking, and fully responsive single-page portfolio designed to showcase my multi-disciplinary capabilities spanning **IT Support, Systems/Network Infrastructure, UI/UX Design, and Machine Learning/NLP**.
 
-📂 **Live Link:** [reziichsan.github.io/My-Portofolio](https://reziichsan.github.io/My-Portofolio)
+📂 **Live Link:** [reziichsan.github.io/My-Portofolio](https://reziichsan.github.io/Portfolio)
 
 ---
 
