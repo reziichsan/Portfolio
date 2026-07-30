@@ -88,6 +88,55 @@
     ::-webkit-scrollbar-track { background: var(--bg); }
     ::-webkit-scrollbar-thumb { background: var(--violet); border-radius: 99px; }
 
+    /* ── CUSTOM CURSOR ───────────────────────────────── */
+    * { cursor: none !important; }
+    .cursor {
+      position: fixed;
+      top: 0; left: 0;
+      width: 10px; height: 10px;
+      background: var(--violet-light);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: 999;
+      mix-blend-mode: exclusion;
+      transition: width 0.25s ease, height 0.25s ease, background 0.25s ease;
+    }
+    .cursor-follower {
+      position: fixed;
+      top: 0; left: 0;
+      width: 38px; height: 38px;
+      border: 1px solid var(--border-h);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: 998;
+      transition: width 0.2s ease, height 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    }
+    .cursor.hover { width: 46px; height: 46px; background: var(--chip); }
+    .cursor-follower.hover { width: 56px; height: 56px; background: transparent; border-color: var(--violet); }
+    @media (max-width: 900px) {
+      * { cursor: auto !important; }
+      .cursor, .cursor-follower { display: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { cursor: auto !important; }
+      .cursor, .cursor-follower { display: none; }
+    }
+
+    /* ── BACKGROUND NETWORK CANVAS ────────────────────── */
+    #network-canvas {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      z-index: -2;
+      opacity: 0.55;
+      pointer-events: none;
+    }
+    @media (max-width: 900px) {
+      #network-canvas { display: none; }
+    }
+
     /* ── NOISE TEXTURE ───────────────────────────────── */
     body::before {
       content: '';
@@ -837,9 +886,6 @@
     .hero-blob.one { animation: floatSlow 9s ease-in-out infinite; }
     .hero-blob.two { animation: floatSlow 11s ease-in-out infinite reverse; }
 
-    #heroParticles { position: absolute; inset: -2rem -1.5rem auto -1.5rem; height: 640px; z-index: -1; pointer-events: none; opacity: 0.9; }
-    @media (max-width: 900px) { #heroParticles { display: none; } }
-
     /* ── BACK TO TOP ──────────────────────────────────── */
     .back-to-top {
       position: fixed; bottom: 1.75rem; right: 1.75rem;
@@ -907,6 +953,13 @@
 </head>
 <body>
 
+  <!-- Custom Cursor -->
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
+
+  <!-- Background Network Canvas -->
+  <canvas id="network-canvas"></canvas>
+
   <a href="#home" class="skip-link">Skip to content</a>
 
   <div id="scrollProgress"></div>
@@ -941,7 +994,6 @@
 
   <!-- ── HERO ───────────────────────────────── -->
   <section class="hero" id="home">
-    <canvas id="heroParticles"></canvas>
     <div class="hero-blob one"></div>
     <div class="hero-blob two"></div>
     <div class="hero-left">
@@ -1659,64 +1711,121 @@
       }
     }
 
-    /* Hero depth-field particles */
-    (function heroParticleField() {
-      const canvas = document.getElementById('heroParticles');
-      if (!canvas) return;
-      const ctx = canvas.getContext('2d');
-      const heroSection = document.getElementById('home');
-      let W, H, dpr = Math.min(window.devicePixelRatio || 1, 2);
-      let particles = [];
-      let mouseX = 0.5, mouseY = 0.3;
+    /* Custom cursor (desktop only, respects reduced motion) */
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (window.matchMedia('(min-width: 901px)').matches && !prefersReducedMotion) {
+      const cursorDot = document.querySelector('.cursor');
+      const cursorRing = document.querySelector('.cursor-follower');
+      let mx = window.innerWidth / 2, my = window.innerHeight / 2;
+      let fx = mx, fy = my;
 
-      function resize() {
-        const rect = canvas.getBoundingClientRect();
-        W = rect.width; H = rect.height;
-        canvas.width = W * dpr; canvas.height = H * dpr;
-        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      }
-      function initParticles() {
-        const count = window.innerWidth < 1200 ? 34 : 52;
-        particles = Array.from({ length: count }, () => ({
-          x: Math.random() * W, y: Math.random() * H, z: Math.random(),
-          r: Math.random() * 1.6 + 0.6,
-          driftX: (Math.random() - 0.5) * 0.12, driftY: (Math.random() - 0.5) * 0.12,
-          twinkle: Math.random() * Math.PI * 2
-        }));
-      }
-      resize(); initParticles();
-      window.addEventListener('resize', () => { resize(); initParticles(); });
+      window.addEventListener('mousemove', (e) => {
+        mx = e.clientX; my = e.clientY;
+        cursorDot.style.left = mx + 'px';
+        cursorDot.style.top = my + 'px';
+      });
 
-      if (window.matchMedia('(min-width: 901px)').matches) {
-        heroSection.addEventListener('mousemove', (e) => {
-          const r = heroSection.getBoundingClientRect();
-          mouseX = (e.clientX - r.left) / r.width;
-          mouseY = (e.clientY - r.top) / r.height;
-        });
-      }
+      (function followCursor() {
+        fx += (mx - fx) * 0.16;
+        fy += (my - fy) * 0.16;
+        cursorRing.style.left = fx + 'px';
+        cursorRing.style.top = fy + 'px';
+        requestAnimationFrame(followCursor);
+      })();
 
-      let t = 0;
-      function draw() {
-        t += 0.016;
-        ctx.clearRect(0, 0, W, H);
-        const parX = (mouseX - 0.5), parY = (mouseY - 0.5);
-        particles.forEach(p => {
-          p.x += p.driftX; p.y += p.driftY;
-          if (p.x < -10) p.x = W + 10; if (p.x > W + 10) p.x = -10;
-          if (p.y < -10) p.y = H + 10; if (p.y > H + 10) p.y = -10;
-          const depth = 0.3 + p.z * 1.4;
-          const dx = p.x + parX * 26 * depth;
-          const dy = p.y + parY * 18 * depth;
-          const twinkle = 0.55 + Math.sin(t * 1.4 + p.twinkle) * 0.35;
-          ctx.beginPath();
-          ctx.arc(dx, dy, p.r * (0.6 + p.z * 0.8), 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(124,108,255,${(0.16 + p.z * 0.32) * twinkle})`;
-          ctx.fill();
-        });
-        requestAnimationFrame(draw);
-      }
-      requestAnimationFrame(draw);
-    })();
+      const hoverTargets = document.querySelectorAll('a, button, .filter-btn, .clink, .dot-item, .footer-social a, [data-lightbox]');
+      hoverTargets.forEach(t => {
+        t.addEventListener('mouseenter', () => { cursorDot.classList.add('hover'); cursorRing.classList.add('hover'); });
+        t.addEventListener('mouseleave', () => { cursorDot.classList.remove('hover'); cursorRing.classList.remove('hover'); });
+      });
+    }
+
+    /* Background network canvas — connected nodes across the whole page (desktop only) */
+    if (window.matchMedia('(min-width: 901px)').matches && !prefersReducedMotion) {
+      (function networkBackground() {
+        const canvas = document.getElementById('network-canvas');
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        let nodes = [];
+        const mouseN = { x: null, y: null, radius: 130 };
+
+        function resizeCanvas() {
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', () => { resizeCanvas(); initNodes(); });
+        window.addEventListener('mousemove', (e) => { mouseN.x = e.clientX; mouseN.y = e.clientY; });
+        window.addEventListener('mouseout', () => { mouseN.x = undefined; mouseN.y = undefined; });
+
+        class Node {
+          constructor(x, y, dx, dy, r) { this.x = x; this.y = y; this.dx = dx; this.dy = dy; this.r = r; }
+          draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+            ctx.fillStyle = 'rgba(124,108,255,0.55)'; /* --violet */
+            ctx.fill();
+          }
+          update() {
+            if (this.x > canvas.width || this.x < 0) this.dx = -this.dx;
+            if (this.y > canvas.height || this.y < 0) this.dy = -this.dy;
+            if (mouseN.x != null) {
+              const distX = mouseN.x - this.x, distY = mouseN.y - this.y;
+              const dist = Math.sqrt(distX * distX + distY * distY);
+              if (dist < mouseN.radius + this.r) {
+                if (mouseN.x < this.x) this.x += 2.4; else this.x -= 2.4;
+                if (mouseN.y < this.y) this.y += 2.4; else this.y -= 2.4;
+              }
+            }
+            this.x += this.dx; this.y += this.dy;
+            this.draw();
+          }
+        }
+
+        function initNodes() {
+          nodes = [];
+          const count = Math.min(60, Math.round((canvas.width * canvas.height) / 22000));
+          for (let i = 0; i < count; i++) {
+            const r = Math.random() * 1.6 + 0.8;
+            const x = Math.random() * (canvas.width - r * 2) + r;
+            const y = Math.random() * (canvas.height - r * 2) + r;
+            const dx = (Math.random() - 0.5) * 0.5;
+            const dy = (Math.random() - 0.5) * 0.5;
+            nodes.push(new Node(x, y, dx, dy, r));
+          }
+        }
+
+        function connectNodes() {
+          const maxDist = (canvas.width / 7) * (canvas.height / 7);
+          for (let a = 0; a < nodes.length; a++) {
+            for (let b = a + 1; b < nodes.length; b++) {
+              const dx = nodes[a].x - nodes[b].x, dy = nodes[a].y - nodes[b].y;
+              const dist2 = dx * dx + dy * dy;
+              if (dist2 < maxDist) {
+                const opacity = Math.min(1 - dist2 / 26000, 0.35);
+                if (opacity <= 0) continue;
+                ctx.strokeStyle = `rgba(79,139,255,${opacity})`; /* --blue */
+                ctx.lineWidth = 1;
+                ctx.beginPath();
+                ctx.moveTo(nodes[a].x, nodes[a].y);
+                ctx.lineTo(nodes[b].x, nodes[b].y);
+                ctx.stroke();
+              }
+            }
+          }
+        }
+
+        function animateNetwork() {
+          requestAnimationFrame(animateNetwork);
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          nodes.forEach(n => n.update());
+          connectNodes();
+        }
+
+        resizeCanvas();
+        initNodes();
+        animateNetwork();
+      })();
+    }
 
     /* Back-to-top ring progress */
     const backToTopRing = document.getElementById('backToTopRing');
