@@ -545,47 +545,6 @@
       background: var(--border);
     }
 
-    /* ── ROLE FIT ─────────────────────────────────────── */
-    .rolefit-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1rem;
-    }
-    .rolefit-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--r);
-      padding: 1.6rem 1.35rem;
-      cursor: pointer;
-      transition: all 0.25s ease;
-    }
-    .rolefit-card:hover { border-color: var(--border-h); background: var(--surface-h); transform: translateY(-4px); }
-    .rolefit-icon {
-      width: 40px; height: 40px;
-      border-radius: 11px;
-      background: var(--grad);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.05rem;
-      color: #fff;
-      margin-bottom: 1.1rem;
-    }
-    .rolefit-card h4 { font-family: var(--display); font-size: 1.05rem; font-weight: 700; margin-bottom: 0.55rem; }
-    .rolefit-card p { font-size: 0.8rem; color: var(--muted); line-height: 1.65; margin-bottom: 0.9rem; }
-    .rolefit-link {
-      font-family: var(--mono);
-      font-size: 0.7rem;
-      color: var(--violet-light);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-      transition: gap 0.2s;
-    }
-    .rolefit-card:hover .rolefit-link { gap: 0.5rem; }
-    @media (max-width: 900px) { .rolefit-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 500px) { .rolefit-grid { grid-template-columns: 1fr; } }
-
     /* ── ABOUT ───────────────────────────────────────── */
     .about-grid {
       display: grid;
@@ -665,7 +624,10 @@
     .tl-card:hover { border-color: var(--border-h); background: var(--surface-h); }
     .tl-date { display: block; font-family: var(--mono); font-size: 0.72rem; font-weight: 500; color: var(--violet-light); letter-spacing: 0.02em; margin-bottom: 0.5rem; }
     .tl-card h3 { font-family: var(--display); font-size: 1.15rem; font-weight: 700; margin-bottom: 0.35rem; }
-    .tl-company { font-size: 0.82rem; color: var(--muted); display: flex; align-items: center; gap: 0.3rem; margin-bottom: 0.9rem; }
+    .tl-company { font-size: 0.82rem; color: var(--muted); display: flex; align-items: center; gap: 0.3rem; margin-bottom: 0.5rem; }
+    
+    .tl-gpa { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.35rem 0.85rem; border-radius: 99px; background: var(--grad); color: #fff; font-family: var(--mono); font-size: 0.75rem; font-weight: 600; margin-bottom: 0.9rem; box-shadow: 0 4px 12px rgba(124,108,255,0.25); }
+    
     .tl-desc { font-size: 0.875rem; color: var(--muted); line-height: 1.78; margin-bottom: 1rem; }
     .tl-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
     .tl-tags span { padding: 0.22rem 0.75rem; border-radius: 99px; font-size: 0.72rem; font-weight: 500; background: var(--chip); color: var(--violet-light); border: 1px solid rgba(124,108,255,0.2); }
@@ -697,7 +659,7 @@
     @media (max-width: 600px) { .skills-bars-grid { grid-template-columns: 1fr; } }
 
     /* ── SHARED CARD MOTION ───────────────────────────── */
-    .pcard, .ccard, .tl-card, .skill-card, .rolefit-card, .stat-card {
+    .pcard, .ccard, .tl-card, .skill-card, .stat-card {
       transform-style: preserve-3d;
       will-change: transform;
       transition: transform 0.35s cubic-bezier(.2,.7,.2,1), box-shadow 0.35s ease, border-color 0.25s ease, background 0.25s ease;
@@ -1032,42 +994,6 @@
     </div>
   </section>
 
-  <!-- ── ROLE FIT ───────────────────────────── -->
-  <section class="section" id="rolefit" style="padding-top: 3rem; padding-bottom: 3rem;">
-    <div class="container">
-      <div class="sec-head centered reveal" style="margin-bottom: 2rem;">
-        <p class="eyebrow">Where I Fit</p>
-        <h2 class="section-title" style="font-size: clamp(1.6rem, 3vw, 2.1rem);">Four fields, <em>one</em> engineer</h2>
-      </div>
-      <div class="rolefit-grid">
-        <a href="#skills" class="rolefit-card reveal">
-          <div class="rolefit-icon"><i class="ri-customer-service-2-line"></i></div>
-          <h4>IT Support</h4>
-          <p>Hardware deployment, OS provisioning, helpdesk workflows, and automated Gemini-powered ticketing triage system setups.</p>
-          <span class="rolefit-link">See skills <i class="ri-arrow-right-s-line"></i></span>
-        </a>
-        <a href="#projects" class="rolefit-card reveal">
-          <div class="rolefit-icon"><i class="ri-server-line"></i></div>
-          <h4>Systems &amp; Networks</h4>
-          <p>Maintained a production distributed server architecture sustaining 1,000+ concurrent users with custom TCP/IP and VLAN structures.</p>
-          <span class="rolefit-link">See projects <i class="ri-arrow-right-s-line"></i></span>
-        </a>
-        <a href="#projects" class="rolefit-card reveal">
-          <div class="rolefit-icon"><i class="ri-pencil-ruler-2-line"></i></div>
-          <h4>UI/UX Design</h4>
-          <p>Figma-based high-fidelity interactive prototyping shipped for multiple digital platform environments via clean Design Systems.</p>
-          <span class="rolefit-link">See projects <i class="ri-arrow-right-s-line"></i></span>
-        </a>
-        <a href="#projects" class="rolefit-card reveal">
-          <div class="rolefit-icon"><i class="ri-brain-line"></i></div>
-          <h4>Data / ML</h4>
-          <p>Benchmarked Multilingual Transformers and IndoBERT models for a specialized Indonesian thesis pipeline, hitting 88.62% test accuracy.</p>
-          <span class="rolefit-link">See projects <i class="ri-arrow-right-s-line"></i></span>
-        </a>
-      </div>
-    </div>
-  </section>
-
   <!-- ── ABOUT ──────────────────────────────── -->
   <section class="section section-alt" id="about">
     <div class="container">
@@ -1164,6 +1090,7 @@
                 <span class="tl-date">Aug 2019 — Sept 2026</span>
                 <h3>Bachelor's Degree in Informatics</h3>
                 <p class="tl-company"><i class="ri-map-pin-line"></i> Telkom University · Bandung, Indonesia</p>
+                <span class="tl-gpa"><i class="ri-award-line"></i> GPA 3.01 / 4.0</span>
                 <p class="tl-desc">Comprehensive coursework in network architecture, mobile framework engineering, database management systems, OOP, corporate cybersecurity structures, and agile project methodologies.</p>
 
                 <div class="tl-actions">
@@ -1176,7 +1103,7 @@
                 </div>
 
                 <div class="tl-tags">
-                  <span>GPA 3.01 / 4.0</span><span>Informatics</span><span>Telkom University</span>
+                  <span>Informatics</span><span>Telkom University</span>
                 </div>
               </div>
             </div>
@@ -1698,7 +1625,7 @@
 
     /* 3D tilt on cards (desktop only) */
     if (window.matchMedia('(min-width: 901px)').matches) {
-      document.querySelectorAll('.pcard, .ccard, .rolefit-card, .stat-card').forEach(card => {
+      document.querySelectorAll('.pcard, .ccard, .stat-card').forEach(card => {
         card.addEventListener('mousemove', (e) => {
           const r = card.getBoundingClientRect();
           const px = (e.clientX - r.left) / r.width - 0.5;
