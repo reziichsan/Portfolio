@@ -349,6 +349,106 @@
       .mobile-menu.open { animation: none; }
     }
 
+
+    /* ===== SPACE & SENIOR POLISH ===== */
+    :root { --bg: #02040f; }
+    ::selection { background: rgba(94,231,255,.28); color: #fff; }
+    ::-webkit-scrollbar { width: 10px; }
+    ::-webkit-scrollbar-track { background: #02040f; }
+    ::-webkit-scrollbar-thumb { background: linear-gradient(#27407f, #3b2a7a); border-radius: 99px; border: 2px solid #02040f; }
+
+    /* Deep space backdrop: stars, nebula and a Milky Way band are drawn on a canvas. */
+    #starfield { background: linear-gradient(180deg, #02040f 0%, #050a26 50%, #02040f 100%); }
+    #starfield::before, #starfield::after { display: none; }
+    #starfield canvas { position: absolute; inset: 0; display: block; }
+
+    /* Hero as a view from orbit. */
+    .stage { background: none; }
+    .stage::before { display: none; }
+    .hero-fade { background: linear-gradient(transparent, rgba(2,4,15,.92)); height: 200px; }
+    .galaxy {
+      position: absolute; right: 7%; top: 13%; width: min(560px, 46vw); aspect-ratio: 2.4 / 1;
+      transform: rotate(-22deg); opacity: .6; pointer-events: none;
+      background:
+        radial-gradient(ellipse 14% 30% at 50% 50%, rgba(255,244,225,.95), rgba(255,226,190,.4) 55%, transparent 100%),
+        radial-gradient(ellipse 50% 34% at 50% 50%, rgba(170,150,255,.5), rgba(90,120,255,.22) 55%, transparent 100%),
+        radial-gradient(ellipse 50% 50% at 50% 50%, rgba(80,110,255,.18), transparent 100%);
+    }
+    .moon {
+      position: absolute; left: 11%; top: 23%; width: clamp(54px, 6vw, 92px); aspect-ratio: 1; border-radius: 50%;
+      background:
+        radial-gradient(circle at 62% 38%, rgba(70,82,125,.5) 0 9%, transparent 10%),
+        radial-gradient(circle at 30% 66%, rgba(70,82,125,.45) 0 7%, transparent 8%),
+        radial-gradient(circle at 72% 74%, rgba(70,82,125,.4) 0 5%, transparent 6%),
+        radial-gradient(circle at 34% 30%, #fff 0, #dfe8ff 24%, #98a8cf 62%, #46527f 100%);
+      box-shadow: inset -12px -9px 20px rgba(0,0,22,.6), 0 0 34px rgba(180,200,255,.32);
+    }
+    .planet-horizon {
+      position: absolute; left: 50%; top: 76%; width: 170vw; aspect-ratio: 1; border-radius: 50%;
+      transform: translateX(-50%);
+      background:
+        radial-gradient(ellipse 52% 9% at 50% 0%, rgba(130,225,255,.5), transparent 75%),
+        radial-gradient(circle at 50% 7%, #1448b8 0%, #0c2a80 13%, #071b58 30%, #030c2c 60%, #010414 100%);
+      box-shadow:
+        0 -2px 0 rgba(180,235,255,.9),
+        0 -10px 38px rgba(94,231,255,.55),
+        0 -42px 150px rgba(79,139,255,.34),
+        inset 0 26px 80px rgba(94,231,255,.24);
+    }
+    .planet-horizon::before {
+      content: ""; position: absolute; inset: 0; border-radius: 50%;
+      background: repeating-linear-gradient(172deg, transparent 0 34px, rgba(255,255,255,.04) 34px 44px, transparent 44px 92px);
+      -webkit-mask-image: linear-gradient(180deg, #000 0, transparent 20%); mask-image: linear-gradient(180deg, #000 0, transparent 20%);
+    }
+    .planet-horizon::after {
+      content: ""; position: absolute; inset: 0; border-radius: 50%; opacity: .75;
+      background:
+        radial-gradient(2px 2px at 36% 4.2%, #ffd9a0, transparent), radial-gradient(2px 2px at 39% 5.4%, #ffe9c4, transparent),
+        radial-gradient(1.5px 1.5px at 44% 3.6%, #ffd9a0, transparent), radial-gradient(2px 2px at 48% 6.2%, #fff1d6, transparent),
+        radial-gradient(1.5px 1.5px at 55% 4.4%, #ffd9a0, transparent), radial-gradient(2px 2px at 60% 5.8%, #ffe9c4, transparent),
+        radial-gradient(1.5px 1.5px at 66% 3.8%, #ffd9a0, transparent);
+      -webkit-mask-image: linear-gradient(180deg, #000 0, transparent 12%); mask-image: linear-gradient(180deg, #000 0, transparent 12%);
+    }
+    .status-pill {
+      display: inline-flex; align-items: center; gap: .55rem; justify-self: center; margin-bottom: 1.1rem; padding: .42rem .95rem;
+      border: 1px solid rgba(74,222,128,.28); border-radius: 99px; background: rgba(74,222,128,.07);
+      color: #9ff0bf; font-size: .76rem; font-weight: 500; letter-spacing: .02em;
+    }
+    .status-pill span { width: 7px; height: 7px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 4px rgba(74,222,128,.14); animation: tw 2s ease-in-out infinite; }
+    .hero-content h1 {
+      letter-spacing: -.02em; text-shadow: none;
+      background: linear-gradient(180deg, #fff 25%, #b4d0ff 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 0 26px rgba(94,231,255,.32));
+    }
+    .hello { letter-spacing: .08em; text-transform: uppercase; font-size: 1rem; opacity: .9; }
+
+    /* Section titles, glass surfaces and navigation. */
+    .eyebrow { display: block; margin-bottom: .45rem; color: var(--level-color); font: 600 .72rem var(--fb); letter-spacing: .2em; text-transform: uppercase; }
+    .level + .level::before {
+      content: ""; position: absolute; top: 0; left: 50%; width: min(1100px, calc(100% - 2.5rem)); height: 1px; transform: translateX(-50%);
+      background: linear-gradient(90deg, transparent, rgba(120,170,255,.28), transparent);
+    }
+    .glass {
+      background: linear-gradient(180deg, rgba(14,28,86,.9), rgba(5,13,44,.96));
+      border-color: rgba(130,175,255,.16);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.07), 0 24px 60px rgba(0,0,0,.38);
+    }
+    .glass:hover { border-color: rgba(94,231,255,.34); }
+    /* The cards are almost opaque, so the blur was invisible but very expensive to paint. */
+    .glass { -webkit-backdrop-filter: none; backdrop-filter: none; }
+    .nav-links { padding: .25rem; border: 1px solid transparent; border-radius: 99px; transition: background .4s, border-color .4s; }
+    nav#navbar.scrolled .nav-links { background: rgba(255,255,255,.03); border-color: rgba(130,175,255,.14); }
+    .nav-links a.active { background: rgba(94,231,255,.12); box-shadow: inset 0 0 0 1px rgba(94,231,255,.22); }
+    .btn.primary { box-shadow: 0 10px 30px rgba(79,139,255,.35), inset 0 1px 0 rgba(255,255,255,.4); }
+    .project-body small, .timeline-card time { letter-spacing: .06em; text-transform: uppercase; font-size: .68rem; }
+    .map-board { background: linear-gradient(180deg, rgba(13,31,102,.85), rgba(7,16,60,.95)); }
+
+    @media (max-width: 600px) {
+      .planet-horizon { top: 82%; width: 260vw; }
+      .galaxy { right: -8%; top: 9%; }
+      .moon { left: 7%; top: 16%; }
+      .status-pill { font-size: .7rem; }
+    }
   </style>
 </head>
 <body>
@@ -391,11 +491,11 @@
 
   <header class="hero" id="home">
     <div class="stage">
-      <div class="layer" data-speed=".05" style="top:12%"><div class="crystal" style="left:12%;top:0"></div><div class="crystal" style="left:84%;top:40px;scale:.7;animation-delay:-2s"></div></div>
-      <div class="layer" data-speed=".12" style="bottom:30%"><svg viewBox="0 0 1200 300" preserveAspectRatio="none"><path fill="#1c3fa0" d="M0 300V190L110 90l90 80 120-130 130 150 90-70 140 120 110-140 120 130 110-90 150 110 130-120v200z"/></svg></div>
-      <div class="layer" data-speed=".22" style="bottom:14%"><svg viewBox="0 0 1200 300" preserveAspectRatio="none"><path fill="#14308a" d="M0 300V150L140 40l120 120 100-80 150 140 110-100 130 90 120-120 130 130 140-90 60 40v220z"/><path fill="#d9ecff" opacity=".55" d="M140 40l-34 34 34-10 20 26zM620 70l-30 30 30-8 24 22zM910 50l-28 40 30-12 24 18z"/></svg></div>
-      <div class="layer" data-speed=".35" style="bottom:-2%"><svg viewBox="0 0 1200 260" preserveAspectRatio="none"><path fill="#0a1a5c" d="M0 260V120C120 60 220 130 330 90s230-70 340 0 250 50 330-20 140 20 200 40v170z"/><g fill="#0c2a6e"><path d="M80 130l30-70 30 70zM130 150l24-56 24 56zM1040 120l30-72 30 72zM1090 140l22-52 22 52z"/></g></svg></div>
+      <div class="layer" data-speed=".04" style="top:0;height:100%"><div class="galaxy"></div></div>
+      <div class="layer" data-speed=".1" style="top:0;height:100%"><div class="moon"></div></div>
+      <div class="layer" data-speed=".2" style="top:0;height:100%"><div class="planet-horizon"></div></div>
       <div class="hero-content" id="hero-content">
+        <p class="status-pill"><span></span> Open to entry-level opportunities</p>
         <p class="hello">Hi, I'm</p><h1>Rezi Ichsan Nur Arsyi</h1>
         <div class="role" aria-live="off"><span id="role-text">Informatics Graduate</span><u></u></div>
         <p>Informatics graduate from Telkom University with hands-on experience in Python/Django projects, IT support fundamentals, and applied machine learning. Looking for entry-level IT Support and Technical Support roles.</p>
@@ -408,22 +508,22 @@
 
   <main id="main">
     <section class="level" id="about" style="--level-color:#a07cff">
-      <div class="container zoom"><div class="level-head reveal"><div class="portal"><i class="ri-user-smile-line"></i><span class="level-sign">PLANET 01</span></div><div><h2>About <span>me</span></h2><p>Building practical technology solutions, one fix at a time.</p></div></div>
+      <div class="container zoom"><div class="level-head reveal"><div class="portal"><i class="ri-user-smile-line"></i><span class="level-sign">PLANET 01</span></div><div><span class="eyebrow">Mission 01 · About</span><h2>About <span>me</span></h2><p>Building practical technology solutions, one fix at a time.</p></div></div>
         <div class="glass about-card reveal"><div class="photo"><img src="assets/header.jpg" alt="Portrait of Rezi Ichsan Nur Arsyi" loading="lazy"/></div><div><p>I'm an Informatics graduate from <strong>Telkom University</strong> with a GPA of <strong>3.01/4.00</strong>. My interests include IT support, basic network troubleshooting, software development, and technology that improves everyday workflows.</p><p>My experience includes a software engineering internship at Nutrifood, warehouse operations at PT Astro Technologies Indonesia, and independent projects in Python, Django, and machine learning. I have also practiced operating system installation, basic LAN/Wi-Fi troubleshooting, and network configuration.</p><div class="chips"><span>IT Support Fundamentals</span><span>Hardware Troubleshooting</span><span>LAN / Wi-Fi</span><span>Python &amp; Django</span><span>Feature Testing</span><span>Machine Learning</span><span>Figma</span><span>Microsoft Excel</span></div></div></div>
         <div class="stats-grid"><div class="glass stat reveal"><b data-count="5" data-suffix="+">0</b><small>Selected projects</small></div><div class="glass stat reveal"><b data-count="355" data-suffix="K+">0</b><small>Roblox game visits</small></div><div class="glass stat reveal"><b data-count="88.62" data-decimals="2" data-suffix="%">0</b><small>IndoBERT accuracy</small></div><div class="glass stat reveal"><b data-count="6" data-suffix="">0</b><small>Certificates listed</small></div></div>
       </div>
     </section>
-    <section class="level" id="experience" style="--level-color:#4ade80"><div class="container zoom"><div class="level-head reveal"><div class="portal"><i class="ri-briefcase-line"></i><span class="level-sign">PLANET 02</span></div><div><h2>Work <span>Experience</span></h2><p>Warehouse operations and a software engineering internship.</p></div></div><div class="two-columns"><article class="glass timeline-card reveal"><time>Jun 2026 — Sep 2026</time><h3>Outbound Checker</h3><p class="timeline-company"><i class="ri-building-line"></i> PT Astro Technologies Indonesia · Warehouse Cibitung</p><p>Checked picked orders before dispatch by matching product information and quantities against order details and inspecting item condition according to warehouse procedures. Reported discrepancies to the relevant team to help maintain order accuracy and support smooth outbound operations.</p><div class="tags"><span>Outbound Checking</span><span>Order Accuracy</span><span>Warehouse Operations</span><span>SOP Compliance</span><span>Teamwork</span></div></article><article class="glass timeline-card reveal"><time>Jul 2022 — Sep 2022</time><h3>Software Engineer Intern</h3><p class="timeline-company"><i class="ri-building-line"></i> Nutrifood Indonesia · Internship</p><p>Contributed to video-related features for an internal application using Python and Django. Worked on video management (create, update, delete) and video recording features. Tested features using dummy data based on team requirements.</p><div class="tags"><span>Python</span><span>Django</span><span>CRUD</span><span>Feature Testing</span></div></article></div></div></section>
-    <section class="level" id="education" style="--level-color:#ff7a59"><div class="container zoom"><div class="level-head reveal"><div class="portal"><i class="ri-graduation-cap-line"></i><span class="level-sign">PLANET 03</span></div><div><h2>My <span>Education</span></h2><p>A degree in Informatics and an English proficiency result.</p></div></div><div class="two-columns"><article class="glass timeline-card reveal"><time>Aug 2019 — Sep 2026</time><h3>Bachelor's Degree in Informatics</h3><p class="timeline-company"><i class="ri-map-pin-line"></i> Telkom University · Bandung, Indonesia</p><span class="gpa">GPA 3.01 / 4.00</span><p>Studied programming, software development, databases, computer networks, and machine learning. Completed an undergraduate thesis on hoax detection using IndoBERT and multilingual transformer models.</p><div class="tags"><span>Informatics</span><span>Python</span><span>Machine Learning</span><span>Networking</span></div></article><article class="glass timeline-card reveal"><time>Apr 2025 — valid until Apr 2027</time><h3>EPrT English Proficiency Test</h3><p class="timeline-company"><i class="ri-translate-2"></i> Telkom University Language Center · Bandung</p><span class="gpa">Total score 463</span><p>Listening 50, Grammar 42, Reading 47. The score falls in the B1 range (460–540) on the EPrT score table attached to the certificate.</p><div class="tags"><span>Listening 50</span><span>Grammar 42</span><span>Reading 47</span></div><figure class="edu-cert" data-lightbox data-caption="EPrT Certificate — Telkom University Language Center"><img src="assets/eprt-certificate.png" alt="EPrT certificate with a total score of 463" loading="lazy"/><figcaption>Select to view the certificate</figcaption></figure></article></div></div></section>
-    <section class="level" id="skills" style="--level-color:#4f8bff"><div class="container zoom"><div class="level-head reveal"><div class="portal"><i class="ri-tools-line"></i><span class="level-sign">PLANET 04</span></div><div><h2>Skills &amp; <span>Tools</span></h2><p>Practical skills and technologies developed through hands-on practice, professional experience, and independent projects.</p></div></div><div class="skills-grid"><article class="glass reveal"><h3><i class="ri-computer-line"></i> IT Support</h3><p>Windows · Troubleshooting · PC Hardware · Linux Basics</p></article><article class="glass reveal"><h3><i class="ri-router-line"></i> Networking</h3><p>TCP/IP · LAN/Wi-Fi · IP/DNS · Ping Testing</p></article><article class="glass reveal"><h3><i class="ri-code-s-slash-line"></i> Programming</h3><p>Python · Django · CRUD · Basic HTML/CSS</p></article><article class="glass reveal"><h3><i class="ri-brain-line"></i> AI &amp; Machine Learning</h3><p>NLP · IndoBERT · mBERT · XLM-R</p></article><article class="glass reveal"><h3><i class="ri-pencil-ruler-2-line"></i> UI/UX Design</h3><p>Figma · Prototyping · Design Systems · Photoshop</p></article><article class="glass reveal"><h3><i class="ri-tools-line"></i> Tools &amp; Platforms</h3><p>VS Code · GitHub · Excel · Google Colab</p></article></div></div></section>
-    <section class="level" id="projects" style="--level-color:#ffb53d"><div class="container zoom"><div class="level-head reveal"><div class="portal"><i class="ri-rocket-2-line"></i><span class="level-sign">PLANET 05</span></div><div><h2>Projects &amp; <span>Portfolio</span></h2><p>IT operations, game development, machine learning, and UI/UX projects.</p></div></div><div class="filter-bar reveal" role="group" aria-label="Filter projects"><button class="active" data-filter="all">All</button><button data-filter="it">IT &amp; Systems</button><button data-filter="uiux">UI/UX</button><button data-filter="ai">AI / ML</button></div><div class="project-grid">
+    <section class="level" id="experience" style="--level-color:#4ade80"><div class="container zoom"><div class="level-head reveal"><div class="portal"><i class="ri-briefcase-line"></i><span class="level-sign">PLANET 02</span></div><div><span class="eyebrow">Mission 02 · Experience</span><h2>Work <span>Experience</span></h2><p>Warehouse operations and a software engineering internship.</p></div></div><div class="two-columns"><article class="glass timeline-card reveal"><time>Jun 2026 — Sep 2026</time><h3>Outbound Checker</h3><p class="timeline-company"><i class="ri-building-line"></i> PT Astro Technologies Indonesia · Warehouse Cibitung</p><p>Checked picked orders before dispatch by matching product information and quantities against order details and inspecting item condition according to warehouse procedures. Reported discrepancies to the relevant team to help maintain order accuracy and support smooth outbound operations.</p><div class="tags"><span>Outbound Checking</span><span>Order Accuracy</span><span>Warehouse Operations</span><span>SOP Compliance</span><span>Teamwork</span></div></article><article class="glass timeline-card reveal"><time>Jul 2022 — Sep 2022</time><h3>Software Engineer Intern</h3><p class="timeline-company"><i class="ri-building-line"></i> Nutrifood Indonesia · Internship</p><p>Contributed to video-related features for an internal application using Python and Django. Worked on video management (create, update, delete) and video recording features. Tested features using dummy data based on team requirements.</p><div class="tags"><span>Python</span><span>Django</span><span>CRUD</span><span>Feature Testing</span></div></article></div></div></section>
+    <section class="level" id="education" style="--level-color:#ff7a59"><div class="container zoom"><div class="level-head reveal"><div class="portal"><i class="ri-graduation-cap-line"></i><span class="level-sign">PLANET 03</span></div><div><span class="eyebrow">Mission 03 · Education</span><h2>My <span>Education</span></h2><p>A degree in Informatics and an English proficiency result.</p></div></div><div class="two-columns"><article class="glass timeline-card reveal"><time>Aug 2019 — Sep 2026</time><h3>Bachelor's Degree in Informatics</h3><p class="timeline-company"><i class="ri-map-pin-line"></i> Telkom University · Bandung, Indonesia</p><span class="gpa">GPA 3.01 / 4.00</span><p>Studied programming, software development, databases, computer networks, and machine learning. Completed an undergraduate thesis on hoax detection using IndoBERT and multilingual transformer models.</p><div class="tags"><span>Informatics</span><span>Python</span><span>Machine Learning</span><span>Networking</span></div></article><article class="glass timeline-card reveal"><time>Apr 2025 — valid until Apr 2027</time><h3>EPrT English Proficiency Test</h3><p class="timeline-company"><i class="ri-translate-2"></i> Telkom University Language Center · Bandung</p><span class="gpa">Total score 463</span><p>Listening 50, Grammar 42, Reading 47. The score falls in the B1 range (460–540) on the EPrT score table attached to the certificate.</p><div class="tags"><span>Listening 50</span><span>Grammar 42</span><span>Reading 47</span></div><figure class="edu-cert" data-lightbox data-caption="EPrT Certificate — Telkom University Language Center"><img src="assets/eprt-certificate.png" alt="EPrT certificate with a total score of 463" loading="lazy"/><figcaption>Select to view the certificate</figcaption></figure></article></div></div></section>
+    <section class="level" id="skills" style="--level-color:#4f8bff"><div class="container zoom"><div class="level-head reveal"><div class="portal"><i class="ri-tools-line"></i><span class="level-sign">PLANET 04</span></div><div><span class="eyebrow">Mission 04 · Skills</span><h2>Skills &amp; <span>Tools</span></h2><p>Practical skills and technologies developed through hands-on practice, professional experience, and independent projects.</p></div></div><div class="skills-grid"><article class="glass reveal"><h3><i class="ri-computer-line"></i> IT Support</h3><p>Windows · Troubleshooting · PC Hardware · Linux Basics</p></article><article class="glass reveal"><h3><i class="ri-router-line"></i> Networking</h3><p>TCP/IP · LAN/Wi-Fi · IP/DNS · Ping Testing</p></article><article class="glass reveal"><h3><i class="ri-code-s-slash-line"></i> Programming</h3><p>Python · Django · CRUD · Basic HTML/CSS</p></article><article class="glass reveal"><h3><i class="ri-brain-line"></i> AI &amp; Machine Learning</h3><p>NLP · IndoBERT · mBERT · XLM-R</p></article><article class="glass reveal"><h3><i class="ri-pencil-ruler-2-line"></i> UI/UX Design</h3><p>Figma · Prototyping · Design Systems · Photoshop</p></article><article class="glass reveal"><h3><i class="ri-tools-line"></i> Tools &amp; Platforms</h3><p>VS Code · GitHub · Excel · Google Colab</p></article></div></div></section>
+    <section class="level" id="projects" style="--level-color:#ffb53d"><div class="container zoom"><div class="level-head reveal"><div class="portal"><i class="ri-rocket-2-line"></i><span class="level-sign">PLANET 05</span></div><div><span class="eyebrow">Mission 05 · Projects</span><h2>Projects &amp; <span>Portfolio</span></h2><p>IT operations, game development, machine learning, and UI/UX projects.</p></div></div><div class="filter-bar reveal" role="group" aria-label="Filter projects"><button class="active" data-filter="all">All</button><button data-filter="it">IT &amp; Systems</button><button data-filter="uiux">UI/UX</button><button data-filter="ai">AI / ML</button></div><div class="project-grid">
       <a class="glass project-card tilt reveal" data-category="it ai" href="https://github.com/reziichsan/automated-it-ticketing-system" target="_blank" rel="noopener noreferrer"><div class="project-image"><img src="assets/IT.png" alt="IT ticket triage dashboard prototype" loading="lazy"/><em>View repository</em></div><div class="project-body"><small>IT Support · Django · Gemini API</small><h3>AI-Assisted IT Ticket Triage Prototype</h3><p>Built a local Django prototype that uses the Gemini API to analyze free-text IT issue reports and suggest issue categories and urgency priorities. It includes a web interface for viewing and managing ticket information.</p></div></a>
       <a class="glass project-card tilt reveal" data-category="it" href="https://www.roblox.com/id/games/115395112112752/Eternia-Forest" target="_blank" rel="noopener noreferrer"><div class="project-image"><img src="assets/eternia-forest.jpg" alt="Eternia Forest Roblox exploration map" loading="lazy"/><em>View experience</em></div><div class="project-body"><small>Game Development · Lua · Systems</small><h3>Eternia Forest — Roblox Experience</h3><p>Developed and maintained a forest and mountain exploration map using custom environment assets and scripting. Implemented checkpoints, summit tracking, leaderboards, and UI updates based on player feedback. The experience has received 355,000+ visits.</p></div></a>
       <a class="glass project-card tilt reveal" data-category="ai" href="https://github.com/reziichsan/HoaxDetection" target="_blank" rel="noopener noreferrer"><div class="project-image"><img src="assets/tes.png" alt="Machine learning hoax detection project" loading="lazy"/><em>View repository</em></div><div class="project-body"><small>Undergraduate Thesis · NLP</small><h3>Multilingual Hoax Classification</h3><p>Compared IndoBERT, multilingual BERT (mBERT), and XLM-R for hoax detection. IndoBERT achieved 88.62% accuracy in the reported experiment.</p></div></a>
       <a class="glass project-card tilt reveal" data-category="uiux" href="https://www.figma.com/proto/FRVgI1yITbqVChRG9dy10w/Redesign-HomePage-Website-JKT48?node-id=283-673&t=HHAQvjkovRpOFjPM-1" target="_blank" rel="noopener noreferrer"><div class="project-image"><img src="assets/project-1.jpg" alt="JKT48 homepage redesign" loading="lazy"/><em>View prototype</em></div><div class="project-body"><small>UI/UX Design · Figma</small><h3>JKT48 Website Homepage Redesign</h3><p>Created a Figma redesign concept for a fan portal homepage, exploring content hierarchy, a hero carousel, news placement, and responsive layout.</p></div></a>
       <a class="glass project-card tilt reveal" data-category="uiux" href="https://www.figma.com/proto/c0Gyv0ROHXc95EnG8ZDkIF/EPerpusdikbud-UI-Re-Design?node-id=1-4" target="_blank" rel="noopener noreferrer"><div class="project-image"><img src="assets/project-2.jpg" alt="EPerpusdikbud mobile interface redesign" loading="lazy"/><em>View prototype</em></div><div class="project-body"><small>UI Redesign · Figma</small><h3>EPerpusdikbud Interface Redesign</h3><p>Explored alternative mobile navigation and interface layouts for the digital library, focusing on clearer navigation and more consistent screen flows.</p></div></a>
     </div></div></section>
-    <section class="level" id="certificates" style="--level-color:#5ee7ff"><div class="container zoom"><div class="level-head reveal"><div class="portal"><i class="ri-award-line"></i><span class="level-sign">PLANET 06</span></div><div><h2>Certificates &amp; <span>Gallery</span></h2><p>Credentials and selected visual design work. Select an image to enlarge it.</p></div></div><div class="cert-grid">
+    <section class="level" id="certificates" style="--level-color:#5ee7ff"><div class="container zoom"><div class="level-head reveal"><div class="portal"><i class="ri-award-line"></i><span class="level-sign">PLANET 06</span></div><div><span class="eyebrow">Mission 06 · Certificates</span><h2>Certificates &amp; <span>Gallery</span></h2><p>Credentials and selected visual design work. Select an image to enlarge it.</p></div></div><div class="cert-grid">
       <article class="glass cert-card reveal" data-lightbox data-caption="Alibaba Cloud Certified Developer"><img src="assets/Alibaba Cloud Dev.png" alt="Alibaba Cloud Certified Developer certificate" loading="lazy"/><div><h3>Alibaba Cloud Certified Developer</h3><p>Alibaba Cloud · 2026</p></div></article>
       <article class="glass cert-card reveal" data-lightbox data-caption="Belajar Dasar Manajemen Proyek — Dicoding Indonesia"><img src="assets/dicoding-project-management.png" alt="Dicoding project management certificate" loading="lazy"/><div><h3>Belajar Dasar Manajemen Proyek</h3><p>Dicoding Indonesia · 2026</p></div></article>
       <article class="glass cert-card reveal" data-lightbox data-caption="Responsive Web Design"><img src="assets/certificate-1.png" alt="Responsive Web Design certificate" loading="lazy"/><div><h3>Responsive Web Design</h3><p>freeCodeCamp · 2025</p></div></article>
@@ -431,7 +531,7 @@
       <article class="glass cert-card reveal" data-lightbox data-caption="Time Series Classification of Badminton Pose webinar"><img src="assets/webinar-badminton-pose.png" alt="Webinar participation certificate" loading="lazy"/><div><h3>Time Series Classification of Badminton Pose</h3><p>KK CITI, Telkom University · 2025</p></div></article>
       <article class="glass cert-card reveal" data-lightbox data-caption="Design System in UI Design"><img src="assets/certificate-3.png" alt="Design System in UI Design certificate" loading="lazy"/><div><h3>Design System in UI Design</h3><p>MySkill Short Class · 2023</p></div></article>
     </div><h3 class="subheading reveal">Visual design gallery</h3><div class="gallery-grid"><a class="reveal" href="assets/editing-1.png" data-lightbox data-caption="Germany Infographic"><img src="assets/editing-1.png" alt="Germany infographic" loading="lazy"/><span>Germany Infographic</span></a><a class="reveal" href="assets/editing-2.png" data-lightbox data-caption="JKT48 Wallpaper Design"><img src="assets/editing-2.png" alt="JKT48 wallpaper" loading="lazy"/><span>JKT48 Wallpaper</span></a><a class="reveal" href="assets/editing-3.png" data-lightbox data-caption="Custom Jersey Design"><img src="assets/editing-3.png" alt="Custom jersey design" loading="lazy"/><span>Custom Jersey</span></a><a class="reveal" href="assets/2.png" data-lightbox data-caption="Portrait Wallpaper Design"><img src="assets/2.png" alt="Portrait wallpaper" loading="lazy"/><span>Portrait Wallpaper</span></a><a class="reveal" href="assets/3.jpg" data-lightbox data-caption="Poster Visual Design"><img src="assets/3.jpg" alt="Poster design" loading="lazy"/><span>Poster Visual</span></a></div></div></section>
-    <section class="level" id="contact" style="--level-color:#ff7ab8"><div class="container zoom"><div class="level-head reveal"><div class="portal"><i class="ri-send-plane-line"></i><span class="level-sign">FINAL PLANET</span></div><div><h2>Let's <span>connect</span></h2><p>The final destination on the journey.</p></div></div><div class="glass contact-card reveal"><div><h3>Let's talk about your next opportunity.</h3><p>I'm open to entry-level roles in IT Support, IT Helpdesk, and related technical positions. Contact me about a position, a project, or a collaboration.</p><a href="mailto:reziichsan@gmail.com" class="btn primary">Email me <i class="ri-arrow-right-up-line"></i></a></div><div><a class="contact-link" href="https://www.linkedin.com/in/reziichsannurarsyi/" target="_blank" rel="noopener noreferrer"><i class="ri-linkedin-fill"></i><div><b>LinkedIn</b><span>linkedin.com/in/reziichsannurarsyi</span></div><i class="ri-arrow-right-up-line"></i></a><a class="contact-link" href="mailto:reziichsan@gmail.com"><i class="ri-mail-line"></i><div><b>Email</b><span>reziichsan@gmail.com</span></div><i class="ri-arrow-right-up-line"></i></a><a class="contact-link" href="https://github.com/reziichsan" target="_blank" rel="noopener noreferrer"><i class="ri-github-fill"></i><div><b>GitHub</b><span>github.com/reziichsan</span></div><i class="ri-arrow-right-up-line"></i></a></div></div></div></section>
+    <section class="level" id="contact" style="--level-color:#ff7ab8"><div class="container zoom"><div class="level-head reveal"><div class="portal"><i class="ri-send-plane-line"></i><span class="level-sign">FINAL PLANET</span></div><div><span class="eyebrow">Mission complete · Contact</span><h2>Let's <span>connect</span></h2><p>The final destination on the journey.</p></div></div><div class="glass contact-card reveal"><div><h3>Let's talk about your next opportunity.</h3><p>I'm open to entry-level roles in IT Support, IT Helpdesk, and related technical positions. Contact me about a position, a project, or a collaboration.</p><a href="mailto:reziichsan@gmail.com" class="btn primary">Email me <i class="ri-arrow-right-up-line"></i></a></div><div><a class="contact-link" href="https://www.linkedin.com/in/reziichsannurarsyi/" target="_blank" rel="noopener noreferrer"><i class="ri-linkedin-fill"></i><div><b>LinkedIn</b><span>linkedin.com/in/reziichsannurarsyi</span></div><i class="ri-arrow-right-up-line"></i></a><a class="contact-link" href="mailto:reziichsan@gmail.com"><i class="ri-mail-line"></i><div><b>Email</b><span>reziichsan@gmail.com</span></div><i class="ri-arrow-right-up-line"></i></a><a class="contact-link" href="https://github.com/reziichsan" target="_blank" rel="noopener noreferrer"><i class="ri-github-fill"></i><div><b>GitHub</b><span>github.com/reziichsan</span></div><i class="ri-arrow-right-up-line"></i></a></div></div></div></section>
   </main>
   <section class="adventure-map"><div class="container"><div class="map-board"><h3>The Adventure Map</h3><div class="map-nodes"><a href="#about"><i class="ri-user-smile-line"></i>About</a><a href="#experience"><i class="ri-briefcase-line"></i>Experience</a><a href="#education"><i class="ri-graduation-cap-line"></i>Education</a><a href="#skills"><i class="ri-tools-line"></i>Skills</a><a href="#projects"><i class="ri-rocket-2-line"></i>Projects</a><a href="#certificates"><i class="ri-award-line"></i>Certificates</a><a href="#contact"><i class="ri-send-plane-line"></i>Contact</a></div></div></div></section>
   <footer><div class="social-links"><a href="https://www.linkedin.com/in/reziichsannurarsyi/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a><a href="https://github.com/reziichsan" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="ri-github-fill"></i></a><a href="mailto:reziichsan@gmail.com" aria-label="Email"><i class="ri-mail-line"></i></a></div>© <span id="year">2026</span> Rezi Ichsan Nur Arsyi. All rights reserved.</footer>
@@ -447,7 +547,92 @@
     const clamp=(v,min,max)=>Math.min(max,Math.max(min,v));
     const reduceMotion=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    function createStarfield(count=118){const root=$("#starfield");for(let i=0;i<count;i++){const star=document.createElement("i"),size=Math.random()*2+1;star.style.cssText=`left:${Math.random()*100}%;top:${Math.random()*100}%;width:${size}px;height:${size}px;opacity:${Math.random()*.7+.2};animation-delay:${-Math.random()*4}s;animation-duration:${2+Math.random()*4}s;box-shadow:0 0 ${1+Math.random()*3}px rgba(155,220,255,.85),0 0 ${4+Math.random()*8}px rgba(94,231,255,.25)`;root.appendChild(star)}}
+    function setupSpace(){
+      const host=$("#starfield"),canvas=document.createElement("canvas"),ctx=canvas.getContext("2d");
+      host.appendChild(canvas);
+      const TINTS=["255,255,255","190,215,255","255,232,205","205,195,255"];
+      const rand=(a,b)=>a+Math.random()*(b-a);
+      let w=0,h=0,stars=[],nebula=null,shooting=null,nextShot=performance.now()+4500;
+
+      // Nebula clouds and a Milky Way band are painted once, then reused every frame.
+      function paintNebula(){
+        const scale=.5,H=h+320,c=document.createElement("canvas");
+        c.width=Math.ceil(w*scale);c.height=Math.ceil(H*scale);
+        const g=c.getContext("2d");g.scale(scale,scale);
+        const blob=(x,y,r,color)=>{const grad=g.createRadialGradient(x,y,0,x,y,r);grad.addColorStop(0,color);grad.addColorStop(1,"rgba(0,0,0,0)");g.fillStyle=grad;g.fillRect(x-r,y-r,r*2,r*2)};
+        blob(w*.15,H*.18,w*.38,"rgba(52,86,255,.30)");
+        blob(w*.85,H*.30,w*.34,"rgba(150,60,255,.24)");
+        blob(w*.55,H*.62,w*.40,"rgba(20,150,255,.16)");
+        blob(w*.10,H*.85,w*.30,"rgba(255,70,170,.12)");
+        g.save();g.translate(w*.5,H*.5);g.rotate(-.42);
+        const band=g.createLinearGradient(0,-H*.16,0,H*.16);
+        band.addColorStop(0,"rgba(120,150,255,0)");band.addColorStop(.5,"rgba(170,190,255,.16)");band.addColorStop(1,"rgba(120,150,255,0)");
+        g.fillStyle=band;g.fillRect(-w,-H*.16,w*2,H*.32);
+        for(let i=0;i<650;i++){
+          const x=rand(-w*.8,w*.8),y=(Math.random()+Math.random()+Math.random()-1.5)*H*.11;
+          g.fillStyle=`rgba(255,${230+Math.random()*25|0},${210+Math.random()*45|0},${rand(.05,.35)})`;
+          g.fillRect(x,y,rand(.6,1.4),rand(.6,1.4));
+        }
+        g.restore();
+        nebula=c;
+      }
+
+      function build(){
+        const dpr=Math.min(window.devicePixelRatio||1,1.5);
+        w=innerWidth;h=innerHeight;
+        canvas.width=w*dpr;canvas.height=h*dpr;
+        canvas.style.width=w+"px";canvas.style.height=h+"px";
+        ctx.setTransform(dpr,0,0,dpr,0,0);
+        // [count at 1440x900, min size, max size, parallax depth]
+        const layers=[[110,.3,.9,.012],[60,.7,1.4,.03],[22,1.2,2.2,.06]];
+        stars=[];
+        layers.forEach(([count,min,max,depth],index)=>{
+          const total=Math.round(Math.max(count*.5,count*(w*h)/(1440*900)));
+          for(let i=0;i<total;i++){
+            stars.push({x:rand(0,w),y:rand(0,h),r:rand(min,max),depth,phase:rand(0,6.28),rate:rand(.6,2.2),
+              alpha:rand(.35,.95),color:`rgb(${TINTS[Math.random()*TINTS.length|0]})`,glow:index===2});
+          }
+        });
+        paintNebula();
+        draw(performance.now(),0);
+      }
+
+      function draw(now,dt){
+        const scroll=window.scrollY;
+        ctx.clearRect(0,0,w,h);
+        ctx.globalAlpha=1;
+        ctx.drawImage(nebula,0,-Math.min(scroll*.03,320),w,h+320);
+        stars.forEach(star=>{
+          let y=(star.y-scroll*star.depth)%h;if(y<0)y+=h;
+          const twinkle=reduceMotion?1:.65+.35*Math.sin(now/1000*star.rate+star.phase);
+          ctx.fillStyle=star.color;
+          ctx.globalAlpha=star.alpha*twinkle;
+          if(star.glow){
+            ctx.beginPath();ctx.arc(star.x,y,star.r,0,6.283);ctx.fill();
+            ctx.globalAlpha*=.18;ctx.beginPath();ctx.arc(star.x,y,star.r*3.2,0,6.283);ctx.fill();
+          }else ctx.fillRect(star.x,y,star.r,star.r);
+        });
+        ctx.globalAlpha=1;
+        if(reduceMotion)return;
+        // An occasional shooting star.
+        if(!shooting&&now>nextShot){shooting={x:rand(w*.45,w),y:rand(0,h*.35),vx:-rand(.8,1.1),vy:rand(.35,.5),life:0};nextShot=now+rand(7000,15000)}
+        if(shooting){
+          shooting.life+=dt;shooting.x+=shooting.vx*dt;shooting.y+=shooting.vy*dt;
+          const fade=1-shooting.life/900,tail=150,len=Math.hypot(shooting.vx,shooting.vy);
+          const tx=shooting.x-shooting.vx/len*tail,ty=shooting.y-shooting.vy/len*tail;
+          const trail=ctx.createLinearGradient(shooting.x,shooting.y,tx,ty);
+          trail.addColorStop(0,`rgba(255,255,255,${.9*fade})`);trail.addColorStop(1,"rgba(120,200,255,0)");
+          ctx.strokeStyle=trail;ctx.lineWidth=1.6;ctx.beginPath();ctx.moveTo(shooting.x,shooting.y);ctx.lineTo(tx,ty);ctx.stroke();
+          if(shooting.life>900)shooting=null;
+        }
+      }
+
+      build();
+      window.addEventListener("resize",build);
+      if(reduceMotion)return;
+      let last=performance.now();
+      (function frame(now){const dt=Math.min(now-last,50);last=now;if(!document.hidden)draw(now,dt);requestAnimationFrame(frame)})(last);
+    }
 
     const progressBar=$("#progress-bar"),navbar=$("#navbar"),backToTop=$("#back-to-top"),heroContent=$("#hero-content"),heroLayers=$$(".layer"),floatingIcons=$$(".floating-icon");let scrollQueued=false;
     function updateOnScroll(){
@@ -631,7 +816,7 @@
       setTimeout(()=>build(false),350);
     }
 
-    createStarfield();setupReveal();setupActiveSection();setupMobileMenu();setupProjectFilter();setupCardTilt();setupLightbox();setupTypewriter();setupClock();setupRocketRoute();updateOnScroll();window.addEventListener("resize",updateOnScroll);
+    setupSpace();setupReveal();setupActiveSection();setupMobileMenu();setupProjectFilter();setupCardTilt();setupLightbox();setupTypewriter();setupClock();setupRocketRoute();updateOnScroll();window.addEventListener("resize",updateOnScroll);
   })();
   </script>
 </body>
