@@ -1,2529 +1,618 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#050b22" />
-    <meta name="color-scheme" content="dark" />
-    <meta name="robots" content="index,follow" />
-    <link rel="canonical" href="https://reziichsan.github.io/Portfolio/" />
-    <meta name="author" content="Rezi Ichsan Nur Arsyi" />
-    <meta
-      name="description"
-      content="Portfolio of Rezi Ichsan Nur Arsyi, Informatics graduate from Telkom University: IT support fundamentals, Python and Django, machine learning, UI/UX."
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://reziichsan.github.io/Portfolio/" />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:site_name" content="Rezi Ichsan Nur Arsyi" />
-    <meta
-      property="og:title"
-      content="Rezi Ichsan Nur Arsyi — Informatics Graduate"
-    />
-    <meta
-      property="og:description"
-      content="IT Support fundamentals, software projects, machine learning research, and UI/UX design."
-    />
-    <meta
-      property="og:image"
-      content="https://reziichsan.github.io/Portfolio/assets/header.jpg"
-    />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="Rezi Ichsan Nur Arsyi — Informatics Graduate"
-    />
-    <meta
-      name="twitter:description"
-      content="IT Support fundamentals, software projects, machine learning research, and UI/UX design."
-    />
-    <meta
-      name="twitter:image"
-      content="https://reziichsan.github.io/Portfolio/assets/header.jpg"
-    />
-    <title>Rezi Ichsan Nur Arsyi — Informatics Graduate</title>
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23050b22'/%3E%3Ctext x='32' y='44' font-size='30' font-weight='800' fill='%235ee7ff' text-anchor='middle' font-family='Arial'%3ER%3C/text%3E%3C/svg%3E"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Rezi Ichsan Nur Arsyi",
-        "url": "https://reziichsan.github.io/Portfolio/",
-        "jobTitle": "Informatics Graduate",
-        "alumniOf": "Telkom University",
-        "email": "reziichsan@gmail.com",
-        "sameAs": [
-          "https://www.linkedin.com/in/reziichsannurarsyi/",
-          "https://github.com/reziichsan"
-        ]
-      }
-    </script>
-    <style>
-      /* Portfolio of Rezi Ichsan Nur Arsyi - styles */
-      :root {
-        --bg: #050b22;
-        --bg2: #08123a;
-        --card: rgba(14, 28, 80, 0.55);
-        --line: rgba(120, 170, 255, 0.2);
-        --cyan: #5ee7ff;
-        --blue: #4f8bff;
-        --violet: #a07cff;
-        --amber: #ffb53d;
-        --green: #4ade80;
-        --text: #eef3ff;
-        --muted: #9fb0d8;
-        --font-display: "Fredoka", sans-serif;
-        --font-body: "Inter", sans-serif;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#050b22" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://reziichsan.github.io/Portfolio/" />
+  <meta name="author" content="Rezi Ichsan Nur Arsyi" />
+  <meta name="description" content="Portfolio of Rezi Ichsan Nur Arsyi, Informatics graduate from Telkom University: IT support fundamentals, Python and Django, machine learning, and UI/UX." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://reziichsan.github.io/Portfolio/" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="Rezi Ichsan Nur Arsyi" />
+  <meta property="og:title" content="Rezi Ichsan Nur Arsyi — Informatics Graduate" />
+  <meta property="og:description" content="IT Support fundamentals, software projects, machine learning research, and UI/UX design." />
+  <meta property="og:image" content="https://reziichsan.github.io/Portfolio/assets/header.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Rezi Ichsan Nur Arsyi — Informatics Graduate" />
+  <meta name="twitter:description" content="IT Support fundamentals, software projects, machine learning research, and UI/UX design." />
+  <meta name="twitter:image" content="https://reziichsan.github.io/Portfolio/assets/header.jpg" />
+  <title>Rezi Ichsan Nur Arsyi — Informatics Graduate</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23050b22'/%3E%3Ctext x='32' y='44' font-size='30' font-weight='800' fill='%235ee7ff' text-anchor='middle' font-family='Arial'%3ER%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Rezi Ichsan Nur Arsyi",
+    "url": "https://reziichsan.github.io/Portfolio/",
+    "jobTitle": "Informatics Graduate",
+    "alumniOf": "Telkom University",
+    "email": "reziichsan@gmail.com",
+    "sameAs": ["https://www.linkedin.com/in/reziichsannurarsyi/", "https://github.com/reziichsan"]
+  }
+  </script>
+  <style>
+    :root{--bg:#050b22;--bg2:#08123a;--card:rgba(14,28,80,.62);--line:rgba(120,170,255,.2);--cyan:#5ee7ff;--blue:#4f8bff;--violet:#a07cff;--amber:#ffb53d;--green:#4ade80;--text:#eef3ff;--muted:#9fb0d8;--fd:'Fredoka',sans-serif;--fb:'Inter',sans-serif}
+    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;scroll-padding-top:76px}body{background:linear-gradient(180deg,#050b22,#07104a 40%,#050b22);color:var(--text);font:400 .95rem/1.75 var(--fb);overflow-x:hidden;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}img{display:block;max-width:100%}button{font:inherit;color:inherit}:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}.container{width:min(1100px,calc(100% - 2.5rem));margin-inline:auto}
+    #starfield{position:fixed;inset:0;z-index:-2;pointer-events:none;overflow:hidden}#starfield i{position:absolute;border-radius:50%;background:#fff;animation:tw 3s ease-in-out infinite}@keyframes tw{50%{opacity:.18}}
+    #progress-bar{position:fixed;top:0;left:0;height:3px;width:0;z-index:150;background:linear-gradient(90deg,var(--cyan),var(--violet),var(--amber))}#progress-bar:after{content:"";position:absolute;right:-8px;top:-7px;width:17px;height:17px;border-radius:50%;background:radial-gradient(#fff,var(--amber) 45%,transparent 72%);box-shadow:0 0 18px 4px rgba(255,181,61,.55)}
+    nav#navbar{position:fixed;inset:0 0 auto;z-index:100;transition:.3s}nav#navbar.scrolled{background:rgba(5,11,34,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.nav-inner{display:flex;align-items:center;justify-content:space-between;height:66px}.logo{display:flex;align-items:center;gap:.6rem;font:600 1.1rem var(--fd)}.logo b{display:grid;place-items:center;width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--cyan),var(--blue));color:#031030;font-size:1rem}.nav-links{display:flex;gap:.2rem;list-style:none}.nav-links a{display:block;padding:.45rem .6rem;border-radius:99px;color:var(--muted);font-size:.8rem;transition:.2s}.nav-links a:hover,.nav-links a.active{color:var(--cyan);background:rgba(94,231,255,.1)}.burger{display:none;background:none;border:0;font-size:1.6rem;cursor:pointer}.mobile-menu{display:none;flex-direction:column;padding:.5rem 1.25rem 1rem;background:rgba(5,11,34,.98);border-top:1px solid var(--line)}.mobile-menu.open{display:flex}.mobile-menu a{padding:.7rem 0;border-bottom:1px solid var(--line);color:var(--muted)}
+    /* Rocket route is a background layer. The real .portal elements are the planets. */
+    #rocket-route{position:absolute;inset:0 auto auto 0;width:100%;height:1px;z-index:0;pointer-events:none;overflow:visible}
+    #rocket-route-svg{display:block;width:100%;overflow:visible}
+    #rocket-route .route-base{fill:none;stroke:rgba(94,231,255,.27);stroke-width:2.2;stroke-dasharray:2 11;stroke-linecap:round}
+    #rocket-route .route-glow{fill:none;stroke:url(#rocket-route-gradient);stroke-width:4;stroke-linecap:round;filter:url(#rocket-route-glow-filter);opacity:.92}
+    #rocket-route .route-core{fill:none;stroke:rgba(226,251,255,.82);stroke-width:1;stroke-linecap:round;opacity:.75}
+    #rocket-ship{filter:url(#rocket-route-glow-filter);transform-box:fill-box;transform-origin:center;will-change:transform;transition:opacity .18s ease}
+    #rocket-ship .rocket-flame{transform-box:fill-box;transform-origin:center;animation:rocket-flame-flicker .15s ease-in-out infinite alternate}
+    #rocket-ship.landed{opacity:0}
+    @keyframes rocket-flame-flicker{from{opacity:.62;transform:scale(.82)}to{opacity:1;transform:scale(1.12)}}
+    .portal{transition:box-shadow .3s ease,filter .3s ease}
+    .portal.rocket-active{filter:saturate(1.22);box-shadow:0 0 62px color-mix(in srgb,var(--level-color),transparent 12%),0 0 0 5px rgba(94,231,255,.08),inset 0 -8px 20px rgba(0,0,0,.4)}
+    /* Hero */
+    .hero{position:relative;z-index:1;isolation:isolate;height:100vh;height:100svh;min-height:0}.stage{position:sticky;top:0;height:100vh;height:100svh;min-height:0;overflow:hidden;background:linear-gradient(#0a1a6e,#123aa8 55%,#0b1f6b)}.layer{position:absolute;left:-5%;width:110%;will-change:transform}.layer svg{display:block;width:100%;height:auto}.crystal{position:absolute;width:34px;height:68px;clip-path:polygon(50% 0,100% 35%,80% 100%,20% 100%,0 35%);background:linear-gradient(135deg,#bff6ff,var(--blue));filter:drop-shadow(0 0 14px var(--cyan));animation:float 5s ease-in-out infinite}@keyframes float{50%{translate:0 -14px}}.hero-content{position:absolute;inset:0;display:grid;place-content:center;text-align:center;padding:0 1.25rem;will-change:transform,opacity;z-index:4}.hello{font:600 1.3rem var(--fd);color:var(--cyan)}.hero-content h1{max-width:900px;margin-inline:auto;font:700 clamp(2.4rem,7.4vw,5.2rem)/1.05 var(--fd);text-shadow:0 0 40px rgba(94,231,255,.55),0 4px 0 rgba(0,0,40,.4)}.role{margin:.7rem 0 .4rem;font:600 clamp(1.05rem,2.6vw,1.5rem) var(--fd);color:#cfe0ff;min-height:1.6em}.role u{display:inline-block;width:2px;height:1em;margin-left:3px;background:var(--cyan);vertical-align:-.12em;animation:blink .8s steps(1) infinite}@keyframes blink{50%{opacity:0}}.hero-content>p:not(.hello){max-width:560px;margin:0 auto 1.4rem;color:#c3d3f7;font-size:.92rem}.facts{display:flex;flex-wrap:wrap;justify-content:center;gap:.4rem .9rem;margin-bottom:1.4rem;font-size:.78rem;color:#b5c7f2}.facts i{color:var(--cyan)}.btns{display:flex;flex-wrap:wrap;justify-content:center;gap:.7rem}.btn{display:inline-flex;align-items:center;gap:.5rem;min-height:44px;padding:.7rem 1.4rem;border-radius:99px;border:1px solid var(--line);font-weight:600;font-size:.85rem;cursor:pointer;background:rgba(14,28,80,.5);transition:.25s}.btn:hover{transform:translateY(-3px);border-color:var(--cyan);color:var(--cyan)}.btn.primary{border:0;color:#031030;background:linear-gradient(135deg,var(--cyan),var(--blue));box-shadow:0 8px 28px rgba(94,231,255,.3)}.btn.primary:hover{color:#031030;box-shadow:0 12px 36px rgba(94,231,255,.5)}.scroll-hint{position:absolute;bottom:1.6rem;left:50%;translate:-50% 0;z-index:6;display:flex;flex-direction:column;align-items:center;gap:.2rem;color:var(--muted);font-size:.72rem;animation:float 2.4s ease-in-out infinite}.hero-fade{position:absolute;inset:auto 0 0;height:160px;background:linear-gradient(transparent,var(--bg));z-index:3}
+    /* Sections */
+    main{position:relative;z-index:1}.level{position:relative;z-index:1;padding:6.5rem 0;isolation:isolate}.level-head{position:relative;display:flex;align-items:center;gap:1.4rem;margin-bottom:2.6rem}.portal{position:relative;flex:0 0 auto;display:grid;place-items:center;width:104px;height:104px;border-radius:50% 50% 38% 38%;font-size:2.3rem;color:#fff;background:radial-gradient(circle at 50% 70%,var(--level-color),#0a1450 75%);box-shadow:0 0 45px color-mix(in srgb,var(--level-color),transparent 35%),inset 0 -8px 20px rgba(0,0,0,.4);border:3px solid rgba(255,255,255,.12)}.level-sign{position:absolute;left:-12px;bottom:-14px;padding:.2rem .7rem;border-radius:6px;font:600 .72rem var(--fd);letter-spacing:.04em;background:linear-gradient(#5b8fe0,#2d5cb8);border:1px solid rgba(255,255,255,.3);box-shadow:0 4px 12px rgba(0,0,0,.4);rotate:-4deg;white-space:nowrap}.level-head h2{font:700 clamp(1.9rem,4.4vw,2.9rem)/1.1 var(--fd)}.level-head h2 span{color:var(--level-color)}.level-head p{max-width:520px;margin-top:.5rem;color:var(--muted)}.glass{position:relative;border:1px solid var(--line);border-radius:20px;background:rgba(7,17,53,.96);backdrop-filter:blur(8px);box-shadow:0 14px 38px rgba(0,0,0,.18)}
+    .about-card{display:grid;grid-template-columns:.8fr 1.2fr;gap:2.5rem;align-items:center;padding:1.8rem}.photo{position:relative}.photo img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:top;border-radius:16px}.photo:after{content:"";position:absolute;inset:-8px;border-radius:22px;border:2px dashed rgba(94,231,255,.35);pointer-events:none}.about-card p{color:var(--muted);margin-bottom:.8rem}.about-card strong{color:var(--text)}.chips{display:flex;flex-wrap:wrap;gap:.4rem;margin:1rem 0 0}.chips span{padding:.3rem .75rem;border:1px solid var(--line);border-radius:99px;font-size:.75rem;color:#c8d6f7;background:rgba(255,255,255,.04)}.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:1.4rem}.stat{padding:1.2rem .8rem;text-align:center}.stat b{display:block;font:700 1.9rem/1.1 var(--fd);color:var(--cyan)}.stat small{color:var(--muted);font-size:.72rem}
+    .two-columns{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:start}.timeline-card{position:relative;padding:1.5rem 1.5rem 1.5rem 1.8rem;margin-bottom:1.2rem}.timeline-card:before{content:"";position:absolute;left:-7px;top:1.7rem;width:14px;height:14px;border-radius:50%;background:var(--amber);box-shadow:0 0 16px var(--amber)}.timeline-card time{color:var(--amber);font-size:.76rem;font-weight:600}.timeline-card h3{font:600 1.15rem var(--fd);margin:.2rem 0}.timeline-card .timeline-company{color:var(--muted);font-size:.8rem;margin-bottom:.6rem}.timeline-card p{color:var(--muted);font-size:.85rem}.gpa{display:inline-block;margin:.2rem 0 .6rem;padding:.2rem .7rem;border-radius:99px;background:linear-gradient(135deg,var(--cyan),var(--blue));color:#031030;font-size:.75rem;font-weight:600}.tags{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.8rem}.tags span{padding:.2rem .6rem;border-radius:99px;font-size:.7rem;color:var(--cyan);background:rgba(94,231,255,.1);border:1px solid rgba(94,231,255,.2)}.edu-cert{margin-top:1rem;overflow:hidden;border:1px solid var(--line);border-radius:12px;cursor:zoom-in}.edu-cert img{width:100%;height:230px;object-fit:cover;object-position:top;transition:transform .5s}.edu-cert:hover img{transform:scale(1.04)}.edu-cert figcaption{padding:.5rem .8rem;color:var(--muted);font-size:.74rem;background:rgba(255,255,255,.04)}
+    .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}.skills-grid article{padding:1.5rem 1.4rem;transition:.3s}.skills-grid article:hover{border-color:var(--cyan);transform:translateY(-5px)}.skills-grid h3{display:flex;align-items:center;gap:.6rem;font:600 1.05rem var(--fd);margin-bottom:.9rem}.skills-grid h3 i{color:var(--level-color,var(--cyan));font-size:1.35rem}.skills-grid p{color:var(--muted);font-size:.88rem;line-height:1.7}
+    .filter-bar{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.4rem}.filter-bar button{padding:.45rem 1rem;border-radius:99px;border:1px solid var(--line);background:transparent;cursor:pointer;font-size:.78rem;color:var(--muted);transition:.2s}.filter-bar button.active{background:linear-gradient(135deg,var(--cyan),var(--blue));color:#031030;border-color:transparent;font-weight:600}.project-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.2rem;perspective:1000px}.project-card{display:flex;flex-direction:column;overflow:hidden;transition:transform .15s,border-color .3s,box-shadow .3s;transform-style:preserve-3d}.project-card:hover{border-color:var(--cyan);box-shadow:0 20px 50px rgba(0,0,0,.4),0 0 30px rgba(94,231,255,.15)}.project-card.hidden{display:none}.project-image{position:relative;aspect-ratio:16/10;overflow:hidden;background:#0a1450}.project-image img{width:100%;height:100%;object-fit:cover;transition:transform .5s}.project-card:hover .project-image img{transform:scale(1.1)}.project-image em{position:absolute;right:.7rem;bottom:.7rem;padding:.3rem .75rem;border-radius:99px;font-style:normal;font-size:.72rem;font-weight:600;background:rgba(5,11,34,.85);color:var(--cyan);opacity:0;transform:translateY(8px);transition:.3s}.project-card:hover .project-image em{opacity:1;transform:none}.project-body{padding:1.1rem 1.2rem 1.3rem}.project-body small{color:var(--amber);font-weight:600;font-size:.72rem}.project-body h3{font:600 1.08rem/1.35 var(--fd);margin:.2rem 0 .5rem}.project-body p{color:var(--muted);font-size:.8rem;line-height:1.7}
+    .cert-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin-bottom:3rem}.cert-card{overflow:hidden;transition:.3s;cursor:zoom-in}.cert-card:hover{transform:translateY(-6px) rotate(-1deg);border-color:var(--cyan)}.cert-card img{width:100%;aspect-ratio:4/3;object-fit:cover}.cert-card div{padding:.9rem}.cert-card h3{font:600 .92rem/1.4 var(--fd)}.cert-card p{font-size:.74rem;color:var(--muted)}.subheading{font:600 1.4rem var(--fd);margin-bottom:1rem}.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}.gallery-grid a{position:relative;overflow:hidden;aspect-ratio:4/3;border-radius:16px;border:1px solid var(--line);cursor:zoom-in}.gallery-grid img{width:100%;height:100%;object-fit:cover;transition:transform .5s,filter .5s}.gallery-grid a:hover img{transform:scale(1.08);filter:brightness(.65)}.gallery-grid span{position:absolute;left:1rem;bottom:.9rem;font-weight:600;font-size:.85rem;opacity:0;transition:.3s}.gallery-grid a:hover span{opacity:1}
+    .contact-card{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center;padding:2.2rem}.contact-card h3{font:700 clamp(1.7rem,3.4vw,2.4rem)/1.15 var(--fd);margin-bottom:.8rem}.contact-card p{color:var(--muted);margin-bottom:1.3rem}.contact-link{display:flex;align-items:center;gap:1rem;padding:1rem 1.1rem;margin-bottom:.7rem;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.03);transition:.25s}.contact-link:hover{transform:translateX(6px);border-color:var(--cyan)}.contact-link>i:first-child{font-size:1.4rem;color:var(--cyan)}.contact-link b{display:block;font-size:.88rem}.contact-link span{color:var(--muted);font-size:.78rem;overflow-wrap:anywhere}.contact-link>div{flex:1;min-width:0}
+    .adventure-map{position:relative;z-index:1;padding:2rem 0 3rem}.map-board{padding:2rem 1.2rem 2.2rem;text-align:center;background:linear-gradient(#0d1f66,#091448);clip-path:polygon(2% 0,34% 4%,66% 0,98% 4%,100% 100%,66% 96%,34% 100%,0 96%)}.map-board h3{font:600 1.2rem var(--fd);margin-bottom:2.6rem}.map-nodes{display:flex;justify-content:space-between;gap:.5rem;position:relative}.map-nodes:before{content:"";position:absolute;left:8%;right:8%;top:25px;border-top:2px dashed var(--line)}.map-nodes a{position:relative;flex:1;font-size:.76rem;color:var(--muted);transition:.3s}.map-nodes a i{display:grid;place-items:center;width:52px;height:52px;margin:0 auto .5rem;border-radius:50%;background:#12297f;border:2px solid var(--line);font-size:1.3rem;color:var(--cyan);transition:.3s}.map-nodes a.active{color:var(--amber);font-weight:600}.map-nodes a.active i{background:var(--amber);color:#2a1a00;border-color:#fff;scale:1.12;box-shadow:0 0 28px var(--amber)}footer{padding:1.5rem 1.25rem 2rem;text-align:center;color:var(--muted);font-size:.78rem}footer .social-links{display:flex;justify-content:center;gap:.6rem;margin-bottom:.8rem}footer .social-links a{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);transition:.2s}footer .social-links a:hover{color:var(--cyan);border-color:var(--cyan)}#back-to-top{position:fixed;right:1.2rem;bottom:1.2rem;z-index:90;width:44px;height:44px;border:0;border-radius:50%;cursor:pointer;background:linear-gradient(135deg,var(--cyan),var(--blue));color:#031030;font-size:1.2rem;opacity:0;pointer-events:none;transition:.25s}#back-to-top.show{opacity:1;pointer-events:auto}
+    #lightbox{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;flex-direction:column;padding:2rem;background:rgba(3,6,20,.95);backdrop-filter:blur(8px)}#lightbox.open{display:flex}#lightbox img{max-width:92vw;max-height:78vh;border-radius:12px}#lightbox p{margin-top:.8rem;color:var(--muted)}#lightbox button{position:absolute;top:1rem;right:1rem;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--card);font-size:1.3rem;cursor:pointer}.reveal{opacity:0;transition:opacity .7s}.reveal.visible{opacity:1}.skip{position:absolute;left:1rem;top:-70px;z-index:300;padding:.7rem 1rem;border-radius:8px;background:var(--cyan);color:#031030;font-weight:600}.skip:focus{top:1rem}
+    @media(max-width:900px){.nav-links{display:none}.burger{display:block}.about-card,.two-columns,.contact-card{grid-template-columns:1fr}.skills-grid,.project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.cert-grid{grid-template-columns:repeat(2,1fr)}.photo{max-width:320px;margin-inline:auto}}
+    @media(max-width:600px){.skills-grid,.project-grid,.gallery-grid{grid-template-columns:1fr}.gallery-grid{grid-template-columns:repeat(2,1fr)}.stats-grid{grid-template-columns:repeat(2,1fr)}.level-head{flex-direction:column;text-align:center}.portal{width:88px;height:88px}.level{padding:4.5rem 0}.map-nodes a{font-size:.56rem}.map-nodes a i{width:34px;height:34px;font-size:.9rem}.map-nodes:before{top:16px}.cert-grid{grid-template-columns:1fr}.map-board{clip-path:none;border-radius:20px}.facts{font-size:.72rem}.hero-content{padding-top:64px}}
+    @media(max-height:780px){.hero-content>p:not(.hello){display:none}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}#rocket-route{display:none!important}}
+  
 
-      /* ===== Base ===== */
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-      html {
-        scroll-behavior: smooth;
-        scroll-padding-top: 70px;
-      }
-      body {
-        background: linear-gradient(#050b22, #07104a 40%, #050b22);
-        color: var(--text);
-        font: 400 0.95rem/1.75 var(--font-body);
-        overflow-x: hidden;
-        -webkit-font-smoothing: antialiased;
-      }
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
-      img {
-        display: block;
-        max-width: 100%;
-      }
-      button {
-        font: inherit;
-        color: inherit;
-      }
-      :focus-visible {
-        outline: 2px solid var(--cyan);
-        outline-offset: 3px;
-      }
-      .container {
-        width: min(1100px, calc(100% - 2.5rem));
-        margin-inline: auto;
-      }
+    /* ===== COSMIC VISUAL UPGRADE ===== */
+    body {
+      isolation: isolate;
+      background: #02040f;
+    }
+    #starfield {
+      z-index: -2;
+      background:
+        radial-gradient(ellipse at 14% 14%, rgba(47, 82, 255, .22), transparent 30%),
+        radial-gradient(ellipse at 83% 25%, rgba(145, 56, 255, .17), transparent 27%),
+        radial-gradient(ellipse at 56% 63%, rgba(18, 162, 255, .12), transparent 29%),
+        radial-gradient(ellipse at 82% 88%, rgba(255, 76, 168, .09), transparent 23%),
+        linear-gradient(180deg, #02040f 0%, #060b27 44%, #030617 100%);
+    }
+    #starfield::before {
+      content: "";
+      position: absolute;
+      z-index: 0;
+      inset: -12%;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse at 28% 28%, rgba(65, 118, 255, .22), transparent 28%),
+        radial-gradient(ellipse at 72% 46%, rgba(160, 70, 255, .16), transparent 24%),
+        radial-gradient(ellipse at 48% 82%, rgba(45, 205, 255, .10), transparent 26%);
+      filter: blur(38px);
+      opacity: .95;
+      transform: scale(1.08);
+      animation: nebula-drift 34s ease-in-out infinite alternate;
+    }
+    #starfield::after {
+      content: "";
+      position: absolute;
+      z-index: 0;
+      inset: 0;
+      pointer-events: none;
+      opacity: .38;
+      background-image:
+        radial-gradient(1px 1px at 7% 15%, rgba(255,255,255,.9) 98%, transparent),
+        radial-gradient(1px 1px at 18% 71%, rgba(190,224,255,.85) 98%, transparent),
+        radial-gradient(1.5px 1.5px at 27% 42%, rgba(255,255,255,.8) 98%, transparent),
+        radial-gradient(1px 1px at 39% 9%, rgba(255,255,255,.85) 98%, transparent),
+        radial-gradient(1.5px 1.5px at 52% 28%, rgba(200,225,255,.85) 98%, transparent),
+        radial-gradient(1px 1px at 64% 77%, rgba(255,255,255,.9) 98%, transparent),
+        radial-gradient(1.5px 1.5px at 75% 17%, rgba(255,255,255,.8) 98%, transparent),
+        radial-gradient(1px 1px at 87% 58%, rgba(204,215,255,.9) 98%, transparent),
+        radial-gradient(1px 1px at 94% 34%, rgba(255,255,255,.85) 98%, transparent);
+      background-size: 100% 100%;
+      animation: star-drift 90s linear infinite;
+    }
+    #starfield i {
+      z-index: 1;
+      background: #f5fbff;
+      box-shadow: 0 0 5px rgba(125, 213, 255, .75), 0 0 12px rgba(94, 231, 255, .22);
+    }
+    @keyframes nebula-drift {
+      0% { transform: translate3d(-1.5%, -1%, 0) scale(1.08) rotate(-2deg); }
+      100% { transform: translate3d(1.5%, 1%, 0) scale(1.15) rotate(2deg); }
+    }
+    @keyframes star-drift { to { transform: translate3d(-1.5%, 1%, 0); } }
 
-      /* ===== Starfield, progress bar and navigation ===== */
-      #starfield {
-        position: fixed;
-        inset: 0;
-        z-index: -1;
-        pointer-events: none;
-      }
-      #starfield i {
-        position: absolute;
-        border-radius: 50%;
-        background: #fff;
-        animation: tw 3s ease-in-out infinite;
-      }
-      @keyframes tw {
-        50% {
-          opacity: 0.2;
-        }
-      }
-      #progress-bar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 3px;
-        width: 0;
-        z-index: 120;
-        background: linear-gradient(
-          90deg,
-          var(--cyan),
-          var(--violet),
-          var(--amber)
-        );
-      }
-      #progress-bar::after {
-        content: "";
-        position: absolute;
-        right: -8px;
-        top: -7px;
-        width: 17px;
-        height: 17px;
-        border-radius: 50%;
-        background: radial-gradient(#fff, var(--amber) 45%, transparent 72%);
-        box-shadow: 0 0 18px 4px rgba(255, 181, 61, 0.55);
-      }
-      nav {
-        position: fixed;
-        inset: 0 0 auto;
-        z-index: 100;
-        transition: 0.3s;
-      }
-      nav.scrolled {
-        background: rgba(5, 11, 34, 0.82);
-        backdrop-filter: blur(14px);
-        border-bottom: 1px solid var(--line);
-      }
-      .nav-inner {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        height: 64px;
-      }
-      .logo {
-        display: flex;
-        align-items: center;
-        gap: 0.6rem;
-        font: 600 1.1rem var(--font-display);
-      }
-      .logo b {
-        display: grid;
-        place-items: center;
-        width: 34px;
-        height: 34px;
-        border-radius: 10px;
-        background: linear-gradient(135deg, var(--cyan), var(--blue));
-        color: #031030;
-        font-size: 1rem;
-      }
-      .nav-links {
-        display: flex;
-        gap: 0.2rem;
-        list-style: none;
-      }
-      .nav-links a {
-        padding: 0.45rem 0.6rem;
-        border-radius: 99px;
-        color: var(--muted);
-        font-size: 0.8rem;
-        transition: 0.2s;
-      }
-      .nav-links a:hover,
-      .nav-links a.active {
-        color: var(--cyan);
-        background: rgba(94, 231, 255, 0.1);
-      }
-      .burger {
-        display: none;
-        background: none;
-        border: 0;
-        font-size: 1.6rem;
-        cursor: pointer;
-      }
-      .mobile-menu {
-        display: none;
-        flex-direction: column;
-        padding: 0.5rem 1.25rem 1rem;
-        background: rgba(5, 11, 34, 0.97);
-      }
-      .mobile-menu.open {
-        display: flex;
-      }
-      .mobile-menu a {
-        padding: 0.7rem 0;
-        border-bottom: 1px solid var(--line);
-        color: var(--muted);
-      }
+    /* Give the launch scene a cosmic sky while preserving the mountain layers. */
+    .stage {
+      background:
+        radial-gradient(ellipse at 18% 20%, rgba(62, 111, 255, .28), transparent 32%),
+        radial-gradient(ellipse at 82% 30%, rgba(150, 57, 255, .23), transparent 30%),
+        radial-gradient(ellipse at 52% 72%, rgba(17, 90, 220, .25), transparent 36%),
+        linear-gradient(180deg, #030611 0%, #091747 48%, #071139 100%);
+    }
+    .stage::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      opacity: .42;
+      background-image:
+        radial-gradient(1px 1px at 13% 18%, #fff 98%, transparent),
+        radial-gradient(1px 1px at 24% 41%, #c8f3ff 98%, transparent),
+        radial-gradient(1px 1px at 46% 17%, #fff 98%, transparent),
+        radial-gradient(1.5px 1.5px at 63% 32%, #fff 98%, transparent),
+        radial-gradient(1px 1px at 78% 15%, #fff 98%, transparent),
+        radial-gradient(1px 1px at 89% 38%, #c8d7ff 98%, transparent);
+      background-size: 100% 100%;
+    }
+    .stage .layer { z-index: 2; }
+    .stage .hero-content { z-index: 5; }
+    .stage .scroll-hint { z-index: 6; }
+    .stage .hero-fade { z-index: 4; }
 
-      /* ===== Hero ===== */
-      .hero {
-        position: relative;
-        height: 135vh;
-        min-height: 760px;
-      }
-      .stage {
-        position: sticky;
-        top: 0;
-        height: 100vh;
-        min-height: 640px;
-        overflow: hidden;
-        background: linear-gradient(#0a1a6e, #123aa8 55%, #0b1f6b);
-      }
-      .layer {
-        position: absolute;
-        left: -5%;
-        width: 110%;
-        will-change: transform;
-      }
-      .layer svg {
-        display: block;
-        width: 100%;
-        height: auto;
-      }
-      .crystal {
-        position: absolute;
-        width: 34px;
-        height: 68px;
-        clip-path: polygon(50% 0, 100% 35%, 80% 100%, 20% 100%, 0 35%);
-        background: linear-gradient(135deg, #bff6ff, var(--blue));
-        filter: drop-shadow(0 0 14px var(--cyan));
-        animation: fl 5s ease-in-out infinite;
-      }
-      @keyframes fl {
-        50% {
-          translate: 0 -14px;
-        }
-      }
-      .hero-content {
-        position: absolute;
-        inset: 0;
-        display: grid;
-        place-content: center;
-        text-align: center;
-        padding: 0 1.25rem;
-        will-change: transform, opacity;
-        z-index: 5;
-      }
-      .hello {
-        font: 600 1.3rem var(--font-display);
-        color: var(--cyan);
-      }
-      .hero-content h1 {
-        max-width: 900px;
-        margin-inline: auto;
-        font: 700 clamp(2.4rem, 7.4vw, 5.2rem)/1.05 var(--font-display);
-        letter-spacing: -0.01em;
-        text-shadow:
-          0 0 40px rgba(94, 231, 255, 0.55),
-          0 4px 0 rgba(0, 0, 40, 0.4);
-      }
-      .role {
-        margin: 0.7rem 0 0.4rem;
-        font: 600 clamp(1.05rem, 2.6vw, 1.5rem) var(--font-display);
-        color: #cfe0ff;
-        min-height: 1.6em;
-      }
-      .role u {
-        display: inline-block;
-        width: 2px;
-        height: 1em;
-        margin-left: 3px;
-        background: var(--cyan);
-        vertical-align: -0.12em;
-        animation: bk 0.8s steps(1) infinite;
-      }
-      @keyframes bk {
-        50% {
-          opacity: 0;
-        }
-      }
-      .hero-content p {
-        max-width: 560px;
-        margin: 0 auto 1.4rem;
-        color: #c3d3f7;
-        font-size: 0.92rem;
-      }
-      .facts {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 0.4rem 0.9rem;
-        margin-bottom: 1.4rem;
-        font-size: 0.78rem;
-        color: #b5c7f2;
-      }
-      .facts i {
-        color: var(--cyan);
-      }
-      .btns {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 0.7rem;
-      }
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        min-height: 44px;
-        padding: 0.7rem 1.4rem;
-        border-radius: 99px;
-        border: 1px solid var(--line);
-        font-weight: 600;
-        font-size: 0.85rem;
-        cursor: pointer;
-        background: rgba(14, 28, 80, 0.5);
-        transition: 0.25s;
-      }
-      .btn:hover {
-        transform: translateY(-3px);
-        border-color: var(--cyan);
-        color: var(--cyan);
-      }
-      .btn.primary {
-        border: 0;
-        color: #031030;
-        background: linear-gradient(135deg, var(--cyan), var(--blue));
-        box-shadow: 0 8px 28px rgba(94, 231, 255, 0.3);
-      }
-      .btn.primary:hover {
-        color: #031030;
-        box-shadow: 0 12px 36px rgba(94, 231, 255, 0.5);
-      }
-      .scroll-hint {
-        position: absolute;
-        bottom: 1.6rem;
-        left: 50%;
-        translate: -50% 0;
-        z-index: 6;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0.2rem;
-        color: var(--muted);
-        font-size: 0.72rem;
-        animation: fl 2.4s ease-in-out infinite;
-      }
-      .hero-fade {
-        position: absolute;
-        inset: auto 0 0;
-        height: 160px;
-        background: linear-gradient(transparent, var(--bg));
-        z-index: 4;
-      }
+    /* A richer, multi-layer flight path: dotted navigation rail + luminous plasma trail. */
+    #rocket-route .route-base {
+      stroke: rgba(127, 207, 255, .48);
+      stroke-width: 2.7;
+      stroke-dasharray: 1.5 10;
+      animation: route-drift 18s linear infinite;
+      filter: drop-shadow(0 0 4px rgba(94, 231, 255, .42));
+    }
+    #rocket-route .route-glow {
+      stroke-width: 8;
+      opacity: .65;
+      filter: url(#rocket-route-glow-filter) drop-shadow(0 0 11px rgba(94, 231, 255, .42));
+    }
+    #rocket-route .route-core {
+      stroke: rgba(239, 252, 255, .96);
+      stroke-width: 1.35;
+      opacity: .9;
+      filter: drop-shadow(0 0 4px rgba(255,255,255,.7));
+    }
+    @keyframes route-drift { to { stroke-dashoffset: -140; } }
 
-      /* ===== Levels: shared structure ===== */
-      main {
-        position: relative;
-      }
-      .level {
-        position: relative;
-        z-index: 1;
-        padding: 6.5rem 0;
-      }
-      .zoom {
-        will-change: transform, opacity;
-        transition: transform 0.12s linear;
-      }
-      .level-head {
-        position: relative;
-        display: flex;
-        align-items: center;
-        gap: 1.4rem;
-        margin-bottom: 2.6rem;
-      }
-      .portal {
-        position: relative;
-        flex: 0 0 auto;
-        display: grid;
-        place-items: center;
-        width: 104px;
-        height: 104px;
-        border-radius: 50% 50% 38% 38%;
-        font-size: 2.3rem;
-        color: #fff;
-        background: radial-gradient(
-          circle at 50% 70%,
-          var(--level-color),
-          #0a1450 75%
-        );
-        box-shadow:
-          0 0 50px var(--level-color),
-          inset 0 -8px 20px rgba(0, 0, 0, 0.4);
-        border: 3px solid rgba(255, 255, 255, 0.12);
-      }
-      .level-sign {
-        position: absolute;
-        left: -12px;
-        bottom: -14px;
-        padding: 0.2rem 0.7rem;
-        border-radius: 6px;
-        font: 600 0.72rem var(--font-display);
-        letter-spacing: 0.04em;
-        background: linear-gradient(#5b8fe0, #2d5cb8);
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-        rotate: -4deg;
-        white-space: nowrap;
-      }
-      .level-head h2 {
-        font: 700 clamp(1.9rem, 4.4vw, 2.9rem)/1.1 var(--font-display);
-      }
-      .level-head h2 span {
-        color: var(--level-color);
-      }
-      .level-head p {
-        max-width: 520px;
-        margin-top: 0.5rem;
-        color: var(--muted);
-      }
-      .glass {
-        border: 1px solid var(--line);
-        border-radius: 20px;
-        background: var(--card);
-        backdrop-filter: blur(8px);
-      }
-      .floating-icon {
-        position: absolute;
-        pointer-events: none;
-        z-index: 0;
-        will-change: transform;
-        z-index: 0;
-      }
+    /* The actual .portal element becomes a small spherical planet with orbit rings. */
+    .level-head .portal {
+      width: 112px;
+      height: 112px;
+      border-radius: 50%;
+      isolation: isolate;
+      overflow: visible;
+      border: 1px solid rgba(235, 248, 255, .55);
+      background:
+        radial-gradient(circle at 28% 22%, rgba(255,255,255,.8) 0 1.5%, rgba(255,255,255,.18) 6%, transparent 20%),
+        radial-gradient(ellipse at 66% 75%, rgba(1,5,25,.78), transparent 42%),
+        radial-gradient(circle at 35% 28%, color-mix(in srgb, var(--level-color), white 18%) 0%, var(--level-color) 33%, color-mix(in srgb, var(--level-color), #05091e 54%) 72%, #040817 100%);
+      box-shadow:
+        inset -12px -14px 22px rgba(0,0,0,.55),
+        inset 7px 6px 15px rgba(255,255,255,.16),
+        0 0 22px color-mix(in srgb, var(--level-color), transparent 43%),
+        0 0 52px color-mix(in srgb, var(--level-color), transparent 72%);
+      transform: translateZ(0);
+    }
+    .level-head .portal::before {
+      content: "";
+      position: absolute;
+      z-index: 0;
+      left: -20%;
+      top: 28%;
+      width: 140%;
+      height: 44%;
+      border: 2px solid color-mix(in srgb, var(--level-color), white 24%);
+      border-left-color: rgba(255,255,255,.25);
+      border-right-color: rgba(255,255,255,.8);
+      border-radius: 50%;
+      transform: rotate(-27deg);
+      box-shadow: 0 0 10px color-mix(in srgb, var(--level-color), transparent 34%);
+      pointer-events: none;
+    }
+    .level-head .portal::after {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      inset: 2px;
+      border-radius: 50%;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse at 66% 43%, color-mix(in srgb, var(--level-color), #07132e 48%) 0 8%, transparent 10%),
+        radial-gradient(ellipse at 38% 67%, rgba(4, 8, 30, .34) 0 7%, transparent 9%),
+        radial-gradient(ellipse at 72% 75%, rgba(255,255,255,.13) 0 3%, transparent 8%),
+        linear-gradient(145deg, rgba(255,255,255,.20), transparent 35%, rgba(1,4,20,.45) 85%);
+      box-shadow: inset -8px -7px 14px rgba(0,0,0,.34), inset 3px 2px 7px rgba(255,255,255,.12);
+    }
+    .level-head .portal > i {
+      position: relative;
+      z-index: 2;
+      font-size: 2.25rem;
+      color: rgba(255,255,255,.96);
+      filter: drop-shadow(0 2px 8px rgba(1,5,25,.78));
+    }
+    .level-head .portal .level-sign {
+      z-index: 4;
+      left: -9px;
+      bottom: -13px;
+      box-shadow: 0 5px 20px rgba(0,0,0,.45), 0 0 15px color-mix(in srgb, var(--level-color), transparent 48%);
+    }
+    .level-head .portal.rocket-active {
+      animation: planet-arrival 2.4s ease-in-out infinite;
+      box-shadow:
+        inset -12px -14px 22px rgba(0,0,0,.45),
+        inset 7px 6px 15px rgba(255,255,255,.2),
+        0 0 28px var(--level-color),
+        0 0 72px color-mix(in srgb, var(--level-color), transparent 34%);
+    }
+    .level-head .portal.rocket-active::before { animation: orbit-pulse 2.4s ease-in-out infinite; }
+    @keyframes planet-arrival {
+      0%,100% { filter: saturate(1.08) brightness(1); }
+      50% { filter: saturate(1.35) brightness(1.14); }
+    }
+    @keyframes orbit-pulse {
+      0%,100% { transform: rotate(-27deg) scale(1); opacity: .8; }
+      50% { transform: rotate(-20deg) scale(1.055); opacity: 1; }
+    }
 
-      /* ===== Level 01 - About ===== */
-      .about-card {
-        display: grid;
-        grid-template-columns: 0.8fr 1.2fr;
-        gap: 2.5rem;
-        align-items: center;
-        padding: 1.8rem;
+    /* Preserve breathing room for the new rings on compact layouts. */
+    @media (max-width: 600px) {
+      .level-head .portal { width: 94px; height: 94px; }
+      .level-head .portal::before { left: -19%; width: 138%; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      #starfield::before, #starfield::after, #rocket-route .route-base,
+      .level-head .portal.rocket-active, .level-head .portal.rocket-active::before {
+        animation: none !important;
       }
-      .photo {
-        position: relative;
-      }
-      .photo img {
-        width: 100%;
-        aspect-ratio: 4/5;
-        object-fit: cover;
-        object-position: top;
-        border-radius: 16px;
-      }
-      .photo::after {
-        content: "";
-        position: absolute;
-        inset: -8px;
-        border-radius: 22px;
-        border: 2px dashed rgba(94, 231, 255, 0.35);
-        pointer-events: none;
-      }
-      .about-card p {
-        color: var(--muted);
-        margin-bottom: 0.8rem;
-      }
-      .about-card strong {
-        color: var(--text);
-      }
-      .chips {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.4rem;
-        margin: 1rem 0 0;
-      }
-      .chips span {
-        padding: 0.3rem 0.75rem;
-        border: 1px solid var(--line);
-        border-radius: 99px;
-        font-size: 0.75rem;
-        color: #c8d6f7;
-        background: rgba(255, 255, 255, 0.04);
-      }
-      .stats-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 1rem;
-        margin-top: 1.4rem;
-      }
-      .stat {
-        padding: 1.2rem 0.8rem;
-        text-align: center;
-      }
-      .stat b {
-        display: block;
-        font: 700 1.9rem/1.1 var(--font-display);
-        color: var(--cyan);
-      }
-      .stat small {
-        color: var(--muted);
-        font-size: 0.72rem;
-      }
+    }
 
-      /* ===== Level 02 - Experience & education ===== */
-      .two-columns {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1.5rem;
-        align-items: start;
-      }
-      .timeline-card {
-        position: relative;
-        padding: 1.5rem 1.5rem 1.5rem 1.8rem;
-        margin-bottom: 1.2rem;
-      }
-      .timeline-card::before {
-        content: "";
-        position: absolute;
-        left: -7px;
-        top: 1.7rem;
-        width: 14px;
-        height: 14px;
-        border-radius: 50%;
-        background: var(--amber);
-        box-shadow: 0 0 16px var(--amber);
-      }
-      .timeline-card time {
-        color: var(--amber);
-        font-size: 0.76rem;
-        font-weight: 600;
-      }
-      .timeline-card h3 {
-        font: 600 1.15rem var(--font-display);
-        margin: 0.2rem 0;
-      }
-      .timeline-card .timeline-company {
-        color: var(--muted);
-        font-size: 0.8rem;
-        margin-bottom: 0.6rem;
-      }
-      .timeline-card p {
-        color: var(--muted);
-        font-size: 0.85rem;
-      }
-      .gpa {
-        display: inline-block;
-        margin: 0.2rem 0 0.6rem;
-        padding: 0.2rem 0.7rem;
-        border-radius: 99px;
-        background: linear-gradient(135deg, var(--cyan), var(--blue));
-        color: #031030;
-        font-size: 0.75rem;
-        font-weight: 600;
-      }
-      .tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.35rem;
-        margin-top: 0.8rem;
-      }
-      .tags span {
-        padding: 0.2rem 0.6rem;
-        border-radius: 99px;
-        font-size: 0.7rem;
-        color: var(--cyan);
-        background: rgba(94, 231, 255, 0.1);
-        border: 1px solid rgba(94, 231, 255, 0.2);
-      }
 
-      .edu-cert {
-        margin-top: 1rem;
-        overflow: hidden;
-        border: 1px solid var(--line);
-        border-radius: 12px;
-        cursor: zoom-in;
-      }
-      .edu-cert img {
-        width: 100%;
-        height: 230px;
-        object-fit: cover;
-        object-position: top;
-        transition: transform 0.5s;
-      }
-      .edu-cert:hover img {
-        transform: scale(1.04);
-      }
-      .edu-cert figcaption {
-        padding: 0.5rem 0.8rem;
-        color: var(--muted);
-        font-size: 0.74rem;
-        background: rgba(255, 255, 255, 0.04);
-      }
 
-      /* ===== Level 04 - Skills ===== */
-      .skills-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1rem;
-      }
-      .skills-grid article {
-        padding: 1.5rem 1.4rem;
-        transition: 0.3s;
-      }
-      .skills-grid article:hover {
-        border-color: var(--cyan);
-        transform: translateY(-5px);
-      }
-      .skills-grid h3 {
-        display: flex;
-        align-items: center;
-        gap: 0.6rem;
-        font: 600 1.05rem var(--font-display);
-        margin-bottom: 0.9rem;
-      }
-      .skills-grid h3 i {
-        color: var(--level-color, var(--cyan));
-        font-size: 1.35rem;
-      }
-      .skills-grid p {
-        color: var(--muted);
-        font-size: 0.88rem;
-        line-height: 1.7;
-      }
+    /* ===== Smooth motion polish ===== */
+    :root {
+      --ease-fluid: cubic-bezier(.22, 1, .36, 1);
+      --ease-soft: cubic-bezier(.4, 0, .2, 1);
+      --motion-fast: 220ms;
+      --motion-medium: 420ms;
+      --motion-slow: 760ms;
+    }
+    html { scroll-behavior: smooth; }
+    #starfield i { animation-timing-function: cubic-bezier(.45, 0, .55, 1); }
+    #starfield::before { animation-duration: 120s; animation-timing-function: ease-in-out; }
+    .stage::before { animation-duration: 100s; animation-timing-function: ease-in-out; }
+    #progress-bar { will-change: width; }
+    nav#navbar { transition: background-color .45s var(--ease-fluid), backdrop-filter .45s var(--ease-fluid), border-color .45s var(--ease-fluid); }
+    .nav-links a, .mobile-menu a { transition: color .3s var(--ease-fluid), background-color .3s var(--ease-fluid), padding-left .3s var(--ease-fluid); }
+    .mobile-menu.open { animation: menu-arrive .32s var(--ease-fluid) both; }
+    @keyframes menu-arrive { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
+    .btn, .filter-bar button, .contact-link, .glass, .cert-card, .project-card, .gallery-grid a, #back-to-top {
+      transition-timing-function: var(--ease-fluid);
+    }
+    .btn { transition-duration: .38s; }
+    .glass { transition: border-color .5s var(--ease-fluid), box-shadow .5s var(--ease-fluid), background-color .5s var(--ease-fluid); }
+    .project-card { transition: transform .42s var(--ease-fluid), border-color .42s var(--ease-fluid), box-shadow .42s var(--ease-fluid); }
+    .project-image img, .gallery-grid img { transition: transform .75s var(--ease-fluid), filter .65s var(--ease-fluid); }
+    .cert-card { transition: transform .48s var(--ease-fluid), border-color .42s var(--ease-fluid), box-shadow .48s var(--ease-fluid); }
+    .contact-link { transition: transform .42s var(--ease-fluid), border-color .42s var(--ease-fluid), background-color .42s var(--ease-fluid); }
+    .skills-grid article { transition: transform .42s var(--ease-fluid), border-color .42s var(--ease-fluid), box-shadow .42s var(--ease-fluid); }
+    .reveal { opacity: 0; transform: translate3d(0, 18px, 0); transition: opacity .82s var(--ease-fluid), transform .82s var(--ease-fluid); }
+    .reveal.visible { opacity: 1; transform: translate3d(0, 0, 0); }
+    .cert-card.reveal.visible:hover { transform: translateY(-6px) rotate(-.6deg); }
+    .skills-grid article.reveal.visible:hover { transform: translateY(-5px); }
+    .project-card .project-image em { transition: opacity .4s var(--ease-fluid), transform .4s var(--ease-fluid); }
+    #lightbox {
+      display: flex;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity .36s var(--ease-fluid), visibility 0s linear .36s;
+    }
+    #lightbox.open { opacity: 1; visibility: visible; pointer-events: auto; transition: opacity .36s var(--ease-fluid), visibility 0s; }
+    #lightbox img { opacity: 0; transform: translate3d(0, 12px, 0) scale(.97); transition: opacity .42s var(--ease-fluid), transform .48s var(--ease-fluid); }
+    #lightbox.open img { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
+    #lightbox p { opacity: 0; transform: translateY(5px); transition: opacity .38s var(--ease-fluid) .05s, transform .38s var(--ease-fluid) .05s; }
+    #lightbox.open p { opacity: 1; transform: translateY(0); }
 
-      /* ===== Level 05 - Projects ===== */
-      .filter-bar {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        margin-bottom: 1.4rem;
-      }
-      .filter-bar button {
-        padding: 0.45rem 1rem;
-        border-radius: 99px;
-        border: 1px solid var(--line);
-        background: transparent;
-        cursor: pointer;
-        font-size: 0.78rem;
-        color: var(--muted);
-        transition: 0.2s;
-      }
-      .filter-bar button.active {
-        background: linear-gradient(135deg, var(--cyan), var(--blue));
-        color: #031030;
-        border-color: transparent;
-        font-weight: 600;
-      }
-      .project-grid {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 1.2rem;
-        perspective: 1000px;
-      }
-      .project-card {
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
-        transition:
-          transform 0.15s,
-          border-color 0.3s,
-          box-shadow 0.3s;
-        transform-style: preserve-3d;
-      }
-      .project-card:hover {
-        border-color: var(--cyan);
-        box-shadow:
-          0 20px 50px rgba(0, 0, 0, 0.4),
-          0 0 30px rgba(94, 231, 255, 0.15);
-      }
-      .project-card.hidden {
-        display: none;
-      }
-      .project-image {
-        position: relative;
-        aspect-ratio: 16/10;
-        overflow: hidden;
-        background: #0a1450;
-      }
-      .project-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.5s;
-      }
-      .project-card:hover .project-image img {
-        transform: scale(1.1);
-      }
-      .project-image em {
-        position: absolute;
-        right: 0.7rem;
-        bottom: 0.7rem;
-        padding: 0.3rem 0.75rem;
-        border-radius: 99px;
-        font-style: normal;
-        font-size: 0.72rem;
-        font-weight: 600;
-        background: rgba(5, 11, 34, 0.85);
-        color: var(--cyan);
-        opacity: 0;
-        transform: translateY(8px);
-        transition: 0.3s;
-      }
-      .project-card:hover .project-image em {
-        opacity: 1;
-        transform: none;
-      }
-      .project-body {
-        padding: 1.1rem 1.2rem 1.3rem;
-      }
-      .project-body small {
-        color: var(--amber);
-        font-weight: 600;
-        font-size: 0.72rem;
-      }
-      .project-body h3 {
-        font: 600 1.08rem/1.35 var(--font-display);
-        margin: 0.2rem 0 0.5rem;
-      }
-      .project-body p {
-        color: var(--muted);
-        font-size: 0.8rem;
-        line-height: 1.7;
-      }
+    /* Rocket motion: feathered glow, calmer engine flicker, eased planet arrival. */
+    #rocket-route .route-base { animation-duration: 28s; animation-timing-function: linear; }
+    #rocket-route .route-glow { opacity: .58; transition: opacity .35s var(--ease-fluid); }
+    #rocket-route .route-core { opacity: .76; }
+    #rocket-ship { opacity: 1; transition: opacity .42s var(--ease-fluid); }
+    #rocket-ship.landed { opacity: 0 !important; }
+    #rocket-ship .rocket-flame { animation: rocket-flame-flicker .34s ease-in-out infinite alternate; }
+    #rocket-ship.rocket-boosting .rocket-flame { animation-duration: .19s; filter: drop-shadow(0 0 7px rgba(255,181,61,.9)); }
+    #rocket-ship .rocket-body { filter: drop-shadow(0 0 3px rgba(226,251,255,.6)); }
+    .level-head .portal { transition: box-shadow .72s var(--ease-fluid), filter .72s var(--ease-fluid), transform .72s var(--ease-fluid); }
+    .level-head .portal.rocket-active { animation: planet-arrival 3.8s cubic-bezier(.45, 0, .55, 1) infinite; }
+    .level-head .portal.rocket-active::before { animation: orbit-pulse 5.2s cubic-bezier(.45, 0, .55, 1) infinite; }
+    @keyframes rocket-flame-flicker { from { opacity: .76; transform: scale(.88, .92); } to { opacity: 1; transform: scale(1.06, 1.14); } }
+    @keyframes planet-arrival {
+      0%, 100% { filter: saturate(1.08) brightness(1); }
+      50% { filter: saturate(1.28) brightness(1.12); }
+    }
+    @keyframes orbit-pulse {
+      0%, 100% { transform: rotate(-27deg) scale(1); opacity: .76; }
+      50% { transform: rotate(-18deg) scale(1.035); opacity: 1; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal { opacity: 1; transform: none; }
+      #lightbox, #lightbox img, #lightbox p { transition: none !important; transform: none !important; }
+      .mobile-menu.open { animation: none; }
+    }
 
-      /* ===== Level 06 - Certificates & gallery ===== */
-      .cert-grid {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 1rem;
-        margin-bottom: 3rem;
-      }
-      .cert-card {
-        overflow: hidden;
-        transition: 0.3s;
-        cursor: zoom-in;
-      }
-      .cert-card:hover {
-        transform: translateY(-6px) rotate(-1deg);
-        border-color: var(--cyan);
-      }
-      .cert-card img {
-        width: 100%;
-        aspect-ratio: 4/3;
-        object-fit: cover;
-      }
-      .cert-card div {
-        padding: 0.9rem;
-      }
-      .cert-card h3 {
-        font: 600 0.92rem/1.4 var(--font-display);
-      }
-      .cert-card p {
-        font-size: 0.74rem;
-        color: var(--muted);
-      }
-      .subheading {
-        font: 600 1.4rem var(--font-display);
-        margin-bottom: 1rem;
-      }
-      .gallery-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1rem;
-      }
-      .gallery-grid a {
-        position: relative;
-        overflow: hidden;
-        aspect-ratio: 4/3;
-        border-radius: 16px;
-        border: 1px solid var(--line);
-        cursor: zoom-in;
-      }
-      .gallery-grid img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition:
-          transform 0.5s,
-          filter 0.5s;
-      }
-      .gallery-grid a:hover img {
-        transform: scale(1.08);
-        filter: brightness(0.65);
-      }
-      .gallery-grid span {
-        position: absolute;
-        left: 1rem;
-        bottom: 0.9rem;
-        font-weight: 600;
-        font-size: 0.85rem;
-        opacity: 0;
-        transition: 0.3s;
-      }
-      .gallery-grid a:hover span {
-        opacity: 1;
-      }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip">Skip to content</a>
+  <div id="progress-bar" aria-hidden="true"></div>
+  <div id="starfield" aria-hidden="true"></div>
 
-      /* ===== Final level - Contact ===== */
-      .contact-card {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 2.5rem;
-        align-items: center;
-        padding: 2.2rem;
-      }
-      .contact-card h3 {
-        font: 700 clamp(1.7rem, 3.4vw, 2.4rem)/1.15 var(--font-display);
-        margin-bottom: 0.8rem;
-      }
-      .contact-card p {
-        color: var(--muted);
-        margin-bottom: 1.3rem;
-      }
-      .contact-link {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        padding: 1rem 1.1rem;
-        margin-bottom: 0.7rem;
-        border: 1px solid var(--line);
-        border-radius: 14px;
-        background: rgba(255, 255, 255, 0.03);
-        transition: 0.25s;
-      }
-      .contact-link:hover {
-        transform: translateX(6px);
-        border-color: var(--cyan);
-      }
-      .contact-link > i:first-child {
-        font-size: 1.4rem;
-        color: var(--cyan);
-      }
-      .contact-link b {
-        display: block;
-        font-size: 0.88rem;
-      }
-      .contact-link span {
-        color: var(--muted);
-        font-size: 0.78rem;
-        overflow-wrap: anywhere;
-      }
-      .contact-link > div {
-        flex: 1;
-        min-width: 0;
-      }
+  <!-- One SVG path connects the launch point and every section planet. -->
+  <div id="rocket-route" aria-hidden="true">
+    <svg id="rocket-route-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="1" viewBox="0 0 100 1" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="rocket-route-gradient" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#5ee7ff"/><stop offset="52%" stop-color="#a07cff"/><stop offset="100%" stop-color="#ffb53d"/></linearGradient>
+        <filter id="rocket-route-glow-filter" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      </defs>
+      <path id="rocket-route-base" class="route-base" d="M 50 0 L 50 1"/>
+      <path id="rocket-route-progress-glow" class="route-glow" d="M 50 0 L 50 1"/>
+      <path id="rocket-route-progress-core" class="route-core" d="M 50 0 L 50 1"/>
+      <g id="rocket-ship" transform="translate(50 1) rotate(180)">
+        <path class="rocket-flame" d="M -4 11 Q 0 25 4 11 Q 0 15 -4 11 Z" fill="#ffb53d"/>
+        <path class="rocket-body" d="M 0 -25 C -7 -18 -8 -7 -6 3 L -4 11 L 4 11 L 6 3 C 8 -7 7 -18 0 -25 Z" fill="#f4fbff" stroke="#5ee7ff" stroke-width="1.5"/>
+        <path d="M 0 -18 C -4 -13 -4 -8 0 -5 C 4 -8 4 -13 0 -18 Z" fill="#4f8bff" stroke="#d8fbff" stroke-width=".8"/>
+        <path d="M -6 2 L -14 10 L -5 9 Z M 6 2 L 14 10 L 5 9 Z" fill="#a07cff" stroke="#d8fbff" stroke-width=".8"/>
+        <path d="M -3 10 L -2 14 L 2 14 L 3 10 Z" fill="#5ee7ff"/><circle cx="0" cy="-1" r="1.6" fill="#fff"/>
+      </g>
+    </svg>
+  </div>
 
-      /* ===== Adventure map and footer ===== */
-      .adventure-map {
-        position: relative;
-        z-index: 1;
-        padding: 2rem 0 3rem;
-      }
-      .map-board {
-        padding: 2rem 1.2rem 2.2rem;
-        text-align: center;
-        background: linear-gradient(#0d1f66, #091448);
-        clip-path: polygon(
-          2% 0,
-          34% 4%,
-          66% 0,
-          98% 4%,
-          100% 100%,
-          66% 96%,
-          34% 100%,
-          0 96%
-        );
-      }
-      .map-board h3 {
-        font: 600 1.2rem var(--font-display);
-        margin-bottom: 2.6rem;
-      }
-      .map-nodes {
-        display: flex;
-        justify-content: space-between;
-        gap: 0.5rem;
-        position: relative;
-      }
-      .map-nodes::before {
-        content: "";
-        position: absolute;
-        left: 8%;
-        right: 8%;
-        top: 25px;
-        border-top: 2px dashed var(--line);
-      }
-      .map-nodes a {
-        position: relative;
-        flex: 1;
-        font-size: 0.76rem;
-        color: var(--muted);
-        transition: 0.3s;
-      }
-      .map-nodes a i {
-        display: grid;
-        place-items: center;
-        width: 52px;
-        height: 52px;
-        margin: 0 auto 0.5rem;
-        border-radius: 50%;
-        background: #12297f;
-        border: 2px solid var(--line);
-        font-size: 1.3rem;
-        color: var(--cyan);
-        transition: 0.3s;
-      }
-      .map-nodes a.active {
-        color: var(--amber);
-        font-weight: 600;
-      }
-      .map-nodes a.active i {
-        background: var(--amber);
-        color: #2a1a00;
-        border-color: #fff;
-        scale: 1.2;
-        box-shadow: 0 0 28px var(--amber);
-      }
-      .map-nodes a.active::after {
-        content: "You are here";
-        position: absolute;
-        top: -1.5rem;
-        left: 50%;
-        translate: -50% 0;
-        white-space: nowrap;
-        font-size: 0.68rem;
-      }
-      footer {
-        padding: 1.5rem 1.25rem 2rem;
-        text-align: center;
-        color: var(--muted);
-        font-size: 0.78rem;
-      }
-      footer .social-links {
-        display: flex;
-        justify-content: center;
-        gap: 0.6rem;
-        margin-bottom: 0.8rem;
-      }
-      footer .social-links a {
-        display: grid;
-        place-items: center;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        border: 1px solid var(--line);
-        transition: 0.2s;
-      }
-      footer .social-links a:hover {
-        color: var(--cyan);
-        border-color: var(--cyan);
-      }
-      #back-to-top {
-        position: fixed;
-        right: 1.2rem;
-        bottom: 1.2rem;
-        z-index: 90;
-        width: 44px;
-        height: 44px;
-        border: 0;
-        border-radius: 50%;
-        cursor: pointer;
-        background: linear-gradient(135deg, var(--cyan), var(--blue));
-        color: #031030;
-        font-size: 1.2rem;
-        opacity: 0;
-        pointer-events: none;
-        transition: 0.25s;
-      }
-      #back-to-top.show {
-        opacity: 1;
-        pointer-events: auto;
-      }
+  <nav id="navbar" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a href="#home" class="logo"><b>R</b> Rezi Ichsan</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li><li><a href="#experience">Experience</a></li><li><a href="#education">Education</a></li><li><a href="#skills">Skills</a></li><li><a href="#projects">Projects</a></li><li><a href="#certificates">Certificates</a></li><li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="burger" id="menu-toggle" aria-label="Open menu" aria-expanded="false"><i class="ri-menu-3-line"></i></button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu"><a href="#about">About</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#certificates">Certificates</a><a href="#contact">Contact</a></div>
+  </nav>
 
-      /* ===== Lightbox, back-to-top and reveal animation ===== */
-      #lightbox {
-        position: fixed;
-        inset: 0;
-        z-index: 200;
-        display: none;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        padding: 2rem;
-        background: rgba(3, 6, 20, 0.95);
-        backdrop-filter: blur(8px);
-      }
-      #lightbox.open {
-        display: flex;
-      }
-      #lightbox img {
-        max-width: 92vw;
-        max-height: 78vh;
-        border-radius: 12px;
-      }
-      #lightbox p {
-        margin-top: 0.8rem;
-        color: var(--muted);
-      }
-      #lightbox button {
-        position: absolute;
-        top: 1rem;
-        right: 1rem;
-        width: 44px;
-        height: 44px;
-        border-radius: 50%;
-        border: 1px solid var(--line);
-        background: var(--card);
-        font-size: 1.3rem;
-        cursor: pointer;
-      }
-      .js .reveal {
-        opacity: 0;
-        transform: translateY(24px) scale(0.97);
-        transition:
-          opacity 0.7s,
-          transform 0.7s;
-      }
-      .js .reveal.visible {
-        opacity: 1;
-        transform: none;
-      }
-      @media (max-width: 900px) {
-        .nav-links {
-          display: none;
-        }
-        .burger {
-          display: block;
-        }
-        .about-card,
-        .two-columns,
-        .contact-card {
-          grid-template-columns: 1fr;
-        }
-        .skills-grid,
-        .project-grid {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-        .cert-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-        .photo {
-          max-width: 320px;
-          margin-inline: auto;
-        }
-      }
-      @media (max-width: 600px) {
-        .skills-grid,
-        .project-grid,
-        .gallery-grid {
-          grid-template-columns: 1fr;
-        }
-        .gallery-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-        .stats-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-        .level-head {
-          flex-direction: column;
-          text-align: center;
-        }
-        .portal {
-          width: 88px;
-          height: 88px;
-        }
-        .level {
-          padding: 4.5rem 0;
-        }
-        .map-nodes a {
-          font-size: 0.56rem;
-        }
-        .map-nodes a i {
-          width: 34px;
-          height: 34px;
-          font-size: 0.9rem;
-        }
-        .map-nodes::before {
-          top: 16px;
-        }
-        .cert-grid {
-          grid-template-columns: 1fr;
-        }
-        .map-board {
-          clip-path: none;
-          border-radius: 20px;
-        }
-      }
-      @media (max-width: 1239px) {
-        .floating-icon {
-          display: none;
-        }
-      }
-      @media (max-height: 780px) {
-        .hero-content > p:not(.hello) {
-          display: none;
-        }
-      }
-      @media (max-width: 600px) {
-        .facts {
-          font-size: 0.72rem;
-        }
-        .hero-content {
-          padding-top: 64px;
-        }
-      }
-      .skip {
-        position: absolute;
-        left: 1rem;
-        top: -70px;
-        z-index: 300;
-        padding: 0.7rem 1rem;
-        border-radius: 8px;
-        background: var(--cyan);
-        color: #031030;
-        font-weight: 600;
-      }
-      .skip:focus {
-        top: 1rem;
-      }
-      @media print {
-        #starfield,
-        #progress-bar,
-        nav,
-        #back-to-top,
-        #trail,
-        #orb,
-        .floating-icon,
-        .scroll-hint,
-        .hero-fade,
-        .adventure-map,
-        #lightbox {
-          display: none !important;
-        }
-        body {
-          background: #fff;
-          color: #111;
-        }
-        .stage {
-          height: auto;
-          background: none;
-        }
-        .hero {
-          height: auto;
-        }
-        .js .reveal,
-        .zoom {
-          opacity: 1 !important;
-          transform: none !important;
-        }
-        .glass {
-          background: #fff;
-          border-color: #ccc;
-        }
-        p,
-        small,
-        .muted {
-          color: #333 !important;
-        }
-      }
-      @media (prefers-reduced-motion: reduce) {
-        * {
-          animation: none !important;
-          transition: none !important;
-        }
-        .js .reveal {
-          opacity: 1;
-          transform: none;
-        }
-        html {
-          scroll-behavior: auto;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <a href="#main" class="skip">Skip to content</a
-    ><noscript
-      ><style>
-        .reveal {
-          opacity: 1 !important;
-          transform: none !important;
-        }
-      </style></noscript
-    >
-    <div id="progress-bar"></div>
-    <div id="starfield" aria-hidden="true"></div>
-    <nav id="navbar">
-      <div class="container nav-inner">
-        <a href="#home" class="logo"><b>R</b> Rezi Ichsan</a>
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#certificates">Certificates</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-        <button
-          class="burger"
-          id="menu-toggle"
-          aria-label="Open menu"
-          aria-expanded="false"
-        >
-          <i class="ri-menu-3-line"></i>
-        </button>
+  <header class="hero" id="home">
+    <div class="stage">
+      <div class="layer" data-speed=".05" style="top:12%"><div class="crystal" style="left:12%;top:0"></div><div class="crystal" style="left:84%;top:40px;scale:.7;animation-delay:-2s"></div></div>
+      <div class="layer" data-speed=".12" style="bottom:30%"><svg viewBox="0 0 1200 300" preserveAspectRatio="none"><path fill="#1c3fa0" d="M0 300V190L110 90l90 80 120-130 130 150 90-70 140 120 110-140 120 130 110-90 150 110 130-120v200z"/></svg></div>
+      <div class="layer" data-speed=".22" style="bottom:14%"><svg viewBox="0 0 1200 300" preserveAspectRatio="none"><path fill="#14308a" d="M0 300V150L140 40l120 120 100-80 150 140 110-100 130 90 120-120 130 130 140-90 60 40v220z"/><path fill="#d9ecff" opacity=".55" d="M140 40l-34 34 34-10 20 26zM620 70l-30 30 30-8 24 22zM910 50l-28 40 30-12 24 18z"/></svg></div>
+      <div class="layer" data-speed=".35" style="bottom:-2%"><svg viewBox="0 0 1200 260" preserveAspectRatio="none"><path fill="#0a1a5c" d="M0 260V120C120 60 220 130 330 90s230-70 340 0 250 50 330-20 140 20 200 40v170z"/><g fill="#0c2a6e"><path d="M80 130l30-70 30 70zM130 150l24-56 24 56zM1040 120l30-72 30 72zM1090 140l22-52 22 52z"/></g></svg></div>
+      <div class="hero-content" id="hero-content">
+        <p class="hello">Hi, I'm</p><h1>Rezi Ichsan Nur Arsyi</h1>
+        <div class="role" aria-live="off"><span id="role-text">Informatics Graduate</span><u></u></div>
+        <p>Informatics graduate from Telkom University with hands-on experience in Python/Django projects, IT support fundamentals, and applied machine learning. Looking for entry-level IT Support and Technical Support roles.</p>
+        <div class="facts"><span><i class="ri-map-pin-2-line"></i> Bekasi, Indonesia</span><span><i class="ri-suitcase-line"></i> Open to full-time roles</span><span><i class="ri-translate-2-line"></i> Indonesian · English (EPrT 463)</span><span><i class="ri-time-line"></i> <b id="clock">--:--:--</b> WIB</span></div>
+        <div class="btns"><a href="#projects" class="btn primary">View projects <i class="ri-arrow-right-line"></i></a><a href="CV.pdf" class="btn" download="Rezi-Ichsan-Nur-Arsyi-CV.pdf">Download CV <i class="ri-download-2-line"></i></a></div>
       </div>
-      <div class="mobile-menu" id="mobile-menu">
-        <a href="#about">About</a><a href="#experience">Experience</a
-        ><a href="#education">Education</a><a href="#skills">Skills</a
-        ><a href="#projects">Projects</a><a href="#certificates">Certificates</a
-        ><a href="#contact">Contact</a>
-      </div>
-    </nav>
+      <div class="scroll-hint"><span>Scroll down</span><i class="ri-arrow-down-line"></i></div><div class="hero-fade"></div>
+    </div>
+  </header>
 
-    <header class="hero" id="home">
-      <div class="stage">
-        <div class="layer" data-speed=".05" style="top: 12%">
-          <div class="crystal" style="left: 12%; top: 0"></div>
-          <div
-            class="crystal"
-            style="left: 84%; top: 40px; scale: 0.7; animation-delay: -2s"
-          ></div>
-        </div>
-        <div class="layer" data-speed=".12" style="bottom: 30%">
-          <svg viewBox="0 0 1200 300" preserveAspectRatio="none">
-            <path
-              fill="#1c3fa0"
-              d="M0 300V190L110 90l90 80 120-130 130 150 90-70 140 120 110-140 120 130 110-90 150 110 130-120v200z"
-            />
-          </svg>
-        </div>
-        <div class="layer" data-speed=".22" style="bottom: 14%">
-          <svg viewBox="0 0 1200 300" preserveAspectRatio="none">
-            <path
-              fill="#14308a"
-              d="M0 300V150L140 40l120 120 100-80 150 140 110-100 130 90 120-120 130 130 140-90 60 40v220z"
-            />
-            <path
-              fill="#d9ecff"
-              opacity=".55"
-              d="M140 40l-34 34 34-10 20 26zM620 70l-30 30 30-8 24 22zM910 50l-28 40 30-12 24 18z"
-            />
-          </svg>
-        </div>
-        <div class="layer" data-speed=".35" style="bottom: -2%">
-          <svg viewBox="0 0 1200 260" preserveAspectRatio="none">
-            <path
-              fill="#0a1a5c"
-              d="M0 260V120C120 60 220 130 330 90s230-70 340 0 250 50 330-20 140 20 200 40v170z"
-            />
-            <g fill="#0c2a6e">
-              <path
-                d="M80 130l30-70 30 70zM130 150l24-56 24 56zM1040 120l30-72 30 72zM1090 140l22-52 22 52z"
-              />
-            </g>
-          </svg>
-        </div>
-        <div class="hero-content" id="hero-content">
-          <p class="hello">Hi, I'm</p>
-          <h1>Rezi Ichsan Nur Arsyi</h1>
-          <div class="role" aria-live="off">
-            <span id="role-text">Informatics Graduate</span><u></u>
-          </div>
-          <p>
-            Informatics graduate from Telkom University with hands-on experience
-            in Python/Django projects, IT support fundamentals, and applied
-            machine learning. Looking for entry-level IT Support and Technical
-            Support roles.
-          </p>
-          <div class="facts">
-            <span><i class="ri-map-pin-2-line"></i> Bekasi, Indonesia</span
-            ><span
-              ><i class="ri-suitcase-line"></i> Open to full-time roles</span
-            ><span
-              ><i class="ri-translate-2-line"></i> Indonesian · English (EPrT
-              463)</span
-            ><span
-              ><i class="ri-time-line"></i> <b id="clock">--:--:--</b> WIB</span
-            >
-          </div>
-          <div class="btns">
-            <a href="#projects" class="btn primary"
-              >View projects <i class="ri-arrow-right-line"></i></a
-            ><a
-              href="CV.pdf"
-              class="btn"
-              download="Rezi-Ichsan-Nur-Arsyi-CV.pdf"
-              >Download CV <i class="ri-download-2-line"></i
-            ></a>
-          </div>
-        </div>
-        <div class="scroll-hint">
-          <span>Scroll down</span><i class="ri-arrow-down-line"></i>
-        </div>
-        <div class="hero-fade"></div>
-      </div>
-    </header>
-
-    <main id="main">
-      <section class="level" id="about" style="--level-color: #a07cff">
-        <div
-          class="floating-icon"
-          data-speed=".25"
-          style="
-            right: 3%;
-            top: 10%;
-            font-size: 3rem;
-            color: #a07cff;
-            opacity: 0.35;
-          "
-        >
-          <i class="ri-vip-diamond-line"></i>
-        </div>
-        <div class="container zoom">
-          <div class="level-head reveal">
-            <div class="portal">
-              <i class="ri-user-smile-line"></i
-              ><span class="level-sign">LEVEL 01</span>
-            </div>
-            <div>
-              <h2>About <span>me</span></h2>
-              <p>Building practical technology solutions, one fix at a time.</p>
-            </div>
-          </div>
-          <div class="glass about-card reveal">
-            <div class="photo">
-              <img
-                src="assets/header.jpg"
-                alt="Portrait of Rezi Ichsan Nur Arsyi"
-                loading="lazy"
-              />
-            </div>
-            <div>
-              <p>
-                I'm an Informatics graduate from
-                <strong>Telkom University</strong> with a GPA of
-                <strong>3.01/4.00</strong>. My interests include IT support,
-                basic network troubleshooting, software development, and
-                technology that improves everyday workflows.
-              </p>
-              <p>
-                My experience includes a software engineering internship at
-                Nutrifood, warehouse operations at PT Astro Technologies
-                Indonesia, and independent projects in Python, Django, and
-                machine learning. I have also practiced operating system
-                installation, basic LAN/Wi-Fi troubleshooting, and network
-                configuration.
-              </p>
-              <div class="chips">
-                <span>IT Support Fundamentals</span
-                ><span>Hardware Troubleshooting</span><span>LAN / Wi-Fi</span
-                ><span>Python &amp; Django</span><span>Feature Testing</span
-                ><span>Machine Learning</span><span>Figma</span
-                ><span>Microsoft Excel</span>
-              </div>
-            </div>
-          </div>
-          <div class="stats-grid">
-            <div class="glass stat reveal">
-              <b data-count="5" data-suffix="+">0</b
-              ><small>Selected projects</small>
-            </div>
-            <div class="glass stat reveal">
-              <b data-count="355" data-suffix="K+">0</b
-              ><small>Roblox game visits</small>
-            </div>
-            <div class="glass stat reveal">
-              <b data-count="88.62" data-decimals="2" data-suffix="%">0</b
-              ><small>IndoBERT accuracy</small>
-            </div>
-            <div class="glass stat reveal">
-              <b data-count="6" data-suffix="">0</b
-              ><small>Certificates listed</small>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="level" id="experience" style="--level-color: #4ade80">
-        <div
-          class="floating-icon"
-          data-speed=".3"
-          style="
-            right: 3%;
-            top: 12%;
-            font-size: 3rem;
-            color: #4ade80;
-            opacity: 0.3;
-          "
-        >
-          <i class="ri-flag-2-line"></i>
-        </div>
-        <div class="container zoom">
-          <div class="level-head reveal">
-            <div class="portal">
-              <i class="ri-briefcase-line"></i
-              ><span class="level-sign">LEVEL 02</span>
-            </div>
-            <div>
-              <h2>Work <span>Experience</span></h2>
-              <p>Warehouse operations and a software engineering internship.</p>
-            </div>
-          </div>
-          <div class="two-columns">
-            <div>
-              <article class="glass timeline-card reveal">
-                <time>Jun 2026 — Sep 2026</time>
-                <h3>Outbound Checker</h3>
-                <p class="timeline-company">
-                  <i class="ri-building-line"></i> PT Astro Technologies
-                  Indonesia · Warehouse Cibitung
-                </p>
-                <p>
-                  Checked picked orders before dispatch by matching product
-                  information and quantities against order details and
-                  inspecting item condition according to warehouse procedures.
-                  Reported discrepancies to the relevant team to help maintain
-                  order accuracy and support smooth outbound operations.
-                </p>
-                <div class="tags">
-                  <span>Outbound Checking</span><span>Order Accuracy</span
-                  ><span>Warehouse Operations</span><span>SOP Compliance</span
-                  ><span>Teamwork</span>
-                </div>
-              </article>
-            </div>
-            <div>
-              <article class="glass timeline-card reveal">
-                <time>Jul 2022 — Sep 2022</time>
-                <h3>Software Engineer Intern</h3>
-                <p class="timeline-company">
-                  <i class="ri-building-line"></i> Nutrifood Indonesia ·
-                  Internship
-                </p>
-                <p>
-                  Contributed to video-related features for an internal
-                  application using Python and Django. Worked on video
-                  management (create, update, delete) and video recording
-                  features. Tested features using dummy data based on team
-                  requirements.
-                </p>
-                <div class="tags">
-                  <span>Python</span><span>Django</span><span>CRUD</span
-                  ><span>Feature Testing</span>
-                </div>
-              </article>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="level" id="education" style="--level-color: #ff7a59">
-        <div
-          class="floating-icon"
-          data-speed=".27"
-          style="
-            right: 3%;
-            top: 10%;
-            font-size: 3rem;
-            color: #ff7a59;
-            opacity: 0.3;
-          "
-        >
-          <i class="ri-book-open-line"></i>
-        </div>
-        <div class="container zoom">
-          <div class="level-head reveal">
-            <div class="portal">
-              <i class="ri-graduation-cap-line"></i
-              ><span class="level-sign">LEVEL 03</span>
-            </div>
-            <div>
-              <h2>My <span>Education</span></h2>
-              <p>
-                A degree in Informatics and a verified English proficiency
-                result.
-              </p>
-            </div>
-          </div>
-          <div class="two-columns">
-            <div>
-              <article class="glass timeline-card reveal">
-                <time>Aug 2019 — Sep 2026</time>
-                <h3>Bachelor's Degree in Informatics</h3>
-                <p class="timeline-company">
-                  <i class="ri-map-pin-line"></i> Telkom University · Bandung,
-                  Indonesia
-                </p>
-                <span class="gpa">GPA 3.01 / 4.00</span>
-                <p>
-                  Studied programming, software development, databases, computer
-                  networks, and machine learning. Completed an undergraduate
-                  thesis on hoax detection using IndoBERT and multilingual
-                  transformer models.
-                </p>
-                <div class="tags">
-                  <span>Informatics</span><span>Python</span
-                  ><span>Machine Learning</span><span>Networking</span>
-                </div>
-              </article>
-            </div>
-            <div>
-              <article class="glass timeline-card reveal">
-                <time>Apr 2025 — valid until Apr 2027</time>
-                <h3>EPrT English Proficiency Test</h3>
-                <p class="timeline-company">
-                  <i class="ri-translate-2"></i> Telkom University Language
-                  Center · Bandung
-                </p>
-                <span class="gpa">Total score 463</span>
-                <p>
-                  Listening 50, Grammar 42, Reading 47. The score falls in the
-                  B1 range (460–540) on the EPrT score table attached to the
-                  certificate.
-                </p>
-                <div class="tags">
-                  <span>Listening 50</span><span>Grammar 42</span
-                  ><span>Reading 47</span>
-                </div>
-                <figure
-                  class="edu-cert"
-                  data-lightbox
-                  data-caption="EPrT Certificate — Telkom University Language Center"
-                >
-                  <img
-                    src="assets/eprt-certificate.png"
-                    alt="EPrT certificate with a total score of 463"
-                    loading="lazy"
-                  />
-                  <figcaption>Select to view the certificate</figcaption>
-                </figure>
-              </article>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="level" id="skills" style="--level-color: #4f8bff">
-        <div
-          class="floating-icon"
-          data-speed=".28"
-          style="
-            right: 3%;
-            top: 8%;
-            font-size: 3rem;
-            color: #4f8bff;
-            opacity: 0.35;
-          "
-        >
-          <i class="ri-box-3-line"></i>
-        </div>
-        <div class="container zoom">
-          <div class="level-head reveal">
-            <div class="portal">
-              <i class="ri-tools-line"></i
-              ><span class="level-sign">LEVEL 04</span>
-            </div>
-            <div>
-              <h2>Skills &amp; <span>Tools</span></h2>
-              <p>
-                Practical skills and technologies developed through hands-on
-                practice, professional experience, and independent projects.
-              </p>
-            </div>
-          </div>
-          <div class="skills-grid">
-            <article class="glass reveal">
-              <h3><i class="ri-computer-line"></i> IT Support</h3>
-              <p>Windows · Troubleshooting · PC Hardware</p>
-            </article>
-            <article class="glass reveal">
-              <h3><i class="ri-router-line"></i> Networking</h3>
-              <p>TCP/IP · LAN/Wi-Fi · IP/DNS</p>
-            </article>
-            <article class="glass reveal">
-              <h3><i class="ri-code-s-slash-line"></i> Programming</h3>
-              <p>Python · Django · CRUD</p>
-            </article>
-            <article class="glass reveal">
-              <h3><i class="ri-brain-line"></i> AI &amp; Machine Learning</h3>
-              <p>NLP · IndoBERT · mBERT · XLM-R</p>
-            </article>
-            <article class="glass reveal">
-              <h3><i class="ri-pencil-ruler-2-line"></i> UI/UX Design</h3>
-              <p>Figma · Prototyping · Design Systems</p>
-            </article>
-            <article class="glass reveal">
-              <h3><i class="ri-tools-line"></i> Tools &amp; Platforms</h3>
-              <p>VS Code · GitHub · Excel · Colab</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="level" id="projects" style="--level-color: #ffb53d">
-        <div
-          class="floating-icon"
-          data-speed=".3"
-          style="
-            right: 3%;
-            top: 6%;
-            font-size: 3rem;
-            color: #ffb53d;
-            opacity: 0.3;
-          "
-        >
-          <i class="ri-gamepad-line"></i>
-        </div>
-        <div class="container zoom">
-          <div class="level-head reveal">
-            <div class="portal">
-              <i class="ri-rocket-2-line"></i
-              ><span class="level-sign">LEVEL 05</span>
-            </div>
-            <div>
-              <h2>Projects &amp; <span>Portfolio</span></h2>
-              <p>
-                IT operations, game development, machine learning, and UI/UX.
-                Open a card to see the repository or prototype.
-              </p>
-            </div>
-          </div>
-          <div
-            class="filter-bar reveal"
-            role="group"
-            aria-label="Filter projects"
-          >
-            <button class="active" data-filter="all">All</button
-            ><button data-filter="it">IT &amp; Systems</button
-            ><button data-filter="uiux">UI/UX</button
-            ><button data-filter="ai">AI / ML</button>
-          </div>
-          <div class="project-grid">
-            <a
-              class="glass project-card tilt reveal"
-              data-category="it ai"
-              href="https://github.com/reziichsan/automated-it-ticketing-system"
-              target="_blank"
-              rel="noopener noreferrer"
-              ><div class="project-image">
-                <img
-                  src="assets/IT.png"
-                  alt="IT ticket triage dashboard prototype"
-                  loading="lazy"
-                /><em>View repository</em>
-              </div>
-              <div class="project-body">
-                <small>IT Support · Django · Gemini API</small>
-                <h3>AI-Assisted IT Ticket Triage Prototype</h3>
-                <p>
-                  Built a local Django prototype that uses the Gemini API to
-                  analyze free-text IT issue reports and suggest issue
-                  categories and urgency priorities. It includes a web interface
-                  for viewing and managing ticket information; it has not been
-                  presented as a production-deployed system.
-                </p>
-              </div></a
-            >
-            <a
-              class="glass project-card tilt reveal"
-              data-category="it"
-              href="https://www.roblox.com/id/games/115395112112752/Eternia-Forest"
-              target="_blank"
-              rel="noopener noreferrer"
-              ><div class="project-image">
-                <img
-                  src="assets/eternia-forest.jpg"
-                  alt="Eternia Forest Roblox exploration map"
-                  loading="lazy"
-                /><em>View experience</em>
-              </div>
-              <div class="project-body">
-                <small>Game Development · Lua · Systems</small>
-                <h3>Eternia Forest — Roblox Experience</h3>
-                <p>
-                  Developed and maintained a forest and mountain exploration map
-                  using custom environment assets and scripting. Implemented
-                  checkpoints, summit tracking, leaderboards, and UI updates,
-                  and shipped updates based on player feedback. The experience
-                  has received 355,000+ visits.
-                </p>
-              </div></a
-            >
-            <a
-              class="glass project-card tilt reveal"
-              data-category="ai"
-              href="https://github.com/reziichsan/HoaxDetection"
-              target="_blank"
-              rel="noopener noreferrer"
-              ><div class="project-image">
-                <img
-                  src="assets/tes.png"
-                  alt="Machine learning hoax detection project"
-                  loading="lazy"
-                /><em>View repository</em>
-              </div>
-              <div class="project-body">
-                <small>Undergraduate Thesis · NLP</small>
-                <h3>Multilingual Hoax Classification</h3>
-                <p>
-                  Compared IndoBERT, multilingual BERT (mBERT), and XLM-R for
-                  hoax detection. The research evaluated model performance on a
-                  labeled news dataset; IndoBERT achieved 88.62% accuracy in the
-                  reported experiment.
-                </p>
-              </div></a
-            >
-            <a
-              class="glass project-card tilt reveal"
-              data-category="uiux"
-              href="https://www.figma.com/proto/FRVgI1yITbqVChRG9dy10w/Redesign-HomePage-Website-JKT48?node-id=283-673&t=HHAQvjkovRpOFjPM-1"
-              target="_blank"
-              rel="noopener noreferrer"
-              ><div class="project-image">
-                <img
-                  src="assets/project-1.jpg"
-                  alt="JKT48 homepage redesign"
-                  loading="lazy"
-                /><em>View prototype</em>
-              </div>
-              <div class="project-body">
-                <small>UI/UX Design · Figma</small>
-                <h3>JKT48 Website Homepage Redesign</h3>
-                <p>
-                  Created a Figma redesign concept for a JKT48 fan portal
-                  homepage, exploring content hierarchy, a hero carousel, news
-                  placement, and a responsive grid layout.
-                </p>
-              </div></a
-            >
-            <a
-              class="glass project-card tilt reveal"
-              data-category="uiux"
-              href="https://www.figma.com/proto/c0Gyv0ROHXc95EnG8ZDkIF/EPerpusdikbud-UI-Re-Design?node-id=1-4"
-              target="_blank"
-              rel="noopener noreferrer"
-              ><div class="project-image">
-                <img
-                  src="assets/project-2.jpg"
-                  alt="EPerpusdikbud mobile interface redesign"
-                  loading="lazy"
-                /><em>View prototype</em>
-              </div>
-              <div class="project-body">
-                <small>UI Redesign · Figma</small>
-                <h3>EPerpusdikbud Interface Redesign</h3>
-                <p>
-                  Explored alternative mobile navigation and interface layouts
-                  for the EPerpusdikbud digital library, focusing on clearer
-                  navigation and more consistent screen flows.
-                </p>
-              </div></a
-            >
-          </div>
-        </div>
-      </section>
-
-      <section class="level" id="certificates" style="--level-color: #5ee7ff">
-        <div
-          class="floating-icon"
-          data-speed=".26"
-          style="
-            right: 3%;
-            top: 5%;
-            font-size: 3rem;
-            color: #5ee7ff;
-            opacity: 0.3;
-          "
-        >
-          <i class="ri-medal-line"></i>
-        </div>
-        <div class="container zoom">
-          <div class="level-head reveal">
-            <div class="portal">
-              <i class="ri-award-line"></i
-              ><span class="level-sign">LEVEL 06</span>
-            </div>
-            <div>
-              <h2>Certificates &amp; <span>Gallery</span></h2>
-              <p>
-                Cloud, web, Python, project management, and UI design
-                credentials, plus selected visual design work. Select an image
-                to enlarge it.
-              </p>
-            </div>
-          </div>
-          <div class="cert-grid">
-            <article
-              class="glass cert-card reveal"
-              data-lightbox
-              data-caption="Alibaba Cloud Certified Developer"
-            >
-              <img
-                src="assets/Alibaba Cloud Dev.png"
-                alt="Alibaba Cloud Certified Developer certificate"
-                loading="lazy"
-              />
-              <div>
-                <h3>Alibaba Cloud Certified Developer</h3>
-                <p>Alibaba Cloud · 2026</p>
-              </div>
-            </article>
-            <article
-              class="glass cert-card reveal"
-              data-lightbox
-              data-caption="Belajar Dasar Manajemen Proyek — Dicoding Indonesia"
-            >
-              <img
-                src="assets/dicoding-project-management.png"
-                alt="Dicoding Belajar Dasar Manajemen Proyek certificate"
-                loading="lazy"
-              />
-              <div>
-                <h3>Belajar Dasar Manajemen Proyek</h3>
-                <p>Dicoding Indonesia · 2026</p>
-              </div>
-            </article>
-            <article
-              class="glass cert-card reveal"
-              data-lightbox
-              data-caption="Responsive Web Design"
-            >
-              <img
-                src="assets/certificate-1.png"
-                alt="Responsive Web Design certificate"
-                loading="lazy"
-              />
-              <div>
-                <h3>Responsive Web Design</h3>
-                <p>freeCodeCamp · 2025</p>
-              </div>
-            </article>
-            <article
-              class="glass cert-card reveal"
-              data-lightbox
-              data-caption="Scientific Computing with Python"
-            >
-              <img
-                src="assets/certificate-2.png"
-                alt="Scientific Computing with Python certificate"
-                loading="lazy"
-              />
-              <div>
-                <h3>Scientific Computing with Python</h3>
-                <p>freeCodeCamp · 2025</p>
-              </div>
-            </article>
-            <article
-              class="glass cert-card reveal"
-              data-lightbox
-              data-caption="Webinar: Time Series Classification of Badminton Pose using LSTM with Landmark Tracking"
-            >
-              <img
-                src="assets/webinar-badminton-pose.png"
-                alt="Webinar participation certificate from KK CITI Telkom University"
-                loading="lazy"
-              />
-              <div>
-                <h3>Time Series Classification of Badminton Pose (Webinar)</h3>
-                <p>KK CITI, Telkom University · 2025</p>
-              </div>
-            </article>
-            <article
-              class="glass cert-card reveal"
-              data-lightbox
-              data-caption="Design System in UI Design"
-            >
-              <img
-                src="assets/certificate-3.png"
-                alt="Design System in UI Design certificate"
-                loading="lazy"
-              />
-              <div>
-                <h3>Design System in UI Design</h3>
-                <p>MySkill Short Class · 2023</p>
-              </div>
-            </article>
-          </div>
-          <h3 class="subheading reveal">Visual design gallery</h3>
-          <div class="gallery-grid">
-            <a
-              class="reveal"
-              href="assets/editing-1.png"
-              data-lightbox
-              data-caption="Germany Infographic"
-              ><img
-                src="assets/editing-1.png"
-                alt="Germany infographic design"
-                loading="lazy"
-              /><span>Germany Infographic</span></a
-            >
-            <a
-              class="reveal"
-              href="assets/editing-2.png"
-              data-lightbox
-              data-caption="JKT48 Wallpaper Design"
-              ><img
-                src="assets/editing-2.png"
-                alt="JKT48 wallpaper design"
-                loading="lazy"
-              /><span>JKT48 Wallpaper</span></a
-            >
-            <a
-              class="reveal"
-              href="assets/editing-3.png"
-              data-lightbox
-              data-caption="Custom Jersey Design"
-              ><img
-                src="assets/editing-3.png"
-                alt="Custom jersey design"
-                loading="lazy"
-              /><span>Custom Jersey</span></a
-            >
-            <a
-              class="reveal"
-              href="assets/2.png"
-              data-lightbox
-              data-caption="Portrait Wallpaper Design"
-              ><img
-                src="assets/2.png"
-                alt="Portrait wallpaper design"
-                loading="lazy"
-              /><span>Portrait Wallpaper</span></a
-            >
-            <a
-              class="reveal"
-              href="assets/3.jpg"
-              data-lightbox
-              data-caption="Poster Visual Design"
-              ><img
-                src="assets/3.jpg"
-                alt="Poster visual design"
-                loading="lazy"
-              /><span>Poster Visual</span></a
-            >
-          </div>
-        </div>
-      </section>
-
-      <section class="level" id="contact" style="--level-color: #ff7ab8">
-        <div class="container zoom">
-          <div class="level-head reveal">
-            <div class="portal">
-              <i class="ri-send-plane-line"></i
-              ><span class="level-sign">FINAL LEVEL</span>
-            </div>
-            <div>
-              <h2>Let's <span>connect</span></h2>
-              <p>The last stop on the trail.</p>
-            </div>
-          </div>
-          <div class="glass contact-card reveal">
-            <div>
-              <h3>Let's talk about your next opportunity.</h3>
-              <p>
-                I'm open to entry-level roles in IT Support, IT Helpdesk, and
-                related technical positions. Contact me about a position, a
-                project, or a collaboration.
-              </p>
-              <a href="mailto:reziichsan@gmail.com" class="btn primary"
-                >Email me <i class="ri-arrow-right-up-line"></i
-              ></a>
-            </div>
-            <div>
-              <a
-                class="contact-link"
-                href="https://www.linkedin.com/in/reziichsannurarsyi/"
-                target="_blank"
-                rel="noopener noreferrer"
-                ><i class="ri-linkedin-fill"></i>
-                <div>
-                  <b>LinkedIn</b><span>linkedin.com/in/reziichsannurarsyi</span>
-                </div>
-                <i class="ri-arrow-right-up-line"></i
-              ></a>
-              <a class="contact-link" href="mailto:reziichsan@gmail.com"
-                ><i class="ri-mail-line"></i>
-                <div><b>Email</b><span>reziichsan@gmail.com</span></div>
-                <i class="ri-arrow-right-up-line"></i
-              ></a>
-              <a
-                class="contact-link"
-                href="https://github.com/reziichsan"
-                target="_blank"
-                rel="noopener noreferrer"
-                ><i class="ri-github-fill"></i>
-                <div><b>GitHub</b><span>github.com/reziichsan</span></div>
-                <i class="ri-arrow-right-up-line"></i
-              ></a>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <section class="adventure-map">
-      <div class="container">
-        <div class="map-board">
-          <h3>The Adventure Map</h3>
-          <div class="map-nodes">
-            <a href="#about"><i class="ri-user-smile-line"></i>About</a
-            ><a href="#experience"
-              ><i class="ri-briefcase-line"></i>Experience</a
-            ><a href="#education"
-              ><i class="ri-graduation-cap-line"></i>Education</a
-            ><a href="#skills"><i class="ri-tools-line"></i>Skills</a
-            ><a href="#projects"><i class="ri-rocket-2-line"></i>Projects</a
-            ><a href="#certificates"
-              ><i class="ri-award-line"></i>Certificates</a
-            ><a href="#contact"><i class="ri-send-plane-line"></i>Contact</a>
-          </div>
-        </div>
+  <main id="main">
+    <section class="level" id="about" style="--level-color:#a07cff">
+      <div class="container zoom"><div class="level-head reveal"><div class="portal"><i class="ri-user-smile-line"></i><span class="level-sign">PLANET 01</span></div><div><h2>About <span>me</span></h2><p>Building practical technology solutions, one fix at a time.</p></div></div>
+        <div class="glass about-card reveal"><div class="photo"><img src="assets/header.jpg" alt="Portrait of Rezi Ichsan Nur Arsyi" loading="lazy"/></div><div><p>I'm an Informatics graduate from <strong>Telkom University</strong> with a GPA of <strong>3.01/4.00</strong>. My interests include IT support, basic network troubleshooting, software development, and technology that improves everyday workflows.</p><p>My experience includes a software engineering internship at Nutrifood, warehouse operations at PT Astro Technologies Indonesia, and independent projects in Python, Django, and machine learning. I have also practiced operating system installation, basic LAN/Wi-Fi troubleshooting, and network configuration.</p><div class="chips"><span>IT Support Fundamentals</span><span>Hardware Troubleshooting</span><span>LAN / Wi-Fi</span><span>Python &amp; Django</span><span>Feature Testing</span><span>Machine Learning</span><span>Figma</span><span>Microsoft Excel</span></div></div></div>
+        <div class="stats-grid"><div class="glass stat reveal"><b data-count="5" data-suffix="+">0</b><small>Selected projects</small></div><div class="glass stat reveal"><b data-count="355" data-suffix="K+">0</b><small>Roblox game visits</small></div><div class="glass stat reveal"><b data-count="88.62" data-decimals="2" data-suffix="%">0</b><small>IndoBERT accuracy</small></div><div class="glass stat reveal"><b data-count="6" data-suffix="">0</b><small>Certificates listed</small></div></div>
       </div>
     </section>
-    <footer>
-      <div class="social-links">
-        <a
-          href="https://www.linkedin.com/in/reziichsannurarsyi/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="LinkedIn"
-          ><i class="ri-linkedin-fill"></i></a
-        ><a
-          href="https://github.com/reziichsan"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="GitHub"
-          ><i class="ri-github-fill"></i></a
-        ><a href="mailto:reziichsan@gmail.com" aria-label="Email"
-          ><i class="ri-mail-line"></i
-        ></a>
-      </div>
-      © <span id="year">2026</span> Rezi Ichsan Nur Arsyi. All rights reserved.
-    </footer>
-    <button id="back-to-top" aria-label="Back to top">
-      <i class="ri-arrow-up-line"></i>
-    </button>
-    <div
-      id="lightbox"
-      role="dialog"
-      aria-modal="true"
-      aria-label="Image preview"
-    >
-      <button aria-label="Close preview"><i class="ri-close-line"></i></button
-      ><img alt="" />
-      <p></p>
-    </div>
+    <section class="level" id="experience" style="--level-color:#4ade80"><div class="container zoom"><div class="level-head reveal"><div class="portal"><i class="ri-briefcase-line"></i><span class="level-sign">PLANET 02</span></div><div><h2>Work <span>Experience</span></h2><p>Warehouse operations and a software engineering internship.</p></div></div><div class="two-columns"><article class="glass timeline-card reveal"><time>Jun 2026 — Sep 2026</time><h3>Outbound Checker</h3><p class="timeline-company"><i class="ri-building-line"></i> PT Astro Technologies Indonesia · Warehouse Cibitung</p><p>Checked picked orders before dispatch by matching product information and quantities against order details and inspecting item condition according to warehouse procedures. Reported discrepancies to the relevant team to help maintain order accuracy and support smooth outbound operations.</p><div class="tags"><span>Outbound Checking</span><span>Order Accuracy</span><span>Warehouse Operations</span><span>SOP Compliance</span><span>Teamwork</span></div></article><article class="glass timeline-card reveal"><time>Jul 2022 — Sep 2022</time><h3>Software Engineer Intern</h3><p class="timeline-company"><i class="ri-building-line"></i> Nutrifood Indonesia · Internship</p><p>Contributed to video-related features for an internal application using Python and Django. Worked on video management (create, update, delete) and video recording features. Tested features using dummy data based on team requirements.</p><div class="tags"><span>Python</span><span>Django</span><span>CRUD</span><span>Feature Testing</span></div></article></div></div></section>
+    <section class="level" id="education" style="--level-color:#ff7a59"><div class="container zoom"><div class="level-head reveal"><div class="portal"><i class="ri-graduation-cap-line"></i><span class="level-sign">PLANET 03</span></div><div><h2>My <span>Education</span></h2><p>A degree in Informatics and an English proficiency result.</p></div></div><div class="two-columns"><article class="glass timeline-card reveal"><time>Aug 2019 — Sep 2026</time><h3>Bachelor's Degree in Informatics</h3><p class="timeline-company"><i class="ri-map-pin-line"></i> Telkom University · Bandung, Indonesia</p><span class="gpa">GPA 3.01 / 4.00</span><p>Studied programming, software development, databases, computer networks, and machine learning. Completed an undergraduate thesis on hoax detection using IndoBERT and multilingual transformer models.</p><div class="tags"><span>Informatics</span><span>Python</span><span>Machine Learning</span><span>Networking</span></div></article><article class="glass timeline-card reveal"><time>Apr 2025 — valid until Apr 2027</time><h3>EPrT English Proficiency Test</h3><p class="timeline-company"><i class="ri-translate-2"></i> Telkom University Language Center · Bandung</p><span class="gpa">Total score 463</span><p>Listening 50, Grammar 42, Reading 47. The score falls in the B1 range (460–540) on the EPrT score table attached to the certificate.</p><div class="tags"><span>Listening 50</span><span>Grammar 42</span><span>Reading 47</span></div><figure class="edu-cert" data-lightbox data-caption="EPrT Certificate — Telkom University Language Center"><img src="assets/eprt-certificate.png" alt="EPrT certificate with a total score of 463" loading="lazy"/><figcaption>Select to view the certificate</figcaption></figure></article></div></div></section>
+    <section class="level" id="skills" style="--level-color:#4f8bff"><div class="container zoom"><div class="level-head reveal"><div class="portal"><i class="ri-tools-line"></i><span class="level-sign">PLANET 04</span></div><div><h2>Skills &amp; <span>Tools</span></h2><p>Practical skills and technologies developed through hands-on practice, professional experience, and independent projects.</p></div></div><div class="skills-grid"><article class="glass reveal"><h3><i class="ri-computer-line"></i> IT Support</h3><p>Windows · Troubleshooting · PC Hardware · Linux Basics</p></article><article class="glass reveal"><h3><i class="ri-router-line"></i> Networking</h3><p>TCP/IP · LAN/Wi-Fi · IP/DNS · Ping Testing</p></article><article class="glass reveal"><h3><i class="ri-code-s-slash-line"></i> Programming</h3><p>Python · Django · CRUD · Basic HTML/CSS</p></article><article class="glass reveal"><h3><i class="ri-brain-line"></i> AI &amp; Machine Learning</h3><p>NLP · IndoBERT · mBERT · XLM-R</p></article><article class="glass reveal"><h3><i class="ri-pencil-ruler-2-line"></i> UI/UX Design</h3><p>Figma · Prototyping · Design Systems · Photoshop</p></article><article class="glass reveal"><h3><i class="ri-tools-line"></i> Tools &amp; Platforms</h3><p>VS Code · GitHub · Excel · Google Colab</p></article></div></div></section>
+    <section class="level" id="projects" style="--level-color:#ffb53d"><div class="container zoom"><div class="level-head reveal"><div class="portal"><i class="ri-rocket-2-line"></i><span class="level-sign">PLANET 05</span></div><div><h2>Projects &amp; <span>Portfolio</span></h2><p>IT operations, game development, machine learning, and UI/UX projects.</p></div></div><div class="filter-bar reveal" role="group" aria-label="Filter projects"><button class="active" data-filter="all">All</button><button data-filter="it">IT &amp; Systems</button><button data-filter="uiux">UI/UX</button><button data-filter="ai">AI / ML</button></div><div class="project-grid">
+      <a class="glass project-card tilt reveal" data-category="it ai" href="https://github.com/reziichsan/automated-it-ticketing-system" target="_blank" rel="noopener noreferrer"><div class="project-image"><img src="assets/IT.png" alt="IT ticket triage dashboard prototype" loading="lazy"/><em>View repository</em></div><div class="project-body"><small>IT Support · Django · Gemini API</small><h3>AI-Assisted IT Ticket Triage Prototype</h3><p>Built a local Django prototype that uses the Gemini API to analyze free-text IT issue reports and suggest issue categories and urgency priorities. It includes a web interface for viewing and managing ticket information.</p></div></a>
+      <a class="glass project-card tilt reveal" data-category="it" href="https://www.roblox.com/id/games/115395112112752/Eternia-Forest" target="_blank" rel="noopener noreferrer"><div class="project-image"><img src="assets/eternia-forest.jpg" alt="Eternia Forest Roblox exploration map" loading="lazy"/><em>View experience</em></div><div class="project-body"><small>Game Development · Lua · Systems</small><h3>Eternia Forest — Roblox Experience</h3><p>Developed and maintained a forest and mountain exploration map using custom environment assets and scripting. Implemented checkpoints, summit tracking, leaderboards, and UI updates based on player feedback. The experience has received 355,000+ visits.</p></div></a>
+      <a class="glass project-card tilt reveal" data-category="ai" href="https://github.com/reziichsan/HoaxDetection" target="_blank" rel="noopener noreferrer"><div class="project-image"><img src="assets/tes.png" alt="Machine learning hoax detection project" loading="lazy"/><em>View repository</em></div><div class="project-body"><small>Undergraduate Thesis · NLP</small><h3>Multilingual Hoax Classification</h3><p>Compared IndoBERT, multilingual BERT (mBERT), and XLM-R for hoax detection. IndoBERT achieved 88.62% accuracy in the reported experiment.</p></div></a>
+      <a class="glass project-card tilt reveal" data-category="uiux" href="https://www.figma.com/proto/FRVgI1yITbqVChRG9dy10w/Redesign-HomePage-Website-JKT48?node-id=283-673&t=HHAQvjkovRpOFjPM-1" target="_blank" rel="noopener noreferrer"><div class="project-image"><img src="assets/project-1.jpg" alt="JKT48 homepage redesign" loading="lazy"/><em>View prototype</em></div><div class="project-body"><small>UI/UX Design · Figma</small><h3>JKT48 Website Homepage Redesign</h3><p>Created a Figma redesign concept for a fan portal homepage, exploring content hierarchy, a hero carousel, news placement, and responsive layout.</p></div></a>
+      <a class="glass project-card tilt reveal" data-category="uiux" href="https://www.figma.com/proto/c0Gyv0ROHXc95EnG8ZDkIF/EPerpusdikbud-UI-Re-Design?node-id=1-4" target="_blank" rel="noopener noreferrer"><div class="project-image"><img src="assets/project-2.jpg" alt="EPerpusdikbud mobile interface redesign" loading="lazy"/><em>View prototype</em></div><div class="project-body"><small>UI Redesign · Figma</small><h3>EPerpusdikbud Interface Redesign</h3><p>Explored alternative mobile navigation and interface layouts for the digital library, focusing on clearer navigation and more consistent screen flows.</p></div></a>
+    </div></div></section>
+    <section class="level" id="certificates" style="--level-color:#5ee7ff"><div class="container zoom"><div class="level-head reveal"><div class="portal"><i class="ri-award-line"></i><span class="level-sign">PLANET 06</span></div><div><h2>Certificates &amp; <span>Gallery</span></h2><p>Credentials and selected visual design work. Select an image to enlarge it.</p></div></div><div class="cert-grid">
+      <article class="glass cert-card reveal" data-lightbox data-caption="Alibaba Cloud Certified Developer"><img src="assets/Alibaba Cloud Dev.png" alt="Alibaba Cloud Certified Developer certificate" loading="lazy"/><div><h3>Alibaba Cloud Certified Developer</h3><p>Alibaba Cloud · 2026</p></div></article>
+      <article class="glass cert-card reveal" data-lightbox data-caption="Belajar Dasar Manajemen Proyek — Dicoding Indonesia"><img src="assets/dicoding-project-management.png" alt="Dicoding project management certificate" loading="lazy"/><div><h3>Belajar Dasar Manajemen Proyek</h3><p>Dicoding Indonesia · 2026</p></div></article>
+      <article class="glass cert-card reveal" data-lightbox data-caption="Responsive Web Design"><img src="assets/certificate-1.png" alt="Responsive Web Design certificate" loading="lazy"/><div><h3>Responsive Web Design</h3><p>freeCodeCamp · 2025</p></div></article>
+      <article class="glass cert-card reveal" data-lightbox data-caption="Scientific Computing with Python"><img src="assets/certificate-2.png" alt="Scientific Computing with Python certificate" loading="lazy"/><div><h3>Scientific Computing with Python</h3><p>freeCodeCamp · 2025</p></div></article>
+      <article class="glass cert-card reveal" data-lightbox data-caption="Time Series Classification of Badminton Pose webinar"><img src="assets/webinar-badminton-pose.png" alt="Webinar participation certificate" loading="lazy"/><div><h3>Time Series Classification of Badminton Pose</h3><p>KK CITI, Telkom University · 2025</p></div></article>
+      <article class="glass cert-card reveal" data-lightbox data-caption="Design System in UI Design"><img src="assets/certificate-3.png" alt="Design System in UI Design certificate" loading="lazy"/><div><h3>Design System in UI Design</h3><p>MySkill Short Class · 2023</p></div></article>
+    </div><h3 class="subheading reveal">Visual design gallery</h3><div class="gallery-grid"><a class="reveal" href="assets/editing-1.png" data-lightbox data-caption="Germany Infographic"><img src="assets/editing-1.png" alt="Germany infographic" loading="lazy"/><span>Germany Infographic</span></a><a class="reveal" href="assets/editing-2.png" data-lightbox data-caption="JKT48 Wallpaper Design"><img src="assets/editing-2.png" alt="JKT48 wallpaper" loading="lazy"/><span>JKT48 Wallpaper</span></a><a class="reveal" href="assets/editing-3.png" data-lightbox data-caption="Custom Jersey Design"><img src="assets/editing-3.png" alt="Custom jersey design" loading="lazy"/><span>Custom Jersey</span></a><a class="reveal" href="assets/2.png" data-lightbox data-caption="Portrait Wallpaper Design"><img src="assets/2.png" alt="Portrait wallpaper" loading="lazy"/><span>Portrait Wallpaper</span></a><a class="reveal" href="assets/3.jpg" data-lightbox data-caption="Poster Visual Design"><img src="assets/3.jpg" alt="Poster design" loading="lazy"/><span>Poster Visual</span></a></div></div></section>
+    <section class="level" id="contact" style="--level-color:#ff7ab8"><div class="container zoom"><div class="level-head reveal"><div class="portal"><i class="ri-send-plane-line"></i><span class="level-sign">FINAL PLANET</span></div><div><h2>Let's <span>connect</span></h2><p>The final destination on the journey.</p></div></div><div class="glass contact-card reveal"><div><h3>Let's talk about your next opportunity.</h3><p>I'm open to entry-level roles in IT Support, IT Helpdesk, and related technical positions. Contact me about a position, a project, or a collaboration.</p><a href="mailto:reziichsan@gmail.com" class="btn primary">Email me <i class="ri-arrow-right-up-line"></i></a></div><div><a class="contact-link" href="https://www.linkedin.com/in/reziichsannurarsyi/" target="_blank" rel="noopener noreferrer"><i class="ri-linkedin-fill"></i><div><b>LinkedIn</b><span>linkedin.com/in/reziichsannurarsyi</span></div><i class="ri-arrow-right-up-line"></i></a><a class="contact-link" href="mailto:reziichsan@gmail.com"><i class="ri-mail-line"></i><div><b>Email</b><span>reziichsan@gmail.com</span></div><i class="ri-arrow-right-up-line"></i></a><a class="contact-link" href="https://github.com/reziichsan" target="_blank" rel="noopener noreferrer"><i class="ri-github-fill"></i><div><b>GitHub</b><span>github.com/reziichsan</span></div><i class="ri-arrow-right-up-line"></i></a></div></div></div></section>
+  </main>
+  <section class="adventure-map"><div class="container"><div class="map-board"><h3>The Adventure Map</h3><div class="map-nodes"><a href="#about"><i class="ri-user-smile-line"></i>About</a><a href="#experience"><i class="ri-briefcase-line"></i>Experience</a><a href="#education"><i class="ri-graduation-cap-line"></i>Education</a><a href="#skills"><i class="ri-tools-line"></i>Skills</a><a href="#projects"><i class="ri-rocket-2-line"></i>Projects</a><a href="#certificates"><i class="ri-award-line"></i>Certificates</a><a href="#contact"><i class="ri-send-plane-line"></i>Contact</a></div></div></div></section>
+  <footer><div class="social-links"><a href="https://www.linkedin.com/in/reziichsannurarsyi/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a><a href="https://github.com/reziichsan" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="ri-github-fill"></i></a><a href="mailto:reziichsan@gmail.com" aria-label="Email"><i class="ri-mail-line"></i></a></div>© <span id="year">2026</span> Rezi Ichsan Nur Arsyi. All rights reserved.</footer>
+  <button id="back-to-top" aria-label="Back to top"><i class="ri-arrow-up-line"></i></button>
+  <div id="lightbox" role="dialog" aria-modal="true" aria-label="Image preview"><button aria-label="Close preview"><i class="ri-close-line"></i></button><img alt=""/><p></p></div>
 
-    <script>
-      /**
-       * Portfolio of Rezi Ichsan Nur Arsyi - interactions
-       *
-       * Sections:
-       *  1. Helpers
-       *  2. Starfield background
-       *  3. Scroll effects (progress bar, parallax, zoom)
-       *  4. Reveal animation and counters
-       *  5. Active section highlighting
-       *  6. Mobile menu and back-to-top button
-       *  7. Project filter and card tilt
-       *  8. Lightbox
-       *  9. Role typewriter, clock and year
-       */
-      (() => {
-        "use strict";
+  <script>
+  (()=>{
+    "use strict";
+    document.documentElement.classList.add("js");
+    const $=(selector,root=document)=>root.querySelector(selector);
+    const $$=(selector,root=document)=>[...root.querySelectorAll(selector)];
+    const clamp=(v,min,max)=>Math.min(max,Math.max(min,v));
+    const reduceMotion=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-        // Lets the CSS hide .reveal elements only when this script is running.
-        document.documentElement.classList.add("js");
+    function createStarfield(count=118){const root=$("#starfield");for(let i=0;i<count;i++){const star=document.createElement("i"),size=Math.random()*2+1;star.style.cssText=`left:${Math.random()*100}%;top:${Math.random()*100}%;width:${size}px;height:${size}px;opacity:${Math.random()*.7+.2};animation-delay:${-Math.random()*4}s;animation-duration:${2+Math.random()*4}s;box-shadow:0 0 ${1+Math.random()*3}px rgba(155,220,255,.85),0 0 ${4+Math.random()*8}px rgba(94,231,255,.25)`;root.appendChild(star)}}
 
-        /* ---------- 1. Helpers ---------- */
+    const progressBar=$("#progress-bar"),navbar=$("#navbar"),backToTop=$("#back-to-top"),heroContent=$("#hero-content"),heroLayers=$$(".layer"),floatingIcons=$$(".floating-icon");let scrollQueued=false;
+    function updateOnScroll(){
+      scrollQueued=false;
+      const y=window.scrollY,h=window.innerHeight,max=document.documentElement.scrollHeight-h;
+      progressBar.style.width=`${max>0?(y/max)*100:0}%`;
+      navbar.classList.toggle("scrolled",y>40);
+      backToTop.classList.toggle("show",y>500);
+      if(reduceMotion)return;
+      // Keep the hero parallax restrained; do not scale/fade whole content sections on scroll.
+      const progress=clamp(y/h,0,1.25);
+      heroLayers.forEach(layer=>{
+        const speed=Number(layer.dataset.speed);
+        layer.style.transform=`translate3d(0,${y*speed}px,0) scale(${1+progress*speed*.34})`;
+      });
+      heroContent.style.transform=`translate3d(0,${y*.18}px,0) scale(${1+progress*.12})`;
+      heroContent.style.opacity=clamp(1-progress*1.35,0,1);
+      floatingIcons.forEach(icon=>{
+        const top=icon.parentElement.getBoundingClientRect().top,offset=h/2-top;
+        icon.style.transform=`translate3d(0,${offset*Number(icon.dataset.speed)*.72}px,0) rotate(${offset*.018}deg)`;
+      });
+    }
+    function requestScrollUpdate(){if(scrollQueued)return;scrollQueued=true;requestAnimationFrame(updateOnScroll)}
+    window.addEventListener("scroll",requestScrollUpdate,{passive:true});
+    window.addEventListener("resize",updateOnScroll);
 
-        const $ = (selector, root = document) => root.querySelector(selector);
-        const $$ = (selector, root = document) => [
-          ...root.querySelectorAll(selector),
-        ];
-        const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
+    function animateCounter(el){const target=Number(el.dataset.count),decimals=Number(el.dataset.decimals)||0,suffix=el.dataset.suffix||"",duration=1000,start=performance.now();if(reduceMotion){el.textContent=target.toFixed(decimals)+suffix;return}function step(now){const p=clamp((now-start)/duration,0,1),eased=1-Math.pow(1-p,3),v=target*eased;el.textContent=(decimals?v.toFixed(decimals):Math.round(v))+suffix;if(p<1)requestAnimationFrame(step)}requestAnimationFrame(step)}
+    function setupReveal(){const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(!entry.isIntersecting)return;entry.target.classList.add("visible");const counter=$("[data-count]",entry.target);if(counter)animateCounter(counter);observer.unobserve(entry.target)}),{threshold:.12});$$(".reveal").forEach((el,i)=>{el.style.transitionDelay=`${i%3*.07}s`;observer.observe(el)});window.addEventListener("load",()=>setTimeout(()=>{$$(".reveal").forEach(el=>{if(el.getBoundingClientRect().top<innerHeight)el.classList.add("visible")})},500))}
+    function setupActiveSection(){const links=$$(".nav-links a, .map-nodes a"),observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(!entry.isIntersecting)return;links.forEach(link=>link.classList.toggle("active",link.getAttribute("href")==="#"+entry.target.id))}),{rootMargin:"-45% 0px -50% 0px"});$$("main section[id]").forEach(section=>observer.observe(section))}
+    function setupMobileMenu(){const toggle=$("#menu-toggle"),menu=$("#mobile-menu"),icon=$("i",toggle);function setMenu(open){menu.classList.toggle("open",open);toggle.setAttribute("aria-expanded",String(open));icon.className=open?"ri-close-line":"ri-menu-3-line"}toggle.addEventListener("click",()=>setMenu(!menu.classList.contains("open")));$$("a",menu).forEach(link=>link.addEventListener("click",()=>setMenu(false)))}
+    backToTop.addEventListener("click",()=>window.scrollTo({top:0,behavior:reduceMotion?"auto":"smooth"}));
+    function setupProjectFilter(){const buttons=$$(".filter-bar button"),cards=$$(".project-card");buttons.forEach(button=>button.addEventListener("click",()=>{const filter=button.dataset.filter;buttons.forEach(b=>b.classList.toggle("active",b===button));cards.forEach(card=>card.classList.toggle("hidden",filter!=="all"&&!card.dataset.category.split(" ").includes(filter)))}))}
+    function setupCardTilt(){if(reduceMotion||!matchMedia("(hover:hover)").matches)return;$$(".tilt").forEach(card=>{card.addEventListener("mousemove",e=>{const r=card.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;card.style.transform=`rotateY(${x*7}deg) rotateX(${-y*7}deg) translateY(-4px)`});card.addEventListener("mouseleave",()=>card.style.transform="")})}
+    function setupLightbox(){const box=$("#lightbox"),img=$("img",box),caption=$("p",box),closeButton=$("button",box);let previousFocus=null;function open(src,text){previousFocus=document.activeElement;img.src=src;img.alt=text;caption.textContent=text;box.classList.add("open");document.body.style.overflow="hidden";closeButton.focus()}function close(){box.classList.remove("open");img.src="";document.body.style.overflow="";previousFocus?.focus()}$$("[data-lightbox]").forEach(item=>{item.tabIndex=0;function openItem(e){e.preventDefault();const source=item.getAttribute("href")||$("img",item)?.getAttribute("src");if(source)open(source,item.dataset.caption||$("img",item)?.alt||"")}item.addEventListener("click",openItem);item.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" ")openItem(e)})});closeButton.addEventListener("click",close);box.addEventListener("click",e=>{if(e.target===box)close()});window.addEventListener("keydown",e=>{if(e.key==="Escape"&&box.classList.contains("open"))close()})}
+    function setupTypewriter(){const el=$("#role-text");if(reduceMotion)return;const roles=["Informatics Graduate","IT Support Candidate","Python & Django Developer","Machine Learning Researcher"];let ri=0,chars=roles[0].length,deleting=true;function type(){if(deleting){chars--;el.textContent=roles[ri].slice(0,chars);if(chars<=0){deleting=false;ri=(ri+1)%roles.length;setTimeout(type,260);return}}else{chars++;el.textContent=roles[ri].slice(0,chars);if(chars>=roles[ri].length){deleting=true;setTimeout(type,1600);return}}setTimeout(type,deleting?30:48)}setTimeout(type,1300)}
+    function setupClock(){const clock=$("#clock"),fmt=new Intl.DateTimeFormat("en-GB",{timeZone:"Asia/Jakarta",hour:"2-digit",minute:"2-digit",second:"2-digit",hour12:false});function tick(){clock.textContent=fmt.format(new Date());setTimeout(tick,1000)}tick();$("#year").textContent=new Date().getFullYear()}
 
-        const prefersReducedMotion = window.matchMedia(
-          "(prefers-reduced-motion: reduce)",
-        ).matches;
+    /* Build the route in document coordinates and let the rocket ease into its target. */
+    function setupRocketRoute(){
+      const root=$("#rocket-route"),svg=$("#rocket-route-svg"),base=$("#rocket-route-base"),glow=$("#rocket-route-progress-glow"),core=$("#rocket-route-progress-core"),rocket=$("#rocket-ship");
+      if(!root||!svg||!base||!glow||!core||!rocket||reduceMotion){if(root)root.hidden=true;return}
 
-        /* ---------- 2. Starfield background ---------- */
-
-        function createStarfield(count = 70) {
-          const starfield = $("#starfield");
-
-          for (let i = 0; i < count; i++) {
-            const star = document.createElement("i");
-            const size = Math.random() * 2 + 1;
-
-            star.style.cssText = `
-              left: ${Math.random() * 100}%;
-              top: ${Math.random() * 100}%;
-              width: ${size}px;
-              height: ${size}px;
-              opacity: ${Math.random() * 0.7 + 0.2};
-              animation-delay: ${-Math.random() * 3}s;
-            `;
-            starfield.appendChild(star);
-          }
+      let points=[],length=0,rafId=0,lastFrame=0,currentDistance=null,currentAngle=null,currentVelocity=0,lastScrollY=window.scrollY,flightDirection=1,ready=false;
+      const clamp=(v,min,max)=>Math.min(max,Math.max(min,v));
+      const centerOf=(el)=>{const r=el.getBoundingClientRect();return{x:r.left+scrollX+r.width/2,y:r.top+scrollY+r.height/2}};
+      const laneFor=(a,b,segmentIndex)=>{
+        const width=innerWidth;
+        if(width<=700)return segmentIndex%2===0?width-15:15;
+        return segmentIndex%2===0?Math.min(54,width*.045):Math.max(width-54,width*.955);
+      };
+      function lengthAtY(y){
+        let lo=0,hi=length;
+        for(let i=0;i<24;i++){
+          const mid=(lo+hi)/2,p=base.getPointAtLength(mid);
+          if(p.y<y)lo=mid;else hi=mid;
         }
-
-        /* ---------- 3. Scroll effects ---------- */
-
-        const progressBar = $("#progress-bar");
-        const navbar = $("#navbar");
-        const backToTop = $("#back-to-top");
-        const heroContent = $("#hero-content");
-        const heroLayers = $$(".layer");
-        const zoomBlocks = $$(".zoom");
-        const floatingIcons = $$(".floating-icon");
-
-        let scrollQueued = false;
-
-        function updateOnScroll() {
-          scrollQueued = false;
-
-          const scrollY = window.scrollY;
-          const viewportHeight = window.innerHeight;
-          const maxScroll =
-            document.documentElement.scrollHeight - viewportHeight;
-
-          progressBar.style.width = `${(scrollY / maxScroll) * 100}%`;
-          navbar.classList.toggle("scrolled", scrollY > 40);
-          backToTop.classList.toggle("show", scrollY > 500);
-
-          if (prefersReducedMotion) return;
-
-          // Hero: every layer moves at its own speed, the title zooms in and fades.
-          const heroProgress = clamp(scrollY / viewportHeight, 0, 1.4);
-
-          heroLayers.forEach((layer) => {
-            const speed = Number(layer.dataset.speed);
-            layer.style.transform = `translate3d(0, ${scrollY * speed}px, 0) scale(${
-              1 + heroProgress * speed * 0.5
-            })`;
-          });
-
-          heroContent.style.transform = `translate3d(0, ${scrollY * 0.3}px, 0) scale(${
-            1 + heroProgress * 0.28
-          })`;
-          heroContent.style.opacity = clamp(1 - heroProgress * 1.15, 0, 1);
-
-          // Levels: shrink and fade slightly the further they are from screen center.
-          zoomBlocks.forEach((block) => {
-            const rect = block.getBoundingClientRect();
-            const blockCenter = rect.top + rect.height / 2;
-            const distance = clamp(
-              Math.abs(blockCenter - viewportHeight / 2) / viewportHeight,
-              0,
-              1,
-            );
-
-            block.style.transform = `scale(${1 - distance * 0.1})`;
-            block.style.opacity = 1 - distance * 0.5;
-          });
-
-          // Decorative icons drift relative to their section.
-          floatingIcons.forEach((icon) => {
-            const sectionTop = icon.parentElement.getBoundingClientRect().top;
-            const offset = viewportHeight / 2 - sectionTop;
-
-            icon.style.transform = `translate3d(0, ${
-              offset * icon.dataset.speed
-            }px, 0) rotate(${offset * 0.03}deg)`;
-          });
-        }
-
-        function requestScrollUpdate() {
-          if (scrollQueued) return;
-          scrollQueued = true;
-          requestAnimationFrame(updateOnScroll);
-        }
-
-        window.addEventListener("scroll", requestScrollUpdate, {
-          passive: true,
+        return(lo+hi)/2;
+      }
+      function readGoal(){
+        if(!length||points.length<2)return{distance:0,landingPoint:null,anchor:0};
+        const anchor=scrollY+innerHeight*.51;
+        const targetY=clamp(anchor,points[0].y,points[points.length-1].y);
+        let distance=lengthAtY(targetY),closest=null,delta=Infinity;
+        points.forEach(point=>{
+          if(point.launch||!point.portalEl)return;
+          const d=Math.abs(anchor-point.y);
+          if(d<delta){delta=d;closest=point;}
         });
-        window.addEventListener("resize", updateOnScroll);
+        const landingPoint=closest&&delta<=Math.min(62,innerHeight*.082)?closest:null;
+        if(landingPoint)distance=landingPoint.distance;
+        return{distance:clamp(distance,0,length),landingPoint,anchor};
+      }
+      function renderRocket(dt,goal){
+        const sample=Math.max(4,Math.min(12,length*.00035));
+        const pos=base.getPointAtLength(currentDistance);
+        const before=base.getPointAtLength(Math.max(0,currentDistance-sample));
+        const after=base.getPointAtLength(Math.min(length,currentDistance+sample));
+        let desiredAngle=Math.atan2(after.y-before.y,after.x-before.x)*180/Math.PI+90;
+        if(flightDirection<0)desiredAngle+=180;
+        if(currentAngle===null)currentAngle=desiredAngle;
+        const angleDelta=((desiredAngle-currentAngle+540)%360)-180;
+        const angleBlend=1-Math.exp(-Math.max(1,dt)/105);
+        currentAngle+=angleDelta*angleBlend;
+        rocket.setAttribute("transform",`translate(${pos.x} ${pos.y}) rotate(${currentAngle})`);
 
-        /* ---------- 4. Reveal animation and counters ---------- */
+        const landed=Boolean(goal.landingPoint&&Math.abs(currentDistance-goal.distance)<7&&Math.abs(currentVelocity)<70);
+        rocket.classList.toggle("landed",landed);
+        rocket.classList.toggle("rocket-boosting",!landed&&Math.abs(currentVelocity)>720);
+        glow.style.strokeDasharray=`${currentDistance} ${length}`;
+        core.style.strokeDasharray=`${currentDistance} ${length}`;
+        points.forEach(point=>point.portalEl?.classList.toggle("rocket-active",landed&&point===goal.landingPoint));
+      }
+      function tick(now){
+        rafId=0;
+        if(!ready||!length||points.length<2)return;
+        const dt=lastFrame?clamp(now-lastFrame,1,34):16;
+        lastFrame=now;
+        const scrollDelta=window.scrollY-lastScrollY;
+        if(Math.abs(scrollDelta)>.35)flightDirection=scrollDelta<0?-1:1;
+        lastScrollY=window.scrollY;
 
-        function animateCounter(element) {
-          const target = Number(element.dataset.count);
-          const decimals = Number(element.dataset.decimals) || 0;
-          const suffix = element.dataset.suffix || "";
-          const duration = 1100;
-          const startTime = performance.now();
+        const goal=readGoal();
+        if(currentDistance===null)currentDistance=goal.distance;
+        const previous=currentDistance,difference=goal.distance-currentDistance;
+        // Fly responsively between planets, then ease in more gently for the landing.
+        const tau=goal.landingPoint ? 0.16 : (Math.abs(difference) > 520 ? 0.065 : 0.09);
+        const blend=1-Math.exp(-dt/(tau*1000));
+        currentDistance+=difference*blend;
+        if(Math.abs(difference)<.22){currentDistance=goal.distance;}
+        currentVelocity=(currentDistance-previous)/(dt/1000);
+        renderRocket(dt,goal);
 
-          if (prefersReducedMotion) {
-            element.textContent = target.toFixed(decimals) + suffix;
-            return;
-          }
-
-          function step(now) {
-            const progress = clamp((now - startTime) / duration, 0, 1);
-            const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
-            const value = target * eased;
-
-            element.textContent =
-              (decimals ? value.toFixed(decimals) : Math.round(value)) + suffix;
-
-            if (progress < 1) requestAnimationFrame(step);
-          }
-
-          requestAnimationFrame(step);
+        const remaining=goal.distance-currentDistance;
+        if(Math.abs(remaining)>.22||Math.abs(currentVelocity)>2){rafId=requestAnimationFrame(tick);}
+        else{
+          currentDistance=goal.distance;
+          currentVelocity=0;
+          renderRocket(dt,goal);
+          lastFrame=0;
         }
-
-        function setupReveal() {
-          const revealObserver = new IntersectionObserver(
-            (entries) => {
-              entries.forEach((entry) => {
-                if (!entry.isIntersecting) return;
-
-                entry.target.classList.add("visible");
-
-                const counter = $("[data-count]", entry.target);
-                if (counter) animateCounter(counter);
-
-                revealObserver.unobserve(entry.target);
-              });
-            },
-            { threshold: 0.12 },
-          );
-
-          $$(".reveal").forEach((element, index) => {
-            element.style.transitionDelay = `${(index % 3) * 0.08}s`; // small stagger
-            revealObserver.observe(element);
-          });
-
-          // Safety net: anything already on screen after load becomes visible.
-          window.addEventListener("load", () => {
-            setTimeout(() => {
-              $$(".reveal").forEach((element) => {
-                if (element.getBoundingClientRect().top < window.innerHeight) {
-                  element.classList.add("visible");
-                }
-              });
-            }, 600);
-          });
+      }
+      function request(){if(!rafId)rafId=requestAnimationFrame(tick);}
+      function build(resetPosition=false){
+        const width=innerWidth,height=Math.max(document.documentElement.scrollHeight,document.body.scrollHeight,innerHeight);
+        root.style.height=height+"px";svg.setAttribute("width",width);svg.setAttribute("height",height);svg.setAttribute("viewBox",`0 0 ${width} ${height}`);
+        const stage=$(".hero .stage"),next=[];
+        if(stage){const r=stage.getBoundingClientRect();next.push({name:"Launch",x:width<=700?width-16:width*.82,y:r.top+scrollY+r.height*.82,launch:true});}
+        $$("main .level").forEach(level=>{
+          const portal=$(".level-head .portal",level),heading=$(".level-head h2",level);
+          if(!portal)return;
+          const p=centerOf(portal);
+          next.push({name:(heading?heading.textContent:level.id).replace(/\s+/g," ").trim(),id:level.id,x:p.x,y:p.y,portalEl:portal,launch:false});
+        });
+        next.sort((a,b)=>a.y-b.y);
+        if(next.length<2)return;
+        points=next;
+        let d=`M ${points[0].x} ${points[0].y}`;
+        for(let i=1;i<points.length;i++){
+          const a=points[i-1],b=points[i],dy=Math.max(1,b.y-a.y),lane=laneFor(a,b,i);
+          const inset=width<=700?Math.min(190,Math.max(105,dy*.18)):Math.min(150,Math.max(78,dy*.16));
+          const laneStartY=Math.min(a.y+inset,b.y-inset),laneEndY=Math.max(laneStartY,b.y-inset);
+          d+=` C ${lane} ${a.y+inset*.25}, ${lane} ${a.y+inset*.75}, ${lane} ${laneStartY}`;
+          if(laneEndY>laneStartY)d+=` L ${lane} ${laneEndY}`;
+          d+=` C ${lane} ${b.y-inset*.75}, ${lane} ${b.y-inset*.25}, ${b.x} ${b.y}`;
         }
+        [base,glow,core].forEach(path=>path.setAttribute("d",d));
+        length=base.getTotalLength();
+        points.forEach(point=>{point.distance=lengthAtY(point.y)});
+        ready=true;
+        if(currentDistance===null||resetPosition)currentDistance=readGoal().distance;
+        currentDistance=clamp(currentDistance,0,length);
+        renderRocket(16,readGoal());
+        request();
+      }
 
-        /* ---------- 5. Active section highlighting ---------- */
+      window.addEventListener("scroll",request,{passive:true});
+      window.addEventListener("resize",()=>{build(true);updateOnScroll()},{passive:true});
+      window.addEventListener("load",()=>build(false),{once:true});
+      if(document.fonts?.ready)document.fonts.ready.then(()=>build(false)).catch(()=>{});
+      build(false);
+      setTimeout(()=>build(false),350);
+    }
 
-        function setupActiveSection() {
-          const links = $$(".nav-links a, .map-nodes a");
-
-          const sectionObserver = new IntersectionObserver(
-            (entries) => {
-              entries.forEach((entry) => {
-                if (!entry.isIntersecting) return;
-
-                links.forEach((link) => {
-                  const isCurrent =
-                    link.getAttribute("href") === `#${entry.target.id}`;
-                  link.classList.toggle("active", isCurrent);
-                });
-              });
-            },
-            { rootMargin: "-45% 0px -50% 0px" },
-          );
-
-          $$("main section[id]").forEach((section) =>
-            sectionObserver.observe(section),
-          );
-        }
-
-        /* ---------- 6. Mobile menu and back-to-top button ---------- */
-
-        function setupMobileMenu() {
-          const toggle = $("#menu-toggle");
-          const menu = $("#mobile-menu");
-          const icon = $("i", toggle);
-
-          function setMenu(isOpen) {
-            menu.classList.toggle("open", isOpen);
-            toggle.setAttribute("aria-expanded", String(isOpen));
-            icon.className = isOpen ? "ri-close-line" : "ri-menu-3-line";
-          }
-
-          toggle.addEventListener("click", () =>
-            setMenu(!menu.classList.contains("open")),
-          );
-          $$("a", menu).forEach((link) =>
-            link.addEventListener("click", () => setMenu(false)),
-          );
-        }
-
-        function setupBackToTop() {
-          backToTop.addEventListener("click", () =>
-            window.scrollTo({ top: 0, behavior: "smooth" }),
-          );
-        }
-
-        /* ---------- 7. Project filter and card tilt ---------- */
-
-        function setupProjectFilter() {
-          const buttons = $$(".filter-bar button");
-          const cards = $$(".project-card");
-
-          buttons.forEach((button) => {
-            button.addEventListener("click", () => {
-              const filter = button.dataset.filter;
-
-              buttons.forEach((item) =>
-                item.classList.toggle("active", item === button),
-              );
-
-              cards.forEach((card) => {
-                const categories = card.dataset.category.split(" ");
-                const isHidden =
-                  filter !== "all" && !categories.includes(filter);
-                card.classList.toggle("hidden", isHidden);
-              });
-            });
-          });
-        }
-
-        function setupCardTilt() {
-          const canHover = window.matchMedia("(hover: hover)").matches;
-          if (prefersReducedMotion || !canHover) return;
-
-          $$(".tilt").forEach((card) => {
-            card.addEventListener("mousemove", (event) => {
-              const rect = card.getBoundingClientRect();
-              const x = (event.clientX - rect.left) / rect.width - 0.5;
-              const y = (event.clientY - rect.top) / rect.height - 0.5;
-
-              card.style.transform = `rotateY(${x * 8}deg) rotateX(${
-                -y * 8
-              }deg) translateY(-6px)`;
-            });
-
-            card.addEventListener("mouseleave", () => {
-              card.style.transform = "";
-            });
-          });
-        }
-
-        /* ---------- 8. Lightbox ---------- */
-
-        function setupLightbox() {
-          const lightbox = $("#lightbox");
-          const image = $("img", lightbox);
-          const caption = $("p", lightbox);
-          const closeButton = $("button", lightbox);
-          let previousFocus = null;
-
-          function open(source, text) {
-            previousFocus = document.activeElement;
-            image.src = source;
-            image.alt = text;
-            caption.textContent = text;
-            lightbox.classList.add("open");
-            document.body.style.overflow = "hidden";
-            closeButton.focus();
-          }
-
-          function close() {
-            lightbox.classList.remove("open");
-            image.src = "";
-            document.body.style.overflow = "";
-            if (previousFocus) previousFocus.focus();
-          }
-
-          $$("[data-lightbox]").forEach((item) => {
-            item.tabIndex = 0;
-
-            const openItem = (event) => {
-              event.preventDefault();
-              const source =
-                item.getAttribute("href") || $("img", item).getAttribute("src");
-              open(source, item.dataset.caption);
-            };
-
-            item.addEventListener("click", openItem);
-            item.addEventListener("keydown", (event) => {
-              if (event.key === "Enter") openItem(event);
-            });
-          });
-
-          closeButton.addEventListener("click", close);
-          lightbox.addEventListener("click", (event) => {
-            if (event.target === lightbox) close();
-          });
-          window.addEventListener("keydown", (event) => {
-            if (event.key === "Escape" && lightbox.classList.contains("open")) {
-              close();
-            }
-          });
-
-          // Hide images that fail to load instead of showing a broken icon.
-          window.addEventListener(
-            "error",
-            (event) => {
-              const target = event.target;
-              if (target.tagName === "IMG" && !lightbox.contains(target)) {
-                target.style.visibility = "hidden";
-              }
-            },
-            true,
-          );
-        }
-
-        /* ---------- 9. Role typewriter, clock and year ---------- */
-
-        function setupTypewriter() {
-          if (prefersReducedMotion) return;
-
-          const element = $("#role-text");
-          const roles = [
-            "Informatics Graduate",
-            "IT Support Candidate",
-            "Python & Django Developer",
-            "Machine Learning Researcher",
-          ];
-
-          let roleIndex = 0;
-          let charCount = roles[0].length;
-          let isDeleting = true;
-
-          function type() {
-            if (isDeleting) {
-              charCount--;
-              element.textContent = roles[roleIndex].slice(0, charCount);
-
-              if (charCount <= 0) {
-                isDeleting = false;
-                roleIndex = (roleIndex + 1) % roles.length;
-                setTimeout(type, 280);
-                return;
-              }
-            } else {
-              charCount++;
-              element.textContent = roles[roleIndex].slice(0, charCount);
-
-              if (charCount >= roles[roleIndex].length) {
-                isDeleting = true;
-                setTimeout(type, 1700); // pause on the full role name
-                return;
-              }
-            }
-
-            setTimeout(type, isDeleting ? 32 : 50);
-          }
-
-          setTimeout(type, 1600);
-        }
-
-        function setupClock() {
-          const clock = $("#clock");
-          const formatter = new Intl.DateTimeFormat("en-GB", {
-            timeZone: "Asia/Jakarta",
-            hour: "2-digit",
-            minute: "2-digit",
-            second: "2-digit",
-            hour12: false,
-          });
-
-          function tick() {
-            clock.textContent = formatter.format(new Date());
-            setTimeout(tick, 1000);
-          }
-
-          tick();
-          $("#year").textContent = new Date().getFullYear();
-        }
-
-        /* ---------- Start ---------- */
-
-        createStarfield();
-        setupReveal();
-        setupActiveSection();
-        setupMobileMenu();
-        setupBackToTop();
-        setupProjectFilter();
-        setupCardTilt();
-        setupLightbox();
-        setupTypewriter();
-        setupClock();
-        updateOnScroll();
-      })();
-    </script>
-  </body>
+    createStarfield();setupReveal();setupActiveSection();setupMobileMenu();setupProjectFilter();setupCardTilt();setupLightbox();setupTypewriter();setupClock();setupRocketRoute();updateOnScroll();window.addEventListener("resize",updateOnScroll);
+  })();
+  </script>
+</body>
 </html>
