@@ -65,8 +65,8 @@ nav.s{background:rgba(5,11,34,.82);backdrop-filter:blur(14px);border-bottom:1px 
 
 /* trail */
 main{position:relative}
-#trail{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:.85}
-#orb{position:absolute;z-index:3;width:22px;height:22px;margin:-11px;border-radius:50%;background:radial-gradient(#fff,var(--am) 45%,transparent 70%);box-shadow:0 0 30px 10px rgba(255,181,61,.5);pointer-events:none}
+#trail{position:absolute;top:0;left:max(10px,calc(50% - 650px));width:44px;height:100%;pointer-events:none;z-index:0;opacity:.9}
+#orb{position:absolute;z-index:3;width:18px;height:18px;margin:-9px;border-radius:50%;background:radial-gradient(#fff,var(--am) 45%,transparent 70%);box-shadow:0 0 22px 6px rgba(255,181,61,.45);pointer-events:none}
 .lvl{position:relative;z-index:1;padding:6.5rem 0}
 .zoom{will-change:transform,opacity;transition:transform .12s linear}
 .head{position:relative;display:flex;align-items:center;gap:1.4rem;margin-bottom:2.6rem}
@@ -78,7 +78,7 @@ main{position:relative}
 .head h2 span{color:var(--c)}
 .head p{max-width:520px;margin-top:.5rem;color:var(--mu)}
 .glass{border:1px solid var(--line);border-radius:20px;background:var(--card);backdrop-filter:blur(8px)}
-.float{position:absolute;pointer-events:none;will-change:transform;z-index:0}
+.float{position:absolute;pointer-events:none;z-index:0;will-change:transform;z-index:0}
 .about{display:grid;grid-template-columns:.8fr 1.2fr;gap:2.5rem;align-items:center;padding:1.8rem}
 .photo{position:relative}
 .photo img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:top;border-radius:16px}
@@ -148,7 +148,7 @@ main{position:relative}
 /* adventure map */
 .map{position:relative;z-index:1;padding:2rem 0 3rem}
 .mapbox{padding:2rem 1.2rem 2.2rem;text-align:center;background:linear-gradient(#0d1f66,#091448);clip-path:polygon(2% 0,34% 4%,66% 0,98% 4%,100% 100%,66% 96%,34% 100%,0 96%)}
-.mapbox h3{font:600 1.2rem var(--disp);margin-bottom:1.6rem}
+.mapbox h3{font:600 1.2rem var(--disp);margin-bottom:2.6rem}
 .nodes{display:flex;justify-content:space-between;gap:.5rem;position:relative}
 .nodes::before{content:'';position:absolute;left:8%;right:8%;top:25px;border-top:2px dashed var(--line)}
 .nodes a{position:relative;flex:1;font-size:.76rem;color:var(--mu);transition:.3s}
@@ -169,7 +169,8 @@ footer .so a:hover{color:var(--cy);border-color:var(--cy)}
 .js .rv{opacity:0;transform:translateY(24px) scale(.97);transition:opacity .7s,transform .7s}
 .js .rv.v{opacity:1;transform:none}
 @media(max-width:900px){.links{display:none}.burger{display:block}.about,.cols,.ct{grid-template-columns:1fr}.sk,.pg{grid-template-columns:repeat(2,minmax(0,1fr))}.cg{grid-template-columns:repeat(2,1fr)}.photo{max-width:320px;margin-inline:auto}}
-@media(max-width:600px){.sk,.pg,.eg{grid-template-columns:1fr}.eg{grid-template-columns:repeat(2,1fr)}.stats{grid-template-columns:repeat(2,1fr)}.head,.lvl:nth-of-type(even) .head{flex-direction:column;text-align:center}.portal{width:88px;height:88px}.lvl{padding:4.5rem 0}.nodes a{font-size:.62rem}.nodes a i{width:40px;height:40px;font-size:1rem}.nodes::before{top:19px}.cg{grid-template-columns:1fr}.mapbox{clip-path:none;border-radius:20px}#trail{opacity:.35}}
+@media(max-width:600px){.sk,.pg,.eg{grid-template-columns:1fr}.eg{grid-template-columns:repeat(2,1fr)}.stats{grid-template-columns:repeat(2,1fr)}.head,.lvl:nth-of-type(even) .head{flex-direction:column;text-align:center}.portal{width:88px;height:88px}.lvl{padding:4.5rem 0}.nodes a{font-size:.62rem}.nodes a i{width:40px;height:40px;font-size:1rem}.nodes::before{top:19px}.cg{grid-template-columns:1fr}.mapbox{clip-path:none;border-radius:20px}}
+@media(max-width:1239px){#trail{visibility:hidden}#orb,.float{display:none}}
 @media(max-height:780px){.hc>p:not(.hello){display:none}}
 @media(max-width:600px){.facts{font-size:.72rem}.hc{padding-top:64px}}
 .skip{position:absolute;left:1rem;top:-70px;z-index:300;padding:.7rem 1rem;border-radius:8px;background:var(--cy);color:#031030;font-weight:600}.skip:focus{top:1rem}
@@ -205,7 +206,7 @@ footer .so a:hover{color:var(--cy);border-color:var(--cy)}
 
 <section class="lvl" id="about" style="--c:#a07cff"><div class="float" data-p=".25" style="right:4%;top:10%;font-size:3rem;color:#a07cff;opacity:.35"><i class="ri-vip-diamond-line"></i></div><div class="wrap zoom">
 <div class="head rv"><div class="portal"><i class="ri-user-smile-line"></i><span class="sign">LEVEL 01</span></div><div><h2>About <span>me</span></h2><p>Building practical technology solutions, one fix at a time.</p></div></div>
-<div class="glass about rv"><div class="photo"><img src="assets/header.jpg" alt="Rezi working on technology projects" loading="lazy"></div>
+<div class="glass about rv"><div class="photo"><img src="assets/header.jpg" alt="Portrait of Rezi Ichsan Nur Arsyi" loading="lazy"></div>
 <div><p>I'm an Informatics graduate from <strong>Telkom University</strong> with a GPA of <strong>3.01/4.00</strong>. My interests include IT support, basic network troubleshooting, software development, and technology that improves everyday workflows.</p>
 <p>My experience includes a software engineering internship at Nutrifood, warehouse operations at PT Astro Technologies Indonesia, and independent projects in Python, Django, and machine learning. I have also practiced operating system installation, basic LAN/Wi-Fi troubleshooting, and network configuration.</p>
 <div class="chips"><span>IT Support Fundamentals</span><span>Hardware Troubleshooting</span><span>LAN / Wi-Fi</span><span>Python &amp; Django</span><span>Feature Testing</span><span>Machine Learning</span><span>Figma</span><span>Microsoft Excel</span></div></div></div>
@@ -287,7 +288,7 @@ const cl=(v,a,b)=>Math.min(b,Math.max(a,v));
 const sky=$('#sky');for(let i=0;i<70;i++){const s=document.createElement('i'),z=Math.random()*2+1;s.style.cssText=`left:${Math.random()*100}%;top:${Math.random()*100}%;width:${z}px;height:${z}px;opacity:${Math.random()*.7+.2};animation-delay:${-Math.random()*3}s`;sky.appendChild(s)}
 // scroll engine
 const bar=$('#bar'),nav=$('#nav'),toTop=$('#top'),hc=$('#hc'),layers=$$('.layer'),zooms=$$('.zoom'),floats=$$('.float');
-const tp=$('#tp2'),orb=$('#orb'),main=$('#main'),L=tp.getTotalLength();
+const trailEl=$('#trail'),tp=$('#tp2'),orb=$('#orb'),main=$('#main'),L=tp.getTotalLength();
 tp.style.strokeDasharray=L;
 let tick=false;
 function frame(){tick=false;const y=scrollY,vh=innerHeight,H=document.documentElement.scrollHeight-vh;
@@ -301,7 +302,7 @@ z.style.transform=`scale(${1-d*.1})`;z.style.opacity=1-d*.5});
 floats.forEach(f=>{const r=f.parentElement.getBoundingClientRect();f.style.transform=`translate3d(0,${(vh/2-r.top)*f.dataset.p}px,0) rotate(${(vh/2-r.top)*.03}deg)`});
 const mr=main.getBoundingClientRect(),p=cl((vh*.55-mr.top)/mr.height,0,1);
 tp.style.strokeDashoffset=L*(1-p);const pt=tp.getPointAtLength(L*p);
-orb.style.left=(pt.x/100*mr.width)+'px';orb.style.top=(pt.y/1000*mr.height)+'px'}
+const tr=trailEl.getBoundingClientRect();orb.style.left=(tr.left-mr.left+pt.x/100*tr.width)+'px';orb.style.top=(pt.y/1000*mr.height)+'px'}
 addEventListener('scroll',()=>{if(!tick){tick=true;requestAnimationFrame(frame)}},{passive:true});
 addEventListener('resize',frame);
 // hero layers start in place (no initial jump)
