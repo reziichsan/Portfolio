@@ -153,7 +153,12 @@
         height: 3px;
         width: 0;
         z-index: 120;
-        background: linear-gradient(90deg, var(--cyan), var(--violet), var(--amber));
+        background: linear-gradient(
+          90deg,
+          var(--cyan),
+          var(--violet),
+          var(--amber)
+        );
       }
       #progress-bar::after {
         content: "";
@@ -205,7 +210,7 @@
         list-style: none;
       }
       .nav-links a {
-        padding: 0.45rem 0.75rem;
+        padding: 0.45rem 0.6rem;
         border-radius: 99px;
         color: var(--muted);
         font-size: 0.8rem;
@@ -237,7 +242,6 @@
         border-bottom: 1px solid var(--line);
         color: var(--muted);
       }
-
 
       /* ===== Hero ===== */
       .hero {
@@ -395,7 +399,6 @@
         background: linear-gradient(transparent, var(--bg));
         z-index: 4;
       }
-
 
       /* ===== Levels: shared structure ===== */
       main {
@@ -609,7 +612,31 @@
         border: 1px solid rgba(94, 231, 255, 0.2);
       }
 
-      /* ===== Level 03 - Skills ===== */
+      .edu-cert {
+        margin-top: 1rem;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        cursor: zoom-in;
+      }
+      .edu-cert img {
+        width: 100%;
+        height: 230px;
+        object-fit: cover;
+        object-position: top;
+        transition: transform 0.5s;
+      }
+      .edu-cert:hover img {
+        transform: scale(1.04);
+      }
+      .edu-cert figcaption {
+        padding: 0.5rem 0.8rem;
+        color: var(--muted);
+        font-size: 0.74rem;
+        background: rgba(255, 255, 255, 0.04);
+      }
+
+      /* ===== Level 04 - Skills ===== */
       .skills-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -640,7 +667,7 @@
         line-height: 1.7;
       }
 
-      /* ===== Level 04 - Projects ===== */
+      /* ===== Level 05 - Projects ===== */
       .filter-bar {
         display: flex;
         flex-wrap: wrap;
@@ -740,7 +767,7 @@
         line-height: 1.7;
       }
 
-      /* ===== Level 05 - Certificates & gallery ===== */
+      /* ===== Level 06 - Certificates & gallery ===== */
       .cert-grid {
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -861,7 +888,6 @@
         flex: 1;
         min-width: 0;
       }
-
 
       /* ===== Adventure map and footer ===== */
       .adventure-map {
@@ -1085,15 +1111,15 @@
           padding: 4.5rem 0;
         }
         .map-nodes a {
-          font-size: 0.62rem;
+          font-size: 0.56rem;
         }
         .map-nodes a i {
-          width: 40px;
-          height: 40px;
-          font-size: 1rem;
+          width: 34px;
+          height: 34px;
+          font-size: 0.9rem;
         }
         .map-nodes::before {
-          top: 19px;
+          top: 16px;
         }
         .cert-grid {
           grid-template-columns: 1fr;
@@ -1208,6 +1234,7 @@
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
           <li><a href="#experience">Experience</a></li>
+          <li><a href="#education">Education</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#certificates">Certificates</a></li>
@@ -1224,8 +1251,9 @@
       </div>
       <div class="mobile-menu" id="mobile-menu">
         <a href="#about">About</a><a href="#experience">Experience</a
-        ><a href="#skills">Skills</a><a href="#projects">Projects</a
-        ><a href="#certificates">Certificates</a><a href="#contact">Contact</a>
+        ><a href="#education">Education</a><a href="#skills">Skills</a
+        ><a href="#projects">Projects</a><a href="#certificates">Certificates</a
+        ><a href="#contact">Contact</a>
       </div>
     </nav>
 
@@ -1386,7 +1414,7 @@
               ><small>IndoBERT accuracy</small>
             </div>
             <div class="glass stat reveal">
-              <b data-count="4" data-suffix="">0</b
+              <b data-count="6" data-suffix="">0</b
               ><small>Certificates listed</small>
             </div>
           </div>
@@ -1414,11 +1442,8 @@
               ><span class="level-sign">LEVEL 02</span>
             </div>
             <div>
-              <h2>Experience &amp; <span>Education</span></h2>
-              <p>
-                Software project experience, warehouse operations, and a degree
-                in Informatics.
-              </p>
+              <h2>Work <span>Experience</span></h2>
+              <p>Warehouse operations and a software engineering internship.</p>
             </div>
           </div>
           <div class="two-columns">
@@ -1443,6 +1468,8 @@
                   ><span>Teamwork</span>
                 </div>
               </article>
+            </div>
+            <div>
               <article class="glass timeline-card reveal">
                 <time>Jul 2022 — Sep 2022</time>
                 <h3>Software Engineer Intern</h3>
@@ -1463,6 +1490,39 @@
                 </div>
               </article>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="level" id="education" style="--level-color: #ff7a59">
+        <div
+          class="floating-icon"
+          data-speed=".27"
+          style="
+            right: 3%;
+            top: 10%;
+            font-size: 3rem;
+            color: #ff7a59;
+            opacity: 0.3;
+          "
+        >
+          <i class="ri-book-open-line"></i>
+        </div>
+        <div class="container zoom">
+          <div class="level-head reveal">
+            <div class="portal">
+              <i class="ri-graduation-cap-line"></i
+              ><span class="level-sign">LEVEL 03</span>
+            </div>
+            <div>
+              <h2>My <span>Education</span></h2>
+              <p>
+                A degree in Informatics and a verified English proficiency
+                result.
+              </p>
+            </div>
+          </div>
+          <div class="two-columns">
             <div>
               <article class="glass timeline-card reveal">
                 <time>Aug 2019 — Sep 2026</time>
@@ -1482,6 +1542,38 @@
                   <span>Informatics</span><span>Python</span
                   ><span>Machine Learning</span><span>Networking</span>
                 </div>
+              </article>
+            </div>
+            <div>
+              <article class="glass timeline-card reveal">
+                <time>Apr 2025 — valid until Apr 2027</time>
+                <h3>EPrT English Proficiency Test</h3>
+                <p class="timeline-company">
+                  <i class="ri-translate-2"></i> Telkom University Language
+                  Center · Bandung
+                </p>
+                <span class="gpa">Total score 463</span>
+                <p>
+                  Listening 50, Grammar 42, Reading 47. The score falls in the
+                  B1 range (460–540) on the EPrT score table attached to the
+                  certificate.
+                </p>
+                <div class="tags">
+                  <span>Listening 50</span><span>Grammar 42</span
+                  ><span>Reading 47</span>
+                </div>
+                <figure
+                  class="edu-cert"
+                  data-lightbox
+                  data-caption="EPrT Certificate — Telkom University Language Center"
+                >
+                  <img
+                    src="assets/eprt-certificate.png"
+                    alt="EPrT certificate with a total score of 463"
+                    loading="lazy"
+                  />
+                  <figcaption>Select to view the certificate</figcaption>
+                </figure>
               </article>
             </div>
           </div>
@@ -1506,7 +1598,7 @@
           <div class="level-head reveal">
             <div class="portal">
               <i class="ri-tools-line"></i
-              ><span class="level-sign">LEVEL 03</span>
+              ><span class="level-sign">LEVEL 04</span>
             </div>
             <div>
               <h2>Skills &amp; <span>Tools</span></h2>
@@ -1563,7 +1655,7 @@
           <div class="level-head reveal">
             <div class="portal">
               <i class="ri-rocket-2-line"></i
-              ><span class="level-sign">LEVEL 04</span>
+              ><span class="level-sign">LEVEL 05</span>
             </div>
             <div>
               <h2>Projects &amp; <span>Portfolio</span></h2>
@@ -1726,13 +1818,14 @@
           <div class="level-head reveal">
             <div class="portal">
               <i class="ri-award-line"></i
-              ><span class="level-sign">LEVEL 05</span>
+              ><span class="level-sign">LEVEL 06</span>
             </div>
             <div>
               <h2>Certificates &amp; <span>Gallery</span></h2>
               <p>
-                Cloud, web, Python, and UI design credentials, plus selected
-                visual design work. Select an image to enlarge it.
+                Cloud, web, Python, project management, and UI design
+                credentials, plus selected visual design work. Select an image
+                to enlarge it.
               </p>
             </div>
           </div>
@@ -1750,6 +1843,21 @@
               <div>
                 <h3>Alibaba Cloud Certified Developer</h3>
                 <p>Alibaba Cloud · 2026</p>
+              </div>
+            </article>
+            <article
+              class="glass cert-card reveal"
+              data-lightbox
+              data-caption="Belajar Dasar Manajemen Proyek — Dicoding Indonesia"
+            >
+              <img
+                src="assets/dicoding-project-management.png"
+                alt="Dicoding Belajar Dasar Manajemen Proyek certificate"
+                loading="lazy"
+              />
+              <div>
+                <h3>Belajar Dasar Manajemen Proyek</h3>
+                <p>Dicoding Indonesia · 2026</p>
               </div>
             </article>
             <article
@@ -1780,6 +1888,21 @@
               <div>
                 <h3>Scientific Computing with Python</h3>
                 <p>freeCodeCamp · 2025</p>
+              </div>
+            </article>
+            <article
+              class="glass cert-card reveal"
+              data-lightbox
+              data-caption="Webinar: Time Series Classification of Badminton Pose using LSTM with Landmark Tracking"
+            >
+              <img
+                src="assets/webinar-badminton-pose.png"
+                alt="Webinar participation certificate from KK CITI Telkom University"
+                loading="lazy"
+              />
+              <div>
+                <h3>Time Series Classification of Badminton Pose (Webinar)</h3>
+                <p>KK CITI, Telkom University · 2025</p>
               </div>
             </article>
             <article
@@ -1923,6 +2046,8 @@
             <a href="#about"><i class="ri-user-smile-line"></i>About</a
             ><a href="#experience"
               ><i class="ri-briefcase-line"></i>Experience</a
+            ><a href="#education"
+              ><i class="ri-graduation-cap-line"></i>Education</a
             ><a href="#skills"><i class="ri-tools-line"></i>Skills</a
             ><a href="#projects"><i class="ri-rocket-2-line"></i>Projects</a
             ><a href="#certificates"
@@ -1990,11 +2115,13 @@
         /* ---------- 1. Helpers ---------- */
 
         const $ = (selector, root = document) => root.querySelector(selector);
-        const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
+        const $$ = (selector, root = document) => [
+          ...root.querySelectorAll(selector),
+        ];
         const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
 
         const prefersReducedMotion = window.matchMedia(
-          "(prefers-reduced-motion: reduce)"
+          "(prefers-reduced-motion: reduce)",
         ).matches;
 
         /* ---------- 2. Starfield background ---------- */
@@ -2066,7 +2193,7 @@
             const distance = clamp(
               Math.abs(blockCenter - viewportHeight / 2) / viewportHeight,
               0,
-              1
+              1,
             );
 
             block.style.transform = `scale(${1 - distance * 0.1})`;
@@ -2090,7 +2217,9 @@
           requestAnimationFrame(updateOnScroll);
         }
 
-        window.addEventListener("scroll", requestScrollUpdate, { passive: true });
+        window.addEventListener("scroll", requestScrollUpdate, {
+          passive: true,
+        });
         window.addEventListener("resize", updateOnScroll);
 
         /* ---------- 4. Reveal animation and counters ---------- */
@@ -2135,7 +2264,7 @@
                 revealObserver.unobserve(entry.target);
               });
             },
-            { threshold: 0.12 }
+            { threshold: 0.12 },
           );
 
           $$(".reveal").forEach((element, index) => {
@@ -2172,11 +2301,11 @@
                 });
               });
             },
-            { rootMargin: "-45% 0px -50% 0px" }
+            { rootMargin: "-45% 0px -50% 0px" },
           );
 
           $$("main section[id]").forEach((section) =>
-            sectionObserver.observe(section)
+            sectionObserver.observe(section),
           );
         }
 
@@ -2194,16 +2323,16 @@
           }
 
           toggle.addEventListener("click", () =>
-            setMenu(!menu.classList.contains("open"))
+            setMenu(!menu.classList.contains("open")),
           );
           $$("a", menu).forEach((link) =>
-            link.addEventListener("click", () => setMenu(false))
+            link.addEventListener("click", () => setMenu(false)),
           );
         }
 
         function setupBackToTop() {
           backToTop.addEventListener("click", () =>
-            window.scrollTo({ top: 0, behavior: "smooth" })
+            window.scrollTo({ top: 0, behavior: "smooth" }),
           );
         }
 
@@ -2218,12 +2347,13 @@
               const filter = button.dataset.filter;
 
               buttons.forEach((item) =>
-                item.classList.toggle("active", item === button)
+                item.classList.toggle("active", item === button),
               );
 
               cards.forEach((card) => {
                 const categories = card.dataset.category.split(" ");
-                const isHidden = filter !== "all" && !categories.includes(filter);
+                const isHidden =
+                  filter !== "all" && !categories.includes(filter);
                 card.classList.toggle("hidden", isHidden);
               });
             });
@@ -2312,7 +2442,7 @@
                 target.style.visibility = "hidden";
               }
             },
-            true
+            true,
           );
         }
 
