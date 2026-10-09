@@ -45,10 +45,10 @@
     #progress-bar{position:fixed;top:0;left:0;height:3px;width:0;z-index:150;background:linear-gradient(90deg,var(--cyan),var(--violet),var(--amber))}#progress-bar:after{content:"";position:absolute;right:-8px;top:-7px;width:17px;height:17px;border-radius:50%;background:radial-gradient(#fff,var(--amber) 45%,transparent 72%);box-shadow:0 0 18px 4px rgba(255,181,61,.55)}
     nav#navbar{position:fixed;inset:0 0 auto;z-index:100;transition:.3s}nav#navbar.scrolled{background:rgba(5,11,34,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.nav-inner{display:flex;align-items:center;justify-content:space-between;height:66px}.logo{display:flex;align-items:center;gap:.6rem;font:600 1.1rem var(--fd)}.logo b{display:grid;place-items:center;width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--cyan),var(--blue));color:#031030;font-size:1rem}.nav-links{display:flex;gap:.2rem;list-style:none}.nav-links a{display:block;padding:.45rem .6rem;border-radius:99px;color:var(--muted);font-size:.8rem;transition:.2s}.nav-links a:hover,.nav-links a.active{color:var(--cyan);background:rgba(94,231,255,.1)}.burger{display:none;background:none;border:0;font-size:1.6rem;cursor:pointer}.mobile-menu{display:none;flex-direction:column;padding:.5rem 1.25rem 1rem;background:rgba(5,11,34,.98);border-top:1px solid var(--line)}.mobile-menu.open{display:flex}.mobile-menu a{padding:.7rem 0;border-bottom:1px solid var(--line);color:var(--muted)}
     /* Rocket route is a background layer. The real .portal elements are the planets. */
-    #rocket-route{position:absolute;inset:0 auto auto 0;width:100%;height:1px;z-index:0;pointer-events:none;overflow:visible}
-    #rocket-route-svg{display:block;width:100%;overflow:visible}
+    #rocket-route{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;overflow:hidden}
+    #rocket-route-svg{display:block;width:100%;height:100%}
     #rocket-route .route-base{fill:none;stroke:rgba(94,231,255,.27);stroke-width:2.2;stroke-dasharray:2 11;stroke-linecap:round}
-    #rocket-route .route-glow{fill:none;stroke:url(#rocket-route-gradient);stroke-width:4;stroke-linecap:round;filter:url(#rocket-route-glow-filter);opacity:.92}
+    #rocket-route .route-glow{fill:none;stroke:url(#rocket-route-gradient);stroke-width:4;stroke-linecap:round;opacity:.92}
     #rocket-route .route-core{fill:none;stroke:rgba(226,251,255,.82);stroke-width:1;stroke-linecap:round;opacity:.75}
     #rocket-ship{filter:url(#rocket-route-glow-filter);transform-box:fill-box;transform-origin:center;will-change:transform;transition:opacity .18s ease}
     #rocket-ship .rocket-flame{transform-box:fill-box;transform-origin:center;animation:rocket-flame-flicker .15s ease-in-out infinite alternate}
@@ -168,19 +168,17 @@
       stroke: rgba(127, 207, 255, .48);
       stroke-width: 2.7;
       stroke-dasharray: 1.5 10;
-      animation: route-drift 18s linear infinite;
-      filter: drop-shadow(0 0 4px rgba(94, 231, 255, .42));
     }
     #rocket-route .route-glow {
       stroke-width: 8;
       opacity: .65;
-      filter: url(#rocket-route-glow-filter) drop-shadow(0 0 11px rgba(94, 231, 255, .42));
+      filter: none;
     }
     #rocket-route .route-core {
       stroke: rgba(239, 252, 255, .96);
       stroke-width: 1.35;
       opacity: .9;
-      filter: drop-shadow(0 0 4px rgba(255,255,255,.7));
+      filter: none;
     }
     @keyframes route-drift { to { stroke-dashoffset: -140; } }
 
@@ -365,6 +363,7 @@
         <linearGradient id="rocket-route-gradient" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#5ee7ff"/><stop offset="52%" stop-color="#a07cff"/><stop offset="100%" stop-color="#ffb53d"/></linearGradient>
         <filter id="rocket-route-glow-filter" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
       </defs>
+      <g id="rocket-world">
       <path id="rocket-route-base" class="route-base" d="M 50 0 L 50 1"/>
       <path id="rocket-route-progress-glow" class="route-glow" d="M 50 0 L 50 1"/>
       <path id="rocket-route-progress-core" class="route-core" d="M 50 0 L 50 1"/>
@@ -374,6 +373,7 @@
         <path d="M 0 -18 C -4 -13 -4 -8 0 -5 C 4 -8 4 -13 0 -18 Z" fill="#4f8bff" stroke="#d8fbff" stroke-width=".8"/>
         <path d="M -6 2 L -14 10 L -5 9 Z M 6 2 L 14 10 L 5 9 Z" fill="#a07cff" stroke="#d8fbff" stroke-width=".8"/>
         <path d="M -3 10 L -2 14 L 2 14 L 3 10 Z" fill="#5ee7ff"/><circle cx="0" cy="-1" r="1.6" fill="#fff"/>
+      </g>
       </g>
     </svg>
   </div>
@@ -487,10 +487,10 @@
 
     /* Build the route in document coordinates and let the rocket ease into its target. */
     function setupRocketRoute(){
-      const root=$("#rocket-route"),svg=$("#rocket-route-svg"),base=$("#rocket-route-base"),glow=$("#rocket-route-progress-glow"),core=$("#rocket-route-progress-core"),rocket=$("#rocket-ship");
-      if(!root||!svg||!base||!glow||!core||!rocket||reduceMotion){if(root)root.hidden=true;return}
+      const root=$("#rocket-route"),svg=$("#rocket-route-svg"),world=$("#rocket-world"),base=$("#rocket-route-base"),glow=$("#rocket-route-progress-glow"),core=$("#rocket-route-progress-core"),rocket=$("#rocket-ship");
+      if(!root||!svg||!world||!base||!glow||!core||!rocket||reduceMotion){if(root)root.hidden=true;return}
 
-      let points=[],length=0,rafId=0,lastFrame=0,currentDistance=null,currentAngle=null,currentVelocity=0,lastScrollY=window.scrollY,flightDirection=1,ready=false;
+      let points=[],length=0,rafId=0,lastFrame=0,currentDistance=null,currentAngle=null,currentVelocity=0,lastScrollY=window.scrollY,flightDirection=1,ready=false,table=null,svgLength=0,dashScale=1,lastSignature="";
       const clamp=(v,min,max)=>Math.min(max,Math.max(min,v));
       const centerOf=(el)=>{const r=el.getBoundingClientRect();return{x:r.left+scrollX+r.width/2,y:r.top+scrollY+r.height/2}};
       const laneFor=(a,b,segmentIndex)=>{
@@ -498,13 +498,19 @@
         if(width<=700)return segmentIndex%2===0?width-15:15;
         return segmentIndex%2===0?Math.min(54,width*.045):Math.max(width-54,width*.955);
       };
+      // The route is sampled once into arrays, so each frame only needs a cheap binary search.
+      function findIndex(values,target){
+        let lo=0,hi=values.length-1;
+        while(lo<hi){const mid=(lo+hi)>>1;if(values[mid]<target)lo=mid+1;else hi=mid}
+        return Math.max(1,lo);
+      }
       function lengthAtY(y){
-        let lo=0,hi=length;
-        for(let i=0;i<24;i++){
-          const mid=(lo+hi)/2,p=base.getPointAtLength(mid);
-          if(p.y<y)lo=mid;else hi=mid;
-        }
-        return(lo+hi)/2;
+        const i=findIndex(table.y,y),span=table.y[i]-table.y[i-1]||1;
+        return table.d[i-1]+(table.d[i]-table.d[i-1])*clamp((y-table.y[i-1])/span,0,1);
+      }
+      function pointAt(distance){
+        const i=findIndex(table.d,distance),span=table.d[i]-table.d[i-1]||1,t=clamp((distance-table.d[i-1])/span,0,1);
+        return{x:table.x[i-1]+(table.x[i]-table.x[i-1])*t,y:table.y[i-1]+(table.y[i]-table.y[i-1])*t};
       }
       function readGoal(){
         if(!length||points.length<2)return{distance:0,landingPoint:null,anchor:0};
@@ -520,24 +526,27 @@
         if(landingPoint)distance=landingPoint.distance;
         return{distance:clamp(distance,0,length),landingPoint,anchor};
       }
+      // The route layer is only as big as the screen; shift it so it matches the page.
+      function follow(){world.setAttribute("transform",`translate(0 ${-window.scrollY})`)}
       function renderRocket(dt,goal){
         const sample=Math.max(4,Math.min(12,length*.00035));
-        const pos=base.getPointAtLength(currentDistance);
-        const before=base.getPointAtLength(Math.max(0,currentDistance-sample));
-        const after=base.getPointAtLength(Math.min(length,currentDistance+sample));
+        const pos=pointAt(currentDistance);
+        const before=pointAt(Math.max(0,currentDistance-sample));
+        const after=pointAt(Math.min(length,currentDistance+sample));
         let desiredAngle=Math.atan2(after.y-before.y,after.x-before.x)*180/Math.PI+90;
         if(flightDirection<0)desiredAngle+=180;
         if(currentAngle===null)currentAngle=desiredAngle;
         const angleDelta=((desiredAngle-currentAngle+540)%360)-180;
         const angleBlend=1-Math.exp(-Math.max(1,dt)/105);
         currentAngle+=angleDelta*angleBlend;
+        follow();
         rocket.setAttribute("transform",`translate(${pos.x} ${pos.y}) rotate(${currentAngle})`);
 
         const landed=Boolean(goal.landingPoint&&Math.abs(currentDistance-goal.distance)<7&&Math.abs(currentVelocity)<70);
         rocket.classList.toggle("landed",landed);
         rocket.classList.toggle("rocket-boosting",!landed&&Math.abs(currentVelocity)>720);
-        glow.style.strokeDasharray=`${currentDistance} ${length}`;
-        core.style.strokeDasharray=`${currentDistance} ${length}`;
+        glow.style.strokeDasharray=`${currentDistance*dashScale} ${svgLength}`;
+        core.style.strokeDasharray=`${currentDistance*dashScale} ${svgLength}`;
         points.forEach(point=>point.portalEl?.classList.toggle("rocket-active",landed&&point===goal.landingPoint));
       }
       function tick(now){
@@ -572,7 +581,7 @@
       function request(){if(!rafId)rafId=requestAnimationFrame(tick);}
       function build(resetPosition=false){
         const width=innerWidth,height=Math.max(document.documentElement.scrollHeight,document.body.scrollHeight,innerHeight);
-        root.style.height=height+"px";svg.setAttribute("width",width);svg.setAttribute("height",height);svg.setAttribute("viewBox",`0 0 ${width} ${height}`);
+        svg.setAttribute("viewBox",`0 0 ${width} ${innerHeight}`);
         const stage=$(".hero .stage"),next=[];
         if(stage){const r=stage.getBoundingClientRect();next.push({name:"Launch",x:width<=700?width-16:width*.82,y:r.top+scrollY+r.height*.82,launch:true});}
         $$("main .level").forEach(level=>{
@@ -583,18 +592,29 @@
         });
         next.sort((a,b)=>a.y-b.y);
         if(next.length<2)return;
+        const signature=width+"|"+next.map(point=>`${Math.round(point.x)},${Math.round(point.y)}`).join(";");
+        if(signature===lastSignature){request();return}
+        lastSignature=signature;
         points=next;
         let d=`M ${points[0].x} ${points[0].y}`;
+        const sampled={x:[points[0].x],y:[points[0].y],d:[0]};
+        const push=(x,y)=>{const last=sampled.x.length-1;sampled.d.push(sampled.d[last]+Math.hypot(x-sampled.x[last],y-sampled.y[last]));sampled.x.push(x);sampled.y.push(y)};
+        const cubic=(x0,y0,x1,y1,x2,y2,x3,y3)=>{for(let k=1;k<=24;k++){const t=k/24,u=1-t;push(u*u*u*x0+3*u*u*t*x1+3*u*t*t*x2+t*t*t*x3,u*u*u*y0+3*u*u*t*y1+3*u*t*t*y2+t*t*t*y3)}};
         for(let i=1;i<points.length;i++){
           const a=points[i-1],b=points[i],dy=Math.max(1,b.y-a.y),lane=laneFor(a,b,i);
           const inset=width<=700?Math.min(190,Math.max(105,dy*.18)):Math.min(150,Math.max(78,dy*.16));
           const laneStartY=Math.min(a.y+inset,b.y-inset),laneEndY=Math.max(laneStartY,b.y-inset);
           d+=` C ${lane} ${a.y+inset*.25}, ${lane} ${a.y+inset*.75}, ${lane} ${laneStartY}`;
-          if(laneEndY>laneStartY)d+=` L ${lane} ${laneEndY}`;
+          cubic(a.x,a.y,lane,a.y+inset*.25,lane,a.y+inset*.75,lane,laneStartY);
+          if(laneEndY>laneStartY){d+=` L ${lane} ${laneEndY}`;push(lane,laneEndY)}
           d+=` C ${lane} ${b.y-inset*.75}, ${lane} ${b.y-inset*.25}, ${b.x} ${b.y}`;
+          cubic(lane,laneEndY,lane,b.y-inset*.75,lane,b.y-inset*.25,b.x,b.y);
         }
         [base,glow,core].forEach(path=>path.setAttribute("d",d));
-        length=base.getTotalLength();
+        table=sampled;
+        length=sampled.d[sampled.d.length-1];
+        svgLength=base.getTotalLength();
+        dashScale=length>0?svgLength/length:1;
         points.forEach(point=>{point.distance=lengthAtY(point.y)});
         ready=true;
         if(currentDistance===null||resetPosition)currentDistance=readGoal().distance;
@@ -603,7 +623,7 @@
         request();
       }
 
-      window.addEventListener("scroll",request,{passive:true});
+      window.addEventListener("scroll",()=>{follow();request()},{passive:true});
       window.addEventListener("resize",()=>{build(true);updateOnScroll()},{passive:true});
       window.addEventListener("load",()=>build(false),{once:true});
       if(document.fonts?.ready)document.fonts.ready.then(()=>build(false)).catch(()=>{});
