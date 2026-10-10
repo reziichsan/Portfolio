@@ -412,7 +412,7 @@
     }
 
 
-    /* ===== Recruiter snapshot, project results, dock ===== */
+    /* ===== Recruiter snapshot and project results ===== */
     .snapshot { display: grid; grid-template-columns: repeat(4, 1fr); gap: .6rem; max-width: 880px; margin: 0 auto 1.5rem; }
     .snapshot div { display: grid; grid-template-columns: auto 1fr; align-items: center; column-gap: .65rem; padding: .7rem .9rem; text-align: left;
       border: 1px solid rgba(130,175,255,.2); border-radius: 14px; background: rgba(5,13,44,.72); }
@@ -425,16 +425,6 @@
     .nav-actions { display: flex; align-items: center; gap: .3rem; }
     .nav-map { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--line); background: rgba(255,255,255,.03); color: var(--cyan); font-size: 1.15rem; cursor: pointer; transition: border-color .3s, background .3s; }
     .nav-map:hover { border-color: var(--cyan); background: rgba(94,231,255,.1); }
-    .dock { position: fixed; left: 50%; bottom: 1.1rem; z-index: 95; display: flex; gap: .2rem; padding: .35rem; border: 1px solid rgba(130,175,255,.22); border-radius: 99px;
-      background: rgba(6,14,48,.94); box-shadow: 0 18px 50px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.07);
-      opacity: 0; pointer-events: none; transform: translate(-50%, 24px); transition: opacity .4s var(--ease-fluid), transform .4s var(--ease-fluid); }
-    .dock.show { opacity: 1; pointer-events: auto; transform: translate(-50%, 0); }
-    .dock > * { display: inline-flex; align-items: center; gap: .45rem; min-height: 40px; padding: .5rem 1rem; border: 0; border-radius: 99px; background: none; color: var(--text);
-      font: 600 .8rem var(--fb); cursor: pointer; white-space: nowrap; transition: background .3s, color .3s; }
-    .dock > *:hover { background: rgba(94,231,255,.12); color: var(--cyan); }
-    .dock .dock-primary { background: linear-gradient(135deg, var(--cyan), var(--blue)); color: #031030; }
-    .dock .dock-primary:hover { background: linear-gradient(135deg, #8ff1ff, #6aa0ff); color: #031030; }
-    .dock i { font-size: 1.05rem; }
 
     /* ===== Star map overlay ===== */
     .starmap { position: fixed; inset: 0; z-index: 250; display: flex; flex-direction: column; padding: clamp(1.1rem, 4vw, 2.4rem);
@@ -484,17 +474,141 @@
       .snapshot i { width: 28px; height: 28px; font-size: .95rem; }
       .snapshot b { font-size: .72rem; }
       .snapshot small { font-size: .62rem; }
-      .dock { bottom: .8rem; }
-      .dock > * { padding: .5rem .8rem; font-size: .74rem; }
-      #back-to-top { bottom: 4.6rem; }
+      #back-to-top { bottom: 1rem; }
     }
-    @media (max-width: 380px) { .dock > * span { display: none; } .dock .dock-primary span { display: inline; } }
+
+
+    /* ===== Scroll-linked 3D orbital expedition ===== */
+    #space3d-layer {
+      position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none;
+      opacity: .90; mix-blend-mode: screen; contain: strict;
+      transition: opacity .6s ease;
+    }
+    #space3d-canvas { display: block; width: 100%; height: 100%; }
+    @media (max-width: 700px) {
+      #space3d-layer { opacity: .66; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      #space3d-layer { transition: none; }
+    }
+    @media (max-width: 700px) {
+      #space3d-layer { mix-blend-mode: screen; }
+    }
+
+
+
+    /* ===== Readability and visual separation polish ===== */
+    body { background-color: #01030a; }
+    #starfield { opacity: .82; }
+    #space3d-layer {
+      opacity: .60;
+      mix-blend-mode: screen;
+      transition: opacity .65s ease;
+      -webkit-mask-image: none;
+      mask-image: none;
+    }
+    #space-scene-shade {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity .55s ease;
+      background:
+        linear-gradient(90deg,
+          rgba(1,3,10,.16) 0%,
+          rgba(1,3,10,.32) 18%,
+          rgba(1,3,10,.55) 36%,
+          rgba(1,3,10,.64) 50%,
+          rgba(1,3,10,.55) 64%,
+          rgba(1,3,10,.32) 82%,
+          rgba(1,3,10,.16) 100%),
+        linear-gradient(180deg, rgba(1,3,10,.12), rgba(1,3,10,.32));
+    }
+    body.in-sections #space-scene-shade { opacity: 1; }
+    body.in-sections #space3d-layer {
+      opacity: .36;
+      -webkit-mask-image: linear-gradient(90deg,
+        #000 0%, #000 10%, rgba(0,0,0,.74) 23%, rgba(0,0,0,.22) 39%,
+        rgba(0,0,0,.16) 50%, rgba(0,0,0,.22) 61%, rgba(0,0,0,.74) 77%, #000 90%, #000 100%);
+      mask-image: linear-gradient(90deg,
+        #000 0%, #000 10%, rgba(0,0,0,.74) 23%, rgba(0,0,0,.22) 39%,
+        rgba(0,0,0,.16) 50%, rgba(0,0,0,.22) 61%, rgba(0,0,0,.74) 77%, #000 90%, #000 100%);
+    }
+    .level { padding-top: 5.35rem; padding-bottom: 5.35rem; }
+    .level-head {
+      width: fit-content;
+      max-width: 100%;
+      padding: 1rem 1.45rem 1rem .65rem;
+      margin-left: -.65rem;
+      border: 1px solid rgba(130,175,255,.12);
+      border-radius: 24px;
+      background: linear-gradient(105deg, rgba(2,5,15,.97), rgba(3,8,24,.92) 74%, rgba(3,8,24,.78));
+      box-shadow: 0 18px 44px rgba(0,0,0,.28), inset 0 1px 0 rgba(255,255,255,.035);
+      isolation: isolate;
+    }
+    .level-head p { color: #b9c7e6; }
+    .level-head .portal {
+      width: 94px;
+      height: 94px;
+      flex-basis: 94px;
+      box-shadow: inset -10px -12px 20px rgba(0,0,0,.62), inset 5px 5px 13px rgba(255,255,255,.12), 0 0 18px color-mix(in srgb,var(--level-color),transparent 54%), 0 0 36px color-mix(in srgb,var(--level-color),transparent 82%);
+    }
+    .level-head .portal::before { opacity: .78; }
+    .level-head .portal.is-current { box-shadow: inset -10px -12px 20px rgba(0,0,0,.62), inset 5px 5px 13px rgba(255,255,255,.12), 0 0 22px color-mix(in srgb,var(--level-color),transparent 42%), 0 0 46px color-mix(in srgb,var(--level-color),transparent 72%); }
+    .glass {
+      background: linear-gradient(180deg, rgba(5,10,28,.985), rgba(2,6,20,.99));
+      border-color: rgba(130,175,255,.18);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.045), 0 20px 48px rgba(0,0,0,.32);
+      -webkit-backdrop-filter: none;
+      backdrop-filter: none;
+    }
+    .glass:hover { border-color: rgba(94,231,255,.34); }
+    .snapshot div {
+      background: linear-gradient(145deg, rgba(3,8,24,.97), rgba(4,10,30,.94));
+      border-color: rgba(130,175,255,.18);
+    }
+    .timeline-card, .about-card, .contact-card, .skills-grid article, .project-card, .cert-card {
+      position: relative;
+      z-index: 1;
+    }
+    .level-head, .filter-bar, .subheading, .stats-grid, .two-columns, .skills-grid, .project-grid, .cert-grid, .gallery-grid, .contact-card {
+      position: relative;
+      z-index: 1;
+    }
+    nav#navbar.scrolled { background: rgba(2,5,16,.95); }
+    @media (max-width: 700px) {
+      body.in-sections #space3d-layer {
+        opacity: .23;
+        -webkit-mask-image: linear-gradient(90deg, #000 0%, rgba(0,0,0,.82) 18%, rgba(0,0,0,.10) 42%, rgba(0,0,0,.10) 58%, rgba(0,0,0,.82) 82%, #000 100%);
+        mask-image: linear-gradient(90deg, #000 0%, rgba(0,0,0,.82) 18%, rgba(0,0,0,.10) 42%, rgba(0,0,0,.10) 58%, rgba(0,0,0,.82) 82%, #000 100%);
+      }
+      #space-scene-shade {
+        background: linear-gradient(90deg, rgba(1,3,10,.2), rgba(1,3,10,.55) 30%, rgba(1,3,10,.62) 50%, rgba(1,3,10,.55) 70%, rgba(1,3,10,.2));
+      }
+      .level { padding-top: 4.25rem; padding-bottom: 4.25rem; }
+      .level-head {
+        width: 100%;
+        margin-left: 0;
+        padding: 1.1rem 1rem 1.2rem;
+        gap: .95rem;
+        background: linear-gradient(180deg, rgba(2,5,15,.97), rgba(3,8,24,.92));
+        border-radius: 22px;
+      }
+      .level-head .portal { width: 82px; height: 82px; flex-basis: 82px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      #space-scene-shade, #space3d-layer { transition: none !important; }
+    }
+
   </style>
 </head>
 <body>
   <a href="#main" class="skip">Skip to content</a>
   <div id="progress-bar" aria-hidden="true"></div>
   <div id="starfield" aria-hidden="true"></div>
+  <div id="space3d-layer" aria-hidden="true"><canvas id="space3d-canvas"></canvas></div>
+  <div id="space-scene-shade" aria-hidden="true"></div>
 
   <nav id="navbar" aria-label="Main navigation">
     <div class="container nav-inner">
@@ -557,11 +671,6 @@
     <section class="level" id="contact" style="--level-color:#ff7ab8"><div class="container zoom"><div class="level-head reveal"><div class="portal"><i class="ri-send-plane-line"></i><span class="level-sign">FINAL PLANET</span></div><div><span class="eyebrow">Mission complete · Contact</span><h2>Let's <span>connect</span></h2><p>The final destination on the journey.</p></div></div><div class="glass contact-card reveal"><div><h3>Let's talk about your next opportunity.</h3><p>I'm open to entry-level roles in IT Support, IT Helpdesk, and related technical positions. Contact me about a position, a project, or a collaboration.</p><a href="mailto:reziichsan@gmail.com" class="btn primary">Email me <i class="ri-arrow-right-up-line"></i></a></div><div><a class="contact-link" href="https://www.linkedin.com/in/reziichsannurarsyi/" target="_blank" rel="noopener noreferrer"><i class="ri-linkedin-fill"></i><div><b>LinkedIn</b><span>linkedin.com/in/reziichsannurarsyi</span></div><i class="ri-arrow-right-up-line"></i></a><a class="contact-link" href="mailto:reziichsan@gmail.com"><i class="ri-mail-line"></i><div><b>Email</b><span>reziichsan@gmail.com</span></div><i class="ri-arrow-right-up-line"></i></a><a class="contact-link" href="https://github.com/reziichsan" target="_blank" rel="noopener noreferrer"><i class="ri-github-fill"></i><div><b>GitHub</b><span>github.com/reziichsan</span></div><i class="ri-arrow-right-up-line"></i></a></div></div></div></section>
   </main>
   <footer><div class="social-links"><a href="https://www.linkedin.com/in/reziichsannurarsyi/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a><a href="https://github.com/reziichsan" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="ri-github-fill"></i></a><a href="mailto:reziichsan@gmail.com" aria-label="Email"><i class="ri-mail-line"></i></a></div>© <span id="year">2026</span> Rezi Ichsan Nur Arsyi. All rights reserved.</footer>
-  <div class="dock" id="dock" aria-label="Quick actions">
-    <button type="button" data-starmap-open aria-haspopup="dialog"><i class="ri-compass-3-line"></i><span>Star Map</span></button>
-    <a href="CV.pdf" class="dock-primary" download="Rezi-Ichsan-Nur-Arsyi-CV.pdf"><i class="ri-download-2-line"></i><span>Download CV</span></a>
-    <a href="mailto:reziichsan@gmail.com"><i class="ri-mail-send-line"></i><span>Email</span></a>
-  </div>
   <div class="starmap" id="starmap" role="dialog" aria-modal="true" aria-label="Star map navigation" hidden>
     <button class="starmap-close" type="button" aria-label="Close star map"><i class="ri-close-line"></i></button>
     <div class="starmap-head"><span class="eyebrow">Navigation</span><h2>Star Map</h2><p>Select a star to travel there. <span class="starmap-keys">Press <kbd>M</kbd> to open or <kbd>Esc</kbd> to close.</span></p></div>
@@ -675,14 +784,14 @@
       (function frame(now){const dt=Math.min(now-last,50);last=now;if(!document.hidden)draw(now,dt);requestAnimationFrame(frame)})(last);
     }
 
-    const progressBar=$("#progress-bar"),navbar=$("#navbar"),backToTop=$("#back-to-top"),heroContent=$("#hero-content"),heroLayers=$$(".layer"),floatingIcons=$$(".floating-icon"),dock=$("#dock");let scrollQueued=false;
+    const progressBar=$("#progress-bar"),navbar=$("#navbar"),backToTop=$("#back-to-top"),heroContent=$("#hero-content"),heroLayers=$$(".layer"),floatingIcons=$$(".floating-icon");let scrollQueued=false;
     function updateOnScroll(){
       scrollQueued=false;
       const y=window.scrollY,h=window.innerHeight,max=document.documentElement.scrollHeight-h;
       progressBar.style.width=`${max>0?(y/max)*100:0}%`;
       navbar.classList.toggle("scrolled",y>40);
+      document.body.classList.toggle("in-sections",y>h*.42);
       backToTop.classList.toggle("show",y>500);
-      dock.classList.toggle("show",y>h*.8);
       if(reduceMotion)return;
       // Keep the hero parallax restrained; do not scale/fade whole content sections on scroll.
       const progress=clamp(y/h,0,1.25);
@@ -776,5 +885,676 @@
     setupSpace();setupReveal();setupActiveSection();setupMobileMenu();setupProjectFilter();setupCardTilt();setupLightbox();setupTypewriter();setupClock();setupStarMap();updateOnScroll();window.addEventListener("resize",updateOnScroll);
   })();
   </script>
+
+  <script type="module">
+  (() => {
+    "use strict";
+
+    const host = document.getElementById("space3d-layer");
+    const canvas = document.getElementById("space3d-canvas");
+    if (!host || !canvas) return;
+
+    const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const isMobile = window.matchMedia("(max-width: 700px)").matches;
+
+    async function bootSpacecraft() {
+      try {
+        const THREE = await import("https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.js");
+        const renderer = new THREE.WebGLRenderer({
+          canvas,
+          alpha: true,
+          antialias: !isMobile,
+          powerPreference: "low-power",
+          failIfMajorPerformanceCaveat: false
+        });
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, isMobile ? 1.2 : 1.5));
+        renderer.setSize(window.innerWidth, window.innerHeight, false);
+        renderer.setClearColor(0x02040f, 0);
+        renderer.outputColorSpace = THREE.SRGBColorSpace;
+        renderer.toneMapping = THREE.ACESFilmicToneMapping;
+        renderer.toneMappingExposure = 1.15;
+
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(54, window.innerWidth / window.innerHeight, 0.1, 240);
+        camera.position.set(0, 0.4, 13);
+
+        scene.add(new THREE.AmbientLight(0x9aafff, 1.15));
+        const keyLight = new THREE.DirectionalLight(0xfff3df, 2.15);
+        keyLight.position.set(-5, 7, 11);
+        scene.add(keyLight);
+        const cyanLight = new THREE.PointLight(0x38dfff, 18, 58, 2);
+        cyanLight.position.set(4, 2.5, -10);
+        scene.add(cyanLight);
+        const violetLight = new THREE.PointLight(0x8e62ff, 13, 62, 2);
+        violetLight.position.set(-5, -2, -35);
+        scene.add(violetLight);
+
+        const rand = (min, max) => min + Math.random() * (max - min);
+
+        // Star points extend along the route, so they drift naturally as the camera advances.
+        {
+          const count = isMobile ? 230 : 540;
+          const positions = new Float32Array(count * 3);
+          const colors = new Float32Array(count * 3);
+          const palette = [[0.72, 0.83, 1], [1, 0.91, 0.77], [0.77, 0.75, 1], [0.86, 0.98, 1]];
+          for (let i = 0; i < count; i++) {
+            positions[i * 3] = rand(-18, 18);
+            positions[i * 3 + 1] = rand(-11, 11);
+            positions[i * 3 + 2] = rand(-86, 19);
+            const color = palette[(Math.random() * palette.length) | 0];
+            colors[i * 3] = color[0]; colors[i * 3 + 1] = color[1]; colors[i * 3 + 2] = color[2];
+          }
+          const geometry = new THREE.BufferGeometry();
+          geometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
+          geometry.setAttribute("color", new THREE.BufferAttribute(colors, 3));
+          const material = new THREE.PointsMaterial({
+            size: isMobile ? 0.045 : 0.052, vertexColors: true, transparent: true,
+            opacity: 0.48, sizeAttenuation: true, depthWrite: false
+          });
+          scene.add(new THREE.Points(geometry, material));
+        }
+
+        // A continuous, gently winding orbital trail forms the route through the portfolio.
+        const routePoints = [];
+        for (let i = 0; i <= 140; i++) {
+          const t = i / 140;
+          routePoints.push(new THREE.Vector3(
+            Math.sin(t * Math.PI * 5.2) * 0.78 + Math.sin(t * Math.PI * 15) * 0.11,
+            Math.sin(t * Math.PI * 7.5) * 0.23,
+            8 - t * 70
+          ));
+        }
+        const route = new THREE.CatmullRomCurve3(routePoints, false, "centripetal");
+        const mainRoute = new THREE.Mesh(
+          new THREE.TubeGeometry(route, 500, 0.045, 7, false),
+          new THREE.MeshBasicMaterial({ color: 0x56eaff, transparent: true, opacity: 0.28, blending: THREE.AdditiveBlending, depthWrite: false })
+        );
+        scene.add(mainRoute);
+        [-0.17, 0.17].forEach((offset, index) => {
+          const railPoints = routePoints.map(point => new THREE.Vector3(point.x + offset, point.y + (index ? 0.10 : -0.10), point.z));
+          const railCurve = new THREE.CatmullRomCurve3(railPoints, false, "centripetal");
+          scene.add(new THREE.Mesh(
+            new THREE.TubeGeometry(railCurve, 420, 0.012, 5, false),
+            new THREE.MeshBasicMaterial({ color: index ? 0x9578ff : 0x48aaff, transparent: true, opacity: 0.22, blending: THREE.AdditiveBlending, depthWrite: false })
+          ));
+        });
+
+        function makePlanetTexture(base, accent, deep, kind) {
+          const textureCanvas = document.createElement("canvas");
+          textureCanvas.width = 1024; textureCanvas.height = 512;
+          const ctx = textureCanvas.getContext("2d");
+          const gradient = ctx.createLinearGradient(0, 0, 0, 512);
+          gradient.addColorStop(0, deep); gradient.addColorStop(0.43, base); gradient.addColorStop(0.72, accent); gradient.addColorStop(1, deep);
+          ctx.fillStyle = gradient; ctx.fillRect(0, 0, 1024, 512);
+
+          // Procedural terrain/bands add visible surface detail without loading external images.
+          if (kind === 0) {
+            for (let n = 0; n < 19; n++) {
+              const x = rand(0, 1024), y = rand(65, 445), rx = rand(18, 90), ry = rand(8, 36);
+              ctx.save(); ctx.translate(x, y); ctx.rotate(rand(-0.8, 0.8));
+              ctx.fillStyle = n % 3 ? accent : "#67c9a4";
+              ctx.beginPath(); ctx.ellipse(0, 0, rx, ry, 0, 0, Math.PI * 2); ctx.fill();
+              ctx.restore();
+            }
+          }
+          for (let n = 0; n < 34; n++) {
+            const y = n * 15 + rand(-5, 5);
+            ctx.beginPath(); ctx.moveTo(0, y);
+            for (let x = 0; x <= 1024; x += 48) ctx.lineTo(x, y + Math.sin(x * 0.011 + n * 0.7) * rand(2, 9));
+            ctx.strokeStyle = n % 3 === 0 ? "rgba(255,255,255,.12)" : "rgba(0,0,18,.10)";
+            ctx.lineWidth = rand(2, 8); ctx.stroke();
+          }
+          for (let n = 0; n < 1500; n++) {
+            ctx.fillStyle = Math.random() > 0.5 ? "rgba(255,255,255,.055)" : "rgba(0,0,0,.06)";
+            ctx.fillRect(rand(0, 1024), rand(0, 512), rand(0.5, 2.2), rand(0.5, 2.2));
+          }
+          const texture = new THREE.CanvasTexture(textureCanvas);
+          texture.colorSpace = THREE.SRGBColorSpace;
+          texture.anisotropy = Math.min(4, renderer.capabilities.getMaxAnisotropy());
+          return texture;
+        }
+
+        // Shared procedural cloud map: wispy translucent bands give planets a layered, living surface.
+        function makeCloudTexture() {
+          const c = document.createElement("canvas");
+          c.width = 768; c.height = 384;
+          const g = c.getContext("2d");
+          for (let i = 0; i < 76; i++) {
+            const x = rand(-30, 798), y = rand(20, 364);
+            const rx = rand(12, 68), ry = rand(3, 17);
+            g.save(); g.translate(x, y); g.rotate(rand(-0.35, 0.35));
+            const cloud = g.createRadialGradient(0, 0, 1, 0, 0, rx);
+            cloud.addColorStop(0, `rgba(224,246,255,${rand(0.07, 0.22)})`);
+            cloud.addColorStop(0.55, `rgba(174,221,255,${rand(0.035, 0.10)})`);
+            cloud.addColorStop(1, "rgba(255,255,255,0)");
+            g.fillStyle = cloud; g.beginPath(); g.ellipse(0, 0, rx, ry, 0, 0, Math.PI * 2); g.fill();
+            g.restore();
+          }
+          const tex = new THREE.CanvasTexture(c);
+          tex.colorSpace = THREE.SRGBColorSpace;
+          return tex;
+        }
+        const cloudTexture = makeCloudTexture();
+
+        const destinations = [
+          { id: "about", name: "About", color: 0xa07cff, base: "#3152b6", accent: "#65c8bd", deep: "#111945", kind: 0, scale: 1.08 },
+          { id: "experience", name: "Experience", color: 0x4ade80, base: "#176d50", accent: "#6de5a2", deep: "#06251f", kind: 1, scale: 1.12 },
+          { id: "education", name: "Education", color: 0xff7a59, base: "#a64e38", accent: "#ffcf9c", deep: "#361628", kind: 2, scale: 1.04, ring: true },
+          { id: "skills", name: "Skills", color: 0x4f8bff, base: "#1853b5", accent: "#60dfff", deep: "#071844", kind: 3, scale: 1.09 },
+          { id: "projects", name: "Projects", color: 0xffb53d, base: "#a56b21", accent: "#ffe18a", deep: "#3a1d10", kind: 4, scale: 1.16, ring: true },
+          { id: "certificates", name: "Certificates", color: 0x5ee7ff, base: "#167c99", accent: "#a2f7ff", deep: "#062839", kind: 5, scale: 1.04 },
+          { id: "contact", name: "Contact", color: 0xff7ab8, base: "#9d2c72", accent: "#ffaddc", deep: "#350d3a", kind: 6, scale: 1.07 }
+        ];
+        const sphereGeometry = new THREE.SphereGeometry(1, isMobile ? 32 : 44, isMobile ? 24 : 32);
+        const planetObjects = [];
+
+        destinations.forEach((destination, index) => {
+          const group = new THREE.Group();
+          group.userData.destination = destination.id;
+          const texture = makePlanetTexture(destination.base, destination.accent, destination.deep, destination.kind);
+          const surfaceMaterial = new THREE.MeshStandardMaterial({
+            map: texture, color: 0xffffff, roughness: 0.9, metalness: 0.025,
+            emissive: new THREE.Color(destination.color), emissiveIntensity: 0.045
+          });
+          const sphere = new THREE.Mesh(sphereGeometry, surfaceMaterial);
+          group.add(sphere);
+
+          const atmosphere = new THREE.Mesh(
+            sphereGeometry,
+            new THREE.MeshBasicMaterial({ color: destination.color, transparent: true, opacity: 0.13, side: THREE.BackSide, blending: THREE.AdditiveBlending, depthWrite: false })
+          );
+          atmosphere.scale.setScalar(1.075);
+          group.add(atmosphere);
+
+          // Fresnel-style atmosphere rim: a bright edge makes the sphere read as a real planet.
+          const rimMaterial = new THREE.ShaderMaterial({
+            uniforms: {
+              uColor: { value: new THREE.Color(destination.color) },
+              uTime: { value: 0 },
+              uStrength: { value: isMobile ? 0.42 : 0.68 }
+            },
+            vertexShader: `
+              varying vec3 vNormal;
+              varying vec3 vViewDir;
+              void main() {
+                vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
+                vNormal = normalize(normalMatrix * normal);
+                vViewDir = normalize(-mvPosition.xyz);
+                gl_Position = projectionMatrix * mvPosition;
+              }
+            `,
+            fragmentShader: `
+              uniform vec3 uColor;
+              uniform float uTime;
+              uniform float uStrength;
+              varying vec3 vNormal;
+              varying vec3 vViewDir;
+              void main() {
+                float facing = max(dot(normalize(vNormal), normalize(vViewDir)), 0.0);
+                float rim = pow(1.0 - facing, 2.55);
+                float pulse = 0.82 + 0.18 * sin(uTime * 1.25);
+                gl_FragColor = vec4(uColor, rim * uStrength * pulse);
+              }
+            `,
+            transparent: true, blending: THREE.AdditiveBlending,
+            depthWrite: false, side: THREE.FrontSide
+          });
+          const rim = new THREE.Mesh(sphereGeometry, rimMaterial);
+          rim.scale.setScalar(1.115);
+          group.add(rim);
+
+          // A separate rotating cloud layer adds slow atmospheric motion above the terrain.
+          const clouds = new THREE.Mesh(
+            sphereGeometry,
+            new THREE.MeshBasicMaterial({
+              map: cloudTexture, color: destination.color, transparent: true,
+              opacity: index === 0 || index === 3 || index === 5 ? 0.52 : 0.23,
+              blending: THREE.AdditiveBlending, depthWrite: false
+            })
+          );
+          clouds.scale.setScalar(1.018);
+          group.add(clouds);
+
+          if (destination.ring) {
+            const ringGeometry = new THREE.RingGeometry(1.28, 1.88, 96);
+            const ringMaterial = new THREE.MeshStandardMaterial({
+              color: destination.kind === 2 ? 0xffc18e : 0xffd879,
+              side: THREE.DoubleSide, transparent: true, opacity: 0.72,
+              metalness: 0.4, roughness: 0.48, depthWrite: false
+            });
+            const ring = new THREE.Mesh(ringGeometry, ringMaterial);
+            ring.rotation.set(1.12, 0.12, 0.25);
+            group.add(ring);
+            const fineRing = new THREE.Mesh(
+              new THREE.RingGeometry(1.92, 1.99, 96),
+              new THREE.MeshBasicMaterial({ color: destination.color, side: THREE.DoubleSide, transparent: true, opacity: 0.36, depthWrite: false })
+            );
+            fineRing.rotation.copy(ring.rotation); group.add(fineRing);
+            const innerRing = new THREE.Mesh(
+              new THREE.RingGeometry(1.13, 1.17, 96),
+              new THREE.MeshBasicMaterial({ color: destination.color, side: THREE.DoubleSide, transparent: true, opacity: 0.48, blending: THREE.AdditiveBlending, depthWrite: false })
+            );
+            innerRing.rotation.copy(ring.rotation); group.add(innerRing);
+          }
+
+          // A tiny moon keeps a couple of worlds from feeling like static icons.
+          if (index === 0 || index === 4) {
+            const orbit = new THREE.Group();
+            const moon = new THREE.Mesh(
+              new THREE.SphereGeometry(0.13, 16, 12),
+              new THREE.MeshStandardMaterial({ color: index === 0 ? 0xb8c8e6 : 0xffdfb1, roughness: 0.96 })
+            );
+            moon.position.set(1.72, 0.35, 0.12);
+            orbit.add(moon); group.add(orbit);
+            group.userData.moonOrbit = orbit;
+          }
+
+          group.scale.setScalar(destination.scale * (isMobile ? 0.86 : 1));
+          scene.add(group);
+          planetObjects.push({ destination, group, surfaceMaterial, rimMaterial, clouds, sectionProgress: 0, side: index % 2 === 0 ? 1 : -1, index });
+        });
+
+        // Each portfolio milestone is a holographic checkpoint gate along the flight path.
+        const waypointObjects = [];
+        const waypointNormal = new THREE.Vector3(0, 0, 1);
+        planetObjects.forEach((item, index) => {
+          const gate = new THREE.Group();
+          const coreMaterial = new THREE.MeshBasicMaterial({
+            color: item.destination.color, transparent: true, opacity: 0.26,
+            blending: THREE.AdditiveBlending, depthWrite: false
+          });
+          const outerMaterial = new THREE.MeshBasicMaterial({
+            color: 0x8cbcff, transparent: true, opacity: 0.11,
+            blending: THREE.AdditiveBlending, depthWrite: false
+          });
+          const core = new THREE.Mesh(new THREE.TorusGeometry(0.78, 0.025, 8, 80), coreMaterial);
+          const outer = new THREE.Mesh(new THREE.TorusGeometry(1.04, 0.009, 6, 96), outerMaterial);
+          gate.add(core, outer);
+          const beaconMaterial = new THREE.MeshBasicMaterial({ color: item.destination.color, blending: THREE.AdditiveBlending });
+          const beacons = [];
+          for (let j = 0; j < 4; j++) {
+            const angle = (j / 4) * Math.PI * 2 + index * 0.24;
+            const beacon = new THREE.Mesh(new THREE.SphereGeometry(0.045, 8, 8), beaconMaterial);
+            beacon.position.set(Math.cos(angle) * 1.04, Math.sin(angle) * 1.04, 0);
+            gate.add(beacon); beacons.push(beacon);
+          }
+          scene.add(gate);
+          waypointObjects.push({ item, gate, coreMaterial, outerMaterial, beacons, index });
+        });
+
+        // Moving light packets run down the orbital rails, making the route feel powered-on.
+        const routePackets = [];
+        const packetGeometry = new THREE.SphereGeometry(isMobile ? 0.026 : 0.034, 8, 8);
+        for (let i = 0; i < (isMobile ? 16 : 28); i++) {
+          const color = i % 4 === 0 ? 0xb49aff : (i % 3 === 0 ? 0xffd7a0 : 0x6df2ff);
+          const packet = new THREE.Group();
+          const core = new THREE.Mesh(packetGeometry, new THREE.MeshBasicMaterial({ color, blending: THREE.AdditiveBlending }));
+          const halo = new THREE.Mesh(
+            new THREE.SphereGeometry(isMobile ? 0.075 : 0.10, 8, 8),
+            new THREE.MeshBasicMaterial({ color, transparent: true, opacity: 0.15, blending: THREE.AdditiveBlending, depthWrite: false })
+          );
+          packet.add(core, halo);
+          scene.add(packet);
+          routePackets.push({ packet, offset: i / (isMobile ? 16 : 28), speed: 0.018 + (i % 5) * 0.002 });
+        }
+
+        // The ship is assembled from lightweight geometry, so it is a real 3D object with no asset dependency.
+        const ship = new THREE.Group();
+        const hull = new THREE.MeshStandardMaterial({ color: 0xd9f5ff, metalness: 0.78, roughness: 0.27 });
+        const navy = new THREE.MeshStandardMaterial({ color: 0x19336c, metalness: 0.68, roughness: 0.32 });
+        const cyan = new THREE.MeshStandardMaterial({ color: 0x46e9ff, emissive: 0x159cff, emissiveIntensity: 1.55, metalness: 0.2, roughness: 0.24 });
+        const darkGlass = new THREE.MeshStandardMaterial({ color: 0x132c5c, emissive: 0x38bfff, emissiveIntensity: 0.65, metalness: 0.48, roughness: 0.16 });
+        const body = new THREE.Mesh(new THREE.CylinderGeometry(0.17, 0.22, 0.95, 12), hull);
+        body.rotation.x = -Math.PI / 2; ship.add(body);
+        const nose = new THREE.Mesh(new THREE.ConeGeometry(0.18, 0.5, 12), hull);
+        nose.rotation.x = -Math.PI / 2; nose.position.z = -0.68; ship.add(nose);
+        const rear = new THREE.Mesh(new THREE.CylinderGeometry(0.25, 0.3, 0.22, 12), navy);
+        rear.rotation.x = -Math.PI / 2; rear.position.z = 0.48; ship.add(rear);
+        const cockpit = new THREE.Mesh(new THREE.SphereGeometry(0.135, 18, 14), darkGlass);
+        cockpit.scale.set(0.82, 0.82, 1.15); cockpit.position.set(0, 0.14, -0.18); ship.add(cockpit);
+
+        function addWing(side) {
+          const geometry = new THREE.BufferGeometry();
+          const s = side;
+          geometry.setAttribute("position", new THREE.Float32BufferAttribute([
+            s * 0.11, -0.035, 0.20,
+            s * 0.64, -0.015, 0.32,
+            s * 0.25, 0.10, -0.26
+          ], 3));
+          geometry.setIndex([0, 1, 2]); geometry.computeVertexNormals();
+          const wing = new THREE.Mesh(geometry, navy); wing.material.side = THREE.DoubleSide; ship.add(wing);
+          const accentGeometry = new THREE.BoxGeometry(0.025, 0.018, 0.34);
+          const accent = new THREE.Mesh(accentGeometry, cyan);
+          accent.position.set(s * 0.39, 0.015, 0.10); accent.rotation.y = s * -0.65; ship.add(accent);
+        }
+        addWing(-1); addWing(1);
+        const fin = new THREE.Mesh(new THREE.BoxGeometry(0.10, 0.26, 0.34), navy);
+        fin.position.set(0, 0.19, 0.23); ship.add(fin);
+
+        const engine = new THREE.Mesh(
+          new THREE.ConeGeometry(0.145, 0.57, 12),
+          new THREE.MeshBasicMaterial({ color: 0x43dfff, transparent: true, opacity: 0.78, blending: THREE.AdditiveBlending, depthWrite: false })
+        );
+        engine.rotation.x = Math.PI / 2; engine.position.z = 0.82; ship.add(engine);
+        const innerEngine = new THREE.Mesh(
+          new THREE.ConeGeometry(0.075, 0.39, 10),
+          new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.9, blending: THREE.AdditiveBlending, depthWrite: false })
+        );
+        innerEngine.rotation.x = Math.PI / 2; innerEngine.position.z = 0.88; ship.add(innerEngine);
+        const engineLight = new THREE.PointLight(0x38dfff, 3.4, 6, 2);
+        engineLight.position.z = 1.05; ship.add(engineLight);
+
+        // Twin auxiliary thrusters, metallic engine housings, and illuminated wing navigation lights.
+        const sideFlames = [];
+        const engineHousing = new THREE.MeshStandardMaterial({ color: 0x263b70, metalness: 0.82, roughness: 0.28 });
+        for (const side of [-1, 1]) {
+          const housing = new THREE.Mesh(new THREE.CylinderGeometry(0.075, 0.092, 0.22, 12), engineHousing);
+          housing.rotation.x = -Math.PI / 2;
+          housing.position.set(side * 0.16, -0.035, 0.51);
+          ship.add(housing);
+          const flame = new THREE.Mesh(
+            new THREE.ConeGeometry(0.078, 0.38, 12),
+            new THREE.MeshBasicMaterial({ color: side < 0 ? 0x55aaff : 0x6fffff, transparent: true, opacity: 0.78, blending: THREE.AdditiveBlending, depthWrite: false })
+          );
+          flame.rotation.x = Math.PI / 2; flame.position.set(side * 0.16, -0.035, 0.78); ship.add(flame);
+          const flameCore = new THREE.Mesh(
+            new THREE.ConeGeometry(0.036, 0.25, 10),
+            new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.86, blending: THREE.AdditiveBlending, depthWrite: false })
+          );
+          flameCore.rotation.x = Math.PI / 2; flameCore.position.set(side * 0.16, -0.035, 0.83); ship.add(flameCore);
+          sideFlames.push({ flame, flameCore });
+          const wingLight = new THREE.Mesh(
+            new THREE.SphereGeometry(0.032, 10, 10),
+            new THREE.MeshBasicMaterial({ color: side < 0 ? 0xff6d9a : 0x6cf7ff, blending: THREE.AdditiveBlending })
+          );
+          wingLight.position.set(side * 0.58, 0.045, 0.045); ship.add(wingLight);
+          const wingGlow = new THREE.Mesh(
+            new THREE.SphereGeometry(0.082, 8, 8),
+            new THREE.MeshBasicMaterial({ color: side < 0 ? 0xff3d85 : 0x3feaff, transparent: true, opacity: 0.17, blending: THREE.AdditiveBlending, depthWrite: false })
+          );
+          wingGlow.position.copy(wingLight.position); ship.add(wingGlow);
+        }
+        // Fine hull markings and a dorsal sensor mast sell the spacecraft silhouette at close range.
+        const hullStripe = new THREE.Mesh(new THREE.BoxGeometry(0.035, 0.018, 0.43), cyan);
+        hullStripe.position.set(0, 0.105, -0.11); ship.add(hullStripe);
+        const sensorMast = new THREE.Mesh(new THREE.CylinderGeometry(0.012, 0.018, 0.18, 8), hull);
+        sensorMast.position.set(0, 0.245, 0.12); ship.add(sensorMast);
+        const sensorTip = new THREE.Mesh(new THREE.SphereGeometry(0.03, 8, 8), cyan);
+        sensorTip.position.set(0, 0.34, 0.12); ship.add(sensorTip);
+
+        // A stream of tiny ion particles follows the ship and intensifies as it accelerates.
+        const exhaustCount = isMobile ? 22 : 38;
+        const exhaustPositions = new Float32Array(exhaustCount * 3);
+        const exhaustSpeeds = new Float32Array(exhaustCount);
+        for (let i = 0; i < exhaustCount; i++) {
+          exhaustPositions[i * 3] = rand(-0.19, 0.19);
+          exhaustPositions[i * 3 + 1] = rand(-0.07, 0.07);
+          exhaustPositions[i * 3 + 2] = rand(0.82, 2.7);
+          exhaustSpeeds[i] = rand(0.7, 2.0);
+        }
+        const exhaustGeometry = new THREE.BufferGeometry();
+        exhaustGeometry.setAttribute("position", new THREE.BufferAttribute(exhaustPositions, 3));
+        const exhaustMaterial = new THREE.PointsMaterial({
+          color: 0x8eeeff, size: isMobile ? 0.055 : 0.072, sizeAttenuation: true,
+          transparent: true, opacity: 0.72, blending: THREE.AdditiveBlending, depthWrite: false
+        });
+        const exhaustParticles = new THREE.Points(exhaustGeometry, exhaustMaterial);
+        ship.add(exhaustParticles);
+
+        ship.scale.setScalar(isMobile ? 0.64 : 0.88);
+        scene.add(ship);
+
+        // An orbiting relay satellite adds a quiet technology detail near the Skills world.
+        const satellite = new THREE.Group();
+        const satCore = new THREE.Mesh(new THREE.BoxGeometry(0.19, 0.19, 0.19), hull);
+        satellite.add(satCore);
+        const panelMaterial = new THREE.MeshStandardMaterial({ color: 0x2c80d9, emissive: 0x0b326b, emissiveIntensity: 0.55, metalness: 0.5, roughness: 0.3 });
+        [-1, 1].forEach(side => {
+          const panel = new THREE.Mesh(new THREE.BoxGeometry(0.47, 0.025, 0.25), panelMaterial);
+          panel.position.x = side * 0.34; satellite.add(panel);
+          const stripe = new THREE.Mesh(new THREE.BoxGeometry(0.42, 0.008, 0.015), cyan);
+          stripe.position.set(side * 0.34, 0.018, 0); satellite.add(stripe);
+        });
+        scene.add(satellite);
+
+        // Low-poly asteroids occupy the margins, never forming a dense wall in front of the text.
+        const asteroidGeometry = new THREE.IcosahedronGeometry(1, 1);
+        const asteroidMaterials = [
+          new THREE.MeshStandardMaterial({ color: 0x586a91, roughness: 0.98, flatShading: true }),
+          new THREE.MeshStandardMaterial({ color: 0x766d9a, roughness: 0.96, flatShading: true }),
+          new THREE.MeshStandardMaterial({ color: 0x3c577d, roughness: 0.99, flatShading: true })
+        ];
+        const asteroids = [];
+        const asteroidCount = isMobile ? 22 : 48;
+        for (let i = 0; i < asteroidCount; i++) {
+          const t = Math.random();
+          const pathPoint = route.getPointAt(t);
+          const size = rand(0.065, 0.20);
+          const asteroid = new THREE.Mesh(asteroidGeometry, asteroidMaterials[i % asteroidMaterials.length]);
+          asteroid.position.set(pathPoint.x + (Math.random() > 0.5 ? 1 : -1) * rand(2.0, 4.8), rand(-3.8, 3.8), 8 - t * 70 + rand(-2.5, 2.5));
+          asteroid.scale.set(size * rand(0.8, 1.45), size * rand(0.65, 1.3), size * rand(0.7, 1.4));
+          asteroid.rotation.set(rand(0, 6.28), rand(0, 6.28), rand(0, 6.28));
+          asteroid.userData.spin = new THREE.Vector3(rand(-0.35, 0.35), rand(-0.5, 0.5), rand(-0.28, 0.28));
+          scene.add(asteroid); asteroids.push(asteroid);
+        }
+
+        // Speed-sensitive warp streaks are normally almost invisible and bloom in during fast scrolling.
+        const warpGroup = new THREE.Group();
+        scene.add(warpGroup);
+        const streakCount = isMobile ? 42 : 94;
+        const streakPositions = new Float32Array(streakCount * 6);
+        const streakSeeds = [];
+        for (let i = 0; i < streakCount; i++) {
+          const x = rand(-10, 10), y = rand(-6.2, 6.2), z = rand(-17, -4);
+          const length = rand(0.10, 0.6);
+          streakPositions[i * 6] = x; streakPositions[i * 6 + 1] = y; streakPositions[i * 6 + 2] = z;
+          streakPositions[i * 6 + 3] = x + rand(-0.03, 0.03); streakPositions[i * 6 + 4] = y + rand(-0.03, 0.03); streakPositions[i * 6 + 5] = z - length;
+          streakSeeds.push({ x, y, z, length });
+        }
+        const streakGeometry = new THREE.BufferGeometry();
+        streakGeometry.setAttribute("position", new THREE.BufferAttribute(streakPositions, 3));
+        const streakMaterial = new THREE.LineBasicMaterial({ color: 0x9fefff, transparent: true, opacity: 0, blending: THREE.AdditiveBlending, depthWrite: false });
+        const warpStreaks = new THREE.LineSegments(streakGeometry, streakMaterial);
+        warpGroup.add(warpStreaks);
+        warpGroup.visible = false;
+
+        let currentProgress = 0;
+        let targetProgress = 0;
+        let previousProgressForVelocity = 0;
+        let scrollVelocity = 0;
+        let pointerX = 0, pointerY = 0;
+        let previousTime = performance.now();
+        let rafId = 0;
+        window.addEventListener("pointermove", event => {
+          if (isMobile || reducedMotion) return;
+          pointerX = (event.clientX / Math.max(1, window.innerWidth) - 0.5) * 2;
+          pointerY = (event.clientY / Math.max(1, window.innerHeight) - 0.5) * 2;
+        }, { passive: true });
+
+        function refreshMilestones() {
+          const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+          targetProgress = clamp(window.scrollY / maxScroll, 0, 1);
+          planetObjects.forEach(item => {
+            const section = document.getElementById(item.destination.id);
+            if (!section) return;
+            const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+            item.sectionProgress = clamp(sectionTop / maxScroll, 0, 1);
+          });
+        }
+        refreshMilestones();
+        window.addEventListener("scroll", refreshMilestones, { passive: true });
+        window.addEventListener("resize", () => {
+          renderer.setSize(window.innerWidth, window.innerHeight, false);
+          camera.aspect = window.innerWidth / window.innerHeight;
+          camera.updateProjectionMatrix();
+          refreshMilestones();
+        }, { passive: true });
+        window.addEventListener("load", refreshMilestones, { once: true });
+        if ("ResizeObserver" in window) {
+          const content = document.querySelector("main");
+          if (content) new ResizeObserver(refreshMilestones).observe(content);
+        }
+        document.addEventListener("visibilitychange", () => {
+          if (!document.hidden && !rafId) { previousTime = performance.now(); rafId = requestAnimationFrame(frame); }
+        });
+
+        function frame(now) {
+          rafId = 0;
+          if (document.hidden) return;
+          const dt = Math.min((now - previousTime) / 1000, 0.05);
+          previousTime = now;
+          if (reducedMotion) currentProgress = targetProgress;
+          else currentProgress += (targetProgress - currentProgress) * (1 - Math.exp(-dt * 5.4));
+
+          const progressDelta = currentProgress - previousProgressForVelocity;
+          const rawVelocity = Math.abs(progressDelta) / Math.max(dt, 0.001);
+          scrollVelocity += (rawVelocity - scrollVelocity) * Math.min(1, dt * 4.2);
+          previousProgressForVelocity = currentProgress;
+          const warpIntensity = clamp((scrollVelocity - 0.075) * 1.9, 0, 1);
+
+          const cameraZ = 13 - currentProgress * 70;
+          const routePoint = route.getPointAt(clamp(currentProgress, 0, 0.9999));
+          camera.position.x += ((routePoint.x * 0.18 + pointerX * 0.13) - camera.position.x) * (reducedMotion ? 1 : 0.045);
+          camera.position.y += ((0.36 + routePoint.y * 0.22 - pointerY * 0.08) - camera.position.y) * (reducedMotion ? 1 : 0.045);
+          camera.position.z = cameraZ;
+          camera.lookAt(routePoint.x * 0.12 + pointerX * 0.22, pointerY * -0.16, cameraZ - 9.5);
+          const cameraBank = clamp(route.getTangentAt(clamp(currentProgress, 0, 0.9999)).x * 0.055, -0.035, 0.035);
+          if (!reducedMotion) camera.rotateZ(cameraBank);
+
+          // Keep the warp streaks just ahead of the camera so they feel like travel speed, not page decoration.
+          const forward = camera.getWorldDirection(new THREE.Vector3());
+          warpGroup.position.copy(camera.position).addScaledVector(forward, 5.2);
+          warpGroup.quaternion.copy(camera.quaternion);
+          warpGroup.visible = warpIntensity > 0.035 && !reducedMotion;
+          streakMaterial.opacity = warpIntensity * 0.55;
+          for (let i = 0; i < streakCount; i++) {
+            const seed = streakSeeds[i], k = i * 6;
+            const length = seed.length + warpIntensity * (1.7 + seed.length * 2.4);
+            streakPositions[k] = seed.x; streakPositions[k + 1] = seed.y; streakPositions[k + 2] = seed.z;
+            streakPositions[k + 3] = seed.x * 0.99; streakPositions[k + 4] = seed.y * 0.99; streakPositions[k + 5] = seed.z - length;
+          }
+          streakGeometry.attributes.position.needsUpdate = true;
+
+          const shipT = clamp(currentProgress, 0, 0.9999);
+          const shipPoint = route.getPointAt(shipT);
+          const tangent = route.getTangentAt(shipT).normalize();
+          ship.position.set(
+            shipPoint.x + Math.min(1.8, 0.37 * 5 * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2)) * camera.aspect),
+            shipPoint.y - 0.32,
+            shipPoint.z
+          );
+          ship.quaternion.setFromUnitVectors(new THREE.Vector3(0, 0, -1), tangent);
+          ship.quaternion.multiply(new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0, 1, 0), -0.42));
+          if (!reducedMotion) {
+            ship.rotateZ(Math.sin(now * 0.0007) * 0.035);
+            const thrust = 1 + warpIntensity * 0.75;
+            engine.scale.setScalar((0.88 + Math.sin(now * 0.012) * 0.11) * thrust);
+            innerEngine.scale.setScalar((0.9 + Math.sin(now * 0.016 + 1) * 0.10) * thrust);
+            sideFlames.forEach((flame, index) => {
+              const flicker = 0.86 + Math.sin(now * 0.014 + index * 2.1) * 0.12;
+              flame.flame.scale.setScalar(flicker * thrust);
+              flame.flameCore.scale.setScalar((0.9 + Math.sin(now * 0.018 + index) * 0.08) * thrust);
+            });
+            engineLight.intensity = 3.4 + warpIntensity * 5.2 + Math.sin(now * 0.009) * 0.4;
+          }
+          exhaustMaterial.opacity = 0.62 + warpIntensity * 0.35;
+          if (!reducedMotion) {
+            for (let i = 0; i < exhaustCount; i++) {
+              const k = i * 3;
+              exhaustPositions[k + 2] += dt * exhaustSpeeds[i] * (1 + warpIntensity * 2.3);
+              exhaustPositions[k] += Math.sin(now * 0.003 + i) * dt * 0.035;
+              if (exhaustPositions[k + 2] > 3.2) {
+                exhaustPositions[k] = rand(-0.19, 0.19);
+                exhaustPositions[k + 1] = rand(-0.07, 0.07);
+                exhaustPositions[k + 2] = rand(0.76, 1.05);
+              }
+            }
+            exhaustGeometry.attributes.position.needsUpdate = true;
+          }
+
+          const aspect = camera.aspect;
+          const edgeX = Math.min(3.18, 0.75 + aspect * 1.45);
+          const activeId = document.body.dataset.current || "about";
+          planetObjects.forEach((item, index) => {
+            const { destination, group, surfaceMaterial } = item;
+            const sign = item.side;
+            const targetX = sign * edgeX * (isMobile ? 1.02 : 1.30);
+            const targetY = index % 3 === 0 ? 1.32 : index % 3 === 1 ? -1.28 : 0.32;
+            group.position.x += (targetX - group.position.x) * (reducedMotion ? 1 : 0.07);
+            group.position.y += (targetY - group.position.y) * (reducedMotion ? 1 : 0.07);
+            group.position.z = 7 - item.sectionProgress * 70;
+            const isActive = destination.id === activeId;
+            const baseScale = destination.scale * (isMobile ? 0.52 : 0.74) * (isActive ? 1.05 : 0.96);
+            const desiredScale = baseScale;
+            const nextScale = reducedMotion ? desiredScale : THREE.MathUtils.damp(group.scale.x, desiredScale, 3.6, dt);
+            group.scale.setScalar(nextScale);
+            if (!reducedMotion) {
+              group.rotation.y += dt * (isActive ? 0.12 : 0.055) * (index % 2 ? -1 : 1);
+              group.rotation.x += dt * 0.009;
+              item.clouds.rotation.y -= dt * (isActive ? 0.045 : 0.025);
+              if (group.userData.moonOrbit) group.userData.moonOrbit.rotation.y += dt * 0.55;
+            }
+            item.rimMaterial.uniforms.uTime.value = now * 0.001 + index * 0.8;
+            item.rimMaterial.uniforms.uStrength.value = (isActive ? 0.70 : (isMobile ? 0.22 : 0.34)) + (isActive ? Math.sin(now * 0.002) * 0.07 : 0);
+            surfaceMaterial.emissiveIntensity = isActive ? 0.12 : 0.025;
+          });
+
+          // Align checkpoint gates to each section's scroll milestone and brighten the active destination.
+          waypointObjects.forEach((waypoint, index) => {
+            const t = clamp(waypoint.item.sectionProgress, 0, 0.9999);
+            const point = route.getPointAt(t);
+            const tangent = route.getTangentAt(t).normalize();
+            waypoint.gate.position.copy(point);
+            waypoint.gate.position.y += 0.12;
+            waypoint.gate.quaternion.setFromUnitVectors(waypointNormal, tangent);
+            const active = waypoint.item.destination.id === activeId;
+            const pulse = reducedMotion ? 0.5 : 0.5 + 0.5 * Math.sin(now * 0.0025 + index * 0.85);
+            waypoint.coreMaterial.opacity = active ? 0.72 + pulse * 0.20 : 0.17;
+            waypoint.outerMaterial.opacity = active ? 0.28 + pulse * 0.16 : 0.07;
+            waypoint.gate.scale.setScalar(active ? 1.0 + pulse * 0.08 : 0.78);
+            if (!reducedMotion) waypoint.gate.rotateZ(dt * (active ? 0.20 : 0.075) * (index % 2 ? -1 : 1));
+            waypoint.beacons.forEach((beacon, beaconIndex) => {
+              const beaconPulse = 0.75 + 0.35 * Math.sin(now * 0.004 + beaconIndex * 1.5 + index);
+              beacon.scale.setScalar(active ? beaconPulse * 1.2 : 0.72);
+            });
+          });
+
+          // Light packets run down the orbital path; reduced-motion mode holds them in place.
+          routePackets.forEach(({ packet, offset, speed }, index) => {
+            const t = reducedMotion ? offset : (offset + now * speed * 0.001) % 1;
+            packet.position.copy(route.getPointAt(t));
+            const pulse = reducedMotion ? 1 : 0.82 + Math.sin(now * 0.005 + index) * 0.18;
+            packet.scale.setScalar(pulse);
+          });
+
+          const skillsProgress = planetObjects.find(item => item.destination.id === "skills")?.sectionProgress ?? 0.5;
+          satellite.position.set(-edgeX * 0.72, 1.1, 7 - skillsProgress * 70 - 2.2);
+          if (!reducedMotion) { satellite.rotation.y += dt * 0.2; satellite.rotation.z = Math.sin(now * 0.0005) * 0.1; }
+
+          if (!reducedMotion) {
+            asteroids.forEach(asteroid => {
+              const spin = asteroid.userData.spin;
+              asteroid.rotation.x += spin.x * dt;
+              asteroid.rotation.y += spin.y * dt;
+              asteroid.rotation.z += spin.z * dt;
+            });
+          }
+
+          renderer.render(scene, camera);
+          rafId = requestAnimationFrame(frame);
+        }
+        rafId = requestAnimationFrame(frame);
+      } catch (error) {
+        // Keep the existing 2D space experience intact if WebGL or the CDN is unavailable.
+        console.warn("3D space scene could not start; keeping the regular portfolio background.", error);
+        host.style.display = "none";
+      }
+    }
+
+    bootSpacecraft();
+  })();
+  </script>
+
 </body>
 </html>
