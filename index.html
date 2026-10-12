@@ -601,6 +601,60 @@
       #space-scene-shade, #space3d-layer { transition: none !important; }
     }
 
+    /* ===== Section heading frame ===== */
+    .level-head {
+      width: 100%;
+      max-width: none;
+      margin: 0 0 2.4rem;
+      padding: 1.45rem 2rem 1.45rem 1.6rem;
+      gap: 1.6rem;
+      align-items: center;
+      border: 1px solid rgba(130,175,255,.18);
+      border-radius: 22px;
+      background:
+        linear-gradient(100deg, color-mix(in srgb, var(--level-color), transparent 88%) 0%, rgba(3,8,24,.97) 36%, rgba(2,6,20,.97) 100%);
+      box-shadow: 0 18px 44px rgba(0,0,0,.30), inset 0 1px 0 rgba(255,255,255,.05);
+    }
+    .level-head::before {
+      content: "";
+      position: absolute;
+      left: 0; top: 20%; bottom: 20%;
+      width: 3px;
+      border-radius: 0 3px 3px 0;
+      background: var(--level-color);
+      box-shadow: 0 0 14px var(--level-color);
+    }
+    .level-head .portal { margin-left: .35rem; margin-bottom: .45rem; }
+    .level-head .portal .level-sign {
+      left: 50%;
+      bottom: -15px;
+      translate: -50% 0;
+      rotate: 0deg;
+      padding: .18rem .75rem;
+      font-size: .66rem;
+      letter-spacing: .06em;
+    }
+    .level-head > div:last-child { min-width: 0; }
+    .level-head h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); }
+    .level-head p { max-width: 560px; margin-top: .45rem; }
+    @media (max-width: 700px) {
+      .level-head {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+        padding: 1.6rem 1.1rem 1.5rem;
+        margin-left: 0;
+      }
+      .level-head::before {
+        left: 50%; top: 0; bottom: auto;
+        width: 46%; height: 3px;
+        translate: -50% 0;
+        border-radius: 0 0 3px 3px;
+      }
+      .level-head .portal { margin: 0 0 .4rem; }
+      .level-head p { margin-inline: auto; }
+    }
+
   </style>
 </head>
 <body>
@@ -614,11 +668,11 @@
     <div class="container nav-inner">
       <a href="#home" class="logo"><b>R</b> Rezi Ichsan</a>
       <ul class="nav-links">
-        <li><a href="#about">About</a></li><li><a href="#experience">Experience</a></li><li><a href="#education">Education</a></li><li><a href="#skills">Skills</a></li><li><a href="#projects">Projects</a></li><li><a href="#certificates">Certificates</a></li><li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About</a></li><li><a href="#experience">Experience</a></li><li><a href="#education">Education</a></li><li><a href="#projects">Projects</a></li><li><a href="#certificates">Certificates</a></li><li><a href="#skills">Skills</a></li><li><a href="#contact">Contact</a></li>
       </ul>
       <div class="nav-actions"><button class="nav-map" type="button" data-starmap-open aria-haspopup="dialog" aria-label="Open star map"><i class="ri-compass-3-line"></i></button><button class="burger" id="menu-toggle" aria-label="Open menu" aria-expanded="false"><i class="ri-menu-3-line"></i></button></div>
     </div>
-    <div class="mobile-menu" id="mobile-menu"><a href="#about">About</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#certificates">Certificates</a><a href="#contact">Contact</a></div>
+    <div class="mobile-menu" id="mobile-menu"><a href="#about">About</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="#projects">Projects</a><a href="#certificates">Certificates</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div>
   </nav>
 
   <header class="hero" id="home">
@@ -653,8 +707,7 @@
     </section>
     <section class="level" id="experience" style="--level-color:#4ade80"><div class="container zoom"><div class="level-head reveal"><div class="portal"><i class="ri-briefcase-line"></i><span class="level-sign">PLANET 02</span></div><div><span class="eyebrow">Mission 02 · Experience</span><h2>Work <span>Experience</span></h2><p>Warehouse operations and a software engineering internship.</p></div></div><div class="two-columns"><article class="glass timeline-card reveal"><time>Jun 2026 — Sep 2026</time><h3>Outbound Checker</h3><p class="timeline-company"><i class="ri-building-line"></i> PT Astro Technologies Indonesia · Warehouse Cibitung</p><p>Checked picked orders before dispatch by matching product information and quantities against order details and inspecting item condition according to warehouse procedures. Reported discrepancies to the relevant team to help maintain order accuracy and support smooth outbound operations.</p><div class="tags"><span>Outbound Checking</span><span>Order Accuracy</span><span>Warehouse Operations</span><span>SOP Compliance</span><span>Teamwork</span></div></article><article class="glass timeline-card reveal"><time>Jul 2022 — Sep 2022</time><h3>Software Engineer Intern</h3><p class="timeline-company"><i class="ri-building-line"></i> Nutrifood Indonesia · Internship</p><p>Contributed to video-related features for an internal application using Python and Django. Worked on video management (create, update, delete) and video recording features. Tested features using dummy data based on team requirements.</p><div class="tags"><span>Python</span><span>Django</span><span>CRUD</span><span>Feature Testing</span></div></article></div></div></section>
     <section class="level" id="education" style="--level-color:#ff7a59"><div class="container zoom"><div class="level-head reveal"><div class="portal"><i class="ri-graduation-cap-line"></i><span class="level-sign">PLANET 03</span></div><div><span class="eyebrow">Mission 03 · Education</span><h2>My <span>Education</span></h2><p>A degree in Informatics and an English proficiency result.</p></div></div><div class="two-columns"><article class="glass timeline-card reveal"><time>Aug 2019 — Sep 2026</time><h3>Bachelor's Degree in Informatics</h3><p class="timeline-company"><i class="ri-map-pin-line"></i> Telkom University · Bandung, Indonesia</p><span class="gpa">GPA 3.01 / 4.00</span><p>Studied programming, software development, databases, computer networks, and machine learning. Completed an undergraduate thesis on hoax detection using IndoBERT and multilingual transformer models.</p><div class="tags"><span>Informatics</span><span>Python</span><span>Machine Learning</span><span>Networking</span></div></article><article class="glass timeline-card reveal"><time>Apr 2025 — valid until Apr 2027</time><h3>EPrT English Proficiency Test</h3><p class="timeline-company"><i class="ri-translate-2"></i> Telkom University Language Center · Bandung</p><span class="gpa">Total score 463</span><p>Listening 50, Grammar 42, Reading 47. The score falls in the B1 range (460–540) on the EPrT score table attached to the certificate.</p><div class="tags"><span>Listening 50</span><span>Grammar 42</span><span>Reading 47</span></div><figure class="edu-cert" data-lightbox data-caption="EPrT Certificate — Telkom University Language Center"><img src="assets/eprt-certificate.png" alt="EPrT certificate with a total score of 463" loading="lazy"/><figcaption>Select to view the certificate</figcaption></figure></article></div></div></section>
-    <section class="level" id="skills" style="--level-color:#4f8bff"><div class="container zoom"><div class="level-head reveal"><div class="portal"><i class="ri-tools-line"></i><span class="level-sign">PLANET 04</span></div><div><span class="eyebrow">Mission 04 · Skills</span><h2>Skills &amp; <span>Tools</span></h2><p>Practical skills and technologies developed through hands-on practice, professional experience, and independent projects.</p></div></div><div class="skills-grid"><article class="glass reveal"><h3><i class="ri-computer-line"></i> IT Support</h3><p>Windows · Troubleshooting · PC Hardware · Linux Basics</p></article><article class="glass reveal"><h3><i class="ri-router-line"></i> Networking</h3><p>TCP/IP · LAN/Wi-Fi · IP/DNS · Ping Testing</p></article><article class="glass reveal"><h3><i class="ri-code-s-slash-line"></i> Programming</h3><p>Python · Django · CRUD · Basic HTML/CSS</p></article><article class="glass reveal"><h3><i class="ri-brain-line"></i> AI &amp; Machine Learning</h3><p>NLP · IndoBERT · mBERT · XLM-R</p></article><article class="glass reveal"><h3><i class="ri-pencil-ruler-2-line"></i> UI/UX Design</h3><p>Figma · Prototyping · Design Systems · Photoshop</p></article><article class="glass reveal"><h3><i class="ri-tools-line"></i> Tools &amp; Platforms</h3><p>VS Code · GitHub · Excel · Google Colab</p></article></div></div></section>
-    <section class="level" id="projects" style="--level-color:#ffb53d"><div class="container zoom"><div class="level-head reveal"><div class="portal"><i class="ri-rocket-2-line"></i><span class="level-sign">PLANET 05</span></div><div><span class="eyebrow">Mission 05 · Projects</span><h2>Projects &amp; <span>Portfolio</span></h2><p>IT operations, game development, machine learning, and UI/UX projects.</p></div></div><div class="filter-bar reveal" role="group" aria-label="Filter projects"><button class="active" data-filter="all">All</button><button data-filter="it">IT &amp; Systems</button><button data-filter="uiux">UI/UX</button><button data-filter="ai">AI / ML</button></div><div class="project-grid">
+    <section class="level" id="projects" style="--level-color:#ffb53d"><div class="container zoom"><div class="level-head reveal"><div class="portal"><i class="ri-rocket-2-line"></i><span class="level-sign">PLANET 04</span></div><div><span class="eyebrow">Mission 04 · Projects</span><h2>Projects &amp; <span>Portfolio</span></h2><p>IT operations, game development, machine learning, and UI/UX projects.</p></div></div><div class="filter-bar reveal" role="group" aria-label="Filter projects"><button class="active" data-filter="all">All</button><button data-filter="it">IT &amp; Systems</button><button data-filter="uiux">UI/UX</button><button data-filter="ai">AI / ML</button></div><div class="project-grid">
 
       <a class="glass project-card tilt reveal" data-category="it ai" href="https://github.com/reziichsan/automated-it-ticketing-system" target="_blank" rel="noopener noreferrer"><div class="project-image"><img src="assets/IT.png" alt="AI-assisted IT helpdesk ticketing platform dashboard" loading="lazy"/><em>View repository</em></div><div class="project-body"><small>Fullstack Web · Node.js · Gemini API · Tailwind</small><h3>AI-Assisted IT Helpdesk Ticketing Platform</h3><p>Built a full-stack IT helpdesk ticketing system using Node.js, Express, SQLite, and Tailwind CSS. Integrated Gemini API to automate ticket content analysis and dynamically assign priority levels based on user issue descriptions.</p><p class="project-result"><i class="ri-checkbox-circle-line"></i> Result: Functional Local Prototype + Gemini AI Integration</p></div></a>
 
@@ -667,7 +720,7 @@
       <a class="glass project-card tilt reveal" data-category="uiux" href="https://www.figma.com/proto/c0Gyv0ROHXc95EnG8ZDkIF/EPerpusdikbud-UI-Re-Design?node-id=1-4" target="_blank" rel="noopener noreferrer"><div class="project-image"><img src="assets/project-2.jpg" alt="EPerpusdikbud mobile app UI redesign" loading="lazy"/><em>View prototype</em></div><div class="project-body"><small>UI/UX Design · Figma · Mobile App</small><h3>EPerpusdikbud Mobile App UI Redesign</h3><p>Explored alternative mobile navigation and layout concepts for the digital library app, focusing on clear content hierarchy, accessibility, and smooth user flow in Figma.</p><p class="project-result"><i class="ri-smartphone-line"></i> Deliverable: Mobile UX Flow &amp; Interactive Prototype</p></div></a>
 
     </div></div></section>
-    <section class="level" id="certificates" style="--level-color:#5ee7ff"><div class="container zoom"><div class="level-head reveal"><div class="portal"><i class="ri-award-line"></i><span class="level-sign">PLANET 06</span></div><div><span class="eyebrow">Mission 06 · Certificates</span><h2>Certificates &amp; <span>Gallery</span></h2><p>Credentials and selected visual design work. Select an image to enlarge it.</p></div></div><div class="cert-grid">
+    <section class="level" id="certificates" style="--level-color:#5ee7ff"><div class="container zoom"><div class="level-head reveal"><div class="portal"><i class="ri-award-line"></i><span class="level-sign">PLANET 05</span></div><div><span class="eyebrow">Mission 05 · Certificates</span><h2>Certificates &amp; <span>Gallery</span></h2><p>Credentials and selected visual design work. Select an image to enlarge it.</p></div></div><div class="cert-grid">
       <article class="glass cert-card reveal" data-lightbox data-caption="Alibaba Cloud Certified Developer"><img src="assets/Alibaba Cloud Dev.png" alt="Alibaba Cloud Certified Developer certificate" loading="lazy"/><div><h3>Alibaba Cloud Certified Developer</h3><p>Alibaba Cloud · 2026</p></div></article>
       <article class="glass cert-card reveal" data-lightbox data-caption="Belajar Dasar Manajemen Proyek — Dicoding Indonesia"><img src="assets/dicoding-project-management.png" alt="Dicoding project management certificate" loading="lazy"/><div><h3>Belajar Dasar Manajemen Proyek</h3><p>Dicoding Indonesia · 2026</p></div></article>
       <article class="glass cert-card reveal" data-lightbox data-caption="Responsive Web Design"><img src="assets/certificate-1.png" alt="Responsive Web Design certificate" loading="lazy"/><div><h3>Responsive Web Design</h3><p>freeCodeCamp · 2025</p></div></article>
@@ -675,6 +728,7 @@
       <article class="glass cert-card reveal" data-lightbox data-caption="Time Series Classification of Badminton Pose webinar"><img src="assets/webinar-badminton-pose.png" alt="Webinar participation certificate" loading="lazy"/><div><h3>Time Series Classification of Badminton Pose</h3><p>KK CITI, Telkom University · 2025</p></div></article>
       <article class="glass cert-card reveal" data-lightbox data-caption="Design System in UI Design"><img src="assets/certificate-3.png" alt="Design System in UI Design certificate" loading="lazy"/><div><h3>Design System in UI Design</h3><p>MySkill Short Class · 2023</p></div></article>
     </div><h3 class="subheading reveal">Visual design gallery</h3><div class="gallery-grid"><a class="reveal" href="assets/editing-1.png" data-lightbox data-caption="Germany Infographic"><img src="assets/editing-1.png" alt="Germany infographic" loading="lazy"/><span>Germany Infographic</span></a><a class="reveal" href="assets/editing-2.png" data-lightbox data-caption="JKT48 Wallpaper Design"><img src="assets/editing-2.png" alt="JKT48 wallpaper" loading="lazy"/><span>JKT48 Wallpaper</span></a><a class="reveal" href="assets/editing-3.png" data-lightbox data-caption="Custom Jersey Design"><img src="assets/editing-3.png" alt="Custom jersey design" loading="lazy"/><span>Custom Jersey</span></a><a class="reveal" href="assets/2.png" data-lightbox data-caption="Portrait Wallpaper Design"><img src="assets/2.png" alt="Portrait wallpaper" loading="lazy"/><span>Portrait Wallpaper</span></a><a class="reveal" href="assets/3.jpg" data-lightbox data-caption="Poster Visual Design"><img src="assets/3.jpg" alt="Poster design" loading="lazy"/><span>Poster Visual</span></a></div></div></section>
+    <section class="level" id="skills" style="--level-color:#4f8bff"><div class="container zoom"><div class="level-head reveal"><div class="portal"><i class="ri-tools-line"></i><span class="level-sign">PLANET 06</span></div><div><span class="eyebrow">Mission 06 · Skills</span><h2>Skills &amp; <span>Tools</span></h2><p>Practical skills and technologies developed through hands-on practice, professional experience, and independent projects.</p></div></div><div class="skills-grid"><article class="glass reveal"><h3><i class="ri-computer-line"></i> IT Support</h3><p>Windows · Troubleshooting · PC Hardware · Linux Basics</p></article><article class="glass reveal"><h3><i class="ri-router-line"></i> Networking</h3><p>TCP/IP · LAN/Wi-Fi · IP/DNS · Ping Testing</p></article><article class="glass reveal"><h3><i class="ri-code-s-slash-line"></i> Programming</h3><p>Python · Django · CRUD · Basic HTML/CSS</p></article><article class="glass reveal"><h3><i class="ri-brain-line"></i> AI &amp; Machine Learning</h3><p>NLP · IndoBERT · mBERT · XLM-R</p></article><article class="glass reveal"><h3><i class="ri-pencil-ruler-2-line"></i> UI/UX Design</h3><p>Figma · Prototyping · Design Systems · Photoshop</p></article><article class="glass reveal"><h3><i class="ri-tools-line"></i> Tools &amp; Platforms</h3><p>VS Code · GitHub · Excel · Google Colab</p></article></div></div></section>
     <section class="level" id="contact" style="--level-color:#ff7ab8"><div class="container zoom"><div class="level-head reveal"><div class="portal"><i class="ri-send-plane-line"></i><span class="level-sign">FINAL PLANET</span></div><div><span class="eyebrow">Mission complete · Contact</span><h2>Let's <span>connect</span></h2><p>The final destination on the journey.</p></div></div><div class="glass contact-card reveal"><div><h3>Let's talk about your next opportunity.</h3><p>I'm open to entry-level roles in IT Support, IT Helpdesk, and related technical positions. Contact me about a position, a project, or a collaboration.</p><a href="mailto:reziichsan@gmail.com" class="btn primary">Email me <i class="ri-arrow-right-up-line"></i></a></div><div><a class="contact-link" href="https://www.linkedin.com/in/reziichsannurarsyi/" target="_blank" rel="noopener noreferrer"><i class="ri-linkedin-fill"></i><div><b>LinkedIn</b><span>linkedin.com/in/reziichsannurarsyi</span></div><i class="ri-arrow-right-up-line"></i></a><a class="contact-link" href="mailto:reziichsan@gmail.com"><i class="ri-mail-line"></i><div><b>Email</b><span>reziichsan@gmail.com</span></div><i class="ri-arrow-right-up-line"></i></a><a class="contact-link" href="https://github.com/reziichsan" target="_blank" rel="noopener noreferrer"><i class="ri-github-fill"></i><div><b>GitHub</b><span>github.com/reziichsan</span></div><i class="ri-arrow-right-up-line"></i></a></div></div></div></section>
   </main>
   <footer><div class="social-links"><a href="https://www.linkedin.com/in/reziichsannurarsyi/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a><a href="https://github.com/reziichsan" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="ri-github-fill"></i></a><a href="mailto:reziichsan@gmail.com" aria-label="Email"><i class="ri-mail-line"></i></a></div>© <span id="year">2026</span> Rezi Ichsan Nur Arsyi. All rights reserved.</footer>
@@ -686,9 +740,9 @@
       <button class="starmap-node" type="button" data-target="about" style="--i:0;--c:#a07cff;--x:9%;--y:64%;--mx:30%;--my:6%"><span class="star"><i class="ri-user-smile-line"></i></span><span class="name">About</span><span class="desc">Profile, GPA and what I am looking for</span><span class="you">You are here</span></button>
       <button class="starmap-node" type="button" data-target="experience" style="--i:1;--c:#4ade80;--x:23%;--y:28%;--mx:68%;--my:20%"><span class="star"><i class="ri-briefcase-line"></i></span><span class="name">Experience</span><span class="desc">Warehouse operations and a software internship</span><span class="you">You are here</span></button>
       <button class="starmap-node" type="button" data-target="education" style="--i:2;--c:#ff7a59;--x:37%;--y:66%;--mx:32%;--my:34%"><span class="star"><i class="ri-graduation-cap-line"></i></span><span class="name">Education</span><span class="desc">Informatics degree and EPrT 463</span><span class="you">You are here</span></button>
-      <button class="starmap-node" type="button" data-target="skills" style="--i:3;--c:#4f8bff;--x:51%;--y:30%;--mx:70%;--my:48%"><span class="star"><i class="ri-tools-line"></i></span><span class="name">Skills</span><span class="desc">IT support, networking, Python and ML</span><span class="you">You are here</span></button>
-      <button class="starmap-node" type="button" data-target="projects" style="--i:4;--c:#ffb53d;--x:65%;--y:68%;--mx:30%;--my:62%"><span class="star"><i class="ri-rocket-2-line"></i></span><span class="name">Projects</span><span class="desc">Five projects, each with a clear result</span><span class="you">You are here</span></button>
-      <button class="starmap-node" type="button" data-target="certificates" style="--i:5;--c:#5ee7ff;--x:79%;--y:32%;--mx:68%;--my:76%"><span class="star"><i class="ri-award-line"></i></span><span class="name">Certificates</span><span class="desc">Six certificates and a design gallery</span><span class="you">You are here</span></button>
+      <button class="starmap-node" type="button" data-target="projects" style="--i:3;--c:#ffb53d;--x:51%;--y:30%;--mx:70%;--my:48%"><span class="star"><i class="ri-rocket-2-line"></i></span><span class="name">Projects</span><span class="desc">Five projects, each with a clear result</span><span class="you">You are here</span></button>
+      <button class="starmap-node" type="button" data-target="certificates" style="--i:4;--c:#5ee7ff;--x:65%;--y:68%;--mx:30%;--my:62%"><span class="star"><i class="ri-award-line"></i></span><span class="name">Certificates</span><span class="desc">Six certificates and a design gallery</span><span class="you">You are here</span></button>
+      <button class="starmap-node" type="button" data-target="skills" style="--i:5;--c:#4f8bff;--x:79%;--y:32%;--mx:68%;--my:76%"><span class="star"><i class="ri-tools-line"></i></span><span class="name">Skills</span><span class="desc">IT support, networking, Python and ML</span><span class="you">You are here</span></button>
       <button class="starmap-node" type="button" data-target="contact" style="--i:6;--c:#ff7ab8;--x:92%;--y:62%;--mx:50%;--my:90%"><span class="star"><i class="ri-send-plane-line"></i></span><span class="name">Contact</span><span class="desc">Email, LinkedIn and GitHub</span><span class="you">You are here</span></button>
     </div>
   </div>
@@ -1048,9 +1102,9 @@
           { id: "about", name: "About", color: 0xa07cff, base: "#3152b6", accent: "#65c8bd", deep: "#111945", kind: 0, scale: 1.08 },
           { id: "experience", name: "Experience", color: 0x4ade80, base: "#176d50", accent: "#6de5a2", deep: "#06251f", kind: 1, scale: 1.12 },
           { id: "education", name: "Education", color: 0xff7a59, base: "#a64e38", accent: "#ffcf9c", deep: "#361628", kind: 2, scale: 1.04, ring: true },
-          { id: "skills", name: "Skills", color: 0x4f8bff, base: "#1853b5", accent: "#60dfff", deep: "#071844", kind: 3, scale: 1.09 },
           { id: "projects", name: "Projects", color: 0xffb53d, base: "#a56b21", accent: "#ffe18a", deep: "#3a1d10", kind: 4, scale: 1.16, ring: true },
           { id: "certificates", name: "Certificates", color: 0x5ee7ff, base: "#167c99", accent: "#a2f7ff", deep: "#062839", kind: 5, scale: 1.04 },
+          { id: "skills", name: "Skills", color: 0x4f8bff, base: "#1853b5", accent: "#60dfff", deep: "#071844", kind: 3, scale: 1.09 },
           { id: "contact", name: "Contact", color: 0xff7ab8, base: "#9d2c72", accent: "#ffaddc", deep: "#350d3a", kind: 6, scale: 1.07 }
         ];
         const sphereGeometry = new THREE.SphereGeometry(1, isMobile ? 32 : 44, isMobile ? 24 : 32);
@@ -1116,7 +1170,7 @@
             sphereGeometry,
             new THREE.MeshBasicMaterial({
               map: cloudTexture, color: destination.color, transparent: true,
-              opacity: index === 0 || index === 3 || index === 5 ? 0.52 : 0.23,
+              opacity: ["about", "skills", "certificates"].includes(destination.id) ? 0.52 : 0.23,
               blending: THREE.AdditiveBlending, depthWrite: false
             })
           );
@@ -1146,11 +1200,11 @@
           }
 
           // A tiny moon keeps a couple of worlds from feeling like static icons.
-          if (index === 0 || index === 4) {
+          if (destination.id === "about" || destination.id === "projects") {
             const orbit = new THREE.Group();
             const moon = new THREE.Mesh(
               new THREE.SphereGeometry(0.13, 16, 12),
-              new THREE.MeshStandardMaterial({ color: index === 0 ? 0xb8c8e6 : 0xffdfb1, roughness: 0.96 })
+              new THREE.MeshStandardMaterial({ color: destination.id === "about" ? 0xb8c8e6 : 0xffdfb1, roughness: 0.96 })
             );
             moon.position.set(1.72, 0.35, 0.12);
             orbit.add(moon); group.add(orbit);
