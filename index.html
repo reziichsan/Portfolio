@@ -622,26 +622,31 @@
   </nav>
 
   <header class="hero" id="home">
-    <div class="stage">
-      <div class="layer" data-speed=".04" style="top:0;height:100%"><div class="galaxy"></div></div>
-      <div class="layer" data-speed=".1" style="top:0;height:100%"><div class="moon"></div></div>
-      <div class="layer" data-speed=".2" style="top:0;height:100%"><div class="planet-horizon"></div></div>
-      <div class="hero-content" id="hero-content">
-        <p class="status-pill"><span></span> Open to entry-level opportunities</p>
-        <p class="hello">Hi, I'm</p><h1>Rezi Ichsan Nur Arsyi</h1>
-        <div class="role" aria-live="off"><span id="role-text">Informatics Graduate</span><u></u></div>
-        <p class="hero-bio">Informatics graduate from Telkom University with hands-on experience in Python/Django projects, IT support fundamentals, and applied machine learning. Looking for entry-level IT Support and Technical Support roles.</p>
-        <div class="snapshot" aria-label="Recruiter snapshot">
-          <div><i class="ri-user-star-line"></i><small>Target role</small><b>IT Support · Helpdesk</b></div>
-          <div><i class="ri-graduation-cap-line"></i><small>Education</small><b>Informatics · GPA 3.01</b></div>
-          <div><i class="ri-translate-2"></i><small>English</small><b>EPrT 463 (B1 range)</b></div>
-          <div><i class="ri-map-pin-2-line"></i><small>Bekasi · <span id="clock">--:--:--</span> WIB</small><b>Open to full-time roles</b></div>
-        </div>
-        <div class="btns"><a href="#projects" class="btn primary">View projects <i class="ri-arrow-right-line"></i></a><a href="CV.pdf" class="btn" download="Rezi-Ichsan-Nur-Arsyi-CV.pdf">Download CV <i class="ri-download-2-line"></i></a></div>
+  <div class="stage">
+    <div class="layer" data-speed=".04" style="top:0;height:100%"><div class="galaxy"></div></div>
+    <div class="layer" data-speed=".1" style="top:0;height:100%"><div class="moon"></div></div>
+    <div class="layer" data-speed=".2" style="top:0;height:100%"><div class="planet-horizon"></div></div>
+    <div class="hero-content" id="hero-content">
+      <p class="status-pill"><span></span> Open to entry-level opportunities</p>
+      <p class="hello">Hi, I'm</p>
+      <h1>Rezi Ichsan Nur Arsyi</h1>
+      <div class="role" aria-live="off"><span id="role-text">Informatics Graduate | Web Developer &amp; IT Specialist</span><u></u></div>
+      <p class="hero-bio">Informatics graduate from Telkom University with hands-on experience in full-stack web development, AI API integration, and IT infrastructure support. Proficient in Python, JavaScript, and Figma, with a strong track record of building responsive web applications and optimization models. Seeking entry-level opportunities in Software Engineering, Web Development, or IT Roles.</p>
+      <div class="snapshot" aria-label="Recruiter snapshot">
+        <div><i class="ri-user-star-line"></i><small>Target role</small><b>Web Developer / IT Specialist</b></div>
+        <div><i class="ri-graduation-cap-line"></i><small>Education</small><b>Informatics · Telkom University (GPA 3.01)</b></div>
+        <div><i class="ri-translate-2"></i><small>English</small><b>EPrT 463 (Intermediate / B1)</b></div>
+        <div><i class="ri-map-pin-2-line"></i><small>Location · <span id="clock">--:--:--</span> WIB</small><b>Bekasi · Open to Full-time &amp; Internships</b></div>
       </div>
-      <div class="scroll-hint"><span>Scroll down</span><i class="ri-arrow-down-line"></i></div><div class="hero-fade"></div>
+      <div class="btns">
+        <a href="#projects" class="btn primary">View projects <i class="ri-arrow-right-line"></i></a>
+        <a href="CV.pdf" class="btn" download="Rezi-Ichsan-Nur-Arsyi-CV.pdf">Download CV <i class="ri-download-2-line"></i></a>
+      </div>
     </div>
-  </header>
+    <div class="scroll-hint"><span>Scroll down</span><i class="ri-arrow-down-line"></i></div>
+    <div class="hero-fade"></div>
+  </div>
+</header>
 
   <main id="main">
     <section class="level" id="about" style="--level-color:#a07cff">
@@ -828,7 +833,7 @@
     function setupProjectFilter(){const buttons=$$(".filter-bar button"),cards=$$(".project-card");buttons.forEach(button=>button.addEventListener("click",()=>{const filter=button.dataset.filter;buttons.forEach(b=>b.classList.toggle("active",b===button));cards.forEach(card=>card.classList.toggle("hidden",filter!=="all"&&!card.dataset.category.split(" ").includes(filter)))}))}
     function setupCardTilt(){if(reduceMotion||!matchMedia("(hover:hover)").matches)return;$$(".tilt").forEach(card=>{card.addEventListener("mousemove",e=>{const r=card.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;card.style.transform=`rotateY(${x*7}deg) rotateX(${-y*7}deg) translateY(-4px)`});card.addEventListener("mouseleave",()=>card.style.transform="")})}
     function setupLightbox(){const box=$("#lightbox"),img=$("img",box),caption=$("p",box),closeButton=$("button",box);let previousFocus=null;function open(src,text){previousFocus=document.activeElement;img.src=src;img.alt=text;caption.textContent=text;box.classList.add("open");document.body.style.overflow="hidden";closeButton.focus()}function close(){box.classList.remove("open");img.src="";document.body.style.overflow="";previousFocus?.focus()}$$("[data-lightbox]").forEach(item=>{item.tabIndex=0;function openItem(e){e.preventDefault();const source=item.getAttribute("href")||$("img",item)?.getAttribute("src");if(source)open(source,item.dataset.caption||$("img",item)?.alt||"")}item.addEventListener("click",openItem);item.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" ")openItem(e)})});closeButton.addEventListener("click",close);box.addEventListener("click",e=>{if(e.target===box)close()});window.addEventListener("keydown",e=>{if(e.key==="Escape"&&box.classList.contains("open"))close()})}
-    function setupTypewriter(){const el=$("#role-text");if(reduceMotion)return;const roles=["Informatics Graduate","IT Support Candidate","Python & Django Developer","Machine Learning Researcher"];let ri=0,chars=roles[0].length,deleting=true;function type(){if(deleting){chars--;el.textContent=roles[ri].slice(0,chars);if(chars<=0){deleting=false;ri=(ri+1)%roles.length;setTimeout(type,260);return}}else{chars++;el.textContent=roles[ri].slice(0,chars);if(chars>=roles[ri].length){deleting=true;setTimeout(type,1600);return}}setTimeout(type,deleting?30:48)}setTimeout(type,1300)}
+    function setupTypewriter(){const el=$("#role-text");if(reduceMotion)return;const roles=["Informatics Graduate | Web Developer & IT Specialist","Full-Stack Web Developer","IT Support & Infrastructure","Python & AI Integration"];let ri=0,chars=roles[0].length,deleting=true;function type(){if(deleting){chars--;el.textContent=roles[ri].slice(0,chars);if(chars<=0){deleting=false;ri=(ri+1)%roles.length;setTimeout(type,260);return}}else{chars++;el.textContent=roles[ri].slice(0,chars);if(chars>=roles[ri].length){deleting=true;setTimeout(type,1600);return}}setTimeout(type,deleting?30:48)}setTimeout(type,1300)}
     function setupClock(){const clock=$("#clock"),fmt=new Intl.DateTimeFormat("en-GB",{timeZone:"Asia/Jakarta",hour:"2-digit",minute:"2-digit",second:"2-digit",hour12:false});function tick(){clock.textContent=fmt.format(new Date());setTimeout(tick,1000)}tick();$("#year").textContent=new Date().getFullYear()}
 
     /* Star map: a full-screen constellation for jumping between sections. */
