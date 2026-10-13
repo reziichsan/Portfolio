@@ -423,50 +423,8 @@
       border: 1px solid rgba(94,231,255,.18); background: rgba(94,231,255,.07); color: #bfefff; font-size: .74rem; font-weight: 600; line-height: 1.45; }
     .project-result i { color: var(--cyan); font-size: .95rem; }
     .nav-actions { display: flex; align-items: center; gap: .3rem; }
-    .nav-map { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--line); background: rgba(255,255,255,.03); color: var(--cyan); font-size: 1.15rem; cursor: pointer; transition: border-color .3s, background .3s; }
-    .nav-map:hover { border-color: var(--cyan); background: rgba(94,231,255,.1); }
-
-    /* ===== Star map overlay ===== */
-    .starmap { position: fixed; inset: 0; z-index: 250; display: flex; flex-direction: column; padding: clamp(1.1rem, 4vw, 2.4rem);
-      background: radial-gradient(ellipse at 18% 20%, rgba(52,86,255,.3), transparent 46%), radial-gradient(ellipse at 86% 78%, rgba(150,60,255,.24), transparent 46%), #02040f;
-      opacity: 0; transition: opacity .35s var(--ease-fluid); overflow: hidden; }
-    .starmap[hidden] { display: none; }
-    .starmap.open { opacity: 1; }
-    .starmap-close { position: absolute; top: 1rem; right: 1rem; z-index: 3; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line); background: rgba(255,255,255,.04); font-size: 1.3rem; cursor: pointer; transition: border-color .3s, color .3s; }
-    .starmap-close:hover { border-color: var(--cyan); color: var(--cyan); }
-    .starmap-head { text-align: center; padding-top: .6rem; }
-    .starmap-head h2 { font: 700 clamp(2rem, 4.4vw, 3rem)/1.1 var(--fd); }
-    .starmap-head p { margin-top: .4rem; color: var(--muted); font-size: .85rem; }
-    .starmap-head kbd { padding: .1rem .45rem; border: 1px solid var(--line); border-radius: 6px; background: rgba(255,255,255,.05); font: 600 .72rem var(--fb); }
-    .starmap-head .eyebrow { color: var(--cyan); }
-    .starmap-stage { position: relative; flex: 1; min-height: 0; width: min(1100px, 100%); margin: 1.2rem auto 0; }
-    .starmap-lines { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
-    .starmap-lines polyline { fill: none; stroke: rgba(94,231,255,.5); stroke-width: 1.4; stroke-dasharray: 3 7; stroke-linecap: round; stroke-linejoin: round; }
-    .starmap-lines line { stroke: rgba(150,190,255,.13); stroke-width: 1; }
-    .starmap-node { position: absolute; left: var(--x); top: var(--y); z-index: 2; display: flex; flex-direction: column; align-items: center; gap: .45rem; padding: 0; border: 0; background: none; color: var(--text); cursor: pointer;
-      opacity: 0; scale: .6; transform: translate(-50%, -50%); transition: opacity .5s var(--ease-fluid), scale .5s var(--ease-fluid); transition-delay: calc(var(--i) * 70ms); }
-    .starmap.open .starmap-node { opacity: 1; scale: 1; }
-    .starmap-node .star { display: grid; place-items: center; width: 60px; height: 60px; border-radius: 50%; color: #fff; font-size: 1.45rem;
-      background: radial-gradient(circle at 35% 30%, color-mix(in srgb, var(--c), white 38%), var(--c) 45%, color-mix(in srgb, var(--c), #02040f 62%));
-      box-shadow: 0 0 0 1px rgba(255,255,255,.28), 0 0 30px color-mix(in srgb, var(--c), transparent 45%); transition: transform .35s var(--ease-fluid), box-shadow .35s; }
-    .starmap-node:hover .star, .starmap-node:focus-visible .star { transform: scale(1.18); box-shadow: 0 0 0 1px rgba(255,255,255,.5), 0 0 46px var(--c); }
-    .starmap-node .name { font: 600 1rem var(--fd); }
-    .starmap-node .desc { position: absolute; top: 100%; width: 200px; margin-top: .55rem; padding: .6rem .8rem; border: 1px solid rgba(130,175,255,.22); border-radius: 12px; background: rgba(7,17,53,.98);
-      color: var(--muted); font-size: .76rem; line-height: 1.5; text-align: center; opacity: 0; transform: translateY(-4px); pointer-events: none; transition: opacity .3s, transform .3s var(--ease-fluid); }
-    .starmap-node:hover .desc, .starmap-node:focus-visible .desc { opacity: 1; transform: none; }
-    .starmap-node .you { display: none; position: absolute; bottom: calc(100% + .45rem); padding: .15rem .6rem; border-radius: 99px; background: var(--amber); color: #2a1a00; font: 700 .64rem var(--fb); letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; }
-    .starmap-node.current .you { display: block; }
-    .starmap-node.current .star { box-shadow: 0 0 0 3px rgba(255,181,61,.9), 0 0 40px var(--amber); }
 
     @media (max-width: 900px) { .snapshot { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 700px) {
-      .starmap-node { left: var(--mx); top: var(--my); }
-      .starmap-node .star { width: 46px; height: 46px; font-size: 1.15rem; }
-      .starmap-node .name { font-size: .85rem; }
-      .starmap-node .desc { display: none; }
-      .starmap-head p { font-size: .76rem; }
-      .starmap-keys { display: none; }
-    }
     @media (max-width: 600px) {
       .hero-bio { display: none; }
       .snapshot { gap: .45rem; margin-bottom: 1.1rem; }
@@ -719,7 +677,7 @@
     .js .reveal.visible { opacity: 1; translate: none; }
 
     /* Surfaces */
-    .glass, .snapshot div, .level-head, .nav-inner, .mobile-menu, .filter-bar, .starmap-node .desc {
+    .glass, .snapshot div, .level-head, .nav-inner, .mobile-menu, .filter-bar {
       background: var(--g-fill), var(--g-tint);
       -webkit-backdrop-filter: var(--g-blur); backdrop-filter: var(--g-blur);
       border: 1px solid var(--g-line);
@@ -776,7 +734,7 @@
     #back-to-top { border-radius: 50%; color: #fff; border: 1px solid var(--g-line); background: var(--g-fill), var(--g-tint);
       -webkit-backdrop-filter: var(--g-blur); backdrop-filter: var(--g-blur); box-shadow: var(--g-edge), 0 10px 30px rgba(0,0,12,.4); }
     #lightbox { background: rgba(3,6,20,.62); -webkit-backdrop-filter: blur(26px) saturate(1.2); backdrop-filter: blur(26px) saturate(1.2); }
-    #lightbox button, .starmap-close { background: var(--g-fill), var(--g-tint); border-color: var(--g-line); box-shadow: var(--g-edge); }
+    #lightbox button { background: var(--g-fill), var(--g-tint); border-color: var(--g-line); box-shadow: var(--g-edge); }
     #lightbox img { border-radius: 18px; box-shadow: 0 30px 80px rgba(0,0,0,.6); }
     footer { border-top: 1px solid rgba(255,255,255,.08); }
     .hero-content h1 { text-shadow: 0 2px 30px rgba(0,0,20,.45); }
@@ -804,7 +762,7 @@
       <ul class="nav-links">
         <li><a href="#about">About</a></li><li><a href="#experience">Experience</a></li><li><a href="#education">Education</a></li><li><a href="#projects">Projects</a></li><li><a href="#certificates">Certificates</a></li><li><a href="#skills">Skills</a></li><li><a href="#contact">Contact</a></li>
       </ul>
-      <div class="nav-actions"><button class="nav-map" type="button" data-starmap-open aria-haspopup="dialog" aria-label="Open star map"><i class="ri-compass-3-line"></i></button><button class="burger" id="menu-toggle" aria-label="Open menu" aria-expanded="false"><i class="ri-menu-3-line"></i></button></div>
+      <div class="nav-actions"><button class="burger" id="menu-toggle" aria-label="Open menu" aria-expanded="false"><i class="ri-menu-3-line"></i></button></div>
     </div>
     <div class="mobile-menu" id="mobile-menu"><a href="#about">About</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="#projects">Projects</a><a href="#certificates">Certificates</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div>
   </nav>
@@ -866,20 +824,6 @@
     <section class="level" id="contact" style="--level-color:#ff7ab8"><div class="container zoom"><div class="level-head reveal"><div class="portal"><i class="ri-send-plane-line"></i><span class="level-sign">07</span></div><div><span class="eyebrow">Contact</span><h2>Let's <span>connect</span></h2><p>Email is the quickest way to reach me.</p></div></div><div class="glass contact-card reveal"><div><h3>Looking for someone to join your team?</h3><p>I'm looking for an entry-level role in web development, software engineering, or IT support. If you have an opening, or just want to talk about a project, send me an email.</p><a href="mailto:reziichsan@gmail.com" class="btn primary">Email me <i class="ri-arrow-right-up-line"></i></a></div><div><a class="contact-link" href="https://www.linkedin.com/in/reziichsannurarsyi/" target="_blank" rel="noopener noreferrer"><i class="ri-linkedin-fill"></i><div><b>LinkedIn</b><span>linkedin.com/in/reziichsannurarsyi</span></div><i class="ri-arrow-right-up-line"></i></a><a class="contact-link" href="mailto:reziichsan@gmail.com"><i class="ri-mail-line"></i><div><b>Email</b><span>reziichsan@gmail.com</span></div><i class="ri-arrow-right-up-line"></i></a><a class="contact-link" href="https://github.com/reziichsan" target="_blank" rel="noopener noreferrer"><i class="ri-github-fill"></i><div><b>GitHub</b><span>github.com/reziichsan</span></div><i class="ri-arrow-right-up-line"></i></a></div></div></div></section>
   </main>
   <footer><div class="social-links"><a href="https://www.linkedin.com/in/reziichsannurarsyi/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a><a href="https://github.com/reziichsan" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="ri-github-fill"></i></a><a href="mailto:reziichsan@gmail.com" aria-label="Email"><i class="ri-mail-line"></i></a></div>© <span id="year">2026</span> Rezi Ichsan Nur Arsyi. Hand-coded in HTML, CSS and Three.js.</footer>
-  <div class="starmap" id="starmap" role="dialog" aria-modal="true" aria-label="Star map navigation" hidden>
-    <button class="starmap-close" type="button" aria-label="Close star map"><i class="ri-close-line"></i></button>
-    <div class="starmap-head"><span class="eyebrow">Navigation</span><h2>Star Map</h2><p>Select a star to travel there. <span class="starmap-keys">Press <kbd>M</kbd> to open or <kbd>Esc</kbd> to close.</span></p></div>
-    <div class="starmap-stage" id="starmap-stage">
-      <svg class="starmap-lines" id="starmap-lines" aria-hidden="true"></svg>
-      <button class="starmap-node" type="button" data-target="about" style="--i:0;--c:#a07cff;--x:9%;--y:64%;--mx:30%;--my:6%"><span class="star"><i class="ri-user-smile-line"></i></span><span class="name">About</span><span class="desc">Who I am</span><span class="you">You are here</span></button>
-      <button class="starmap-node" type="button" data-target="experience" style="--i:1;--c:#4ade80;--x:23%;--y:28%;--mx:68%;--my:20%"><span class="star"><i class="ri-briefcase-line"></i></span><span class="name">Experience</span><span class="desc">Warehouse operations and a software internship</span><span class="you">You are here</span></button>
-      <button class="starmap-node" type="button" data-target="education" style="--i:2;--c:#ff7a59;--x:37%;--y:66%;--mx:32%;--my:34%"><span class="star"><i class="ri-graduation-cap-line"></i></span><span class="name">Education</span><span class="desc">Informatics degree and EPrT 463</span><span class="you">You are here</span></button>
-      <button class="starmap-node" type="button" data-target="projects" style="--i:3;--c:#ffb53d;--x:51%;--y:30%;--mx:70%;--my:48%"><span class="star"><i class="ri-rocket-2-line"></i></span><span class="name">Projects</span><span class="desc">Five projects I built or designed</span><span class="you">You are here</span></button>
-      <button class="starmap-node" type="button" data-target="certificates" style="--i:4;--c:#5ee7ff;--x:65%;--y:68%;--mx:30%;--my:62%"><span class="star"><i class="ri-award-line"></i></span><span class="name">Certificates</span><span class="desc">Courses and a design gallery</span><span class="you">You are here</span></button>
-      <button class="starmap-node" type="button" data-target="skills" style="--i:5;--c:#4f8bff;--x:79%;--y:32%;--mx:68%;--my:76%"><span class="star"><i class="ri-tools-line"></i></span><span class="name">Skills</span><span class="desc">Web, IT support and ML tools</span><span class="you">You are here</span></button>
-      <button class="starmap-node" type="button" data-target="contact" style="--i:6;--c:#ff7ab8;--x:92%;--y:62%;--mx:50%;--my:90%"><span class="star"><i class="ri-send-plane-line"></i></span><span class="name">Contact</span><span class="desc">Email, LinkedIn and GitHub</span><span class="you">You are here</span></button>
-    </div>
-  </div>
   <button id="back-to-top" aria-label="Back to top"><i class="ri-arrow-up-line"></i></button>
   <div id="lightbox" role="dialog" aria-modal="true" aria-label="Image preview"><button aria-label="Close preview"><i class="ri-close-line"></i></button><img alt=""/><p></p></div>
 
@@ -1026,58 +970,7 @@
     function setupTypewriter(){const el=$("#role-text");if(reduceMotion)return;const roles=["Informatics Graduate | Web Developer & IT Specialist","Full-Stack Web Developer","IT Support & Infrastructure","Python & AI Integration"];let ri=0,chars=roles[0].length,deleting=true;function type(){if(deleting){chars--;el.textContent=roles[ri].slice(0,chars);if(chars<=0){deleting=false;ri=(ri+1)%roles.length;setTimeout(type,260);return}}else{chars++;el.textContent=roles[ri].slice(0,chars);if(chars>=roles[ri].length){deleting=true;setTimeout(type,1600);return}}setTimeout(type,deleting?30:48)}setTimeout(type,1300)}
     function setupClock(){const clock=$("#clock"),fmt=new Intl.DateTimeFormat("en-GB",{timeZone:"Asia/Jakarta",hour:"2-digit",minute:"2-digit",second:"2-digit",hour12:false});function tick(){clock.textContent=fmt.format(new Date());setTimeout(tick,1000)}tick();$("#year").textContent=new Date().getFullYear()}
 
-    /* Star map: a full-screen constellation for jumping between sections. */
-    function setupStarMap(){
-      const overlay=$("#starmap"),stage=$("#starmap-stage"),lines=$("#starmap-lines"),closeButton=$(".starmap-close",overlay);
-      const nodes=$$(".starmap-node",overlay),openers=$$("[data-starmap-open]");
-      let lastFocus=null;
-
-      // Lines are drawn from the real node positions, so the map works on any screen size.
-      function drawLines(){
-        const box=stage.getBoundingClientRect();
-        const points=nodes.map(node=>{const r=$(".star",node).getBoundingClientRect();return[r.left+r.width/2-box.left,r.top+r.height/2-box.top]});
-        const faint=points.slice(0,-2).map((p,i)=>`<line x1="${p[0]}" y1="${p[1]}" x2="${points[i+2][0]}" y2="${points[i+2][1]}"/>`).join("");
-        lines.setAttribute("viewBox",`0 0 ${box.width} ${box.height}`);
-        lines.innerHTML=faint+`<polyline points="${points.map(p=>p.join(",")).join(" ")}"/>`;
-      }
-      function open(){
-        lastFocus=document.activeElement;
-        overlay.hidden=false;
-        document.body.style.overflow="hidden";
-        nodes.forEach(node=>node.classList.toggle("current",node.dataset.target===document.body.dataset.current));
-        requestAnimationFrame(()=>{drawLines();overlay.classList.add("open")});
-        closeButton.focus();
-      }
-      function close(){
-        overlay.classList.remove("open");
-        document.body.style.overflow="";
-        setTimeout(()=>{overlay.hidden=true},reduceMotion?0:350);
-        if(lastFocus)lastFocus.focus();
-      }
-      function travel(id){
-        close();
-        const target=document.getElementById(id);
-        if(target)setTimeout(()=>target.scrollIntoView({behavior:reduceMotion?"auto":"smooth"}),reduceMotion?0:260);
-      }
-
-      openers.forEach(button=>button.addEventListener("click",open));
-      closeButton.addEventListener("click",close);
-      nodes.forEach(node=>node.addEventListener("click",()=>travel(node.dataset.target)));
-      window.addEventListener("resize",()=>{if(!overlay.hidden)drawLines()});
-      window.addEventListener("keydown",event=>{
-        const isOpen=!overlay.hidden;
-        if(event.key==="Escape"&&isOpen){close();return}
-        if(event.key==="Tab"&&isOpen){
-          const items=[closeButton,...nodes],index=items.indexOf(document.activeElement);
-          const next=event.shiftKey?(index<=0?items.length-1:index-1):(index===items.length-1?0:index+1);
-          event.preventDefault();items[next].focus();return;
-        }
-        const typing=/INPUT|TEXTAREA|SELECT/.test(event.target.tagName);
-        if((event.key==="m"||event.key==="M")&&!typing&&!event.metaKey&&!event.ctrlKey&&!event.altKey)isOpen?close():open();
-      });
-    }
-
-    setupSpace();setupReveal();setupActiveSection();setupMobileMenu();setupProjectFilter();setupLightbox();setupClock();setupStarMap();updateOnScroll();window.addEventListener("resize",updateOnScroll);
+    setupSpace();setupReveal();setupActiveSection();setupMobileMenu();setupProjectFilter();setupLightbox();setupClock();updateOnScroll();window.addEventListener("resize",updateOnScroll);
   })();
   </script>
 
