@@ -747,6 +747,23 @@
       .glass, .snapshot div, .level-head, .nav-inner, .mobile-menu, .filter-bar, .btn, .chips span, .tags span { background: #0a1236; -webkit-backdrop-filter: none; backdrop-filter: none; }
     }
 
+    /* ===== Hero: less text, background kept away from the content ===== */
+    .hero-bio { max-width: 500px; margin-bottom: 1.5rem; font-size: .98rem; color: #dbe6ff; }
+    .snapshot { max-width: 760px; }
+    .snapshot b { white-space: nowrap; }
+    .hero-content::before { content: ""; position: absolute; inset: 14% 12%; z-index: -1; pointer-events: none;
+      background: radial-gradient(ellipse at center, rgba(2,4,15,.82) 0%, rgba(2,4,15,.6) 45%, rgba(2,4,15,0) 72%); }
+    /* 3D planets and rocket stay at the screen edges from the very top */
+    #space3d-layer {
+      -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 8%, rgba(0,0,0,.7) 20%, rgba(0,0,0,.14) 34%, rgba(0,0,0,.06) 50%, rgba(0,0,0,.14) 66%, rgba(0,0,0,.7) 80%, #000 92%, #000 100%);
+      mask-image: linear-gradient(90deg, #000 0%, #000 8%, rgba(0,0,0,.7) 20%, rgba(0,0,0,.14) 34%, rgba(0,0,0,.06) 50%, rgba(0,0,0,.14) 66%, rgba(0,0,0,.7) 80%, #000 92%, #000 100%);
+    }
+    .moon, .galaxy { opacity: .45; }
+    @media (max-width: 700px) {
+      .hero-content::before { inset: 10% 2%; }
+      .snapshot b { white-space: normal; }
+    }
+
   </style>
 </head>
 <body>
@@ -777,12 +794,12 @@
         <p class="hello">Hi, I'm</p>
         <h1>Rezi Ichsan Nur Arsyi</h1>
         <div class="role" aria-live="off"><span id="role-text">Informatics Graduate | Web Developer &amp; IT Specialist</span><u></u></div>
-        <p class="hero-bio">Informatics graduate from Telkom University with hands-on experience in full-stack web development, AI API integration, and IT infrastructure support. Proficient in Python, JavaScript, and Figma, with a strong track record of building responsive web applications and optimization models. Seeking entry-level opportunities in Software Engineering, Web Development, or IT Roles.</p>
+        <p class="hero-bio">Informatics graduate from Telkom University, looking for entry-level roles in web development, software engineering, or IT support.</p>
         <div class="snapshot" aria-label="Recruiter snapshot">
-          <div><i class="ri-user-star-line"></i><small>Target role</small><b>Web Developer / IT Specialist</b></div>
-          <div><i class="ri-graduation-cap-line"></i><small>Education</small><b>Informatics · Telkom University (GPA 3.01)</b></div>
-          <div><i class="ri-translate-2"></i><small>English</small><b>EPrT 463 (Intermediate / B1)</b></div>
-          <div><i class="ri-map-pin-2-line"></i><small>Location · <span id="clock">--:--:--</span> WIB</small><b>Bekasi · Open to Full-time &amp; Internships</b></div>
+          <div><i class="ri-user-star-line"></i><small>Target role</small><b>Web Developer / IT</b></div>
+          <div><i class="ri-graduation-cap-line"></i><small>Education</small><b>Informatics · GPA 3.01</b></div>
+          <div><i class="ri-translate-2"></i><small>English</small><b>EPrT 463 (B1)</b></div>
+          <div><i class="ri-map-pin-2-line"></i><small>Location · <span id="clock">--:--:--</span> WIB</small><b>Bekasi · Full-time / Intern</b></div>
         </div>
         <div class="btns"><a href="#projects" class="btn primary">View projects <i class="ri-arrow-right-line"></i></a><a href="CV.pdf" class="btn" download="Rezi-Ichsan-Nur-Arsyi-CV.pdf">Download CV <i class="ri-download-2-line"></i></a></div>
       </div>
