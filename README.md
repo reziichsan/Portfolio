@@ -1,58 +1,92 @@
-# Rezi Ichsannur Arsyi — Informatics Portfolio 🚀
+# Rezi Ichsannur Arsyi | Informatics Portfolio
 
-Welcome to the official repository for my personal portfolio website. This project is a high-performance, visually striking, and fully responsive single-page portfolio designed to showcase my multi-disciplinary capabilities spanning **IT Support, Systems/Network Infrastructure, UI/UX Design, and Machine Learning/NLP**.
+Welcome to my personal portfolio repository. This website showcases my background as an Informatics graduate, along with my projects and experience across IT support, web development, UI/UX design, and machine learning.
 
-📂 **Live Link:** [reziichsan.github.io/My-Portofolio](https://reziichsan.github.io/Portfolio)
+The portfolio is designed as a responsive, interactive single-page website that presents my technical interests, selected projects, and professional profile.
 
----
-
-## 🏛️ Core Pillars & Architecture
-
-This portfolio highlights my unique engineering profile bridging four major domains:
-
-1. **IT Support & Helpdesk Workflows** — Hardware deployment matrices, OS provisioning architectures, and automated ticketing triage system pipelines.
-2. **Systems & Networks** — High-availability server structures scaling to 1,000+ concurrent active users, custom TCP/IP layouts, and VLAN isolation paradigms.
-3. **UI/UX Design Systems** — High-fidelity responsive prototyping built on rigid Figma design token grids.
-4. **Data Science / Machine Learning** — Deep-learning benchmarks evaluating Multilingual Transformers (`mBERT`, `XLM-R`) and `IndoBERT` for specialized Indonesian Hoax Classification pipelines (achieving **88.62%** validation accuracy).
+**Live Portfolio:** [reziichsan.github.io/Portfolio](https://reziichsan.github.io/Portfolio)
 
 ---
 
-## ✨ Features & Interactive Systems
+## About Me
 
-The source code includes advanced visual and system behaviors engineered cleanly in semantic HTML5, modern CSS variables, and native Vanilla JavaScript:
+I am an Informatics graduate from Telkom University with an interest in building practical technology solutions. My experience includes software development with Python and Django, UI/UX prototyping, IT support fundamentals, and machine learning research.
 
-*   **⚡ Intelligent Scroll-Spy Pipeline:** Synchronized desktop navigation active state transitions mapped directly across both horizontal header tabs and the modern right HUD breadcrumb matrix.
-*   **🎭 Dynamic Project Filter Engine:** Pure client-side array manipulation toggling operational states (`All`, `IT & Systems`, `UI/UX`, `AI/ML`) instantly without layout shift animations.
-*   **🕒 Real-Time Synchronization Engine:** Live operational clock anchored directly to the **Asia/Jakarta (WIB)** NTP timezone coordinate matrix.
-*   **✨ Advanced DOM Interactivity:**
-    *   *3D Card Tilt Effect:* Real-time pointer vector calculus mapping card angle reflections based on local workspace tracking (desktop-exclusive).
-    *   *Magnetic Button Bounds:* Inertia-mapped magnetic button traps drawing controls gently toward active coordinates.
-    *   *Interactive Lightbox & Copy Contexts:* Dynamic element modals and quick clipboard hooks providing toast confirmation overlays.
-*   **🎨 Custom Visual Identity:** Built on an ultra-dark background design palette featuring responsive canvas particles (`Confetti Engine`) and custom viewport lighting fields.
+I am interested in opportunities where I can apply my technical foundation, strengthen my problem-solving skills, and continue developing professionally.
+
+## Areas of Interest
+
+- **IT Support and Infrastructure:** Operating system installation, hardware troubleshooting, basic networking, and system configuration.
+- **Web Development:** Python, Django, and foundational front-end development.
+- **UI/UX Design:** User interface design, prototyping, and digital product development using Figma.
+- **Machine Learning and NLP:** Multilingual transformer models and text classification, including Indonesian hoax detection.
+
+## Portfolio Features
+
+The website incorporates a range of interactive elements and responsive design techniques:
+
+- **Responsive Layout:** Adapts the interface to desktop and mobile screen sizes.
+- **Interactive Navigation:** Scroll-based section tracking and synchronized navigation indicators.
+- **Project Filtering:** Client-side filtering for projects across IT, systems, UI/UX, and AI/ML categories.
+- **Interactive Visual Elements:** 3D card tilt effects, magnetic buttons, and animated transitions.
+- **Dynamic Components:** Interactive project details, lightbox interfaces, and clipboard functionality.
+- **Custom Visual Design:** A dark interface with layered visual effects, ambient lighting, and animated background elements.
+- **Local Time Display:** A real-time clock configured for the Asia/Jakarta time zone.
+
+## Technology Stack
+
+| Category | Technologies |
+|---|---|
+| Structure | HTML5 |
+| Styling | CSS3 |
+| Interactivity | Vanilla JavaScript (ES6+) |
+| Typography | Google Fonts |
+| Icons | Remix Icon |
+| Deployment | GitHub Pages |
+
+The website uses native web technologies to deliver its interactive experience without relying on a front-end framework.
+
+## Selected Projects
+
+### 1. Automated IT Ticketing System
+
+A helpdesk application concept focused on organizing IT support requests and assisting with issue prioritization.
+
+- Developed using Python and Django.
+- Explores AI-assisted issue classification and prioritization using the Gemini API.
+- Demonstrates an approach to improving IT support workflows.
+
+**Repository:** [Automated IT Ticketing System](https://github.com/reziichsan/automated-it-ticketing-system)
+
+### 2. Eternia Forest
+
+A multiplayer exploration experience developed on the Roblox platform, featuring an expedition-themed environment and interactive gameplay systems.
+
+- Developed and maintained a custom Roblox game environment.
+- Includes gameplay progression, checkpoints, leaderboards, and supporting user interfaces.
+- Reached more than 355,000 visits, based on the latest project statistics recorded in my portfolio.
+
+**Project:** [Eternia Forest on Roblox](https://www.roblox.com/games/115395112112752/Eternia-Forest)
+
+### 3. Multilingual Hoax Detection
+
+An undergraduate research project investigating transformer-based models for classifying potentially misleading news.
+
+- Evaluates IndoBERT, multilingual BERT (mBERT), and XLM-RoBERTa.
+- Focuses on natural language processing and text classification.
+- Achieved 88.62% accuracy with IndoBERT in the reported evaluation.
+
+**Repository:** [Hoax Detection](https://github.com/reziichsan/HoaxDetection)
+
+## Contact
+
+I welcome opportunities to collaborate, learn, and contribute to technology projects.
+
+- **LinkedIn:** [linkedin.com/in/reziichsannurarsyi](https://www.linkedin.com/in/reziichsannurarsyi/)
+- **GitHub:** [github.com/reziichsan](https://github.com/reziichsan)
+- **Email:** [reziichsan@gmail.com](mailto:reziichsan@gmail.com)
+- **Portfolio:** [reziichsan.github.io/Portfolio](https://reziichsan.github.io/Portfolio)
 
 ---
 
-## 🛠️ Technological Footprint
-
-*   **Front-End Core:** HTML5, CSS3, Vanilla JavaScript (ES6+)
-*   **Iconography & Typography:** Remix Icon Asset Matrix, Google Fonts (`Outfit`, `Cormorant Garamond`, `JetBrains Mono`)
-*   **Optimization Layer:** CSS paged media properties ensuring high-fidelity hardware print outputs (`@media print`).
-
----
-
-## 📂 Project Repository Matrix Shipped Within
-
-*   **[Automated IT-OPS Triage Console](https://github.com/reziichsan/automated-it-ticketing-system)** — Full-Stack Helpdesk application with dynamic issue categorization powered by the Gemini LLM pipeline.
-*   **[Eternia Forest Ecosystem](https://www.roblox.com/id/games/115395112112752/Eternia-Forest)** — Production multiplayer map infrastructure engineering handling over 1,000 concurrent players and 300K+ cumulative visits.
-*   **[Automated Multilingual Hoax Classification](https://github.com/reziichsan/HoaxDetection)** — Custom deep learning model benchmarking source code for final undergraduate thesis data structures.
-
----
-
-## 📞 Get In Touch
-
-*   **LinkedIn:** [/in/reziichsannurarsyi](https://www.linkedin.com/in/reziichsannurarsyi/)
-*   **GitHub:** [@reziichsan](https://github.com/reziichsan)
-*   **Email:** [reziichsan@gmail.com](mailto:reziichsan@gmail.com)
-
----
-*Developed by **Rezi Ichsannur Arsyi** — Expected Graduation September 2026.*
+*Designed and developed by Rezi Ichsannur Arsyi.*
