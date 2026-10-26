@@ -62,7 +62,7 @@
     @media(max-width:600px){.skills-grid,.project-grid,.gallery-grid{grid-template-columns:1fr}.gallery-grid{grid-template-columns:repeat(2,1fr)}.stats-grid{grid-template-columns:repeat(2,1fr)}.level-head{flex-direction:column;text-align:center}.portal{width:88px;height:88px}.level{padding:4.5rem 0}.cert-grid{grid-template-columns:1fr}.facts{font-size:.72rem}.hero-content{padding-top:64px}}
     @media(max-height:780px){.hero-bio{display:none}}
     @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
-  
+
 
     /* ===== COSMIC VISUAL UPGRADE ===== */
     body {
@@ -124,7 +124,6 @@
     }
     @keyframes star-drift { to { transform: translate3d(-1.5%, 1%, 0); } }
 
-    /* Give the launch scene a cosmic sky while preserving the mountain layers. */
     .stage {
       background:
         radial-gradient(ellipse at 18% 20%, rgba(62, 111, 255, .28), transparent 32%),
@@ -153,8 +152,6 @@
     .stage .scroll-hint { z-index: 6; }
     .stage .hero-fade { z-index: 4; }
 
-
-    /* The actual .portal element becomes a small spherical planet with orbit rings. */
     .level-head .portal {
       width: 112px;
       height: 112px;
@@ -234,7 +231,6 @@
       50% { transform: rotate(-20deg) scale(1.055); opacity: 1; }
     }
 
-    /* Preserve breathing room for the new rings on compact layouts. */
     @media (max-width: 600px) {
       .level-head .portal { width: 94px; height: 94px; }
       .level-head .portal::before { left: -19%; width: 138%; }
@@ -245,7 +241,6 @@
         animation: none !important;
       }
     }
-
 
 
     /* ===== Smooth motion polish ===== */
@@ -319,12 +314,10 @@
     ::-webkit-scrollbar-track { background: #02040f; }
     ::-webkit-scrollbar-thumb { background: linear-gradient(#27407f, #3b2a7a); border-radius: 99px; border: 2px solid #02040f; }
 
-    /* Deep space backdrop: stars, nebula and a Milky Way band are drawn on a canvas. */
     #starfield { background: linear-gradient(180deg, #02040f 0%, #050a26 50%, #02040f 100%); }
     #starfield::before, #starfield::after { display: none; }
     #starfield canvas { position: absolute; inset: 0; display: block; }
 
-    /* Hero as a view from orbit. */
     .stage { background: none; }
     .stage::before { display: none; }
     .hero-fade { background: linear-gradient(transparent, rgba(2,4,15,.92)); height: 200px; }
@@ -384,7 +377,6 @@
     }
     .hello { letter-spacing: .08em; text-transform: uppercase; font-size: 1rem; opacity: .9; }
 
-    /* Section titles, glass surfaces and navigation. */
     .eyebrow { display: block; margin-bottom: .45rem; color: var(--level-color); font: 600 .72rem var(--fb); letter-spacing: .2em; text-transform: uppercase; }
     .level + .level::before {
       content: ""; position: absolute; top: 0; left: 50%; width: min(1100px, calc(100% - 2.5rem)); height: 1px; transform: translateX(-50%);
@@ -396,7 +388,6 @@
       box-shadow: inset 0 1px 0 rgba(255,255,255,.07), 0 24px 60px rgba(0,0,0,.38);
     }
     .glass:hover { border-color: rgba(94,231,255,.34); }
-    /* The cards are almost opaque, so the blur was invisible but very expensive to paint. */
     .glass { -webkit-backdrop-filter: none; backdrop-filter: none; }
     .nav-links { padding: .25rem; border: 1px solid transparent; border-radius: 99px; transition: background .4s, border-color .4s; }
     nav#navbar.scrolled .nav-links { background: rgba(255,255,255,.03); border-color: rgba(130,175,255,.14); }
@@ -436,7 +427,7 @@
     }
 
 
-    /* ===== Scroll-linked 3D orbital expedition ===== */
+    /* ===== Scroll-linked 3D planets ===== */
     #space3d-layer {
       position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none;
       opacity: .90; mix-blend-mode: screen; contain: strict;
@@ -613,7 +604,7 @@
       .level-head p { margin-inline: auto; }
     }
 
-    /* ===== Calmer, flatter pass: less "template", more hand-made ===== */
+    /* ===== Calmer, flatter pass ===== */
     :root { --cyan: #7fdcef; --muted: #a3b1d1; }
     body::after { content: ""; position: fixed; inset: 0; z-index: 5; pointer-events: none; opacity: .045;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
@@ -671,12 +662,10 @@
     html { scroll-padding-top: 92px; }
     @media (max-width: 700px) { :root { --g-blur: blur(12px) saturate(1.3); } }
 
-    /* Safer reveal: content stays visible if JS fails */
     .reveal, .reveal.visible { opacity: 1; transform: none; translate: none; }
     .js .reveal { opacity: 0; translate: 0 14px; transition: opacity .7s var(--ease-fluid), translate .7s var(--ease-fluid), transform .4s var(--ease-fluid), border-color .4s, background .4s, box-shadow .4s; }
     .js .reveal.visible { opacity: 1; translate: none; }
 
-    /* Surfaces */
     .glass, .snapshot div, .level-head, .nav-inner, .mobile-menu, .filter-bar {
       background: var(--g-fill), var(--g-tint);
       -webkit-backdrop-filter: var(--g-blur); backdrop-filter: var(--g-blur);
@@ -694,7 +683,6 @@
     .about-card .photo img { border-radius: 20px; }
     .edu-cert { border-radius: 16px; border-color: var(--g-line); }
 
-    /* Navigation: floating glass bar */
     nav#navbar, nav#navbar.scrolled { padding-top: 12px; background: none; border: 0; -webkit-backdrop-filter: none; backdrop-filter: none; }
     .nav-inner { height: 58px; border-radius: 999px; padding: 0 .7rem 0 1rem; }
     nav#navbar.scrolled .nav-links { background: none; border-color: transparent; }
@@ -704,10 +692,8 @@
     .mobile-menu a:last-child { border-bottom: 0; }
     .logo b { background: linear-gradient(180deg, #aef0ff, #4f96ff); box-shadow: inset 0 1px 0 rgba(255,255,255,.7); }
 
-    /* Section heading frame */
     .level-head { border-radius: 30px; background: linear-gradient(105deg, color-mix(in srgb, var(--level-color), transparent 80%), rgba(255,255,255,.05) 42%, rgba(255,255,255,.03)), rgba(8,14,40,.46); }
 
-    /* Controls */
     .btn { border-radius: 999px; background: linear-gradient(180deg, rgba(255,255,255,.18), rgba(255,255,255,.05)); border: 1px solid rgba(255,255,255,.22);
       -webkit-backdrop-filter: blur(14px) saturate(1.4); backdrop-filter: blur(14px) saturate(1.4);
       box-shadow: inset 0 1px 0 rgba(255,255,255,.38), 0 8px 24px rgba(0,0,12,.28); }
@@ -739,7 +725,6 @@
     footer { border-top: 1px solid rgba(255,255,255,.08); }
     .hero-content h1 { text-shadow: 0 2px 30px rgba(0,0,20,.45); }
 
-    /* Fallbacks */
     @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
       .glass, .snapshot div, .level-head, .nav-inner, .mobile-menu, .filter-bar { background: #0a1236; }
     }
@@ -747,13 +732,12 @@
       .glass, .snapshot div, .level-head, .nav-inner, .mobile-menu, .filter-bar, .btn, .chips span, .tags span { background: #0a1236; -webkit-backdrop-filter: none; backdrop-filter: none; }
     }
 
-    /* ===== Hero: less text, background kept away from the content ===== */
+    /* ===== Hero ===== */
     .hero-bio { max-width: 500px; margin-bottom: 1.5rem; font-size: .98rem; color: #dbe6ff; }
     .snapshot { max-width: 760px; }
     .snapshot b { white-space: nowrap; }
     .hero-content::before { content: ""; position: absolute; inset: 14% 12%; z-index: -1; pointer-events: none;
       background: radial-gradient(ellipse at center, rgba(2,4,15,.82) 0%, rgba(2,4,15,.6) 45%, rgba(2,4,15,0) 72%); }
-    /* 3D planets and rocket stay at the screen edges from the very top */
     #space3d-layer {
       -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 8%, rgba(0,0,0,.7) 20%, rgba(0,0,0,.14) 34%, rgba(0,0,0,.06) 50%, rgba(0,0,0,.14) 66%, rgba(0,0,0,.7) 80%, #000 92%, #000 100%);
       mask-image: linear-gradient(90deg, #000 0%, #000 8%, rgba(0,0,0,.7) 20%, rgba(0,0,0,.14) 34%, rgba(0,0,0,.06) 50%, rgba(0,0,0,.14) 66%, rgba(0,0,0,.7) 80%, #000 92%, #000 100%);
@@ -768,6 +752,36 @@
     .edu-single p { max-width: 72ch; }
     .cert-card img[src*="eprt"] { object-position: top; }
 
+    /* ===== Skills & Tools: Soft Skills / Hard Skills / Tools & Technologies ===== */
+    .skills-layout { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1.45fr; gap: 1rem; align-items: stretch; }
+    .skills-layout > article { padding: 1.6rem 1.5rem; }
+    .skills-layout .skill-tools { grid-column: 1 / -1; }
+    .skills-layout h3 { display: flex; align-items: center; gap: .6rem; font: 600 1.1rem var(--fd); margin-bottom: 1.1rem; }
+    .skills-layout h3 i { color: var(--level-color); font-size: 1.4rem; }
+    .skills-layout .tags { margin-top: 0; gap: .5rem; }
+    .skills-layout .tags span { font-size: .8rem; padding: .35rem .85rem; }
+    .skill-list { display: grid; gap: .95rem; }
+    .skill-list dt { display: flex; align-items: center; gap: .5rem; font: 600 .92rem var(--fd); color: #fff; margin-bottom: .45rem; }
+    .skill-list dt i { color: var(--level-color); font-size: 1.1rem; }
+    .skill-list dd { display: flex; flex-wrap: wrap; gap: .4rem; }
+    .skill-list dd span { padding: .22rem .65rem; border-radius: 999px; font-size: .74rem; color: #dbe6ff; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14); }
+    .tool-groups { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.4rem 1.2rem; }
+    .tool-groups h4 { font: 600 .82rem var(--fb); color: var(--muted); letter-spacing: .02em; margin-bottom: .75rem; }
+    .logos { display: flex; flex-wrap: wrap; gap: .6rem; }
+    .tool-logo {
+      display: grid; place-items: center; width: 54px; height: 54px; border-radius: 16px;
+      background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.14);
+      transition: transform .35s var(--ease-fluid), border-color .35s var(--ease-fluid), background .35s var(--ease-fluid);
+    }
+    .tool-logo:hover { transform: translateY(-3px); border-color: rgba(255,255,255,.4); background: rgba(255,255,255,.11); }
+    .tool-logo .si { display: block; width: 28px; height: 28px; background: var(--c); -webkit-mask: var(--si) center / contain no-repeat; mask: var(--si) center / contain no-repeat; }
+    .tool-logo i { font-size: 1.7rem; line-height: 1; }
+    @media (max-width: 900px) {
+      .skills-layout { grid-template-columns: 1fr; }
+      .tool-groups { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) { .tool-groups { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -843,7 +857,78 @@
       <article class="glass cert-card reveal" data-lightbox data-caption="Time Series Classification of Badminton Pose webinar"><img src="assets/webinar-badminton-pose.png" alt="Webinar participation certificate" loading="lazy"/><div><h3>Time Series Classification of Badminton Pose</h3><p>KK CITI, Telkom University · 2025</p></div></article>
       <article class="glass cert-card reveal" data-lightbox data-caption="Design System in UI Design"><img src="assets/certificate-3.png" alt="Design System in UI Design certificate" loading="lazy"/><div><h3>Design System in UI Design</h3><p>MySkill Short Class · 2023</p></div></article>
     </div><h3 class="subheading reveal">Visual design gallery</h3><div class="gallery-grid"><a class="reveal" href="assets/editing-1.png" data-lightbox data-caption="Germany Infographic"><img src="assets/editing-1.png" alt="Germany infographic" loading="lazy"/><span>Germany Infographic</span></a><a class="reveal" href="assets/editing-2.png" data-lightbox data-caption="JKT48 Wallpaper Design"><img src="assets/editing-2.png" alt="JKT48 wallpaper" loading="lazy"/><span>JKT48 Wallpaper</span></a><a class="reveal" href="assets/editing-3.png" data-lightbox data-caption="Custom Jersey Design"><img src="assets/editing-3.png" alt="Custom jersey design" loading="lazy"/><span>Custom Jersey</span></a><a class="reveal" href="assets/2.png" data-lightbox data-caption="Portrait Wallpaper Design"><img src="assets/2.png" alt="Portrait wallpaper" loading="lazy"/><span>Portrait Wallpaper</span></a><a class="reveal" href="assets/3.jpg" data-lightbox data-caption="Poster Visual Design"><img src="assets/3.jpg" alt="Poster design" loading="lazy"/><span>Poster Visual</span></a></div></div></section>
-    <section class="level" id="skills" style="--level-color:#4f8bff"><div class="container zoom"><div class="level-head reveal"><div class="portal"><i class="ri-tools-line"></i><span class="level-sign">06</span></div><div><span class="eyebrow">Skills</span><h2>Skills &amp; <span>Tools</span></h2><p>Tools and technologies I have actually used.</p></div></div><div class="skills-grid"><article class="glass reveal"><h3><i class="ri-computer-line"></i> IT Support</h3><p>Windows · Troubleshooting · PC Hardware · Linux Basics</p></article><article class="glass reveal"><h3><i class="ri-router-line"></i> Networking</h3><p>TCP/IP · LAN/Wi-Fi · IP/DNS · Ping Testing</p></article><article class="glass reveal"><h3><i class="ri-code-s-slash-line"></i> Programming</h3><p>Python · JavaScript · Node.js · Django · HTML/CSS</p></article><article class="glass reveal"><h3><i class="ri-brain-line"></i> AI &amp; Machine Learning</h3><p>Gemini API · NLP · IndoBERT · mBERT · XLM-R</p></article><article class="glass reveal"><h3><i class="ri-pencil-ruler-2-line"></i> UI/UX Design</h3><p>Figma · Prototyping · Design Systems · Photoshop</p></article><article class="glass reveal"><h3><i class="ri-tools-line"></i> Tools &amp; Platforms</h3><p>VS Code · GitHub · Tailwind CSS · SQLite · Excel · Google Colab</p></article></div></div></section>
+
+    <section class="level" id="skills" style="--level-color:#4f8bff"><div class="container zoom"><div class="level-head reveal"><div class="portal"><i class="ri-tools-line"></i><span class="level-sign">06</span></div><div><span class="eyebrow">Skills</span><h2>Skills &amp; <span>Tools</span></h2><p>Soft skills, hard skills, and the tools &amp; technologies I use.</p></div></div>
+      <div class="skills-layout">
+
+        <article class="glass skill-soft reveal">
+          <h3><i class="ri-team-line"></i> Soft Skills</h3>
+          <div class="tags">
+            <span>Problem Solving</span><span>Analytical Thinking</span><span>Teamwork &amp; Collaboration</span><span>Adaptability</span>
+            <span>Willingness to Learn</span><span>Attention to Detail</span><span>Time Management</span><span>Communication</span>
+          </div>
+        </article>
+
+        <article class="glass skill-hard reveal">
+          <h3><i class="ri-code-s-slash-line"></i> Hard Skills</h3>
+          <dl class="skill-list">
+            <div><dt><i class="ri-computer-line"></i> IT Support</dt><dd><span>Hardware &amp; Software Troubleshooting</span><span>Windows Installation</span><span>Basic Linux</span><span>Basic Networking</span><span>IP/DNS Configuration</span><span>Router Configuration</span></dd></div>
+            <div><dt><i class="ri-terminal-box-line"></i> Programming</dt><dd><span>Python</span><span>Django</span><span>HTML</span><span>CSS</span><span>Basic JavaScript</span><span>CRUD Development</span><span>Feature Testing</span></dd></div>
+            <div><dt><i class="ri-brain-line"></i> Machine Learning</dt><dd><span>NLP</span><span>Transformer Models</span><span>IndoBERT</span><span>mBERT</span><span>XLM-R</span><span>Text Classification</span><span>Model Evaluation</span><span>Cross-Validation</span></dd></div>
+            <div><dt><i class="ri-pencil-ruler-2-line"></i> UI/UX</dt><dd><span>UI Design</span><span>Wireframing</span><span>Prototyping</span><span>Responsive Web Design</span></dd></div>
+          </dl>
+        </article>
+
+        <article class="glass skill-tools reveal">
+          <h3><i class="ri-apps-2-line"></i> Tools &amp; Technologies</h3>
+          <div class="tool-groups">
+
+            <div>
+              <h4>Development</h4>
+              <div class="logos">
+                <span class="tool-logo" title="Visual Studio Code" role="img" aria-label="Visual Studio Code"><i class="si" style="--c:#3fa7f5;--si:url('https://cdn.jsdelivr.net/npm/simple-icons@11.14.0/icons/visualstudiocode.svg')"></i></span>
+                <span class="tool-logo" title="Git" role="img" aria-label="Git"><i class="si" style="--c:#f05032;--si:url('https://cdn.jsdelivr.net/npm/simple-icons@11.14.0/icons/git.svg')"></i></span>
+                <span class="tool-logo" title="GitHub" role="img" aria-label="GitHub"><i class="si" style="--c:#ffffff;--si:url('https://cdn.jsdelivr.net/npm/simple-icons@11.14.0/icons/github.svg')"></i></span>
+                <span class="tool-logo" title="Django" role="img" aria-label="Django"><i class="si" style="--c:#44b78b;--si:url('https://cdn.jsdelivr.net/npm/simple-icons@11.14.0/icons/django.svg')"></i></span>
+              </div>
+            </div>
+
+            <div>
+              <h4>Machine Learning</h4>
+              <div class="logos">
+                <span class="tool-logo" title="Google Colab" role="img" aria-label="Google Colab"><i class="si" style="--c:#f9ab00;--si:url('https://cdn.jsdelivr.net/npm/simple-icons@11.14.0/icons/googlecolab.svg')"></i></span>
+                <span class="tool-logo" title="Jupyter Notebook" role="img" aria-label="Jupyter Notebook"><i class="si" style="--c:#f37626;--si:url('https://cdn.jsdelivr.net/npm/simple-icons@11.14.0/icons/jupyter.svg')"></i></span>
+                <span class="tool-logo" title="Hugging Face Transformers" role="img" aria-label="Hugging Face Transformers"><i class="si" style="--c:#ffd21e;--si:url('https://cdn.jsdelivr.net/npm/simple-icons@11.14.0/icons/huggingface.svg')"></i></span>
+              </div>
+            </div>
+
+            <div>
+              <h4>Operating Systems &amp; Networking</h4>
+              <div class="logos">
+                <span class="tool-logo" title="Windows 10" role="img" aria-label="Windows 10"><i class="si" style="--c:#3aa0ff;--si:url('https://cdn.jsdelivr.net/npm/simple-icons@11.14.0/icons/windows.svg')"></i></span>
+                <span class="tool-logo" title="Linux" role="img" aria-label="Linux"><i class="si" style="--c:#fcc624;--si:url('https://cdn.jsdelivr.net/npm/simple-icons@11.14.0/icons/linux.svg')"></i></span>
+                <span class="tool-logo" title="Command Prompt" role="img" aria-label="Command Prompt"><i class="ri-terminal-window-line" style="color:#d6dcea"></i></span>
+                <span class="tool-logo" title="Terminal" role="img" aria-label="Terminal"><i class="ri-terminal-box-line" style="color:#6ee7a0"></i></span>
+                <span class="tool-logo" title="Router Administration" role="img" aria-label="Router Administration"><i class="ri-router-line" style="color:#7fdcef"></i></span>
+              </div>
+            </div>
+
+            <div>
+              <h4>Design &amp; Productivity</h4>
+              <div class="logos">
+                <span class="tool-logo" title="Figma" role="img" aria-label="Figma"><i class="si" style="--c:#f24e1e;--si:url('https://cdn.jsdelivr.net/npm/simple-icons@11.14.0/icons/figma.svg')"></i></span>
+                <span class="tool-logo" title="Adobe Photoshop" role="img" aria-label="Adobe Photoshop"><i class="si" style="--c:#31a8ff;--si:url('https://cdn.jsdelivr.net/npm/simple-icons@11.14.0/icons/adobephotoshop.svg')"></i></span>
+                <span class="tool-logo" title="Microsoft Excel" role="img" aria-label="Microsoft Excel"><i class="si" style="--c:#2fcf86;--si:url('https://cdn.jsdelivr.net/npm/simple-icons@11.14.0/icons/microsoftexcel.svg')"></i></span>
+                <span class="tool-logo" title="Microsoft Word" role="img" aria-label="Microsoft Word"><i class="si" style="--c:#4a9bf0;--si:url('https://cdn.jsdelivr.net/npm/simple-icons@11.14.0/icons/microsoftword.svg')"></i></span>
+              </div>
+            </div>
+
+          </div>
+        </article>
+
+      </div>
+    </div></section>
+
     <section class="level" id="contact" style="--level-color:#ff7ab8"><div class="container zoom"><div class="level-head reveal"><div class="portal"><i class="ri-send-plane-line"></i><span class="level-sign">07</span></div><div><span class="eyebrow">Contact</span><h2>Let's <span>connect</span></h2><p>Email is the quickest way to reach me.</p></div></div><div class="glass contact-card reveal"><div><h3>Looking for someone to join your team?</h3><p>I'm looking for an entry-level role in web development, software engineering, or IT support. If you have an opening, or just want to talk about a project, send me an email.</p><a href="mailto:reziichsan@gmail.com" class="btn primary">Email me <i class="ri-arrow-right-up-line"></i></a></div><div><a class="contact-link" href="https://www.linkedin.com/in/reziichsannurarsyi/" target="_blank" rel="noopener noreferrer"><i class="ri-linkedin-fill"></i><div><b>LinkedIn</b><span>linkedin.com/in/reziichsannurarsyi</span></div><i class="ri-arrow-right-up-line"></i></a><a class="contact-link" href="mailto:reziichsan@gmail.com"><i class="ri-mail-line"></i><div><b>Email</b><span>reziichsan@gmail.com</span></div><i class="ri-arrow-right-up-line"></i></a><a class="contact-link" href="https://github.com/reziichsan" target="_blank" rel="noopener noreferrer"><i class="ri-github-fill"></i><div><b>GitHub</b><span>github.com/reziichsan</span></div><i class="ri-arrow-right-up-line"></i></a></div></div></div></section>
   </main>
   <footer><div class="social-links"><a href="https://www.linkedin.com/in/reziichsannurarsyi/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a><a href="https://github.com/reziichsan" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="ri-github-fill"></i></a><a href="mailto:reziichsan@gmail.com" aria-label="Email"><i class="ri-mail-line"></i></a></div>© <span id="year">2026</span> Rezi Ichsan Nur Arsyi. Hand-coded in HTML, CSS and Three.js.</footer>
@@ -866,7 +951,6 @@
       const rand=(a,b)=>a+Math.random()*(b-a);
       let w=0,h=0,stars=[],nebula=null,shooting=null,nextShot=performance.now()+4500;
 
-      // Nebula clouds and a Milky Way band are painted once, then reused every frame.
       function paintNebula(){
         const scale=.5,H=h+320,c=document.createElement("canvas");
         c.width=Math.ceil(w*scale);c.height=Math.ceil(H*scale);
@@ -895,7 +979,6 @@
         canvas.width=w*dpr;canvas.height=h*dpr;
         canvas.style.width=w+"px";canvas.style.height=h+"px";
         ctx.setTransform(dpr,0,0,dpr,0,0);
-        // [count at 1440x900, min size, max size, parallax depth]
         const layers=[[110,.3,.9,.012],[60,.7,1.4,.03],[22,1.2,2.2,.06]];
         stars=[];
         layers.forEach(([count,min,max,depth],index)=>{
@@ -926,7 +1009,6 @@
         });
         ctx.globalAlpha=1;
         if(reduceMotion)return;
-        // An occasional shooting star.
         if(!shooting&&now>nextShot){shooting={x:rand(w*.45,w),y:rand(0,h*.35),vx:-rand(.8,1.1),vy:rand(.35,.5),life:0};nextShot=now+rand(7000,15000)}
         if(shooting){
           shooting.life+=dt;shooting.x+=shooting.vx*dt;shooting.y+=shooting.vy*dt;
@@ -946,7 +1028,7 @@
       (function frame(now){const dt=Math.min(now-last,50);last=now;if(!document.hidden)draw(now,dt);requestAnimationFrame(frame)})(last);
     }
 
-    const progressBar=$("#progress-bar"),navbar=$("#navbar"),backToTop=$("#back-to-top"),heroContent=$("#hero-content"),heroLayers=$$(".layer"),floatingIcons=$$(".floating-icon");let scrollQueued=false;
+    const progressBar=$("#progress-bar"),navbar=$("#navbar"),backToTop=$("#back-to-top"),heroContent=$("#hero-content"),heroLayers=$$(".layer");let scrollQueued=false;
     function updateOnScroll(){
       scrollQueued=false;
       const y=window.scrollY,h=window.innerHeight,max=document.documentElement.scrollHeight-h;
@@ -955,7 +1037,6 @@
       document.body.classList.toggle("in-sections",y>h*.42);
       backToTop.classList.toggle("show",y>500);
       if(reduceMotion)return;
-      // Keep the hero parallax restrained; do not scale/fade whole content sections on scroll.
       const progress=clamp(y/h,0,1.25);
       heroLayers.forEach(layer=>{
         const speed=Number(layer.dataset.speed);
@@ -963,10 +1044,6 @@
       });
       heroContent.style.transform=`translate3d(0,${y*.18}px,0) scale(${1+progress*.12})`;
       heroContent.style.opacity=clamp(1-progress*1.35,0,1);
-      floatingIcons.forEach(icon=>{
-        const top=icon.parentElement.getBoundingClientRect().top,offset=h/2-top;
-        icon.style.transform=`translate3d(0,${offset*Number(icon.dataset.speed)*.72}px,0) rotate(${offset*.018}deg)`;
-      });
     }
     function requestScrollUpdate(){if(scrollQueued)return;scrollQueued=true;requestAnimationFrame(updateOnScroll)}
     window.addEventListener("scroll",requestScrollUpdate,{passive:true});
@@ -988,7 +1065,6 @@
     function setupMobileMenu(){const toggle=$("#menu-toggle"),menu=$("#mobile-menu"),icon=$("i",toggle);function setMenu(open){menu.classList.toggle("open",open);toggle.setAttribute("aria-expanded",String(open));icon.className=open?"ri-close-line":"ri-menu-3-line"}toggle.addEventListener("click",()=>setMenu(!menu.classList.contains("open")));$$("a",menu).forEach(link=>link.addEventListener("click",()=>setMenu(false)))}
     backToTop.addEventListener("click",()=>window.scrollTo({top:0,behavior:reduceMotion?"auto":"smooth"}));
     function setupProjectFilter(){const buttons=$$(".filter-bar button"),cards=$$(".project-card");buttons.forEach(button=>button.addEventListener("click",()=>{const filter=button.dataset.filter;buttons.forEach(b=>b.classList.toggle("active",b===button));cards.forEach(card=>card.classList.toggle("hidden",filter!=="all"&&!card.dataset.category.split(" ").includes(filter)))}))}
-    function setupCardTilt(){if(reduceMotion||!matchMedia("(hover:hover)").matches)return;$$(".tilt").forEach(card=>{card.addEventListener("mousemove",e=>{const r=card.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;card.style.transform=`rotateY(${x*7}deg) rotateX(${-y*7}deg) translateY(-4px)`});card.addEventListener("mouseleave",()=>card.style.transform="")})}
     function setupLightbox(){const box=$("#lightbox"),img=$("img",box),caption=$("p",box),closeButton=$("button",box);let previousFocus=null;function open(src,text){previousFocus=document.activeElement;img.src=src;img.alt=text;caption.textContent=text;box.classList.add("open");document.body.style.overflow="hidden";closeButton.focus()}function close(){box.classList.remove("open");img.src="";document.body.style.overflow="";previousFocus?.focus()}$$("[data-lightbox]").forEach(item=>{item.tabIndex=0;function openItem(e){e.preventDefault();const source=item.getAttribute("href")||$("img",item)?.getAttribute("src");if(source)open(source,item.dataset.caption||$("img",item)?.alt||"")}item.addEventListener("click",openItem);item.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" ")openItem(e)})});closeButton.addEventListener("click",close);box.addEventListener("click",e=>{if(e.target===box)close()});window.addEventListener("keydown",e=>{if(e.key==="Escape"&&box.classList.contains("open"))close()})}
     function setupTypewriter(){const el=$("#role-text");if(reduceMotion)return;const roles=["Informatics Graduate | Web Developer & IT Specialist","Full-Stack Web Developer","IT Support & Infrastructure","Python & AI Integration"];let ri=0,chars=roles[0].length,deleting=true;function type(){if(deleting){chars--;el.textContent=roles[ri].slice(0,chars);if(chars<=0){deleting=false;ri=(ri+1)%roles.length;setTimeout(type,260);return}}else{chars++;el.textContent=roles[ri].slice(0,chars);if(chars>=roles[ri].length){deleting=true;setTimeout(type,1600);return}}setTimeout(type,deleting?30:48)}setTimeout(type,1300)}
     function setupClock(){const clock=$("#clock"),fmt=new Intl.DateTimeFormat("en-GB",{timeZone:"Asia/Jakarta",hour:"2-digit",minute:"2-digit",second:"2-digit",hour12:false});function tick(){clock.textContent=fmt.format(new Date());setTimeout(tick,1000)}tick();$("#year").textContent=new Date().getFullYear()}
@@ -1199,48 +1275,10 @@ void main(){
   gl_FragColor = vec4(col, dens * 0.8);
   #include <colorspace_fragment>
 }
-`,
-    flameVert: `varying vec2 vUv;
-void main(){
-  vUv = uv;
-  gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
-}
-`,
-    flameFrag: `uniform float uTime;
-uniform float uIntensity;
-uniform vec3 uColA;
-uniform vec3 uColB;
-varying vec2 vUv;
-float hash13(vec3 p){
-  p = fract(p * 0.3183099 + 0.1);
-  p *= 17.0;
-  return fract(p.x * p.y * p.z * (p.x + p.y + p.z));
-}
-float vnoise(vec3 x){
-  vec3 i = floor(x);
-  vec3 f = fract(x);
-  f = f * f * (3.0 - 2.0 * f);
-  float a = mix(hash13(i + vec3(0.0,0.0,0.0)), hash13(i + vec3(1.0,0.0,0.0)), f.x);
-  float b = mix(hash13(i + vec3(0.0,1.0,0.0)), hash13(i + vec3(1.0,1.0,0.0)), f.x);
-  float c = mix(hash13(i + vec3(0.0,0.0,1.0)), hash13(i + vec3(1.0,0.0,1.0)), f.x);
-  float d = mix(hash13(i + vec3(0.0,1.0,1.0)), hash13(i + vec3(1.0,1.0,1.0)), f.x);
-  return mix(mix(a, b, f.y), mix(c, d, f.y), f.z);
-}
-
-void main(){
-  float y = vUv.y;
-  float ang = vUv.x * 6.2831853;
-  float n = vnoise(vec3(cos(ang) * 1.5, sin(ang) * 1.5, y * 5.0 - uTime * 9.0));
-  float core = pow(y, 1.6);
-  vec3 col = mix(uColA, uColB, pow(y, 2.2));
-  float a = core * (0.45 + 0.55 * n) * uIntensity;
-  gl_FragColor = vec4(col, clamp(a, 0.0, 1.0));
-  #include <colorspace_fragment>
-}
 `
   };
 
-  async function bootSpacecraft() {
+  async function bootPlanets() {
     try {
       const THREE = await import("https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.js");
       const renderer = new THREE.WebGLRenderer({
@@ -1268,14 +1306,8 @@ void main(){
       const keyLight = new THREE.DirectionalLight(0xfff1dc, 2.4);
       keyLight.position.copy(SUN).multiplyScalar(14);
       scene.add(keyLight);
-      const cyanLight = new THREE.PointLight(0x38dfff, 16, 58, 2);
-      cyanLight.position.set(4, 2.5, -10);
-      scene.add(cyanLight);
-      const violetLight = new THREE.PointLight(0x8e62ff, 12, 62, 2);
-      violetLight.position.set(-5, -2, -35);
-      scene.add(violetLight);
 
-      // ---------- Soft sprite textures (stars, glows, nebula clouds) ----------
+      // ---------- Soft sprite textures (stars, nebula clouds) ----------
       function makeGlowTexture() {
         const c = document.createElement("canvas");
         c.width = c.height = 64;
@@ -1310,7 +1342,7 @@ void main(){
         return tex;
       }
 
-      // ---------- Stars: round, soft points scattered along the whole route ----------
+      // ---------- Stars ----------
       function addStars(count, size, opacity) {
         const positions = new Float32Array(count * 3);
         const colors = new Float32Array(count * 3);
@@ -1333,7 +1365,7 @@ void main(){
       addStars(isMobile ? 260 : 620, isMobile ? 0.09 : 0.1, 0.8);
       addStars(isMobile ? 18 : 46, isMobile ? 0.34 : 0.4, 0.9);
 
-      // ---------- Orbital route ----------
+      // ---------- Invisible camera path (only used to move the camera gently) ----------
       const routePoints = [];
       for (let i = 0; i <= 140; i++) {
         const t = i / 140;
@@ -1344,18 +1376,6 @@ void main(){
         ));
       }
       const route = new THREE.CatmullRomCurve3(routePoints, false, "centripetal");
-      scene.add(new THREE.Mesh(
-        new THREE.TubeGeometry(route, 500, 0.04, 7, false),
-        new THREE.MeshBasicMaterial({ color: 0x56eaff, transparent: true, opacity: 0.2, blending: THREE.AdditiveBlending, depthWrite: false })
-      ));
-      [-0.17, 0.17].forEach((offset, index) => {
-        const railPoints = routePoints.map(point => new THREE.Vector3(point.x + offset, point.y + (index ? 0.10 : -0.10), point.z));
-        const railCurve = new THREE.CatmullRomCurve3(railPoints, false, "centripetal");
-        scene.add(new THREE.Mesh(
-          new THREE.TubeGeometry(railCurve, 420, 0.01, 5, false),
-          new THREE.MeshBasicMaterial({ color: index ? 0x9578ff : 0x48aaff, transparent: true, opacity: 0.18, blending: THREE.AdditiveBlending, depthWrite: false })
-        ));
-      });
 
       // ---------- Planets (procedural GLSL surfaces, no image assets) ----------
       const planetDefs = [
@@ -1457,7 +1477,7 @@ void main(){
         });
       });
 
-      // ---------- Soft nebula clouds drifting beside each destination ----------
+      // ---------- Soft nebula clouds beside each planet ----------
       const nebulae = [];
       planetObjects.forEach(item => {
         const texture = makeNebulaTexture(item.destination.color);
@@ -1473,193 +1493,8 @@ void main(){
         }
       });
 
-      // ---------- Checkpoint gates ----------
-      const waypointObjects = [];
-      const waypointNormal = new THREE.Vector3(0, 0, 1);
-      planetObjects.forEach((item, index) => {
-        const gate = new THREE.Group();
-        const coreMaterial = new THREE.MeshBasicMaterial({ color: item.destination.color, transparent: true, opacity: 0.26, blending: THREE.AdditiveBlending, depthWrite: false });
-        const outerMaterial = new THREE.MeshBasicMaterial({ color: 0x8cbcff, transparent: true, opacity: 0.11, blending: THREE.AdditiveBlending, depthWrite: false });
-        gate.add(new THREE.Mesh(new THREE.TorusGeometry(0.78, 0.025, 8, 80), coreMaterial));
-        gate.add(new THREE.Mesh(new THREE.TorusGeometry(1.04, 0.009, 6, 96), outerMaterial));
-        const beaconMaterial = new THREE.MeshBasicMaterial({ color: item.destination.color, blending: THREE.AdditiveBlending });
-        const beacons = [];
-        for (let j = 0; j < 4; j++) {
-          const angle = (j / 4) * Math.PI * 2 + index * 0.24;
-          const beacon = new THREE.Mesh(new THREE.SphereGeometry(0.045, 8, 8), beaconMaterial);
-          beacon.position.set(Math.cos(angle) * 1.04, Math.sin(angle) * 1.04, 0);
-          gate.add(beacon); beacons.push(beacon);
-        }
-        scene.add(gate);
-        waypointObjects.push({ item, gate, coreMaterial, outerMaterial, beacons, index });
-      });
-
-      // ---------- Light packets running down the route ----------
-      const packetCount = isMobile ? 16 : 28;
-      const routePackets = [];
-      for (let i = 0; i < packetCount; i++) {
-        const color = i % 4 === 0 ? 0xb49aff : (i % 3 === 0 ? 0xffd7a0 : 0x6df2ff);
-        const sprite = new THREE.Sprite(new THREE.SpriteMaterial({ map: glowTexture, color, transparent: true, opacity: 0.9, blending: THREE.AdditiveBlending, depthWrite: false, toneMapped: false }));
-        sprite.scale.setScalar(isMobile ? 0.16 : 0.2);
-        scene.add(sprite);
-        routePackets.push({ sprite, offset: i / packetCount, speed: 0.018 + (i % 5) * 0.002 });
-      }
-
-      // ---------- The rocket ----------
-      const ship = new THREE.Group();
-      const rocket = new THREE.Group();
-      rocket.rotation.x = -Math.PI / 2; // nose (+Y) points along -Z
-      ship.add(rocket);
-
-      const hullMat = new THREE.MeshStandardMaterial({ color: 0xf0f6ff, metalness: 0.35, roughness: 0.32 });
-      const navyMat = new THREE.MeshStandardMaterial({ color: 0x1b2f66, metalness: 0.5, roughness: 0.4 });
-      const noseMat = new THREE.MeshStandardMaterial({ color: 0xff9a3d, metalness: 0.3, roughness: 0.35, emissive: 0x3a1400 });
-      const finMat = new THREE.MeshStandardMaterial({ color: 0xff5d73, metalness: 0.3, roughness: 0.4, side: THREE.DoubleSide });
-      const cyanMat = new THREE.MeshStandardMaterial({ color: 0x46e9ff, emissive: 0x159cff, emissiveIntensity: 1.4, metalness: 0.2, roughness: 0.3 });
-      const glassMat = new THREE.MeshStandardMaterial({ color: 0x0b2150, emissive: 0x38bfff, emissiveIntensity: 0.9, metalness: 0.2, roughness: 0.1 });
-      const metalMat = new THREE.MeshStandardMaterial({ color: 0x2a3560, metalness: 0.8, roughness: 0.35, side: THREE.DoubleSide });
-
-      const body = new THREE.Mesh(new THREE.CylinderGeometry(0.25, 0.25, 0.77, 32), hullMat);
-      body.position.y = 0.035; rocket.add(body);
-      const tail = new THREE.Mesh(new THREE.CylinderGeometry(0.25, 0.22, 0.35, 32), navyMat);
-      tail.position.y = -0.525; rocket.add(tail);
-      const nosePoints = [];
-      for (let k = 0; k <= 14; k++) {
-        const t = k / 14;
-        nosePoints.push(new THREE.Vector2(k === 14 ? 0 : 0.25 * Math.pow(1 - Math.pow(t, 1.9), 0.6), 0.42 + 0.73 * t));
-      }
-      rocket.add(new THREE.Mesh(new THREE.LatheGeometry(nosePoints, 32), Object.assign(noseMat, { side: THREE.DoubleSide })));
-      [0.42, -0.33].forEach(y => {
-        const band = new THREE.Mesh(new THREE.TorusGeometry(0.253, 0.012, 8, 48), cyanMat);
-        band.rotation.x = Math.PI / 2; band.position.y = y; rocket.add(band);
-      });
-      const nozzlePoints = [[0.19, -0.98], [0.15, -0.92], [0.11, -0.82], [0.1, -0.7]].map(([r, y]) => new THREE.Vector2(r, y));
-      rocket.add(new THREE.Mesh(new THREE.LatheGeometry(nozzlePoints, 24), metalMat));
-
-      [1, -1].forEach(side => {
-        const ringPort = new THREE.Mesh(new THREE.TorusGeometry(0.07, 0.016, 8, 24), metalMat);
-        ringPort.position.set(0, 0.2, side * 0.248); rocket.add(ringPort);
-        const glass = new THREE.Mesh(new THREE.SphereGeometry(0.066, 16, 12), glassMat);
-        glass.scale.z = 0.5; glass.position.set(0, 0.2, side * 0.248); rocket.add(glass);
-      });
-
-      const finShape = new THREE.Shape();
-      finShape.moveTo(0.24, -0.05); finShape.lineTo(0.62, -0.62); finShape.lineTo(0.62, -0.86); finShape.lineTo(0.24, -0.74); finShape.closePath();
-      const finGeometry = new THREE.ExtrudeGeometry(finShape, { depth: 0.035, bevelEnabled: false });
-      finGeometry.translate(0, 0, -0.0175);
-      const beacons = [];
-      for (let k = 0; k < 3; k++) {
-        const finGroup = new THREE.Group();
-        finGroup.rotation.y = (k * Math.PI * 2) / 3;
-        finGroup.add(new THREE.Mesh(finGeometry, finMat));
-        const sprite = new THREE.Sprite(new THREE.SpriteMaterial({ map: glowTexture, color: k === 0 ? 0xff6d9a : 0x6cf7ff, transparent: true, opacity: 0.95, blending: THREE.AdditiveBlending, depthWrite: false, toneMapped: false }));
-        sprite.scale.setScalar(0.2); sprite.position.set(0.62, -0.74, 0);
-        finGroup.add(sprite); beacons.push(sprite);
-        rocket.add(finGroup);
-      }
-
-      // Engine plume: two additive cones with animated noise, plus a glow and ion particles.
-      function makePlume(radiusTop, height, colA, colB) {
-        const material = new THREE.ShaderMaterial({
-          uniforms: { uTime: { value: 0 }, uIntensity: { value: 1 }, uColA: { value: new THREE.Color(colA) }, uColB: { value: new THREE.Color(colB) } },
-          vertexShader: SH.flameVert, fragmentShader: SH.flameFrag,
-          transparent: true, blending: THREE.AdditiveBlending, depthWrite: false, side: THREE.DoubleSide, toneMapped: false
-        });
-        const mesh = new THREE.Mesh(new THREE.CylinderGeometry(radiusTop, radiusTop * 0.15, height, 24, 1, true), material);
-        mesh.position.y = -0.98 - height / 2;
-        rocket.add(mesh);
-        return { mesh, material };
-      }
-      const outerPlume = makePlume(0.14, 1.9, 0x2f8bff, 0x9ff6ff);
-      const innerPlume = makePlume(0.07, 1.0, 0x8ff2ff, 0xffffff);
-      const nozzleGlow = new THREE.Sprite(new THREE.SpriteMaterial({ map: glowTexture, color: 0x6fe8ff, transparent: true, opacity: 0.85, blending: THREE.AdditiveBlending, depthWrite: false, toneMapped: false }));
-      nozzleGlow.scale.setScalar(0.9); nozzleGlow.position.y = -1.02; rocket.add(nozzleGlow);
-      const engineLight = new THREE.PointLight(0x38dfff, 3.2, 6, 2);
-      engineLight.position.y = -1.25; rocket.add(engineLight);
-
-      const exhaustCount = isMobile ? 24 : 40;
-      const exhaustPositions = new Float32Array(exhaustCount * 3);
-      const exhaustSpeeds = new Float32Array(exhaustCount);
-      for (let i = 0; i < exhaustCount; i++) {
-        exhaustPositions[i * 3] = rand(-0.1, 0.1);
-        exhaustPositions[i * 3 + 1] = -rand(1.0, 3.2);
-        exhaustPositions[i * 3 + 2] = rand(-0.1, 0.1);
-        exhaustSpeeds[i] = rand(0.8, 2.2);
-      }
-      const exhaustGeometry = new THREE.BufferGeometry();
-      exhaustGeometry.setAttribute("position", new THREE.BufferAttribute(exhaustPositions, 3));
-      const exhaustMaterial = new THREE.PointsMaterial({
-        color: 0x8eeeff, size: isMobile ? 0.12 : 0.15, map: glowTexture, sizeAttenuation: true,
-        transparent: true, opacity: 0.7, blending: THREE.AdditiveBlending, depthWrite: false
-      });
-      rocket.add(new THREE.Points(exhaustGeometry, exhaustMaterial));
-
-      ship.scale.setScalar(isMobile ? 0.6 : 0.82);
-      scene.add(ship);
-
-      // ---------- Relay satellite near the Skills world ----------
-      const satellite = new THREE.Group();
-      satellite.add(new THREE.Mesh(new THREE.BoxGeometry(0.19, 0.19, 0.19), hullMat));
-      const panelMaterial = new THREE.MeshStandardMaterial({ color: 0x2c80d9, emissive: 0x0b326b, emissiveIntensity: 0.55, metalness: 0.5, roughness: 0.3 });
-      [-1, 1].forEach(side => {
-        const panel = new THREE.Mesh(new THREE.BoxGeometry(0.47, 0.025, 0.25), panelMaterial);
-        panel.position.x = side * 0.34; satellite.add(panel);
-        const stripe = new THREE.Mesh(new THREE.BoxGeometry(0.42, 0.008, 0.015), cyanMat);
-        stripe.position.set(side * 0.34, 0.018, 0); satellite.add(stripe);
-      });
-      scene.add(satellite);
-
-      // ---------- Lumpy asteroids in the margins ----------
-      function makeAsteroidGeometry(seed) {
-        const g = new THREE.IcosahedronGeometry(1, 2);
-        const pos = g.attributes.position, v = new THREE.Vector3();
-        for (let i = 0; i < pos.count; i++) {
-          v.fromBufferAttribute(pos, i);
-          const n = 1 + (Math.sin(v.x * 3.1 + seed) + Math.sin(v.y * 4.3 + seed * 2) + Math.sin(v.z * 3.7 + seed * 3)) * 0.11;
-          v.multiplyScalar(n);
-          pos.setXYZ(i, v.x, v.y, v.z);
-        }
-        g.computeVertexNormals();
-        return g;
-      }
-      const asteroidGeometries = [makeAsteroidGeometry(1.1), makeAsteroidGeometry(2.7), makeAsteroidGeometry(4.2)];
-      const asteroidMaterials = [
-        new THREE.MeshStandardMaterial({ color: 0x586a91, roughness: 0.98 }),
-        new THREE.MeshStandardMaterial({ color: 0x766d9a, roughness: 0.96 }),
-        new THREE.MeshStandardMaterial({ color: 0x3c577d, roughness: 0.99 })
-      ];
-      const asteroids = [];
-      const asteroidCount = isMobile ? 22 : 48;
-      for (let i = 0; i < asteroidCount; i++) {
-        const t = Math.random();
-        const pathPoint = route.getPointAt(t);
-        const size = rand(0.065, 0.2);
-        const asteroid = new THREE.Mesh(asteroidGeometries[i % 3], asteroidMaterials[(i + 1) % 3]);
-        asteroid.position.set(pathPoint.x + (Math.random() > 0.5 ? 1 : -1) * rand(2.0, 4.8), rand(-3.8, 3.8), 8 - t * 70 + rand(-2.5, 2.5));
-        asteroid.scale.set(size * rand(0.8, 1.45), size * rand(0.65, 1.3), size * rand(0.7, 1.4));
-        asteroid.rotation.set(rand(0, 6.28), rand(0, 6.28), rand(0, 6.28));
-        asteroid.userData.spin = new THREE.Vector3(rand(-0.35, 0.35), rand(-0.5, 0.5), rand(-0.28, 0.28));
-        scene.add(asteroid); asteroids.push(asteroid);
-      }
-
-      // ---------- Warp streaks (appear only while scrolling fast) ----------
-      const warpGroup = new THREE.Group();
-      scene.add(warpGroup);
-      const streakCount = isMobile ? 42 : 94;
-      const streakPositions = new Float32Array(streakCount * 6);
-      const streakSeeds = [];
-      for (let i = 0; i < streakCount; i++) {
-        const x = rand(-10, 10), y = rand(-6.2, 6.2), z = rand(-17, -4);
-        streakSeeds.push({ x, y, z, length: rand(0.1, 0.6) });
-      }
-      const streakGeometry = new THREE.BufferGeometry();
-      streakGeometry.setAttribute("position", new THREE.BufferAttribute(streakPositions, 3));
-      const streakMaterial = new THREE.LineBasicMaterial({ color: 0x9fefff, transparent: true, opacity: 0, blending: THREE.AdditiveBlending, depthWrite: false });
-      warpGroup.add(new THREE.LineSegments(streakGeometry, streakMaterial));
-      warpGroup.visible = false;
-
       // ---------- State ----------
-      let currentProgress = 0, targetProgress = 0, previousProgressForVelocity = 0, scrollVelocity = 0;
+      let currentProgress = 0, targetProgress = 0;
       let pointerX = 0, pointerY = 0;
       let previousTime = performance.now();
       let rafId = 0;
@@ -1696,11 +1531,6 @@ void main(){
         if (!document.hidden && !rafId) { previousTime = performance.now(); rafId = requestAnimationFrame(frame); }
       });
 
-      const upAxis = new THREE.Vector3(0, 1, 0);
-      const backAxis = new THREE.Vector3(0, 0, -1);
-      const yawQuat = new THREE.Quaternion().setFromAxisAngle(upAxis, -0.42);
-      const tmpVec = new THREE.Vector3();
-
       function frame(now) {
         rafId = 0;
         if (document.hidden) return;
@@ -1710,75 +1540,13 @@ void main(){
         if (reducedMotion) currentProgress = targetProgress;
         else currentProgress += (targetProgress - currentProgress) * (1 - Math.exp(-dt * 5.4));
 
-        const progressDelta = currentProgress - previousProgressForVelocity;
-        const rawVelocity = Math.abs(progressDelta) / Math.max(dt, 0.001);
-        scrollVelocity += (rawVelocity - scrollVelocity) * Math.min(1, dt * 4.2);
-        previousProgressForVelocity = currentProgress;
-        const warpIntensity = clamp((scrollVelocity - 0.075) * 1.9, 0, 1);
-
-        // Camera
+        // Camera glides forward through space as you scroll
         const cameraZ = 13 - currentProgress * 70;
         const routePoint = route.getPointAt(clamp(currentProgress, 0, 0.9999));
         camera.position.x += ((routePoint.x * 0.18 + pointerX * 0.13) - camera.position.x) * (reducedMotion ? 1 : 0.045);
         camera.position.y += ((0.36 + routePoint.y * 0.22 - pointerY * 0.08) - camera.position.y) * (reducedMotion ? 1 : 0.045);
         camera.position.z = cameraZ;
         camera.lookAt(routePoint.x * 0.12 + pointerX * 0.22, pointerY * -0.16, cameraZ - 9.5);
-        const cameraBank = clamp(route.getTangentAt(clamp(currentProgress, 0, 0.9999)).x * 0.055, -0.035, 0.035);
-        if (!reducedMotion) camera.rotateZ(cameraBank);
-
-        // Warp streaks
-        camera.getWorldDirection(tmpVec);
-        warpGroup.position.copy(camera.position).addScaledVector(tmpVec, 5.2);
-        warpGroup.quaternion.copy(camera.quaternion);
-        warpGroup.visible = warpIntensity > 0.035 && !reducedMotion;
-        streakMaterial.opacity = warpIntensity * 0.55;
-        for (let i = 0; i < streakCount; i++) {
-          const seed = streakSeeds[i], k = i * 6;
-          const length = seed.length + warpIntensity * (1.7 + seed.length * 2.4);
-          streakPositions[k] = seed.x; streakPositions[k + 1] = seed.y; streakPositions[k + 2] = seed.z;
-          streakPositions[k + 3] = seed.x * 0.99; streakPositions[k + 4] = seed.y * 0.99; streakPositions[k + 5] = seed.z - length;
-        }
-        streakGeometry.attributes.position.needsUpdate = true;
-
-        // Rocket
-        const shipT = clamp(currentProgress, 0, 0.9999);
-        const shipPoint = route.getPointAt(shipT);
-        const tangent = route.getTangentAt(shipT).normalize();
-        ship.position.set(
-          shipPoint.x + Math.min(1.8, 0.37 * 5 * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2)) * camera.aspect),
-          shipPoint.y - 0.32,
-          shipPoint.z
-        );
-        ship.quaternion.setFromUnitVectors(backAxis, tangent);
-        ship.quaternion.multiply(yawQuat);
-        const thrust = 1 + warpIntensity * 0.8;
-        if (!reducedMotion) {
-          ship.rotateZ(Math.sin(time * 0.7) * 0.035);
-          rocket.rotation.y += dt * 0.35; // slow roll around its own axis
-          engineLight.intensity = 3.2 + warpIntensity * 5 + Math.sin(time * 9) * 0.4;
-          nozzleGlow.scale.setScalar((0.85 + Math.sin(time * 14) * 0.08) * thrust);
-          beacons.forEach((sprite, i) => { sprite.material.opacity = 0.35 + 0.65 * Math.max(0, Math.sin(time * 3 + i * 2.1)); });
-        }
-        [outerPlume, innerPlume].forEach((plume, i) => {
-          plume.material.uniforms.uTime.value = time + i;
-          plume.material.uniforms.uIntensity.value = (i ? 1.0 : 0.85) * (0.9 + warpIntensity * 0.9);
-          plume.mesh.scale.y = (0.9 + Math.sin(time * 13 + i) * 0.07) * thrust;
-          plume.mesh.position.y = -0.98 - (i ? 0.5 : 0.95) * plume.mesh.scale.y;
-        });
-        exhaustMaterial.opacity = 0.6 + warpIntensity * 0.35;
-        if (!reducedMotion) {
-          for (let i = 0; i < exhaustCount; i++) {
-            const k = i * 3;
-            exhaustPositions[k + 1] -= dt * exhaustSpeeds[i] * (1 + warpIntensity * 2.3);
-            exhaustPositions[k] += Math.sin(time * 3 + i) * dt * 0.04;
-            if (exhaustPositions[k + 1] < -3.4) {
-              exhaustPositions[k] = rand(-0.1, 0.1);
-              exhaustPositions[k + 1] = -rand(0.95, 1.25);
-              exhaustPositions[k + 2] = rand(-0.1, 0.1);
-            }
-          }
-          exhaustGeometry.attributes.position.needsUpdate = true;
-        }
 
         // Planets
         const aspect = camera.aspect;
@@ -1792,7 +1560,7 @@ void main(){
           group.position.y += (targetY - group.position.y) * (reducedMotion ? 1 : 0.07);
           group.position.z = 7 - item.sectionProgress * 70;
           const isActive = destination.id === activeId;
-          const desiredScale = destination.scale * (isMobile ? 0.55 : 0.78) * (isActive ? 1.06 : 0.96);
+          const desiredScale = destination.scale * (isMobile ? 0.7 : 1.0) * (isActive ? 1.06 : 0.96);
           group.scale.setScalar(reducedMotion ? desiredScale : THREE.MathUtils.damp(group.scale.x, desiredScale, 3.6, dt));
           item.activeMix += ((isActive ? 1 : 0) - item.activeMix) * Math.min(1, dt * 3);
           if (!reducedMotion) {
@@ -1809,59 +1577,22 @@ void main(){
           }
         });
 
-        // Nebula clouds follow their section along the route
+        // Nebula clouds follow their planet
         nebulae.forEach(({ sprite, item, x, y, z }, i) => {
           sprite.position.set(x, y + (reducedMotion ? 0 : Math.sin(time * 0.1 + i) * 0.4), 7 - item.sectionProgress * 70 + z);
         });
-
-        // Checkpoint gates
-        waypointObjects.forEach((waypoint, index) => {
-          const t = clamp(waypoint.item.sectionProgress, 0, 0.9999);
-          waypoint.gate.position.copy(route.getPointAt(t));
-          waypoint.gate.position.y += 0.12;
-          waypoint.gate.quaternion.setFromUnitVectors(waypointNormal, route.getTangentAt(t).normalize());
-          const active = waypoint.item.destination.id === activeId;
-          const pulse = reducedMotion ? 0.5 : 0.5 + 0.5 * Math.sin(time * 2.5 + index * 0.85);
-          waypoint.coreMaterial.opacity = active ? 0.72 + pulse * 0.2 : 0.17;
-          waypoint.outerMaterial.opacity = active ? 0.28 + pulse * 0.16 : 0.07;
-          waypoint.gate.scale.setScalar(active ? 1.0 + pulse * 0.08 : 0.78);
-          if (!reducedMotion) waypoint.gate.rotateZ(dt * (active ? 0.2 : 0.075) * (index % 2 ? -1 : 1));
-          waypoint.beacons.forEach((beacon, beaconIndex) => {
-            beacon.scale.setScalar(active ? (0.75 + 0.35 * Math.sin(time * 4 + beaconIndex * 1.5 + index)) * 1.2 : 0.72);
-          });
-        });
-
-        // Light packets
-        routePackets.forEach(({ sprite, offset, speed }, index) => {
-          const t = reducedMotion ? offset : (offset + now * speed * 0.001) % 1;
-          sprite.position.copy(route.getPointAt(t));
-        });
-
-        const skillsProgress = planetObjects.find(item => item.destination.id === "skills")?.sectionProgress ?? 0.5;
-        satellite.position.set(-edgeX * 0.72, 1.1, 7 - skillsProgress * 70 - 2.2);
-        if (!reducedMotion) { satellite.rotation.y += dt * 0.2; satellite.rotation.z = Math.sin(time * 0.5) * 0.1; }
-
-        if (!reducedMotion) {
-          asteroids.forEach(asteroid => {
-            const spin = asteroid.userData.spin;
-            asteroid.rotation.x += spin.x * dt;
-            asteroid.rotation.y += spin.y * dt;
-            asteroid.rotation.z += spin.z * dt;
-          });
-        }
 
         renderer.render(scene, camera);
         rafId = requestAnimationFrame(frame);
       }
       rafId = requestAnimationFrame(frame);
     } catch (error) {
-      // Keep the existing 2D space experience intact if WebGL or the CDN is unavailable.
       console.warn("3D space scene could not start; keeping the regular portfolio background.", error);
       host.style.display = "none";
     }
   }
 
-  bootSpacecraft();
+  bootPlanets();
 })();
   </script>
 
