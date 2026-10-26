@@ -752,36 +752,51 @@
     .edu-single p { max-width: 72ch; }
     .cert-card img[src*="eprt"] { object-position: top; }
 
-    /* ===== Skills & Tools: Soft Skills / Hard Skills / Tools & Technologies ===== */
-    .skills-layout { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1.45fr; gap: 1rem; align-items: stretch; }
-    .skills-layout > article { padding: 1.6rem 1.5rem; }
+    /* ===== Skills & Tools (clean layout) ===== */
+    .skills-layout { position: relative; z-index: 1; display: grid; grid-template-columns: .85fr 1.3fr; gap: 1.1rem; align-items: stretch; }
+    .skills-layout > article { padding: 1.7rem 1.8rem; }
     .skills-layout .skill-tools { grid-column: 1 / -1; }
-    .skills-layout h3 { display: flex; align-items: center; gap: .6rem; font: 600 1.1rem var(--fd); margin-bottom: 1.1rem; }
-    .skills-layout h3 i { color: var(--level-color); font-size: 1.4rem; }
-    .skills-layout .tags { margin-top: 0; gap: .5rem; }
-    .skills-layout .tags span { font-size: .8rem; padding: .35rem .85rem; }
-    .skill-list { display: grid; gap: .95rem; }
-    .skill-list dt { display: flex; align-items: center; gap: .5rem; font: 600 .92rem var(--fd); color: #fff; margin-bottom: .45rem; }
-    .skill-list dt i { color: var(--level-color); font-size: 1.1rem; }
-    .skill-list dd { display: flex; flex-wrap: wrap; gap: .4rem; }
-    .skill-list dd span { padding: .22rem .65rem; border-radius: 999px; font-size: .74rem; color: #dbe6ff; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14); }
-    .tool-groups { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.4rem 1.2rem; }
-    .tool-groups h4 { font: 600 .82rem var(--fb); color: var(--muted); letter-spacing: .02em; margin-bottom: .75rem; }
-    .logos { display: flex; flex-wrap: wrap; gap: .6rem; }
+    .skills-layout h3 { display: flex; align-items: center; gap: .65rem; font: 600 1.1rem var(--fd); margin-bottom: 1.2rem; padding-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,.08); }
+    .skills-layout h3 i { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 10px; font-size: 1.15rem; color: var(--level-color); background: color-mix(in srgb, var(--level-color), transparent 86%); }
+    .soft-list { list-style: none; display: grid; }
+    .soft-list li { display: flex; align-items: center; gap: .7rem; padding: .62rem 0; font-size: .9rem; color: #dbe6ff; border-bottom: 1px solid rgba(255,255,255,.05); }
+    .soft-list li:last-child { border-bottom: 0; }
+    .soft-list i { color: var(--level-color); font-size: 1rem; }
+    .hard-list { display: grid; }
+    .hard-list > div { display: grid; grid-template-columns: 150px 1fr; gap: 1rem; padding: .85rem 0; border-bottom: 1px solid rgba(255,255,255,.06); }
+    .hard-list > div:first-child { padding-top: 0; }
+    .hard-list > div:last-child { border-bottom: 0; padding-bottom: 0; }
+    .hard-list dt { display: flex; align-items: flex-start; gap: .55rem; font: 600 .92rem var(--fd); color: #fff; }
+    .hard-list dt i { color: var(--level-color); font-size: 1.1rem; margin-top: .05rem; }
+    .hard-list dd { color: var(--muted); font-size: .84rem; line-height: 1.75; }
+    .tool-groups { display: grid; grid-template-columns: 1fr .8fr 1.35fr 1fr; gap: 1.4rem 2rem; }
+    .tool-groups h4 { font: 600 .74rem var(--fb); color: var(--muted); letter-spacing: .08em; text-transform: uppercase; margin-bottom: .8rem; }
+    .logos { display: flex; flex-wrap: nowrap; gap: .5rem; }
     .tool-logo {
-      display: grid; place-items: center; width: 54px; height: 54px; border-radius: 16px;
-      background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.14);
-      transition: transform .35s var(--ease-fluid), border-color .35s var(--ease-fluid), background .35s var(--ease-fluid);
+      position: relative; display: grid; place-items: center; flex: 0 0 auto; width: 46px; height: 46px; border-radius: 13px;
+      background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.12);
+      transition: transform .3s var(--ease-fluid), border-color .3s var(--ease-fluid), background .3s var(--ease-fluid);
     }
-    .tool-logo:hover { transform: translateY(-3px); border-color: rgba(255,255,255,.4); background: rgba(255,255,255,.11); }
-    .tool-logo .si { display: block; width: 28px; height: 28px; background: var(--c); -webkit-mask: var(--si) center / contain no-repeat; mask: var(--si) center / contain no-repeat; }
-    .tool-logo i { font-size: 1.7rem; line-height: 1; }
+    .tool-logo:hover { transform: translateY(-3px); border-color: rgba(255,255,255,.35); background: rgba(255,255,255,.1); }
+    .tool-logo::after {
+      content: attr(data-name); position: absolute; bottom: calc(100% + 8px); left: 50%; translate: -50% 4px; z-index: 5;
+      padding: .25rem .6rem; border-radius: 8px; white-space: nowrap; font-size: .72rem; font-weight: 600; color: #fff;
+      background: #0b1330; border: 1px solid rgba(255,255,255,.18); opacity: 0; pointer-events: none;
+      transition: opacity .25s, translate .25s;
+    }
+    .tool-logo:hover::after { opacity: 1; translate: -50% 0; }
+    .tool-logo .si { display: block; width: 24px; height: 24px; background: var(--c); -webkit-mask: var(--si) center / contain no-repeat; mask: var(--si) center / contain no-repeat; }
+    .tool-logo i { font-size: 1.45rem; line-height: 1; }
+    .tool-logo .emoji { font-size: 1.35rem; line-height: 1; }
     @media (max-width: 900px) {
       .skills-layout { grid-template-columns: 1fr; }
       .tool-groups { grid-template-columns: repeat(2, 1fr); }
     }
-    @media (max-width: 480px) { .tool-groups { grid-template-columns: 1fr; } }
+    @media (max-width: 600px) {
+      .hard-list > div { grid-template-columns: 1fr; gap: .3rem; }
+      .tool-groups { grid-template-columns: 1fr; }
+      .logos { flex-wrap: wrap; }
+    }
   </style>
 </head>
 <body>
@@ -860,73 +875,10 @@
 
     <section class="level" id="skills" style="--level-color:#4f8bff"><div class="container zoom"><div class="level-head reveal"><div class="portal"><i class="ri-tools-line"></i><span class="level-sign">06</span></div><div><span class="eyebrow">Skills</span><h2>Skills &amp; <span>Tools</span></h2><p>Soft skills, hard skills, and the tools &amp; technologies I use.</p></div></div>
       <div class="skills-layout">
-
-        <article class="glass skill-soft reveal">
-          <h3><i class="ri-team-line"></i> Soft Skills</h3>
-          <div class="tags">
-            <span>Problem Solving</span><span>Analytical Thinking</span><span>Teamwork &amp; Collaboration</span><span>Adaptability</span>
-            <span>Willingness to Learn</span><span>Attention to Detail</span><span>Time Management</span><span>Communication</span>
-          </div>
-        </article>
-
-        <article class="glass skill-hard reveal">
-          <h3><i class="ri-code-s-slash-line"></i> Hard Skills</h3>
-          <dl class="skill-list">
-            <div><dt><i class="ri-computer-line"></i> IT Support</dt><dd><span>Hardware &amp; Software Troubleshooting</span><span>Windows Installation</span><span>Basic Linux</span><span>Basic Networking</span><span>IP/DNS Configuration</span><span>Router Configuration</span></dd></div>
-            <div><dt><i class="ri-terminal-box-line"></i> Programming</dt><dd><span>Python</span><span>Django</span><span>HTML</span><span>CSS</span><span>Basic JavaScript</span><span>CRUD Development</span><span>Feature Testing</span></dd></div>
-            <div><dt><i class="ri-brain-line"></i> Machine Learning</dt><dd><span>NLP</span><span>Transformer Models</span><span>IndoBERT</span><span>mBERT</span><span>XLM-R</span><span>Text Classification</span><span>Model Evaluation</span><span>Cross-Validation</span></dd></div>
-            <div><dt><i class="ri-pencil-ruler-2-line"></i> UI/UX</dt><dd><span>UI Design</span><span>Wireframing</span><span>Prototyping</span><span>Responsive Web Design</span></dd></div>
-          </dl>
-        </article>
-
-        <article class="glass skill-tools reveal">
-          <h3><i class="ri-apps-2-line"></i> Tools &amp; Technologies</h3>
-          <div class="tool-groups">
-
-            <div>
-              <h4>Development</h4>
-              <div class="logos">
-                <span class="tool-logo" title="Visual Studio Code" role="img" aria-label="Visual Studio Code"><i class="si" style="--c:#3fa7f5;--si:url('https://cdn.jsdelivr.net/npm/simple-icons@11.14.0/icons/visualstudiocode.svg')"></i></span>
-                <span class="tool-logo" title="Git" role="img" aria-label="Git"><i class="si" style="--c:#f05032;--si:url('https://cdn.jsdelivr.net/npm/simple-icons@11.14.0/icons/git.svg')"></i></span>
-                <span class="tool-logo" title="GitHub" role="img" aria-label="GitHub"><i class="si" style="--c:#ffffff;--si:url('https://cdn.jsdelivr.net/npm/simple-icons@11.14.0/icons/github.svg')"></i></span>
-                <span class="tool-logo" title="Django" role="img" aria-label="Django"><i class="si" style="--c:#44b78b;--si:url('https://cdn.jsdelivr.net/npm/simple-icons@11.14.0/icons/django.svg')"></i></span>
-              </div>
-            </div>
-
-            <div>
-              <h4>Machine Learning</h4>
-              <div class="logos">
-                <span class="tool-logo" title="Google Colab" role="img" aria-label="Google Colab"><i class="si" style="--c:#f9ab00;--si:url('https://cdn.jsdelivr.net/npm/simple-icons@11.14.0/icons/googlecolab.svg')"></i></span>
-                <span class="tool-logo" title="Jupyter Notebook" role="img" aria-label="Jupyter Notebook"><i class="si" style="--c:#f37626;--si:url('https://cdn.jsdelivr.net/npm/simple-icons@11.14.0/icons/jupyter.svg')"></i></span>
-                <span class="tool-logo" title="Hugging Face Transformers" role="img" aria-label="Hugging Face Transformers"><i class="si" style="--c:#ffd21e;--si:url('https://cdn.jsdelivr.net/npm/simple-icons@11.14.0/icons/huggingface.svg')"></i></span>
-              </div>
-            </div>
-
-            <div>
-              <h4>Operating Systems &amp; Networking</h4>
-              <div class="logos">
-                <span class="tool-logo" title="Windows 10" role="img" aria-label="Windows 10"><i class="si" style="--c:#3aa0ff;--si:url('https://cdn.jsdelivr.net/npm/simple-icons@11.14.0/icons/windows.svg')"></i></span>
-                <span class="tool-logo" title="Linux" role="img" aria-label="Linux"><i class="si" style="--c:#fcc624;--si:url('https://cdn.jsdelivr.net/npm/simple-icons@11.14.0/icons/linux.svg')"></i></span>
-                <span class="tool-logo" title="Command Prompt" role="img" aria-label="Command Prompt"><i class="ri-terminal-window-line" style="color:#d6dcea"></i></span>
-                <span class="tool-logo" title="Terminal" role="img" aria-label="Terminal"><i class="ri-terminal-box-line" style="color:#6ee7a0"></i></span>
-                <span class="tool-logo" title="Router Administration" role="img" aria-label="Router Administration"><i class="ri-router-line" style="color:#7fdcef"></i></span>
-              </div>
-            </div>
-
-            <div>
-              <h4>Design &amp; Productivity</h4>
-              <div class="logos">
-                <span class="tool-logo" title="Figma" role="img" aria-label="Figma"><i class="si" style="--c:#f24e1e;--si:url('https://cdn.jsdelivr.net/npm/simple-icons@11.14.0/icons/figma.svg')"></i></span>
-                <span class="tool-logo" title="Adobe Photoshop" role="img" aria-label="Adobe Photoshop"><i class="si" style="--c:#31a8ff;--si:url('https://cdn.jsdelivr.net/npm/simple-icons@11.14.0/icons/adobephotoshop.svg')"></i></span>
-                <span class="tool-logo" title="Microsoft Excel" role="img" aria-label="Microsoft Excel"><i class="si" style="--c:#2fcf86;--si:url('https://cdn.jsdelivr.net/npm/simple-icons@11.14.0/icons/microsoftexcel.svg')"></i></span>
-                <span class="tool-logo" title="Microsoft Word" role="img" aria-label="Microsoft Word"><i class="si" style="--c:#4a9bf0;--si:url('https://cdn.jsdelivr.net/npm/simple-icons@11.14.0/icons/microsoftword.svg')"></i></span>
-              </div>
-            </div>
-
-          </div>
-        </article>
-
-      </div>
+<article class="glass reveal"><h3><i class="ri-team-line"></i> Soft Skills</h3><ul class="soft-list"><li><i class="ri-check-line"></i>Problem Solving</li><li><i class="ri-check-line"></i>Analytical Thinking</li><li><i class="ri-check-line"></i>Teamwork &amp; Collaboration</li><li><i class="ri-check-line"></i>Adaptability</li><li><i class="ri-check-line"></i>Willingness to Learn</li><li><i class="ri-check-line"></i>Attention to Detail</li><li><i class="ri-check-line"></i>Time Management</li><li><i class="ri-check-line"></i>Communication</li></ul></article>
+<article class="glass reveal"><h3><i class="ri-code-s-slash-line"></i> Hard Skills</h3><dl class="hard-list"><div><dt><i class="ri-computer-line"></i>IT Support</dt><dd>Hardware &amp; software troubleshooting, Windows installation, basic Linux, basic networking, IP/DNS and router configuration</dd></div><div><dt><i class="ri-code-s-slash-line"></i>Programming</dt><dd>Python, Django, HTML, CSS, basic JavaScript, CRUD development, feature testing</dd></div><div><dt><i class="ri-brain-line"></i>Machine Learning</dt><dd>NLP, transformer models (IndoBERT, mBERT, XLM-R), text classification, model evaluation, cross-validation</dd></div><div><dt><i class="ri-pencil-ruler-2-line"></i>UI/UX</dt><dd>UI design, wireframing, prototyping, responsive web design</dd></div></dl></article>
+<article class="glass skill-tools reveal"><h3><i class="ri-apps-2-line"></i> Tools &amp; Technologies</h3><div class="tool-groups"><div><h4>Development</h4><div class="logos"><span class="tool-logo" data-name="Visual Studio Code" role="img" aria-label="Visual Studio Code"><i class="si" style="--c:#3fa7f5;--si:url('https://cdn.jsdelivr.net/npm/simple-icons@11.14.0/icons/visualstudiocode.svg')"></i></span><span class="tool-logo" data-name="Git" role="img" aria-label="Git"><i class="si" style="--c:#f05032;--si:url('https://cdn.jsdelivr.net/npm/simple-icons@11.14.0/icons/git.svg')"></i></span><span class="tool-logo" data-name="GitHub" role="img" aria-label="GitHub"><i class="si" style="--c:#ffffff;--si:url('https://cdn.jsdelivr.net/npm/simple-icons@11.14.0/icons/github.svg')"></i></span><span class="tool-logo" data-name="Django" role="img" aria-label="Django"><i class="si" style="--c:#44b78b;--si:url('https://cdn.jsdelivr.net/npm/simple-icons@11.14.0/icons/django.svg')"></i></span></div></div><div><h4>Machine Learning</h4><div class="logos"><span class="tool-logo" data-name="Google Colab" role="img" aria-label="Google Colab"><i class="si" style="--c:#f9ab00;--si:url('https://cdn.jsdelivr.net/npm/simple-icons@11.14.0/icons/googlecolab.svg')"></i></span><span class="tool-logo" data-name="Jupyter Notebook" role="img" aria-label="Jupyter Notebook"><i class="si" style="--c:#f37626;--si:url('https://cdn.jsdelivr.net/npm/simple-icons@11.14.0/icons/jupyter.svg')"></i></span><span class="tool-logo" data-name="Hugging Face" role="img" aria-label="Hugging Face"><span class="emoji">🤗</span></span></div></div><div><h4>OS &amp; Networking</h4><div class="logos"><span class="tool-logo" data-name="Windows 10" role="img" aria-label="Windows 10"><i class="si" style="--c:#3aa0ff;--si:url('https://cdn.jsdelivr.net/npm/simple-icons@11.14.0/icons/windows.svg')"></i></span><span class="tool-logo" data-name="Linux" role="img" aria-label="Linux"><i class="si" style="--c:#fcc624;--si:url('https://cdn.jsdelivr.net/npm/simple-icons@11.14.0/icons/linux.svg')"></i></span><span class="tool-logo" data-name="Command Prompt" role="img" aria-label="Command Prompt"><i class="ri-terminal-window-line" style="color:#d6dcea"></i></span><span class="tool-logo" data-name="Terminal" role="img" aria-label="Terminal"><i class="ri-terminal-box-line" style="color:#6ee7a0"></i></span><span class="tool-logo" data-name="Router Administration" role="img" aria-label="Router Administration"><i class="ri-router-line" style="color:#7fdcef"></i></span></div></div><div><h4>Design &amp; Productivity</h4><div class="logos"><span class="tool-logo" data-name="Figma" role="img" aria-label="Figma"><i class="si" style="--c:#f24e1e;--si:url('https://cdn.jsdelivr.net/npm/simple-icons@11.14.0/icons/figma.svg')"></i></span><span class="tool-logo" data-name="Adobe Photoshop" role="img" aria-label="Adobe Photoshop"><i class="si" style="--c:#31a8ff;--si:url('https://cdn.jsdelivr.net/npm/simple-icons@11.14.0/icons/adobephotoshop.svg')"></i></span><span class="tool-logo" data-name="Microsoft Excel" role="img" aria-label="Microsoft Excel"><i class="si" style="--c:#2fcf86;--si:url('https://cdn.jsdelivr.net/npm/simple-icons@11.14.0/icons/microsoftexcel.svg')"></i></span><span class="tool-logo" data-name="Microsoft Word" role="img" aria-label="Microsoft Word"><i class="si" style="--c:#4a9bf0;--si:url('https://cdn.jsdelivr.net/npm/simple-icons@11.14.0/icons/microsoftword.svg')"></i></span></div></div></div></article>
+</div>
     </div></section>
 
     <section class="level" id="contact" style="--level-color:#ff7ab8"><div class="container zoom"><div class="level-head reveal"><div class="portal"><i class="ri-send-plane-line"></i><span class="level-sign">07</span></div><div><span class="eyebrow">Contact</span><h2>Let's <span>connect</span></h2><p>Email is the quickest way to reach me.</p></div></div><div class="glass contact-card reveal"><div><h3>Looking for someone to join your team?</h3><p>I'm looking for an entry-level role in web development, software engineering, or IT support. If you have an opening, or just want to talk about a project, send me an email.</p><a href="mailto:reziichsan@gmail.com" class="btn primary">Email me <i class="ri-arrow-right-up-line"></i></a></div><div><a class="contact-link" href="https://www.linkedin.com/in/reziichsannurarsyi/" target="_blank" rel="noopener noreferrer"><i class="ri-linkedin-fill"></i><div><b>LinkedIn</b><span>linkedin.com/in/reziichsannurarsyi</span></div><i class="ri-arrow-right-up-line"></i></a><a class="contact-link" href="mailto:reziichsan@gmail.com"><i class="ri-mail-line"></i><div><b>Email</b><span>reziichsan@gmail.com</span></div><i class="ri-arrow-right-up-line"></i></a><a class="contact-link" href="https://github.com/reziichsan" target="_blank" rel="noopener noreferrer"><i class="ri-github-fill"></i><div><b>GitHub</b><span>github.com/reziichsan</span></div><i class="ri-arrow-right-up-line"></i></a></div></div></div></section>
