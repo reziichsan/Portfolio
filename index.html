@@ -329,6 +329,28 @@ footer{border-top:0;background:linear-gradient(90deg,#3c3c3c,#141414) top/100% 1
 .talk .tp{max-width:46ch;font-size:14px;line-height:1.7;color:var(--mid)}
 .talk-l{max-width:38rem}
 @media(min-width:861px){.hero .meta{max-width:27vw}.talk a.big{font-size:clamp(2rem,3.5vw,3.5rem);line-height:1.08}}
+
+/* ===== round: certificates, arrow, about, career side-by-side ===== */
+.more .im,.more:hover .im{background:none;box-shadow:none}
+.more .im svg{width:24%}
+.card .res{max-width:none}
+.yr .cc h3{font-size:13px;font-weight:500;line-height:1.45;letter-spacing:0;color:var(--fg);padding:0;margin:0;border:0;background:none;min-height:0}
+.yr>h3{font-size:clamp(1.8rem,2.6vw,2.6rem);padding-bottom:.9rem;margin-bottom:1rem}
+.cc .by{font-size:11px;margin-top:auto}
+.cc{padding:.7rem;gap:.7rem}
+@media(min-width:861px){
+.cg{grid-template-columns:repeat(3,minmax(0,1fr));gap:.8rem}
+.about{align-items:start}
+.about-r{margin-top:calc(1.5 * 11px + 1.4rem)}
+.me{width:100%;max-width:none;aspect-ratio:4/5}
+.about p.big{max-width:none}
+.about-body{grid-template-columns:1fr 1fr;gap:2.4rem;max-width:none}
+.career{display:grid;grid-template-columns:.4fr .6fr;padding:5rem var(--pad) 1rem;align-items:start}
+.career .sec-h,.career+.career .sec-h{display:block;padding:0 2rem 0 0;position:sticky;top:6.5rem}
+.career .rows{padding:0 0 0 3rem;border-left:1px solid #2e2e2e}
+.row{grid-template-columns:150px 1fr;gap:1.5rem}
+.row:first-child{border-top:0;padding-top:0}
+}
 </style>
 </head>
 <body>
