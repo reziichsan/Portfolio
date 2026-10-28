@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#0a0a0a">
-<title>Rezi Ichsan Nur Arsyi — Informatics Graduate</title>
-<meta name="description" content="Portfolio of Rezi Ichsan Nur Arsyi, Informatics graduate from Telkom University. Web development, IT support, machine learning, and UI/UX.">
+<title>Rezi Ichsan Nur Arsyi | IT Support & Informatics Portfolio</title>
+<meta name="description" content="Explore the portfolio of Rezi Ichsan Nur Arsyi, an Informatics graduate from Telkom University with experience in Python, Django, IT troubleshooting, machine learning research, and UI/UX design.">
 <link rel="canonical" href="https://reziichsan.github.io/Portfolio/">
-<meta property="og:title" content="Rezi Ichsan Nur Arsyi — Informatics Graduate">
-<meta property="og:description" content="Web development, IT support, machine learning research, and UI/UX design.">
+<meta property="og:title" content="Rezi Ichsan Nur Arsyi | IT Support & Informatics Portfolio">
+<meta property="og:description" content="Explore the portfolio of Rezi Ichsan Nur Arsyi, an Informatics graduate from Telkom University with experience in Python, Django, IT troubleshooting, machine learning research, and UI/UX design.">
 <meta property="og:image" content="https://reziichsan.github.io/Portfolio/assets/header.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
@@ -284,6 +284,51 @@ nav::before{content:"";position:absolute;inset:0;z-index:-1;background:rgba(10,1
 .cc img{aspect-ratio:16/10;object-position:top}
 .cc h3{min-height:2.8em}
 @media(max-width:860px){.c6{grid-column:span 12}.row{grid-template-columns:1fr;gap:.6rem}.cg{grid-template-columns:1fr}.about p.big{max-width:none}}
+
+/* ===== borders, smaller project cards, more type ===== */
+:root{--ln:#262626}
+.grid{gap:1.4vw;row-gap:3vw}
+.c4{grid-column:span 4}.c4 .im{aspect-ratio:4/3}
+.card .im{border-radius:6px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.09)}
+.card .im img{border-radius:6px}
+.card .t b{font-size:clamp(13px,1.1vw,15px)}
+.card .res{font-size:12px;line-height:1.6}
+.more .im{display:grid;place-items:center;padding:0;background:#101010;transition:background .4s,box-shadow .4s}
+.more .im svg{width:30%;transition:translate .5s var(--ease)}
+.more:hover .im{background:#171717;box-shadow:inset 0 0 0 1px rgba(255,255,255,.35)}
+.more:hover .im svg{translate:6px -6px}
+.row{position:relative}
+.row::before{content:"";position:absolute;left:0;top:-1px;width:100%;height:1px;background:#fff;scale:0 1;transform-origin:left;transition:scale .7s var(--ease)}
+.row:hover::before{scale:1 1}.row:hover{border-top-color:var(--ln)}
+.yr h3{font-size:clamp(2.6rem,4.8vw,4.8rem);color:#8a8a8a;line-height:1;border:0;padding-bottom:1.1rem;font-variant-numeric:tabular-nums;background:linear-gradient(90deg,#3c3c3c,#161616) bottom/100% 1px no-repeat}
+.cc{border:1px solid var(--ln);background:#101010;border-radius:6px;transition:border-color .4s,background .4s}
+.cc:hover{border-color:#4a4a4a;background:#141414}
+.cc img{border-radius:3px}
+details{border:1px solid var(--ln);background:#101010;border-radius:6px}
+details:hover{border-color:#444;background:#141414}
+summary{font-size:clamp(14px,1.25vw,17px)}
+details p{font-size:13px}
+footer{border-top:0;background:linear-gradient(90deg,#3c3c3c,#141414) top/100% 1px no-repeat}
+.about-r{display:grid}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;margin-top:3.5rem;padding-top:1.8rem;background:linear-gradient(90deg,#3c3c3c,#141414) top/100% 1px no-repeat}
+.stats b{display:block;font-weight:500;font-size:clamp(2.2rem,4.2vw,4.2rem);letter-spacing:-.045em;line-height:1;font-variant-numeric:tabular-nums}
+.stats span{display:block;margin-top:.7rem;font-size:12px;line-height:1.55;color:var(--mid);max-width:22ch}
+.marq2{overflow:hidden;padding:6rem 0 1rem}
+.marq2 div{display:flex;width:max-content;font-weight:500;font-size:clamp(4rem,11vw,12rem);letter-spacing:-.045em;line-height:1;white-space:nowrap;color:transparent;-webkit-text-stroke:1px #4d4d4d}
+.marq2 span{padding-right:.6em}
+.talk-l{order:1;justify-self:end;padding-right:3rem;display:grid;gap:1.2rem}
+.talk-l a.big{padding:0;justify-self:start}
+.talk .mail{font-size:clamp(1rem,1.7vw,1.5rem);letter-spacing:-.02em;color:var(--mid);border-bottom:1px solid #444;justify-self:start;padding-bottom:2px;transition:color .3s,border-color .3s}
+.talk .mail:hover{color:#fff;border-color:#fff}
+@media(max-width:860px){.stats{grid-template-columns:1fr}.talk-l{justify-self:start;padding:0}.marq2{padding-top:4rem}}
+
+/* ===== copy update ===== */
+.about-body{margin-top:2.2rem;display:grid;gap:1rem;max-width:54ch}
+.about-body p{font-size:15px;line-height:1.7;color:#c4c4c4}
+.sec-h .intro{margin-top:1.3rem;max-width:36ch;font-size:14px;line-height:1.7;color:var(--mid)}
+.talk .tp{max-width:46ch;font-size:14px;line-height:1.7;color:var(--mid)}
+.talk-l{max-width:38rem}
+@media(min-width:861px){.hero .meta{max-width:27vw}.talk a.big{font-size:clamp(2rem,3.5vw,3.5rem);line-height:1.08}}
 </style>
 </head>
 <body>
@@ -296,63 +341,61 @@ nav::before{content:"";position:absolute;inset:0;z-index:-1;background:rgba(10,1
 
 <header class="hero" id="home">
   <img class="photo" src="assets/IT.png" alt="">
-  <div class="l sm">Web developer<br>IT support<br>Informatics graduate<br><span class="open">Open to work</span></div>
+  <div class="l sm">Informatics Graduate<br>IT Support &amp; Troubleshooting<br>Python &amp; Web Development<br><span class="open">Open to Opportunities</span></div>
   <div></div>
   <div class="r sm">Social media
     <div class="social"><a href="https://github.com/reziichsan" aria-label="GitHub" target="_blank" rel="noopener">Gh</a><a href="https://www.linkedin.com/in/reziichsannurarsyi/" aria-label="LinkedIn" target="_blank" rel="noopener">in</a></div>
   </div>
   <span class="year">©2026</span>
   <h1>Rezi<sup>®</sup></h1>
-  <p class="meta sm">Informatics graduate (S.Kom) from Telkom University. I build web apps, fix IT problems, and run machine learning experiments. Looking for an entry-level role.<br><a class="cv" href="CV.pdf" download="Rezi-Ichsan-Nur-Arsyi-CV.pdf">Download CV</a></p>
+  <p class="meta sm">Informatics graduate from Telkom University with hands-on experience in web development, IT troubleshooting, and software projects. Experienced with Python and Django, with additional project work in machine learning and UI/UX design. Seeking an entry-level IT role where I can contribute, strengthen my technical skills, and grow through real-world challenges.<br><a class="cv" href="CV.pdf" download="Rezi-Ichsan-Nur-Arsyi-CV.pdf">Download CV</a></p>
 </header>
 
-<div class="marq" aria-hidden="true"><div>
-  <span>Web development</span><span>●</span><span>IT support</span><span>●</span><span>Machine learning</span><span>●</span><span>UI/UX design</span><span>●</span><span>Open to entry-level roles</span><span>●</span>
-  <span>Web development</span><span>●</span><span>IT support</span><span>●</span><span>Machine learning</span><span>●</span><span>UI/UX design</span><span>●</span><span>Open to entry-level roles</span><span>●</span>
-</div></div>
+<div class="marq" aria-hidden="true"><div><span>IT Support</span><span>●</span><span>Troubleshooting</span><span>●</span><span>Python Development</span><span>●</span><span>Web Applications</span><span>●</span><span>Machine Learning</span><span>●</span><span>UI/UX Design</span><span>●</span><span>IT Support</span><span>●</span><span>Troubleshooting</span><span>●</span><span>Python Development</span><span>●</span><span>Web Applications</span><span>●</span><span>Machine Learning</span><span>●</span><span>UI/UX Design</span><span>●</span></div></div>
 
 <section class="about" id="about">
   <div class="about-l"><span class="label">About me</span><img class="me" src="assets/header.jpg" alt="Portrait of Rezi Ichsan Nur Arsyi" loading="lazy"></div>
-  <p class="big">I'm Rezi, an Informatics graduate (GPA 3.01) who ships working software. <em>I built an interview-video feature in Django at Nutrifood, a Gemini-powered helpdesk, and a hoax detector that reached 88.62% accuracy with IndoBERT. I'm looking for an entry-level role in web development, software engineering, or IT support.</em></p>
+  <div class="about-r"><p class="big">I'm an Informatics graduate from Telkom University <em>with a practical interest in IT support, software development, and technology-driven problem solving.</em></p>
+<div class="about-body"><p>During my internship at Nutrifood Indonesia, I worked with Python and Django to develop and test features for an internal application. Beyond my internship, I've explored machine learning through my undergraduate research on multilingual fake news detection, built web-based projects, and developed digital experiences through UI/UX design and Roblox Studio.</p><p>I enjoy breaking down technical problems, learning new tools, and turning ideas into practical solutions. I'm looking for an entry-level opportunity where I can contribute to a team, build on my existing skills, and continue growing as an IT professional.</p></div><div class="stats"><div><b data-count="88.62" data-dec="2" data-suf="%">88.62%</b><span>validation accuracy in my thesis, with IndoBERT</span></div><div><b data-count="355" data-suf="K+">355K+</b><span>visits on my Roblox map, Eternia Forest</span></div><div><b data-count="1000">1,000</b><span>players online at once at its peak</span></div></div></div>
 </section>
 
 
 <section id="projects">
   <div class="sec-h"><span class="label">Projects</span><div class="sh-r"><h2>Selected<br>Work</h2><a class="pill" href="https://github.com/reziichsan" target="_blank" rel="noopener">All projects on GitHub</a></div></div>
   <div class="grid">
-    <a class="card c6" href="https://github.com/reziichsan/automated-it-ticketing-system" target="_blank" rel="noopener"><div class="im"><img src="assets/IT.png" alt="IT helpdesk ticketing dashboard" loading="lazy"></div><div class="t"><div><b>AI Helpdesk Ticketing</b><small>Node.js, Express, Gemini API</small></div><span>Web</span></div><p class="res">Node.js, Express, SQLite. Gemini API sets ticket priority from the issue text.</p></a>
-    <a class="card c6" href="https://github.com/reziichsan/HoaxDetection" target="_blank" rel="noopener"><div class="im"><img src="assets/tes.png" alt="Fake news detection project" loading="lazy"></div><div class="t"><div><b>Multilingual Fake News Detection</b><small>Python, IndoBERT, XLM-R</small></div><span>ML</span></div><p class="res">IndoBERT, mBERT, and XLM-R on a 5-language dataset. Peak validation accuracy 88.62%.</p></a>
-    <a class="card c6" href="https://www.roblox.com/id/games/115395112112752/Eternia-Forest" target="_blank" rel="noopener"><div class="im"><img src="assets/eternia-forest.jpg" alt="Eternia Forest Roblox map" loading="lazy"></div><div class="t"><div><b>Eternia Forest</b><small>Lua, Roblox Studio</small></div><span>Game</span></div><p class="res">Lua scripts and map optimization. 355K+ visits, 1,000 concurrent players at peak.</p></a>
-    <a class="card c6" href="https://www.figma.com/proto/FRVgI1yITbqVChRG9dy10w/Redesign-HomePage-Website-JKT48?node-id=283-673&t=HHAQvjkovRpOFjPM-1" target="_blank" rel="noopener"><div class="im"><img src="assets/project-1.jpg" alt="JKT48 website redesign" loading="lazy"></div><div class="t"><div><b>JKT48 Website Redesign</b><small>Figma, design system</small></div><span>UI/UX</span></div><p class="res">Usability review, high-fidelity prototype, and design system in Figma.</p></a>
-    <a class="card c6" href="https://www.figma.com/proto/c0Gyv0ROHXc95EnG8ZDkIF/EPerpusdikbud-UI-Re-Design?node-id=1-4" target="_blank" rel="noopener"><div class="im"><img src="assets/project-2.jpg" alt="EPerpusdikbud app redesign" loading="lazy"></div><div class="t"><div><b>EPerpusdikbud App Redesign</b><small>Figma, mobile prototype</small></div><span>UI/UX</span></div><p class="res">New navigation and content hierarchy for a digital library app.</p></a>
-    <a class="card c6 more" href="https://github.com/reziichsan" target="_blank" rel="noopener"><div class="im"><span>More on<br>GitHub</span></div><div class="t"><div><b>All repositories</b><small>github.com/reziichsan</small></div></div></a>
+    <a class="card c4" href="https://github.com/reziichsan/automated-it-ticketing-system" target="_blank" rel="noopener"><div class="im"><img src="assets/IT.png" alt="IT helpdesk ticketing dashboard" loading="lazy"></div><div class="t"><div><b>AI Helpdesk Ticketing System</b><small>Node.js, Express, SQLite, Gemini API</small></div><span>Web</span></div><p class="res">A web-based helpdesk ticketing project designed to organize IT support requests and simplify issue prioritization. Integrates the Gemini API to assess ticket descriptions and suggest priority levels, with Node.js, Express, and SQLite supporting the application workflow.</p></a>
+    <a class="card c4" href="https://github.com/reziichsan/HoaxDetection" target="_blank" rel="noopener"><div class="im"><img src="assets/tes.png" alt="Fake news detection project" loading="lazy"></div><div class="t"><div><b>Multilingual Fake News Detection</b><small>Python, IndoBERT, mBERT, XLM-R</small></div><span>ML</span></div><p class="res">An undergraduate research project evaluating transformer-based language models for fake news detection across multilingual datasets. Compared IndoBERT, mBERT, and XLM-R to study their classification performance. The IndoBERT experiment achieved a validation accuracy of 88.62% in the reported evaluation.</p></a>
+    <a class="card c4" href="https://www.roblox.com/id/games/115395112112752/Eternia-Forest" target="_blank" rel="noopener"><div class="im"><img src="assets/eternia-forest.jpg" alt="Eternia Forest Roblox map" loading="lazy"></div><div class="t"><div><b>Eternia Forest</b><small>Lua, Roblox Studio</small></div><span>Game</span></div><p class="res">A Roblox exploration and mountain-hiking experience developed with Lua scripting and Roblox Studio. The project has surpassed 355,000 visits, demonstrating experience in building interactive digital environments, implementing game features, and maintaining a live project for players.</p></a>
+    <a class="card c4" href="https://www.figma.com/proto/FRVgI1yITbqVChRG9dy10w/Redesign-HomePage-Website-JKT48?node-id=283-673&t=HHAQvjkovRpOFjPM-1" target="_blank" rel="noopener"><div class="im"><img src="assets/project-1.jpg" alt="JKT48 website redesign" loading="lazy"></div><div class="t"><div><b>JKT48 Website Redesign</b><small>Figma, UI/UX design</small></div><span>UI/UX</span></div><p class="res">A website redesign concept focused on reviewing the existing interface and developing a more consistent visual experience. Includes high-fidelity prototyping and a design system in Figma to establish reusable interface elements and visual consistency.</p></a>
+    <a class="card c4" href="https://www.figma.com/proto/c0Gyv0ROHXc95EnG8ZDkIF/EPerpusdikbud-UI-Re-Design?node-id=1-4" target="_blank" rel="noopener"><div class="im"><img src="assets/project-2.jpg" alt="EPerpusdikbud app redesign" loading="lazy"></div><div class="t"><div><b>EPerpusdikbud App Redesign</b><small>Figma, mobile UI/UX</small></div><span>UI/UX</span></div><p class="res">A mobile application redesign concept for a digital library, exploring clearer navigation and content hierarchy. Uses a high-fidelity prototype to communicate interface structure and improve the consistency of the intended user experience.</p></a>
+    <a class="card c4 more" href="https://github.com/reziichsan" target="_blank" rel="noopener" aria-label="More on GitHub"><div class="im"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square" aria-hidden="true"><path d="M13 35 35 13M17 13h18v18"/></svg></div><div class="t"><div><b>More on GitHub</b><small>github.com/reziichsan</small></div></div></a>
   </div>
 </section>
 
 <section class="career" id="experience">
   <div class="sec-h"><span class="label">Experience</span><h2>Where I've<br>worked</h2></div>
   <div class="rows">
-    <article class="row"><time>Jun – Sep 2026</time><div><h3>Outbound Checker</h3><p class="org">PT Astro Technologies Indonesia, Warehouse Cibitung</p><p class="desc">Checked picked orders before dispatch by matching product information and quantities against order details and inspecting item condition. Reported discrepancies to the relevant team to keep orders accurate.</p></div></article>
-    <article class="row"><time>Jul – Sep 2022</time><div><h3>Web Developer Intern</h3><p class="org">Nutrifood Indonesia</p><p class="desc">Built a feature for storing job interview video recordings in an internal application with Python and Django, including create, update, and delete. Tested it with dummy data based on the team's requirements.</p></div></article>
+    <article class="row"><time>Jun – Sep 2026</time><div><h3>Outbound Checker</h3><p class="org">PT Astro Technologies Indonesia</p><p class="desc">Verified picked orders before dispatch by checking product details, quantities, and item condition against order information. Reported discrepancies to the relevant team to support order accuracy and reliable warehouse operations.</p></div></article>
+    <article class="row"><time>Jul – Sep 2022</time><div><h3>Web Developer Intern</h3><p class="org">Nutrifood Indonesia</p><p class="desc">Contributed to the development of an internal application feature for managing job interview video recordings using Python and Django. Implemented create, update, and delete functionality and tested the feature using dummy data based on team requirements.</p></div></article>
   </div>
 </section>
 
 <section class="career" id="education">
   <div class="sec-h"><span class="label">Education</span><h2>Where I<br>studied</h2></div>
   <div class="rows">
-    <article class="row"><time>Aug 2019 – Sep 2026</time><div><h3>Bachelor's Degree in Informatics (S.Kom)</h3><p class="org">Telkom University, Bandung. GPA 3.01 / 4.00</p><p class="desc">Studied programming, software development, databases, computer networks, and machine learning. Undergraduate thesis on hoax detection with IndoBERT and multilingual transformer models.</p></div></article>
+    <article class="row"><time>Aug 2019 – Sep 2026</time><div><h3>Bachelor of Informatics (S.Kom)</h3><p class="org">Telkom University. GPA 3.01 / 4.00</p><p class="desc">Built an academic foundation in programming, software development, databases, computer networks, and machine learning. Completed undergraduate research on fake news detection using IndoBERT and multilingual transformer models.</p></div></article>
   </div>
 </section>
 
 <section class="do" id="service">
   <div><span class="label">Skills</span>
     <ol id="svc" style="margin-top:1.5rem;padding-left:1.6rem">
-      <li class="on" data-i="0">Web development</li>
-      <li data-i="1">IT support</li>
-      <li data-i="2">Machine learning</li>
-      <li data-i="3">UI/UX design</li>
+      <li class="on" data-i="0">Web Development</li>
+      <li data-i="1">IT Support</li>
+      <li data-i="2">Machine Learning</li>
+      <li data-i="3">UI/UX Design</li>
     </ol></div>
-  <div class="side"><img id="svc-img" src="assets/IT.png" alt=""><p class="sm" id="svc-txt">Python, Django, and Node.js apps with clean CRUD flows and tested features.</p></div>
+  <div class="side"><img id="svc-img" src="assets/IT.png" alt=""><p class="sm" id="svc-txt">Developing web application features using Python and Django, with additional project experience in Node.js, Express, HTML, CSS, and JavaScript. Familiar with CRUD workflows and testing features using sample data.</p></div>
 </section>
 
 <p class="label tools-h">Tools</p>
@@ -370,7 +413,7 @@ nav::before{content:"";position:absolute;inset:0;z-index:-1;background:rgba(10,1
 </div>
 
 <section id="certificates">
-  <div class="sec-h tight"><span class="label">Certificates</span><h2>Courses and<br>certificates</h2></div>
+  <div class="sec-h tight"><span class="label">Certificates</span><h2>Certifications &amp;<br>Professional<br>Development</h2><p class="intro">A selection of technical courses, professional certifications, and learning activities that reflect my commitment to continuous improvement across programming, cloud technologies, web development, and UI/UX design.</p></div>
   <div class="certs">
 <div class="yr"><h3>2026</h3><div class="cg"><article class="cc"><img src="assets/dicoding-python.png" alt="" loading="lazy"><h3>Memulai Pemrograman dengan Python, 60 hours</h3><div class="by"><span>Dicoding Indonesia</span><span>2026</span></div></article><article class="cc"><img src="assets/Alibaba Cloud Dev.png" alt="" loading="lazy"><h3>Alibaba Cloud Certified Developer</h3><div class="by"><span>Alibaba Cloud</span><span>2026</span></div></article><article class="cc"><img src="assets/dicoding-project-management.png" alt="" loading="lazy"><h3>Belajar Dasar Manajemen Proyek</h3><div class="by"><span>Dicoding Indonesia</span><span>2026</span></div></article></div></div>
 <div class="yr"><h3>2025</h3><div class="cg"><article class="cc"><img src="assets/eprt-certificate.png" alt="" loading="lazy"><h3>EPrT English Proficiency Test, score 463 (B1)</h3><div class="by"><span>Telkom University</span><span>2025</span></div></article><article class="cc"><img src="assets/certificate-1.png" alt="" loading="lazy"><h3>Responsive Web Design</h3><div class="by"><span>freeCodeCamp</span><span>2025</span></div></article><article class="cc"><img src="assets/certificate-2.png" alt="" loading="lazy"><h3>Scientific Computing with Python</h3><div class="by"><span>freeCodeCamp</span><span>2025</span></div></article><article class="cc"><img src="assets/webinar-badminton-pose.png" alt="" loading="lazy"><h3>Time Series Classification of Badminton Pose (webinar)</h3><div class="by"><span>KK CITI, Telkom University</span><span>2025</span></div></article></div></div>
@@ -381,17 +424,20 @@ nav::before{content:"";position:absolute;inset:0;z-index:-1;background:rgba(10,1
 <section class="faq">
   <div><span class="label">FAQ</span><h2 style="margin-top:1rem">Frequently<br>asked questions</h2></div>
   <div>
-    <details open><summary>What roles are you looking for?</summary><p>Entry-level web developer, software engineer, or IT support, full-time or internship.</p></details>
-    <details><summary>What is your strongest stack?</summary><p>Python and Django on the back end, HTML, CSS, and basic JavaScript on the front end, and Node.js for smaller projects.</p></details>
-    <details><summary>Do you have IT support experience?</summary><p>I handle hardware and software troubleshooting, Windows installation, basic Linux, IP and DNS setup, and router configuration.</p></details>
-    <details><summary>What is your English level?</summary><p>EPrT score 463, which is B1.</p></details>
-    <details><summary>Where are you based?</summary><p>Bekasi, Indonesia. Open to on-site and remote work.</p></details>
+    <details open><summary>What roles are you looking for?</summary><p>I'm primarily interested in entry-level IT Support and IT Helpdesk roles, while remaining open to junior web development and other suitable IT opportunities where I can contribute and continue learning.</p></details>
+    <details><summary>What are your strongest technical skills?</summary><p>Python is my primary programming language, supported by hands-on experience with Django and practical projects involving web applications, basic IT troubleshooting, and machine learning experiments.</p></details>
+    <details><summary>What IT support tasks are you familiar with?</summary><p>I have practical exposure to Windows and Linux installation, basic hardware and software troubleshooting, IP and DNS configuration, router setup, and network connectivity checks. I am continuing to strengthen these skills through hands-on practice.</p></details>
+    <details><summary>Do you have professional experience?</summary><p>Yes. I completed a three-month internship at Nutrifood Indonesia, contributing to a Python and Django application feature, and later worked as an Outbound Checker at PT Astro Technologies Indonesia. I also develop independent projects to expand my technical experience.</p></details>
+    <details><summary>What is your English proficiency?</summary><p>I achieved an EPrT score of 463 from Telkom University. I continue to develop my English communication skills for professional and technical environments.</p></details>
+    <details><summary>Where are you based, and what work arrangements are you open to?</summary><p>Based in Indonesia, I am open to suitable on-site, hybrid, or remote opportunities, depending on the role and its requirements.</p></details>
   </div>
 </section>
 
+<div class="marq2" aria-hidden="true"><div><span>Web Development</span><span>IT Support</span><span>Machine Learning</span><span>UI/UX Design</span><span>Web Development</span><span>IT Support</span><span>Machine Learning</span><span>UI/UX Design</span></div></div>
+
 <section class="talk" id="contact">
   <div class="stack" aria-hidden="true"><img src="assets/IT.png" alt=""><img src="assets/tes.png" alt=""><img src="assets/project-1.jpg" alt=""><img src="assets/eternia-forest.jpg" alt=""></div>
-  <a class="big" href="mailto:reziichsan@gmail.com"><span>Let's talk</span> <b>→</b></a>
+  <div class="talk-l"><a class="big" href="mailto:reziichsan@gmail.com"><span>Let's build something meaningful.</span> <b>→</b></a><p class="tp">I'm open to entry-level IT opportunities, collaborative projects, and conversations about technology. If my background aligns with your team's needs, I'd be glad to connect and discuss how I can contribute.</p><a class="mail" href="mailto:reziichsan@gmail.com">reziichsan@gmail.com</a></div>
 </section>
 
 <footer>
@@ -404,10 +450,7 @@ nav::before{content:"";position:absolute;inset:0;z-index:-1;background:rgba(10,1
 
 <script>
 (()=>{
-  const d=[["Python, Django, and Node.js apps with clean CRUD flows and tested features.","assets/IT.png"],
-  ["Troubleshooting, Windows installs, basic Linux, IP/DNS and router setup.","assets/eternia-forest.jpg"],
-  ["NLP and text classification with IndoBERT, mBERT, and XLM-R.","assets/tes.png"],
-  ["Wireframes, prototypes, and design systems in Figma.","assets/project-1.jpg"]];
+  const d=[["Developing web application features using Python and Django, with additional project experience in Node.js, Express, HTML, CSS, and JavaScript. Familiar with CRUD workflows and testing features using sample data.", "assets/IT.png"], ["Practical exposure to Windows and Linux installation, basic hardware and software troubleshooting, IP and DNS configuration, router setup, and network connectivity testing.", "assets/IT.png"], ["Working knowledge of Python-based NLP and text classification, including experiments with IndoBERT, mBERT, and XLM-R for fake news detection and comparative model evaluation.", "assets/tes.png"], ["Creating interface redesign concepts, wireframes, high-fidelity prototypes, and reusable design components in Figma, with a focus on navigation, visual consistency, and content hierarchy.", "assets/project-1.jpg"]];
   const items=[...document.querySelectorAll("#svc li")],img=document.getElementById("svc-img"),txt=document.getElementById("svc-txt");
   let cur=0;const set=i=>{if(i===cur)return;cur=i;items.forEach((l,k)=>l.classList.toggle("on",k==i));img.style.opacity=0;txt.style.opacity=0;setTimeout(()=>{txt.textContent=d[i][0];img.src=d[i][1];img.style.opacity=1;txt.style.opacity=1},220)};
   items.forEach(l=>{l.tabIndex=0;l.addEventListener("mouseenter",()=>set(+l.dataset.i));l.addEventListener("focus",()=>set(+l.dataset.i))});
@@ -459,6 +502,13 @@ nav::before{content:"";position:absolute;inset:0;z-index:-1;background:rgba(10,1
 (()=>{const n=document.querySelector("nav"),b=n.querySelector(".burger");
 b.addEventListener("click",()=>{const o=n.classList.toggle("open");b.setAttribute("aria-expanded",o);b.textContent=o?"Close":"Menu"});
 n.querySelectorAll("ul a").forEach(a=>a.addEventListener("click",()=>{n.classList.remove("open");b.textContent="Menu";b.setAttribute("aria-expanded",false)}));})();
+
+(()=>{if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+const fmt=(v,d)=>d?v.toFixed(d):Math.round(v).toLocaleString("en-US");
+document.querySelectorAll("[data-count]").forEach(el=>{const t=+el.dataset.count,d=+el.dataset.dec||0,suf=el.dataset.suf||"";el.textContent=fmt(0,d)+suf;
+new IntersectionObserver((e,o)=>{if(!e[0].isIntersecting)return;o.disconnect();const st=performance.now();(function f(n){const p=Math.min(1,(n-st)/1400),v=t*(1-Math.pow(1-p,3));el.textContent=fmt(v,d)+suf;if(p<1)requestAnimationFrame(f)})(st)},{threshold:.6}).observe(el)});
+const m=document.querySelector(".marq2 div");let x=0,v=0,ly=scrollY;
+(function f(){const dy=scrollY-ly;ly=scrollY;v+=(dy*.22-v)*.08;x+=.5+v;const h=m.scrollWidth/2;if(x>=0)x-=h;if(x<-h)x+=h;m.style.transform="translateX("+x+"px)";requestAnimationFrame(f)})();})();
 </script>
 </body>
 </html>
