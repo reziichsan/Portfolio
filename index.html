@@ -351,25 +351,32 @@ footer{border-top:0;background:linear-gradient(90deg,#3c3c3c,#141414) top/100% 1
 .row{grid-template-columns:150px 1fr;gap:1.5rem}
 .row:first-child{border-top:0;padding-top:0}
 }
+
+/* ===== hero text readability ===== */
+.hero .meta{font-size:clamp(14px,1.05vw,17px);line-height:1.65;color:#dcdcdc;text-align:left;max-width:34rem}
+.hero .l,.hero .r{font-size:13px;line-height:1.7}
+.hero .cv{display:inline-block;margin-top:1.3rem;padding:.7rem 1.4rem;border:1px solid #fff;border-radius:99px;background:#fff;color:#0a0a0a;font-size:14px;font-weight:500;line-height:1.2;transition:background .3s,color .3s}
+.hero .cv:hover{background:transparent;color:#fff;border-color:#fff}
+@media(min-width:861px){.hero .meta{max-width:26vw}}
 </style>
 </head>
 <body>
 <nav aria-label="Main">
-  <a class="logo" href="#home">Rezi®</a>
+  <a class="logo" href="#home">Rezi</a>
   <ul><li><a href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#projects">Projects</a></li><li><a href="#experience">Experience</a></li><li><a href="#education">Education</a></li><li><a href="#service">Skills</a></li><li><a href="#certificates">Certificates</a></li></ul>
   <a class="pill" href="#contact">Contact</a>
   <button class="burger" aria-expanded="false" aria-label="Menu">Menu</button>
 </nav>
 
 <header class="hero" id="home">
-  <img class="photo" src="assets/Modern IT Development Dashboard.png" alt="">
+  <img class="photo" src="assets/IT.png" alt="">
   <div class="l sm">Informatics Graduate<br>IT Support &amp; Troubleshooting<br>Python &amp; Web Development<br><span class="open">Open to Opportunities</span></div>
   <div></div>
   <div class="r sm">Social media
     <div class="social"><a href="https://github.com/reziichsan" aria-label="GitHub" target="_blank" rel="noopener">Gh</a><a href="https://www.linkedin.com/in/reziichsannurarsyi/" aria-label="LinkedIn" target="_blank" rel="noopener">in</a></div>
   </div>
   <span class="year">©2026</span>
-  <h1>Rezi<sup>®</sup></h1>
+  <h1>Rezi<sup>Ichsan N.A</sup></h1>
   <p class="meta sm">Informatics graduate from Telkom University with hands-on experience in web development, IT troubleshooting, and software projects. Experienced with Python and Django, with additional project work in machine learning and UI/UX design. Seeking an entry-level IT role where I can contribute, strengthen my technical skills, and grow through real-world challenges.<br><a class="cv" href="CV.pdf" download="Rezi-Ichsan-Nur-Arsyi-CV.pdf">Download CV</a></p>
 </header>
 
