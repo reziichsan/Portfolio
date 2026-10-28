@@ -255,6 +255,35 @@ nav.open .logo,nav.open .pill,nav.open .burger{position:relative;z-index:2}
 .cc:hover{transform:none}
 .hero .open{margin-top:.5rem;color:#d8e6dc}
 .cc:nth-child(7){margin-left:20%}.cc:nth-child(8){margin-left:45%}
+
+/* ===== fixes from screenshots ===== */
+nav{mix-blend-mode:normal}
+nav::before{content:"";position:absolute;inset:0;z-index:-1;background:rgba(10,10,10,.8);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid #1c1c1c}
+.hero .photo{object-position:0 0;height:84%}
+.about-l{display:flex;flex-direction:column;gap:1.4rem}
+.me{width:min(100%,320px);aspect-ratio:4/5;object-fit:cover;object-position:top;border-radius:3px}
+.about p.big{text-align:left;text-align-last:auto;max-width:30em}
+.c6{grid-column:span 6}.c6 .im{aspect-ratio:16/10}
+.c6 .im img{object-position:top}
+.more .im{display:grid;align-content:end;padding:2rem;background:#141414;font-size:clamp(2rem,3.4vw,3.4rem);letter-spacing:-.03em;font-weight:500;line-height:1.05;transition:background .4s}
+.more:hover .im{background:#1d1d1d}
+.career .sec-h{padding-top:7rem;padding-bottom:2.5rem}
+.career+.career .sec-h{padding-top:5rem}
+.rows{padding:0 var(--pad)}
+.row{display:grid;grid-template-columns:.31fr .69fr;gap:2rem;padding:2rem 0;border-top:1px solid #242424;transition:border-color .3s}
+.row:last-child{border-bottom:1px solid #242424}
+.row:hover{border-top-color:#555}
+.row time{font-size:13px;color:var(--mid);padding-top:.5rem}
+.row h3{font-weight:500;font-size:clamp(1.5rem,2.4vw,2.2rem);letter-spacing:-.025em;line-height:1.15}
+.row .org{margin-top:.5rem;font-size:14px;color:var(--mid)}
+.row .desc{margin-top:1.1rem;max-width:58ch;font-size:15px;line-height:1.7;color:#c4c4c4}
+.yr{margin-bottom:3rem}
+.yr h3{font-weight:500;font-size:clamp(1.6rem,2.4vw,2.2rem);letter-spacing:-.03em;padding-bottom:.9rem;margin-bottom:1.2rem;border-bottom:1px solid #242424}
+.cg{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.cc{width:auto!important;margin:0!important}
+.cc img{aspect-ratio:16/10;object-position:top}
+.cc h3{min-height:2.8em}
+@media(max-width:860px){.c6{grid-column:span 12}.row{grid-template-columns:1fr;gap:.6rem}.cg{grid-template-columns:1fr}.about p.big{max-width:none}}
 </style>
 </head>
 <body>
@@ -266,7 +295,7 @@ nav.open .logo,nav.open .pill,nav.open .burger{position:relative;z-index:2}
 </nav>
 
 <header class="hero" id="home">
-  <img class="photo" src="assets/header.jpg" alt="Portrait of Rezi Ichsan Nur Arsyi">
+  <img class="photo" src="assets/IT.png" alt="">
   <div class="l sm">Web developer<br>IT support<br>Informatics graduate<br><span class="open">Open to work</span></div>
   <div></div>
   <div class="r sm">Social media
@@ -283,7 +312,7 @@ nav.open .logo,nav.open .pill,nav.open .burger{position:relative;z-index:2}
 </div></div>
 
 <section class="about" id="about">
-  <span class="label">About me</span>
+  <div class="about-l"><span class="label">About me</span><img class="me" src="assets/header.jpg" alt="Portrait of Rezi Ichsan Nur Arsyi" loading="lazy"></div>
   <p class="big">I'm Rezi, an Informatics graduate (GPA 3.01) who ships working software. <em>I built an interview-video feature in Django at Nutrifood, a Gemini-powered helpdesk, and a hoax detector that reached 88.62% accuracy with IndoBERT. I'm looking for an entry-level role in web development, software engineering, or IT support.</em></p>
 </section>
 
@@ -291,27 +320,28 @@ nav.open .logo,nav.open .pill,nav.open .burger{position:relative;z-index:2}
 <section id="projects">
   <div class="sec-h"><span class="label">Projects</span><div class="sh-r"><h2>Selected<br>Work</h2><a class="pill" href="https://github.com/reziichsan" target="_blank" rel="noopener">All projects on GitHub</a></div></div>
   <div class="grid">
-    <a class="card c5" href="https://github.com/reziichsan/automated-it-ticketing-system" target="_blank" rel="noopener"><div class="im"><img src="assets/IT.png" alt="IT helpdesk ticketing dashboard" loading="lazy"></div><div class="t"><div><b>AI Helpdesk Ticketing</b><small>Node.js, Express, Gemini API</small></div><span>Web</span></div><p class="res">Node.js, Express, SQLite. Gemini API sets ticket priority from the issue text.</p></a>
-    <a class="card c7" href="https://github.com/reziichsan/HoaxDetection" target="_blank" rel="noopener"><div class="im"><img src="assets/tes.png" alt="Fake news detection project" loading="lazy"></div><div class="t"><div><b>Multilingual Fake News Detection</b><small>Python, IndoBERT, XLM-R</small></div><span>ML</span></div><p class="res">IndoBERT, mBERT, and XLM-R on a 5-language dataset. Peak validation accuracy 88.62%.</p></a>
-    <a class="card c7" href="https://www.roblox.com/id/games/115395112112752/Eternia-Forest" target="_blank" rel="noopener"><div class="im"><img src="assets/eternia-forest.jpg" alt="Eternia Forest Roblox map" loading="lazy"></div><div class="t"><div><b>Eternia Forest</b><small>Lua, Roblox Studio</small></div><span>Game</span></div><p class="res">Lua scripts and map optimization. 355K+ visits, 1,000 concurrent players at peak.</p></a>
-    <a class="card c5" href="https://www.figma.com/proto/FRVgI1yITbqVChRG9dy10w/Redesign-HomePage-Website-JKT48?node-id=283-673&t=HHAQvjkovRpOFjPM-1" target="_blank" rel="noopener"><div class="im"><img src="assets/project-1.jpg" alt="JKT48 website redesign" loading="lazy"></div><div class="t"><div><b>JKT48 Website Redesign</b><small>Figma, design system</small></div><span>UI/UX</span></div><p class="res">Usability review, high-fidelity prototype, and design system in Figma.</p></a>
-    <a class="card c5" href="https://www.figma.com/proto/c0Gyv0ROHXc95EnG8ZDkIF/EPerpusdikbud-UI-Re-Design?node-id=1-4" target="_blank" rel="noopener"><div class="im"><img src="assets/project-2.jpg" alt="EPerpusdikbud app redesign" loading="lazy"></div><div class="t"><div><b>EPerpusdikbud App Redesign</b><small>Figma, mobile prototype</small></div><span>UI/UX</span></div><p class="res">New navigation and content hierarchy for a digital library app.</p></a>
-    <a class="card c7" href="assets/editing-1.png" target="_blank" rel="noopener"><div class="im"><img src="assets/editing-1.png" alt="Germany infographic" loading="lazy"></div><div class="t"><div><b>Graphic design works</b><small>Infographic, wallpaper, jersey, poster</small></div><span>Design</span></div></a>
+    <a class="card c6" href="https://github.com/reziichsan/automated-it-ticketing-system" target="_blank" rel="noopener"><div class="im"><img src="assets/IT.png" alt="IT helpdesk ticketing dashboard" loading="lazy"></div><div class="t"><div><b>AI Helpdesk Ticketing</b><small>Node.js, Express, Gemini API</small></div><span>Web</span></div><p class="res">Node.js, Express, SQLite. Gemini API sets ticket priority from the issue text.</p></a>
+    <a class="card c6" href="https://github.com/reziichsan/HoaxDetection" target="_blank" rel="noopener"><div class="im"><img src="assets/tes.png" alt="Fake news detection project" loading="lazy"></div><div class="t"><div><b>Multilingual Fake News Detection</b><small>Python, IndoBERT, XLM-R</small></div><span>ML</span></div><p class="res">IndoBERT, mBERT, and XLM-R on a 5-language dataset. Peak validation accuracy 88.62%.</p></a>
+    <a class="card c6" href="https://www.roblox.com/id/games/115395112112752/Eternia-Forest" target="_blank" rel="noopener"><div class="im"><img src="assets/eternia-forest.jpg" alt="Eternia Forest Roblox map" loading="lazy"></div><div class="t"><div><b>Eternia Forest</b><small>Lua, Roblox Studio</small></div><span>Game</span></div><p class="res">Lua scripts and map optimization. 355K+ visits, 1,000 concurrent players at peak.</p></a>
+    <a class="card c6" href="https://www.figma.com/proto/FRVgI1yITbqVChRG9dy10w/Redesign-HomePage-Website-JKT48?node-id=283-673&t=HHAQvjkovRpOFjPM-1" target="_blank" rel="noopener"><div class="im"><img src="assets/project-1.jpg" alt="JKT48 website redesign" loading="lazy"></div><div class="t"><div><b>JKT48 Website Redesign</b><small>Figma, design system</small></div><span>UI/UX</span></div><p class="res">Usability review, high-fidelity prototype, and design system in Figma.</p></a>
+    <a class="card c6" href="https://www.figma.com/proto/c0Gyv0ROHXc95EnG8ZDkIF/EPerpusdikbud-UI-Re-Design?node-id=1-4" target="_blank" rel="noopener"><div class="im"><img src="assets/project-2.jpg" alt="EPerpusdikbud app redesign" loading="lazy"></div><div class="t"><div><b>EPerpusdikbud App Redesign</b><small>Figma, mobile prototype</small></div><span>UI/UX</span></div><p class="res">New navigation and content hierarchy for a digital library app.</p></a>
+    <a class="card c6 more" href="https://github.com/reziichsan" target="_blank" rel="noopener"><div class="im"><span>More on<br>GitHub</span></div><div class="t"><div><b>All repositories</b><small>github.com/reziichsan</small></div></div></a>
   </div>
 </section>
 
-<section class="exp" id="experience" aria-label="Experience">
-  <span class="label">Experience</span>
-  <p><b>Outbound Checker</b>PT Astro Technologies Indonesia, Jun – Sep 2026. Checked picked orders against order details before dispatch and reported discrepancies to the relevant team.</p>
-  <p><b>Web Developer Intern</b>Nutrifood Indonesia, Jul – Sep 2022. Built a Django feature for storing job interview videos, with create, update, and delete, and tested it with dummy data.</p>
-  <h3>Experience</h3>
+<section class="career" id="experience">
+  <div class="sec-h"><span class="label">Experience</span><h2>Where I've<br>worked</h2></div>
+  <div class="rows">
+    <article class="row"><time>Jun – Sep 2026</time><div><h3>Outbound Checker</h3><p class="org">PT Astro Technologies Indonesia, Warehouse Cibitung</p><p class="desc">Checked picked orders before dispatch by matching product information and quantities against order details and inspecting item condition. Reported discrepancies to the relevant team to keep orders accurate.</p></div></article>
+    <article class="row"><time>Jul – Sep 2022</time><div><h3>Web Developer Intern</h3><p class="org">Nutrifood Indonesia</p><p class="desc">Built a feature for storing job interview video recordings in an internal application with Python and Django, including create, update, and delete. Tested it with dummy data based on the team's requirements.</p></div></article>
+  </div>
 </section>
 
-<section class="exp edu" id="education" aria-label="Education">
-  <span class="label">Education</span>
-  <p><b>Bachelor's Degree in Informatics (S.Kom)</b>Telkom University, Bandung, Aug 2019 – Sep 2026. GPA 3.01 / 4.00.</p>
-  <p><b>Thesis</b>Hoax detection with IndoBERT and multilingual transformer models. Coursework in programming, databases, networks, and machine learning.</p>
-  <h3>Education</h3>
+<section class="career" id="education">
+  <div class="sec-h"><span class="label">Education</span><h2>Where I<br>studied</h2></div>
+  <div class="rows">
+    <article class="row"><time>Aug 2019 – Sep 2026</time><div><h3>Bachelor's Degree in Informatics (S.Kom)</h3><p class="org">Telkom University, Bandung. GPA 3.01 / 4.00</p><p class="desc">Studied programming, software development, databases, computer networks, and machine learning. Undergraduate thesis on hoax detection with IndoBERT and multilingual transformer models.</p></div></article>
+  </div>
 </section>
 
 <section class="do" id="service">
@@ -342,15 +372,10 @@ nav.open .logo,nav.open .pill,nav.open .burger{position:relative;z-index:2}
 <section id="certificates">
   <div class="sec-h tight"><span class="label">Certificates</span><h2>Courses and<br>certificates</h2></div>
   <div class="certs">
-    <article class="cc"><img src="assets/dicoding-python.png" alt="" loading="lazy"><h3>Memulai Pemrograman dengan Python, 60 hours</h3><div class="by"><span>Dicoding Indonesia</span><span>2026</span></div></article>
-    <article class="cc"><img src="assets/Alibaba Cloud Dev.png" alt="" loading="lazy"><h3>Alibaba Cloud Certified Developer</h3><div class="by"><span>Alibaba Cloud</span><span>2026</span></div></article>
-    <article class="cc"><img src="assets/eprt-certificate.png" alt="" loading="lazy"><h3>EPrT English Proficiency Test, score 463 (B1)</h3><div class="by"><span>Telkom University</span><span>2025</span></div></article>
-    <article class="cc"><img src="assets/certificate-1.png" alt="" loading="lazy"><h3>Responsive Web Design</h3><div class="by"><span>freeCodeCamp</span><span>2025</span></div></article>
-    <article class="cc"><img src="assets/certificate-2.png" alt="" loading="lazy"><h3>Scientific Computing with Python</h3><div class="by"><span>freeCodeCamp</span><span>2025</span></div></article>
-    <article class="cc"><img src="assets/dicoding-project-management.png" alt="" loading="lazy"><h3>Belajar Dasar Manajemen Proyek</h3><div class="by"><span>Dicoding Indonesia</span><span>2026</span></div></article>
-    <article class="cc"><img src="assets/webinar-badminton-pose.png" alt="" loading="lazy"><h3>Time Series Classification of Badminton Pose (webinar)</h3><div class="by"><span>KK CITI, Telkom University</span><span>2025</span></div></article>
-    <article class="cc"><img src="assets/certificate-3.png" alt="" loading="lazy"><h3>Design System in UI Design</h3><div class="by"><span>MySkill</span><span>2023</span></div></article>
-  </div>
+<div class="yr"><h3>2026</h3><div class="cg"><article class="cc"><img src="assets/dicoding-python.png" alt="" loading="lazy"><h3>Memulai Pemrograman dengan Python, 60 hours</h3><div class="by"><span>Dicoding Indonesia</span><span>2026</span></div></article><article class="cc"><img src="assets/Alibaba Cloud Dev.png" alt="" loading="lazy"><h3>Alibaba Cloud Certified Developer</h3><div class="by"><span>Alibaba Cloud</span><span>2026</span></div></article><article class="cc"><img src="assets/dicoding-project-management.png" alt="" loading="lazy"><h3>Belajar Dasar Manajemen Proyek</h3><div class="by"><span>Dicoding Indonesia</span><span>2026</span></div></article></div></div>
+<div class="yr"><h3>2025</h3><div class="cg"><article class="cc"><img src="assets/eprt-certificate.png" alt="" loading="lazy"><h3>EPrT English Proficiency Test, score 463 (B1)</h3><div class="by"><span>Telkom University</span><span>2025</span></div></article><article class="cc"><img src="assets/certificate-1.png" alt="" loading="lazy"><h3>Responsive Web Design</h3><div class="by"><span>freeCodeCamp</span><span>2025</span></div></article><article class="cc"><img src="assets/certificate-2.png" alt="" loading="lazy"><h3>Scientific Computing with Python</h3><div class="by"><span>freeCodeCamp</span><span>2025</span></div></article><article class="cc"><img src="assets/webinar-badminton-pose.png" alt="" loading="lazy"><h3>Time Series Classification of Badminton Pose (webinar)</h3><div class="by"><span>KK CITI, Telkom University</span><span>2025</span></div></article></div></div>
+<div class="yr"><h3>2023</h3><div class="cg"><article class="cc"><img src="assets/certificate-3.png" alt="" loading="lazy"><h3>Design System in UI Design</h3><div class="by"><span>MySkill</span><span>2023</span></div></article></div></div>
+</div>
 </section>
 
 <section class="faq">
