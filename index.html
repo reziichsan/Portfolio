@@ -373,6 +373,13 @@ footer{border-top:0;background:linear-gradient(90deg,#3c3c3c,#141414) top/100% 1
 @media(max-width:1100px){.sk-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.sk:nth-child(n+3){border-top:1px solid var(--ln)}}
 @media(max-width:860px){.sk-grid{grid-template-columns:1fr;border-left:1px solid var(--ln)}.sk{border-left:0;border-top:1px solid var(--ln)}.sk:first-child{border-top:0}.sk .n{margin-bottom:1.6rem}.skills .intro{white-space:normal}}
 
+/* ===== hero: name only ===== */
+.hero h1{font-size:clamp(3rem,11.5vw,11rem);line-height:.92;letter-spacing:-.045em}
+.hero h1 .wd{display:inline-block;white-space:nowrap}
+.hero{grid-template-rows:1fr auto auto}
+.hero .meta{grid-row:3;margin-top:2.5rem;padding-bottom:0}
+@media(max-width:860px){.hero h1{font-size:14vw}.hero .meta{margin-top:1.8rem}}
+
 /* ===== certificate lightbox ===== */
 .cc{cursor:zoom-in}
 .lb{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:4vw;background:rgba(10,10,10,.92);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
@@ -396,14 +403,13 @@ body.lb-lock{overflow:hidden}
 </nav>
 
 <header class="hero" id="home">
-  <img class="photo" src="assets/IT.png" alt="">
   <div class="l sm">Informatics Graduate<br>IT Support &amp; Troubleshooting<br>Python &amp; Web Development<br><span class="open">Open to Opportunities</span></div>
   <div></div>
   <div class="r sm">Social media
     <div class="social"><a href="https://github.com/reziichsan" aria-label="GitHub" target="_blank" rel="noopener">Gh</a><a href="https://www.linkedin.com/in/reziichsannurarsyi/" aria-label="LinkedIn" target="_blank" rel="noopener">in</a></div>
   </div>
   <span class="year">©2026</span>
-  <h1>Rezi<sup>®</sup></h1>
+  <h1>Rezi Ichsan<br>Nur Arsyi</h1>
   <p class="meta sm">Informatics graduate from Telkom University with hands-on experience in web development, IT troubleshooting, and software projects. Experienced with Python and Django, with additional project work in machine learning and UI/UX design. Seeking an entry-level IT role where I can contribute, strengthen my technical skills, and grow through real-world challenges.<br><a class="cv" href="CV.pdf" download="Rezi-Ichsan-Nur-Arsyi-CV.pdf">Download CV</a></p>
 </header>
 
@@ -553,9 +559,11 @@ body.lb-lock{overflow:hidden}
   if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;
   const $=(q,r=document)=>[...r.querySelectorAll(q)];
   document.documentElement.classList.add("js");
-  const h1=document.querySelector(".hero h1"),t=h1.firstChild;
-  [...t.textContent].forEach((c,i)=>{const a=document.createElement("span"),b=document.createElement("span");a.className="ch";b.className="ci";b.style.setProperty("--i",i);b.textContent=c;a.appendChild(b);h1.insertBefore(a,t)});
-  t.remove();
+  const h1=document.querySelector(".hero h1");let ci=0;
+  [...h1.childNodes].forEach(n=>{if(n.nodeType!==3)return;const f=document.createDocumentFragment();
+    n.textContent.trim().split(/\s+/).forEach((w,k)=>{if(k)f.append(" ");const wd=document.createElement("span");wd.className="wd";
+      [...w].forEach(c=>{const a=document.createElement("span"),b=document.createElement("span");a.className="ch";b.className="ci";b.style.setProperty("--i",ci++);b.textContent=c;a.appendChild(b);wd.appendChild(a)});f.append(wd)});
+    n.replaceWith(f)});
   addEventListener("load",()=>setTimeout(()=>document.body.classList.add("ready"),80));
   setTimeout(()=>document.body.classList.add("ready"),1500);
   const em=document.querySelector(".about p.big em");
@@ -564,10 +572,9 @@ body.lb-lock{overflow:hidden}
   const targets=$(".card");
   const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.12,rootMargin:"0px 0px -6% 0px"});
   targets.forEach((el,i)=>{el.classList.add("rv");el.style.setProperty("--d",(i%4)*.08+"s");io.observe(el)});
-  const nav=document.querySelector("nav"),photo=document.querySelector(".hero .photo");let ly=0,tick=false;
+  const nav=document.querySelector("nav");let ly=0,tick=false;
   function onScroll(){tick=false;const y=scrollY;
     nav.classList.toggle("hide",y>ly&&y>240);ly=y;
-    if(y<innerHeight*1.2)photo.style.transform="translateY("+y*.14+"px)";
     const r=big.getBoundingClientRect(),p=Math.min(1,Math.max(0,(innerHeight*.85-r.top)/(r.height+innerHeight*.35)));
     const n=Math.round(p*words.length);words.forEach((w,i)=>w.classList.toggle("lit",i<n));}
   addEventListener("scroll",()=>{if(!tick){tick=true;requestAnimationFrame(onScroll)}},{passive:true});onScroll();
