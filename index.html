@@ -372,6 +372,19 @@ footer{border-top:0;background:linear-gradient(90deg,#3c3c3c,#141414) top/100% 1
 .sk .d{margin-top:.9rem;font-size:13.5px;line-height:1.7;color:var(--mid)}
 @media(max-width:1100px){.sk-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.sk:nth-child(n+3){border-top:1px solid var(--ln)}}
 @media(max-width:860px){.sk-grid{grid-template-columns:1fr;border-left:1px solid var(--ln)}.sk{border-left:0;border-top:1px solid var(--ln)}.sk:first-child{border-top:0}.sk .n{margin-bottom:1.6rem}.skills .intro{white-space:normal}}
+
+/* ===== certificate lightbox ===== */
+.cc{cursor:zoom-in}
+.lb{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:4vw;background:rgba(10,10,10,.92);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
+.lb.open{opacity:1;visibility:visible}
+.lb figure{max-width:min(1100px,100%);max-height:100%;display:flex;flex-direction:column;align-items:center;gap:.9rem;scale:.97;transition:scale .4s var(--ease)}
+.lb.open figure{scale:1}
+.lb img{max-width:100%;max-height:78vh;width:auto;height:auto;object-fit:contain;border-radius:6px;border:1px solid var(--ln);background:#101010}
+.lb figcaption{font-size:13px;color:var(--mid);text-align:center}
+.lb figcaption b{display:block;color:var(--fg);font-weight:500;margin-bottom:.15rem}
+.lb .x{position:absolute;top:1.2rem;right:var(--pad);background:#fff;color:#000;border:0;border-radius:99px;padding:.45rem 1rem;font:500 12px 'Inter Tight',sans-serif;cursor:pointer}
+body.lb-lock{overflow:hidden}
+@media(max-width:860px){.lb .x{right:1.25rem}}
 </style>
 </head>
 <body>
@@ -537,13 +550,6 @@ footer{border-top:0;background:linear-gradient(90deg,#3c3c3c,#141414) top/100% 1
 
 <script>
 (()=>{
-  const d=[["Developing web application features using Python and Django, with additional project experience in Node.js, Express, HTML, CSS, and JavaScript. Familiar with CRUD workflows and testing features using sample data.", "assets/IT.png"], ["Practical exposure to Windows and Linux installation, basic hardware and software troubleshooting, IP and DNS configuration, router setup, and network connectivity testing.", "assets/IT.png"], ["Working knowledge of Python-based NLP and text classification, including experiments with IndoBERT, mBERT, and XLM-R for fake news detection and comparative model evaluation.", "assets/tes.png"], ["Creating interface redesign concepts, wireframes, high-fidelity prototypes, and reusable design components in Figma, with a focus on navigation, visual consistency, and content hierarchy.", "assets/project-1.jpg"]];
-  const items=[...document.querySelectorAll("#svc li")],img=document.getElementById("svc-img"),txt=document.getElementById("svc-txt");
-  let cur=0;const set=i=>{if(i===cur)return;cur=i;items.forEach((l,k)=>l.classList.toggle("on",k==i));img.style.opacity=0;txt.style.opacity=0;setTimeout(()=>{txt.textContent=d[i][0];img.src=d[i][1];img.style.opacity=1;txt.style.opacity=1},220)};
-  items.forEach(l=>{l.tabIndex=0;l.addEventListener("mouseenter",()=>set(+l.dataset.i));l.addEventListener("focus",()=>set(+l.dataset.i))});
-})();
-
-(()=>{
   if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;
   const $=(q,r=document)=>[...r.querySelectorAll(q)];
   document.documentElement.classList.add("js");
@@ -565,8 +571,6 @@ footer{border-top:0;background:linear-gradient(90deg,#3c3c3c,#141414) top/100% 1
     const r=big.getBoundingClientRect(),p=Math.min(1,Math.max(0,(innerHeight*.85-r.top)/(r.height+innerHeight*.35)));
     const n=Math.round(p*words.length);words.forEach((w,i)=>w.classList.toggle("lit",i<n));}
   addEventListener("scroll",()=>{if(!tick){tick=true;requestAnimationFrame(onScroll)}},{passive:true});onScroll();
-  const img=document.getElementById("svc-img"),txt2=document.getElementById("svc-txt"),old=img.src;
-  const obs=new MutationObserver(()=>{});
 })();
 
 (()=>{
@@ -596,6 +600,31 @@ document.querySelectorAll("[data-count]").forEach(el=>{const t=+el.dataset.count
 new IntersectionObserver((e,o)=>{if(!e[0].isIntersecting)return;o.disconnect();const st=performance.now();(function f(n){const p=Math.min(1,(n-st)/1400),v=t*(1-Math.pow(1-p,3));el.textContent=fmt(v,d)+suf;if(p<1)requestAnimationFrame(f)})(st)},{threshold:.6}).observe(el)});
 const m=document.querySelector(".marq2 div");let x=0,v=0,ly=scrollY;
 (function f(){const dy=scrollY-ly;ly=scrollY;v+=(dy*.22-v)*.08;x+=.5+v;const h=m.scrollWidth/2;if(x>=0)x-=h;if(x<-h)x+=h;m.style.transform="translateX("+x+"px)";requestAnimationFrame(f)})();})();
+
+/* certificate lightbox */
+(()=>{
+  const lb=document.createElement("div");
+  lb.className="lb";lb.setAttribute("role","dialog");lb.setAttribute("aria-modal","true");lb.setAttribute("aria-label","Certificate preview");
+  lb.innerHTML='<button class="x" aria-label="Close">Close ×</button><figure><img alt=""><figcaption></figcaption></figure>';
+  document.body.appendChild(lb);
+  const im=lb.querySelector("img"),cap=lb.querySelector("figcaption"),x=lb.querySelector(".x");
+  let last=null;
+  const open=c=>{
+    const src=c.querySelector("img"),title=c.querySelector("h3").textContent,by=[...c.querySelectorAll(".by span")].map(s=>s.textContent).join(" · ");
+    im.src=c.dataset.full||src.currentSrc||src.src;im.alt=src.alt;
+    cap.innerHTML="<b></b><span></span>";cap.firstChild.textContent=title;cap.lastChild.textContent=by;
+    last=c;lb.classList.add("open");document.body.classList.add("lb-lock");x.focus();
+  };
+  const close=()=>{lb.classList.remove("open");document.body.classList.remove("lb-lock");if(last)last.focus()};
+  document.querySelectorAll(".cc").forEach(c=>{
+    c.tabIndex=0;c.setAttribute("role","button");c.setAttribute("aria-label","View certificate: "+c.querySelector("h3").textContent);
+    c.addEventListener("click",()=>open(c));
+    c.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();open(c)}});
+  });
+  x.addEventListener("click",close);
+  lb.addEventListener("click",e=>{if(e.target===lb)close()});
+  addEventListener("keydown",e=>{if(e.key==="Escape"&&lb.classList.contains("open"))close()});
+})();
 </script>
 </body>
 </html>
